@@ -15,12 +15,12 @@
 - Admin
   - [ ] Create and manage users of type Manager, Patient and Professional
   - [ ] Create and review inventory and appointment reports 
-  - [ ] ...
+
 
 - Professional
   - [ ] Can edit and add information to users of type Patient
   - [ ] Access to editing the inventory.
-  - [ ] ...
+
 
 - Manager
   - [ ] Create users of type Patient.
@@ -31,7 +31,7 @@
 - Patient
   - [ ] Check info about itself.
   - [ ] Manage a self-appointment.
-  - [ ] ...
+
 
 
 
@@ -46,11 +46,11 @@
 
 ## Technologies
 
-Ruby on Rails
-PostgreSQL
-CSS and SASS
-Javascript
-Minitest
+- uby on Rails
+- PostgreSQL
+- CSS and SASS
+- Javascript
+- Minitest
 
 
 ## Execution plan
@@ -60,7 +60,6 @@ Minitest
 - [See the plan](https://docs.google.com/spreadsheets/d/1crwQmVgiG5wjaZA1N86E2DQC8RAWi1DYfoxzD_BJP4I/edit?usp=sharing)
 
 ## Diseño de UI
-> Instrucciones: *inserta el enlace a el diseño de UI de tu proyecto. Asegúrate de que todos tengan permisos para el acceso.*
 
 - [See the UI Design](https://www.figma.com/file/e65RkLKAd4kwqrRnYF2jhv/NutriCheck)
 
