@@ -46,7 +46,7 @@
 
 ## Technologies
 
-- uby on Rails
+- Ruby on Rails
 - PostgreSQL
 - CSS and SASS
 - Javascript
