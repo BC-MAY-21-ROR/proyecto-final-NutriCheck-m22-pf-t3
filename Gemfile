@@ -10,7 +10,7 @@ gem "rails", "~> 7.0.3"
 gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 1.1"
+gem 'pg', '~> 1.3', '>= 1.3.5'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -70,3 +70,20 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Code check
+gem 'rspec', '~> 3.5'
+gem 'rubycritic', '~> 4.7'
+gem 'sandi_meter', '~> 1.2'
+gem 'rubocop', '~> 1.30'
+
+#Autentication and DB
+gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'pg', '~> 1.3', '>= 1.3.5'
+gem "paranoia", "~> 2.2"
+gem 'pry', '~> 0.14.1'
+gem "letter_opener", group: :development
+gem 'jquery-rails', '~> 4.5'
+gem 'rails-ujs', '~> 0.1.0'
+gem 'pg_search', '~> 2.3'
+gem 'bootstrap', '~> 5.1.3'
