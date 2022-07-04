@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  next_appointment: 2022-07-04
+  weight: 1.5
+  comments: MyString
+
+two:
+  next_appointment: 2022-07-04
+  weight: 1.5
+  comments: MyString
