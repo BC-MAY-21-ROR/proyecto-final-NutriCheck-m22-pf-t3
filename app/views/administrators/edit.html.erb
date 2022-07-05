@@ -1,0 +1,32 @@
+<div id="admin-edit">
+  <h1>Edit Admin</h1>
+  <%= form_with model: @user do |form| %>
+    <%= form.label :name %>
+    <div>
+      <%= form.text_field :name %>
+    </div>
+    <%= form.label :last_name %>
+    <div>
+      <%= form.text_field :last_name %>
+    </div>
+    <%= form.label :birth_date %>
+    <div>
+      <%= form.text_field :birth_date %>
+    </div>
+    <%= form.label :phone_number %>
+    <div>
+      <%= form.text_field :phone_number %>
+    </div>
+    <%= form.label :email %>
+    <div>
+      <%= form.text_field :email %>
+    </div>
+        <%= form.label :password %>
+    <div>
+      <%= form.text_field :password %>
+    </div>
+    <div>
+      <%= form.submit ' Edit'%>
+    </div>
+  <% end %>
+</div>

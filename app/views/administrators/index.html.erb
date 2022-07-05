@@ -2,6 +2,7 @@
   <h1>Admin Profile</h1>
   <div>
     <% @administrators.each do |administrator| %>
+    <%= button_to "edit", edit_administrator_path(administrator), method: :get %>
       <div>
         <%=administrator.name %> <br>
         <%=administrator.last_name %> <br>
