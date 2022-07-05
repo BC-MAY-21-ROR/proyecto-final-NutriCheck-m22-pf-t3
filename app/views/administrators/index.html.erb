@@ -1,0 +1,28 @@
+<div>
+  <h1>Admin Profile</h1>
+  <div>
+    <% @administrators.each do |administrator| %>
+      <%= button_to "edit", edit_administrator_path(administrator), method: :get %>
+      <%= button_to "show", administrator_path(administrator), method: :get %>
+      <div>
+        <%=administrator.name %> <br>
+        <%=administrator.last_name %> <br>
+        <%=administrator.phone %> <br>
+        <%=administrator.email %> <br>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <div>
+      <h2>Options</h2>
+      <a>Manage Employees</a><br>
+      <a>Manage Managers</a><br>
+      <a>Manage Schedule</a><br>
+    </div>
+    <div>
+      <h2>Reports</h2>
+      <a>Appointments</a><br>
+      <a>Sales</a>
+    </div>
+  </div>
+</div>

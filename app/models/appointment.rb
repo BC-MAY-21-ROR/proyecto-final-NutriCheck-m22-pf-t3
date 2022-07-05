@@ -1,3 +1,5 @@
 class Appointment < ApplicationRecord
-  belongs_to :patient, :user, :service
+  belongs_to :patient
+  belongs_to :user
+  belongs_to :service
 end
