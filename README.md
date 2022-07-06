@@ -10,11 +10,10 @@
 
 ## Description
 
-> Sistema web para la gestión, administración y control de un consultorio nutricional.
-> Web system for the management, administration and control of a nutritional office.
+- Sistema web para la gestión, administración y control de un consultorio nutricional.
+- Web system for the management, administration and control of a nutritional office.
 
 ## Functional requirements
-
 
 - Admin
   - [ ] Create and manage users of type Manager, Patient and Professional
