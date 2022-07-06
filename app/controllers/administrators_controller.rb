@@ -5,7 +5,7 @@ class AdministratorsController < ApplicationController
   end
 
   def new
-    @administrators = User.new
+    @administrator = User.new
   end
   
   def show
