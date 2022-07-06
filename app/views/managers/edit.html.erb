@@ -1,0 +1,35 @@
+<h1>Edit manager</h1>
+<div id="admin-edit">
+  <%= form_with model: @user do |form| %>
+    <%= form.label :name %>
+    <div>
+      <%= form.text_field :name, value: @manager.name %>
+    </div>
+    <%= form.label :last_name %>
+    <div>
+      <%= form.text_field :last_name, value: @manager.last_name %>
+    </div>
+    <%= form.label :birth_date %>
+    <div>
+      <%= form.text_field :birth_date, value: @manager.birth_date %>
+    </div>
+    <%= form.label :phone_number %>
+    <div>
+      <%= form.text_field :phone_number, value: @manager.phone %>
+    </div>
+    <%= form.label :email %>
+    <div>
+      <%= form.text_field :email, value: @manager.email %>
+    </div>
+    <%= form.label :password %>
+    <div>
+      <%= form.text_field :password, value: @manager.password %>
+    </div>
+    <div>
+      <%= form.text_field :role, value: @manager.role %>
+    </div>
+    <div>
+      <%= form.submit 'Edit'%>
+    </div>
+  <% end %>
+</div>

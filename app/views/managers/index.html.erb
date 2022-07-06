@@ -1,0 +1,25 @@
+<h1>Managers</h1>
+<div>
+  <% @managers.each do |manager|%>
+    <div>
+      <div>
+        <%= manager.name %>
+      </div>
+      <div>
+        <%= manager.last_name %>
+      </div>
+      <div>
+        <%= manager.phone %>
+      </div>
+      <div>
+        <%= manager.email %>
+      </div>
+      <div>
+        <%= button_to "edit", edit_manager_path(manager), method: :get %>
+        <%= button_to "show", manager_path(manager), method: :get %>
+        <%= button_to "destroy", manager_path(manager), method: :delete %>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>
