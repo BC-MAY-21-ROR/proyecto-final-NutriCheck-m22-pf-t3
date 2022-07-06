@@ -1,8 +1,12 @@
 ![BrightCoders Logo](img/logo-bc.png)
 
-# Project's name
+# NutriCheck
 
-> NutriCheck
+## Sprint Leader
+
+| Sprint 1 | Sprint 1 | Sprint 1 | Sprint 1 | Sprint 1 | Sprint 1 | Sprint 1 | Sprint 1 |
+|---|---|---|---|---|---|---|---|
+| Owen  |
 
 ## Description
 
