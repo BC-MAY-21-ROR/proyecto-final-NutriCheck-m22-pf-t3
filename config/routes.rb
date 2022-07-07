@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+
  
-  root 'administrators#index'
-  resources :administrators
-  resources :managers
+  root 'users#index'
+  resources :users
+
 end
