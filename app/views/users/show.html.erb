@@ -1,0 +1,43 @@
+<h1>User Detail</h1>
+<h1>Manager detail</h1>
+<div>
+  <div>
+    <label for="">Name: </label>
+    <%= @user.name %>
+  </div>
+  <div>
+    <label for="">Last Name: </label>
+    <%= @user.last_name %>
+  </div>
+  <div>
+    <label for="">Birth Date: </label>
+    <%= @user.birth_date %>
+  </div>
+  <div>
+    <label for="">Phone Number: </label>
+    <%= @user.phone %>
+  </div>
+  <div>
+    <label for="">Email: </label>
+    <%= @user.email %>
+  </div>
+  <div>
+    <label for="">Password: </label>
+    <%= @user.password %>
+  </div>
+  <div>
+    <label for="">Role: </label>
+    <%= @user.role %>
+  </div>
+  <div>
+    <label for="">speciality_id: </label>
+    <%= @user.speciality_id %>
+  </div>
+  <div>
+    <label for="">Date of entry: </label>
+    <%= @user.created_at %>
+  </div>
+  <div>
+    <%= button_to "volver a users", users_path, method: :get%>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div>
+  <h1>user New Create</h1>
+  <%= form_with(model: @user) do |form| %>
+    <%= form.label :name %>
+    <div>
+      <%= form.text_field :name %>
+    </div>
+    <%= form.label :last_name %>
+    <div>
+      <%= form.text_field :last_name %>
+    </div>
+    <%= form.label :birth_date %>
+    <div>
+      <%= form.text_field :birth_date %>
+    </div>
+    <%= form.label :phone %>
+    <div>
+      <%= form.text_field :phone %>
+    </div>
+    <%= form.label :email %>
+    <div>
+      <%= form.text_field :email %>
+    </div>
+    <%= form.label :password %>
+    <div>
+      <%= form.text_field :password %>
+    </div>
+    <%= form.label :speciality_id %>
+    <div>
+      <%= form.text_field :speciality_id %>
+    </div>
+    <%= form.label :role %>
+    <div>
+      <%= form.text_field :role %>
+    </div>
+    <div>
+      <%= form.submit 'Create'%>
+    </div>
+  <% end %>
+</div>
