@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
- 
-  root 'administrators#index'
+
+  root 'users#index'
+  resources :users
+  resources :managers
   resources :administrators
+  resources :professionals
+  resources :schedules
 end
