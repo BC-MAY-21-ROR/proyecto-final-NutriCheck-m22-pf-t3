@@ -1,0 +1,42 @@
+<h1>Professional detail</h1>
+<div>
+  <div>
+    <label for="">Name: </label>
+    <%= @professional.name %>
+  </div>
+  <div>
+    <label for="">Last Name: </label>
+    <%= @professional.last_name %>
+  </div>
+  <div>
+    <label for="">Birth Date: </label>
+    <%= @professional.birth_date %>
+  </div>
+  <div>
+    <label for="">Phone Number: </label>
+    <%= @professional.phone %>
+  </div>
+  <div>
+    <label for="">Email: </label>
+    <%= @professional.email %>
+  </div>
+  <div>
+    <label for="">Password: </label>
+    <%= @professional.password %>
+  </div>
+  <div>
+    <label for="">Role: </label>
+    <%= @professional.role %>
+  </div>
+  <div>
+    <label for="">Date of entry: </label>
+    <%= @professional.created_at %>
+  </div>
+  <div>
+    <label for="">speciality_id: </label>
+    <%= @professional.speciality_id %>
+  </div>
+  <div>
+    <%= button_to "volver a professionals", professionals_path, method: :get%>
+  </div>
+</div>
