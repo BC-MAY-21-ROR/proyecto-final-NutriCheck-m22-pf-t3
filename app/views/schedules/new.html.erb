@@ -1,6 +1,6 @@
 <div id="schedule-new">
   <h1>Create Schedule</h1>
-  <%= form_with model: @schedule do |form| %>
+  <%= form_for @schedule do |f| %>
     <%= form.label :week_day %>
     <div>
       <%= form.text_field :week_day %>
@@ -14,7 +14,7 @@
       <%= form.text_field :closing_time %>
     </div>
     <div>
-      <%= form.submit ' Edit'%>
+      <%= form.submit 'New Schedule'%>
     </div>
   <% end %>
 </div>

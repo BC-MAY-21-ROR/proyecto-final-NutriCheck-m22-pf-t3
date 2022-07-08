@@ -2,12 +2,16 @@
   <h1>Manage Schedule</h1>
   <div>
     <% @schedules.each do |schedule| %>
-    <%= button_to "edit", edit_schedule_path(schedule), method: :get %>
       <div>
         <%=schedule.week_day %> <br>
         <%=schedule.opening_time %> <br>
         <%=schedule.closing_time %> <br>
+        <%= button_to "Edit Schedule", edit_schedule_path(schedule), method: :get %>
+        <br>
       </div>
+
     <% end %>
   </div>
+  <%= button_to "Add a schedule", new_schedule_path, method: :get %>
+  <%= button_to "Manage turns"%>
 </div>
