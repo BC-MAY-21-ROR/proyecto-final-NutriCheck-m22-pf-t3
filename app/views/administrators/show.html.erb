@@ -1,34 +1,42 @@
-<h1>show</h1>
+<h1>administrator detail</h1>
 <div>
-  <label for="">Name: </label>
-  <%= @administrator.name %>
-</div>
-<label for="">Last Name: </label>
-<%= @administrator.last_name %>
-<div>
-  <label for="">Birth Date: </label>
-  <%= @administrator.birth_date %>
-</div>
-<div>
-  <label for="">Phone Number: </label>
-  <%= @administrator.phone %>
-</div>
-<div>
-  <label for="">Email: </label>
-  <%= @administrator.email %>
-</div>
-<div>
-  <label for="">Password: </label>
-  <%= @administrator.password %>
-</div>
-<div>
-  <label for="">Role: </label>
-  <%= @administrator.role %>
-</div>
-<div>
-  <label for="">Date of entry: </label>
-  <%= @administrator.created_at %>
-</div>
-<div>
-  <%= button_to "volver a admins", administrators_path, method: :get%>
+  <div>
+    <label for="">Name: </label>
+    <%= @administrator.name %>
+  </div>
+  <div>
+    <label for="">Last Name: </label>
+    <%= @administrator.last_name %>
+  </div>
+  <div>
+    <label for="">Birth Date: </label>
+    <%= @administrator.birth_date %>
+  </div>
+  <div>
+    <label for="">Phone Number: </label>
+    <%= @administrator.phone %>
+  </div>
+  <div>
+    <label for="">Email: </label>
+    <%= @administrator.email %>
+  </div>
+  <div>
+    <label for="">Password: </label>
+    <%= @administrator.password %>
+  </div>
+  <div>
+    <label for="">Role: </label>
+    <%= @administrator.role %>
+  </div>
+  <div>
+    <label for="">Date of entry: </label>
+    <%= @administrator.created_at %>
+  </div>
+  <div>
+    <label for="">speciality_id: </label>
+    <%= @administrator.speciality_id %>
+  </div>
+  <div>
+    <%= button_to "volver a administrators", administrators_path, method: :get%>
+  </div>
 </div>
