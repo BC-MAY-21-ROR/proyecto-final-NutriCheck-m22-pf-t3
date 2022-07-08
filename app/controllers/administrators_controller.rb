@@ -1,7 +1,7 @@
 class AdministratorsController < ApplicationController
 
   def index
-    @administrators = User.all
+    @administrators = User.where(role: "administrator")
   end
 
   def new
