@@ -4,7 +4,7 @@ class AdministratorsController < UsersController
   end
 
   def show
-    @administrators = User.find(params[:id])
+    @administrator = User.find(params[:id])
   end
 
 end
