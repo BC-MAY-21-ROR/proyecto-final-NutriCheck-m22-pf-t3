@@ -1,9 +1,9 @@
-<div id="admin-edit">
-  <h1>Edit Admin</h1>
+<h1>Edit administrator</h1>
+<div>
   <%= form_with model: @user do |form| %>
     <%= form.label :name %>
     <div>
-      <%= form.text_field :name %>
+      <%= form.text_field :name  %>
     </div>
     <%= form.label :last_name %>
     <div>
@@ -13,20 +13,28 @@
     <div>
       <%= form.text_field :birth_date %>
     </div>
-    <%= form.label :phone_number %>
+    <%= form.label :phone %>
     <div>
-      <%= form.text_field :phone_number %>
+      <%= form.text_field :phone %>
     </div>
     <%= form.label :email %>
     <div>
-      <%= form.text_field :email %>
+      <%= form.text_field :email%>
     </div>
-        <%= form.label :password %>
+    <%= form.label :password %>
     <div>
-      <%= form.text_field :password %>
+      <%= form.text_field :password%>
+    </div>
+    <%= form.label :role %>
+    <div>
+      <%= form.text_field :role%>
+    </div>
+    <%= form.label :speciality_id %>
+    <div>
+      <%= form.text_field :speciality_id%>
     </div>
     <div>
-      <%= form.submit ' Edit'%>
+      <%= form.submit 'Edit'%>
     </div>
   <% end %>
 </div>
