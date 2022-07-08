@@ -7,6 +7,7 @@
         <%= user.last_name %>
         <%= user.email %>
         <%= user.phone %>
+        <%= user.role %>
         <%= button_to "show", user_path(user), method: :get %>
         <%= button_to "edit", edit_user_path(user), method: :get %>
         <%= button_to "delete", user, method: :delete %>
