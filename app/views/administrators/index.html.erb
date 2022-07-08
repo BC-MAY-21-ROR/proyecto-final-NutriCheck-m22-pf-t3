@@ -2,22 +2,23 @@
   <h1>Admin Profile</h1>
   <div>
     <% @administrators.each do |administrator| %>
-      <%= button_to "edit", edit_administrator_path(administrator), method: :get %>
-      <%= button_to "show", administrator_path(administrator), method: :get %>
       <div>
         <%=administrator.name %> <br>
         <%=administrator.last_name %> <br>
         <%=administrator.phone %> <br>
         <%=administrator.email %> <br>
+        <%= button_to "edit", edit_administrator_path(administrator), method: :get %>
+        <%= button_to "show", administrator_path(administrator), method: :get %>
       </div>
     <% end %>
   </div>
   <div>
     <div>
       <h2>Options</h2>
-      <a>Manage Employees</a><br>
-      <a>Manage Managers</a><br>
-      <a>Manage Schedule</a><br>
+      <%= button_to "Manage All Employees", users_path, method: :get %><br>
+      <%= button_to "Manage Managers", managers_path, method: :get %><br>
+      <%= button_to "Manage Professionals", professionals_path, method: :get %><br>
+      <%= button_to "Manage Schedules", schedules_path, method: :get %><br>
     </div>
     <div>
       <h2>Reports</h2>
