@@ -18,8 +18,12 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      if @user.role == 'manager'
-        redirect_to manager_path(@user)
+      if @user.role == 'administrator'
+        redirect_to administrator_path(@user), notice: 'New Administrator Created'
+      elsif @user.role == 'manager'
+        redirect_to manager_path(@user), notice: 'New Manager Created'
+      elsif @user.role == 'professional'
+        redirect_to professional_path(@user), notice: 'New Professional Created'
       else
         redirect_to users_path, notice: 'New User Created'
       end
@@ -35,12 +39,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      if @user.role == 'manager'
-        redirect_to manager_path(@user)
+      if @user.role == 'administrator'
+        redirect_to administrator_path(@user), notice: 'New Administrator Created'
+      elsif @user.role == 'manager'
+        redirect_to manager_path(@user), notice: 'New Manager Created'
+      elsif @user.role == 'professional'
+        redirect_to professional_path(@user), notice: 'New Professional Created'
       else
-        redirect_to users_path
+        redirect_to users_path, notice: 'New User Created'
       end
-
     else
       render :edit, :unprocessable_entity
     end
