@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create | Edit Turn</title>
+  <style>
+    .back {
+      left: 0;
+      z-index: 1;
+      padding: 20px
+    }
+
+    a {
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+      font-size: 1rem;
+    }
+
+    .container {
+      padding-top: 100px;
+      margin: auto;
+      width: 90%;
+      max-height: 720px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      text-transform: capitalize;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.7rem;
+    }
+
+    .create {
+      display: flex;
+      margin: 20px auto;
+      flex-direction: column;
+      height: 320px;
+    }
+    
+    .create__form {
+      margin-left: 20px;
+      margin: 20px;
+      text-transform: capitalize;
+    }
+
+    .create__form label {
+      font-weight: 600;
+    }
+
+    .input {
+      width: 85%;
+      height: 2.125rem;
+      font-size: 1em;
+      padding-left: 20px;
+      border: none;
+      border-radius: 10px;
+      letter-spacing: 1px;
+      background-color: rgb(241, 241, 241);
+      outline: none;
+    }
+
+    .input:hover {
+      border: 2px solid rgba(93, 176, 117, 1);
+    }
+
+    .btn {
+      margin-top: 40px;
+      margin-left: 25px;
+      background-color: rgba(93, 176, 117, 1);
+      width: 80%;
+      height: 30px;
+      border-radius: 30px;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .btn:hover {
+      background-color: rgba(93, 176, 117, 0.8);
+    }
+
+    @media screen and (min-width: 720px) {
+      .create {
+        padding-top: 40px;
+        padding-left: 60px;
+      }
+      h2 {
+        padding-top: 40px;
+        margin-bottom: 60px;
+      }
+
+      form {
+        background: #fff;
+        fill-opacity: transparent;
+        margin: auto;
+        width: 500px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        border-radius: 10px;
+      }
+    }
+
+   /* 
+    @media screen and (max-width: 1024px) {
+      .create {
+        padding-top: 40px;
+        padding-left: 60px;
+      }
+      h2 {
+        padding-top: 40px;
+        margin-bottom: 60px;
+      }
+
+      form {
+        background: #fff;
+        fill-opacity: transparent;
+        margin: auto;
+        width: 500px;
+        height: 400px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        border-radius: 10px;
+      }
+    }*/
+  </style>
+</head>
+<body>
+  <div class="back">
+    <a href="#">< Back</a>
+  </div>
+
+  <div class="container">
+    <h2>create | edit turn</h2>
+
+    <form>
+      <div class="create">
+        <div class="create__form">
+          <label for="profession">schedule</label>
+        </br>
+          <input type="day" class="input" placeholder="day open and close time">
+        </div>
+        <div class="create__form">
+          <label for="user">user</label>
+          <br/>
+          <input type="text" class="input" placeholder="user role and name">
+        </div>
+        <button type="button" class="btn">save</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
