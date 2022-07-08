@@ -5,3 +5,11 @@ db/schema.rb linguist-generated
 
 # Mark any vendored files as having been vendored.
 vendor/* linguist-vendored
+
+.ruby-version
+Gemfile.lock
+/bin/bundle
+/bin/bundle.cmd
+/bin/rails
+/bin/rake
+/bin/setup

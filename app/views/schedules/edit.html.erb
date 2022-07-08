@@ -1,0 +1,20 @@
+<div id="schedule-edit">
+  <h1>Edit Schedule</h1>
+  <%= form_with model: @schedule do |form| %>
+    <%= form.label :week_day %>
+    <div>
+      <%= form.text_field :week_day %>
+    </div>
+    <%= form.label :opening_time %>
+    <div>
+      <%= form.text_field :opening_time %>
+    </div>
+    <%= form.label :closing_time %>
+    <div>
+      <%= form.text_field :closing_time %>
+    </div>
+    <div>
+      <%= form.submit ' Edit'%>
+    </div>
+  <% end %>
+</div>
