@@ -14,7 +14,10 @@ class SchedulesController < ApplicationController
   
   def create
     @schedule = Schedule.new(schedule_params)
-
+    @schedule.save
+    if @schedule.save
+      redirect_to schedules_path
+    end
   end
   
   def edit
@@ -23,7 +26,7 @@ class SchedulesController < ApplicationController
   
   def update
     @schedule = Schedule.find(params[:id])
-  
+
     if @schedule.update(schedule_params)
 
     else
