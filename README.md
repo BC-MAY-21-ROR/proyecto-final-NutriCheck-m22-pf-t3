@@ -1,16 +1,19 @@
 ![BrightCoders Logo](img/logo-bc.png)
 
-# Project's name
+# NutriCheck
 
-> NutriCheck
+## Sprint Leader
+
+| Sprint 1 | Sprint 2 | Sprint 3 | Sprint 4 | Sprint 5 | Sprint 6 | Sprint 7 | Sprint 8 |
+|---|---|---|---|---|---|---|---|
+| Owen  |
 
 ## Description
 
-> Sistema web para la gestión, administración y control de un consultorio nutricional.
-> Web system for the management, administration and control of a nutritional office.
+- Sistema web para la gestión, administración y control de un consultorio nutricional.
+- Web system for the management, administration and control of a nutritional office.
 
 ## Functional requirements
-
 
 - Admin
   - [ ] Create and manage users of type Manager, Patient and Professional
@@ -31,9 +34,6 @@
 - Patient
   - [ ] Check info about itself.
   - [ ] Manage a self-appointment.
-
-
-
 
 ## Non-functional requirements
 

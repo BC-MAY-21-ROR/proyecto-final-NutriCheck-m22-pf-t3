@@ -1,0 +1,28 @@
+<h1>Professionals</h1>
+<div>
+  <% @professionals.each do |professional|%>
+    <div>
+      <div>
+        <%= professional.name %>
+      </div>
+      <div>
+        <%= professional.last_name %>
+      </div>
+      <div>
+        <%= professional.phone %>
+      </div>
+      <div>
+        <%= professional.email %>
+      </div>
+      <div>
+        <%= button_to "edit", edit_professional_path(professional), method: :get %>
+        <%= button_to "show", professional_path(professional), method: :get %>
+        <%= button_to "destroy", professional_path(professional), method: :delete %>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>
+<div>
+  <%= button_to "New Professional", new_professional_path, method: :get %>
+</div>
