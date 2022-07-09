@@ -1,0 +1,15 @@
+<%= form_with model: @turn do |form| %>
+  <%= form.label :schedules %>
+  <div>
+    <%= collection_select(:turn, :schedule_id, Schedule.all, :id, :week_day) %>
+  </div>
+  <%= form.label :user %>
+  <div>
+    <%= collection_select(:turn, :user_id, User.all, :id, :name) %>
+  </div>
+</div>
+
+  <div>
+    <%= form.submit 'New Schedule'%>
+  </div>
+<% end %>
