@@ -1,14 +1,10 @@
 <h1>Turns List</h1>
 
-<div>
-  <% @turns.each do |t| %>
-    <div>
-      <%= t.schedule.gethours %> <br>
-      <%= t.user.getname %> <br>
-      <br>
-    </div>
+<%= notice %>
+<%= alert %>
 
-    <% end %>
+<div>
+  <%= render partial: 'turn', collections: @turns %>
 </div>
 <div>
   <%= button_to "Create new Turn", new_turn_path, method: :get %>

@@ -5,6 +5,6 @@ class User < ApplicationRecord
   has_many :appointments
 
   def getname
-    name + ' ' + last_name
+    role + ' ' + name + ' ' + last_name
   end
 end
