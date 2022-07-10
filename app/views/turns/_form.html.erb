@@ -7,9 +7,5 @@
   <div>
     <%= collection_select(:turn, :user_id, User.all, :id, :name) %>
   </div>
-</div>
-
-  <div>
-    <%= form.submit 'New Schedule'%>
-  </div>
+  <%= form.submit %>
 <% end %>

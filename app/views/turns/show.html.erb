@@ -7,7 +7,5 @@
 </div>
 
 <%= link_to "edit", edit_turn_path, method: :get %>
-<%= link_to "delete", turns_path(@turn), data: {
-  turbo_method: :delete,
-  turbo_confirm: :confirm
-} %>
+<%= button_to "delete", turn_path, method: :delete %>
+

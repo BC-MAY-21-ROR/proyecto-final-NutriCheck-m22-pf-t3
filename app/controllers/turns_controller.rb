@@ -39,10 +39,14 @@ class TurnsController < ApplicationController
   end
 
   def destroy
+    turn
 
-    turn.destroy
+    if @turn.destroy
     redirect_to turns_path, notice: 'Turn deleted'
-    
+    else
+      redirect_to edit_turn :unprocessable_entity
+    end
+
   end
 
   private
