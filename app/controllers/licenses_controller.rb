@@ -48,6 +48,6 @@ class LicensesController < ApplicationController
   private
 
   def lic_params
-    params.require(:licence).permit(:tyoe, :number, :user_id)
+    params.require(:licence).permit(:type, :number, :user_id)
   end
 end

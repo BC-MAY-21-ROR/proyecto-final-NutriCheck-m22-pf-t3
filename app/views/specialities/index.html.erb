@@ -1,0 +1,18 @@
+<h1>Manage specialities</h1>
+<div>
+  <% @specialities.each do |speciality|%>
+    <div>
+      <div>
+        <%= speciality.name %>
+      </div>
+      <div>
+        <%= button_to "edit", edit_speciality_path(speciality), method: :get %>
+        <%= button_to "destroy", speciality_path(speciality), method: :delete %>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+</div>
+<div>
+  <%= button_to "New Speciality", new_speciality_path, method: :get %>
+</div>
