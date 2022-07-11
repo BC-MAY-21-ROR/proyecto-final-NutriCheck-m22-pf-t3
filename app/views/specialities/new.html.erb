@@ -1,0 +1,13 @@
+<div>
+  <h1>Create Speciality</h1>
+  <%= form_with(model: @speciality) do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.submit 'Create'%>
+    </div>
+  <% end %>
+</div>
+<%= button_to "Go back", specialities_path, method: :get%>
