@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddServiceUserPatientToAppointment < ActiveRecord::Migration[7.0]
   def change
     add_reference :appointments, :service, null: false, foreign_key: true

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddUserRefToLicense < ActiveRecord::Migration[7.0]
   def change
     add_reference :licenses, :user, null: false, foreign_key: true

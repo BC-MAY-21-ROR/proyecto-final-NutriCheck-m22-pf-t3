@@ -1,28 +1,36 @@
-<div>
-  <h1>Admin Profile</h1>
-  <div>
-    <% @administrators.each do |administrator| %>
-      <div>
-        <%=administrator.name %> <br>
-        <%=administrator.last_name %> <br>
-        <%=administrator.phone %> <br>
-        <%=administrator.email %> <br>
-        <%= button_to "edit", edit_administrator_path(administrator), method: :get %>
-        <%= button_to "show", administrator_path(administrator), method: :get %>
+<div class="d-grid gap-2 my-4">
+  <h1 class="mx-auto text-white fw-bold">Admin Profile</h1>
+</div>
+<div class="card text-black card-bcg w-75 my-3 mx-auto own-radius shadow-lg">
+  <% @administrators.each do |administrator| %>
+    <div class="card-body text-white">
+      <div class="card-title">
+        <%=administrator.name %>
+        <%=administrator.last_name %>
       </div>
-    <% end %>
+      <div class="card-text">
+        <%=administrator.phone %>
+        <%=administrator.email %>
+      </div>
+    </div>
+    <div class="d-flex w-100 p-2">
+      <%= button_to "Edit", edit_administrator_path(administrator), method: :get, form_class: "w-75 ", class: "btn btn-sm color-btn-2 rounded-pill w-100 shadow text-white fw-bold" %>
+      <%= button_to "Show", administrator_path(administrator), method: :get, form_class: "w-25",  class: "btn btn-sm btn-light rounded-pill border-success shadow" %>
+    </div>
+  <% end %>
+</div>
+<div class="d-grid gap-4">
+  <div class="d-grid gap-2">
+    <h2 class="mx-auto my-3 text-white fw-bold">Options</h2>
+    <div class="d-grid gap-3">
+      <%= button_to "Manage Managers", managers_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <%= button_to "Manage Professionals", professionals_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Manage Schedules", schedules_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
   </div>
-  <div>
-    <div>
-      <h2>Options</h2>
-      <%= button_to "Manage Managers", managers_path, method: :get %><br>
-      <%= button_to "Manage Professionals", professionals_path, method: :get %><br>
-      <%= button_to "Manage Schedules", schedules_path, method: :get %><br>
-    </div>
-    <div>
-      <h2>Reports</h2>
-      <a>Appointments</a><br>
-      <a>Sales</a>
-    </div>
+  <div class="d-grid gap-3 col-6 mx-auto">
+    <h2 class="mx-auto my-3 text-white fw-bold">Reports</h2>
+    <button class="btn color-btn rounded-pill text-white fw-bold">Appointments</button>
+    <button class="btn color-btn rounded-pill text-white fw-bold">Sales</button>
   </div>
 </div>

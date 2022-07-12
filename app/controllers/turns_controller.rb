@@ -1,5 +1,6 @@
-class TurnsController < ApplicationController
+# frozen_string_literal: true
 
+class TurnsController < ApplicationController
   def index
     @turns = Turn.all
   end
@@ -19,8 +20,7 @@ class TurnsController < ApplicationController
       redirect_to turns_path, notice: 'Turn create succesfully'
     else
       render :new, status: :unprocessable_entity
-    end 
-
+    end
   end
 
   def edit
@@ -35,18 +35,16 @@ class TurnsController < ApplicationController
     else
       redirect_to edit_turn, :unprocessable_entity
     end
-
   end
 
   def destroy
     turn
 
     if @turn.destroy
-    redirect_to turns_path, notice: 'Turn deleted'
+      redirect_to turns_path, notice: 'Turn deleted'
     else
       redirect_to edit_turn :unprocessable_entity
     end
-
   end
 
   private
@@ -58,5 +56,4 @@ class TurnsController < ApplicationController
   def turn
     @turn = Turn.find(params[:id])
   end
-
 end
