@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Controller for LICENSES
 
 class LicensesController < ApplicationController
