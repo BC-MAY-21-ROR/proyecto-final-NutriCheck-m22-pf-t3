@@ -30,13 +30,16 @@
   </div>
   <div>
     <label for="">Date of entry: </label>
-    <%= @professional.created_at %>
+    <%= @professional.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
   </div>
   <div>
-    <label for="">speciality_id: </label>
-    <%= @professional.speciality_id %>
+    <label for="">Speciality: </label>
+    <%= @professional.speciality.name %>
   </div>
   <div>
-    <%= button_to "volver a professionals", professionals_path, method: :get%>
+    <%= button_to "Licenses", license_path(params[:id]), method: :get %>
+  </div>
+  <div>
+    <%= button_to "Go back", professionals_path, method: :get%>
   </div>
 </div>

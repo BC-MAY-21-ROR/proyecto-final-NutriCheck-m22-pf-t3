@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :managers
   resources :administrators
   resources :professionals
+  resources :licenses
+  resources :specialities
   resources :schedules
 end

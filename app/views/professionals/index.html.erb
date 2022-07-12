@@ -15,9 +15,9 @@
         <%= professional.email %>
       </div>
       <div>
-        <%= button_to "edit", edit_professional_path(professional), method: :get %>
-        <%= button_to "show", professional_path(professional), method: :get %>
-        <%= button_to "destroy", professional_path(professional), method: :delete %>
+        <%= button_to "Edit", edit_professional_path(professional), method: :get %>
+        <%= button_to "Show", professional_path(professional), method: :get %>
+        <%= button_to "Destroy", professional_path(professional), method: :delete %>
       </div>
       <hr>
     <% end %>
@@ -25,4 +25,10 @@
 </div>
 <div>
   <%= button_to "New Professional", new_professional_path, method: :get %>
+</div>
+<div>
+  <%= button_to "Manage specialities", specialities_path, method: :get %>
+</div>
+<div>
+  <%= button_to "Go back", administrators_path, method: :get %>
 </div>

@@ -1,0 +1,15 @@
+<h1>Edit Speciality</h1>
+<div>
+  <%= form_with model: @speciality do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name  %>
+    </div>
+    <div>
+      <%= form.submit 'Edit'%>
+    </div>
+  <% end %>
+  <div>
+    <%= button_to "Go back", specialities_path, method: :get %>
+  </div>
+</div>
