@@ -36,15 +36,9 @@
     <label for="">Speciality: </label>
     <%= @professional.speciality.name %>
   </div>
-  
   <div>
-    <label for="">Licenses: </label>
-    <% @professional.licenses.each do |license| %>
-      <%= license.name %>
-      <%= license.number %>
-    <% end %>
+    <%= button_to "Licenses", license_path(params[:id]), method: :get %>
   </div>
-
   <div>
     <%= button_to "Go back", professionals_path, method: :get%>
   </div>

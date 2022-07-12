@@ -1,0 +1,23 @@
+<h1>Edit Licence</h1>
+<div>
+  <%= form_with model: @license do |form| %>
+    <div>
+      <%= form.label :user_id %><br>
+      <%= collection_select(:license, :user_id, User.all, :id, :name) %>
+    </div>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :number %><br>
+      <%= form.text_field :number %>
+    </div>
+    <div>
+      <%= form.submit 'Edit'%>
+    </div>
+  <% end %>
+  <div>
+    <%= button_to "Cancel", professionals_path, method: :get%>
+  </div>
+</div>

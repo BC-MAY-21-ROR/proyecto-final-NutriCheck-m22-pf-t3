@@ -1,0 +1,22 @@
+<div>
+  <h1>Create Licence for professional</h1>
+
+  <%= form_with(model: @license) do |form| %>
+    <div>
+      <%= form.label :user_id %>
+      <%= collection_select(:license, :user_id, User.all, :id, :name) %>
+    </div>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :number %>
+      <%= form.text_field :number %>
+    </div>
+    <div>
+      <%= form.submit 'Create'%>
+    </div>
+  <% end %>
+</div>
+<%= button_to "Cancel", professionals_path, method: :get%>

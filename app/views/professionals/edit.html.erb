@@ -31,10 +31,13 @@
     </div>
     <div>
       <%= form.label :speciality_id %><br>
-      <%= form.text_field :speciality_id%>
+      <%= collection_select(:user, :speciality_id, Speciality.all, :id, :name) %>
     </div>
     <div>
       <%= form.submit 'Edit'%>
     </div>
   <% end %>
+  <div>
+    <%= button_to "Go back", professionals_path, method: :get %>
+  </div>
 </div>

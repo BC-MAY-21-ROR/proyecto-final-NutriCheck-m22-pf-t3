@@ -1,0 +1,18 @@
+<h1>Professional Licenses</h1>
+<div>
+  <div>
+    <% @license.each do |lic| %>
+      Name: <%= lic.name %><br>
+      Number: <%= lic.number %>
+      <%= button_to "Edit", edit_license_path(lic), method: :get %>
+      <%= button_to "Destroy", license_path(lic), method: :delete %>
+      <hr>
+    <% end %>
+  </div>
+  <div>
+    <%= button_to "Add License", new_license_path, method: :get %>
+  </div>
+  <div>
+    <%= button_to "Go back", professionals_path, method: :get%>
+  </div>
+</div>

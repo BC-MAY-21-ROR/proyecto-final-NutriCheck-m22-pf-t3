@@ -2,44 +2,44 @@
 
 class LicensesController < ApplicationController
   def index
-    @licences = License.all
+    @licenses = License.all
   end
 
   def new
-    @licence = License.new
+    @license = License.new
   end
 
   def show
-    @licence = License.find(params[:id])
+    @license = License.where("user_id = #{params[:id]}")
   end
 
   def create
-    @licence = License.new(lic_params)
-    if @licence.save
-      redirect_to licences_path, notice: 'New licence created successfully'
+    @license = License.new(lic_params)
+    if @license.save
+      redirect_to professionals_path, notice: 'New license created successfully'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    @licence = License.find(params[:id])
+    @license = License.find(params[:id])
   end
 
   def update
-    @licence = License.find(params[:id])
+    @license = License.find(params[:id])
 
-    if @licence.update(lic_params)
-      redirect_to licences_path, notice: 'License was edited successfully'
+    if @license.update(lic_params)
+      redirect_to professionals_path, notice: 'License was edited successfully'
     else
       render :edit, :unprocessable_entity
     end
   end
 
   def destroy
-    @licence = License.find(params[:id])
-    if @licence.destroy
-      redirect_to licences_path, notice: 'License was deleted successfully'
+    @license = License.find(params[:id])
+    if @license.destroy
+      redirect_to professionals_path, notice: 'License was deleted successfully'
     else
       render :edit, :unprocessable_entity
     end
@@ -48,6 +48,6 @@ class LicensesController < ApplicationController
   private
 
   def lic_params
-    params.require(:licence).permit(:type, :number, :user_id)
+    params.require(:license).permit(:name, :number, :user_id)
   end
 end
