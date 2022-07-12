@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Turn < ApplicationRecord
   include PgSearch::Model
 
@@ -7,5 +9,4 @@ class Turn < ApplicationRecord
 
   belongs_to :user
   belongs_to :schedule
-
 end

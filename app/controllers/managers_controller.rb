@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ManagersController < UsersController
-  def index 
+  def index
     @managers = User.where(role: 'manager')
   end
 

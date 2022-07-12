@@ -14,15 +14,15 @@
       <div>
         <%= manager.email %>
       </div>
-      <div>
-        <%= button_to "edit", edit_manager_path(manager), method: :get %>
-        <%= button_to "show", manager_path(manager), method: :get %>
-        <%= button_to "destroy", manager_path(manager), method: :delete %>
+      <div class="flex" >
+        <%= button_to "show", manager_path(manager), method: :get, form_class: "", class: "mr-2 bg-blue-600 text-white p-2 rounded  leading-none flex items-center" %>
+        <%= button_to "edit", edit_manager_path(manager), method: :get, class: "mr-2 bg-orange-600 text-white p-2 rounded  leading-none flex items-center" %>
+        <%= button_to "destroy", manager_path(manager), method: :delete, class: "mr-2 bg-red-600 text-white p-2 rounded  leading-none flex items-center" %>
       </div>
       <hr>
     <% end %>
   </div>
 </div>
 <div>
-  <%= button_to "New Manager", new_manager_path, method: :get %>
+  <%= button_to "New Manager", new_manager_path, method: :get, class: "h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg hover:bg-indigo-800 h-12 px-6 m-2 text-lg" %>
 </div>
