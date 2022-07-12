@@ -1,0 +1,8 @@
+<% @turns.each do |turn| %>
+  <div>
+    <p><%= turn.schedule.gethours %></p>
+    <p><%= turn.user.getname %> </p>
+  </div>
+
+  <%= link_to "check", turn_path(turn), method: :get %>
+<% end %>
