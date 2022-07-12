@@ -1,42 +1,58 @@
-<h1>administrator detail</h1>
-<div>
-  <div>
-    <label for="">Name: </label>
-    <%= @administrator.name %>
+<div class="bg-white min-vh-100 d-grid">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Admin Info Detail</h1>
   </div>
-  <div>
-    <label for="">Last Name: </label>
-    <%= @administrator.last_name %>
-  </div>
-  <div>
-    <label for="">Birth Date: </label>
-    <%= @administrator.birth_date %>
-  </div>
-  <div>
-    <label for="">Phone Number: </label>
-    <%= @administrator.phone %>
-  </div>
-  <div>
-    <label for="">Email: </label>
-    <%= @administrator.email %>
-  </div>
-  <div>
-    <label for="">Password: </label>
-    <%= @administrator.password %>
-  </div>
-  <div>
-    <label for="">Role: </label>
-    <%= @administrator.role %>
-  </div>
-  <div>
-    <label for="">Date of entry: </label>
-    <%= @administrator.created_at %>
-  </div>
-  <div>
-    <label for="">speciality_id: </label>
-    <%= @administrator.speciality_id %>
-  </div>
-  <div>
-    <%= button_to "volver a administrators", administrators_path, method: :get%>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Name: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.name %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Last Name: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.last_name %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Birth Date: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.birth_date %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Phone Number: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.phone %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Email: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.email %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Password: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.password %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Role: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.role %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Speciality: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @administrator.speciality_id %>
+    </div>
+    <div class="d-grid gap-3 col-15 mx-auto py-2">
+      <%= button_to "volver a administrators", administrators_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
+    </div>
   </div>
 </div>
