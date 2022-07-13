@@ -1,0 +1,19 @@
+<div class="d-grid gap-2 mt-2">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", professionals_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  </p>
+  <h1 class="mx-auto text-white fw-bold">Diets</h1>
+  <a class="center-a" href="<%= new_diet_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
+  <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
+    <% @diets.each do |diet|%>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src="/assets/dieta_vegetariana.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-title"><%= diet.name %></p>
+          </div>
+          <%= button_to "Check", diet_path(diet), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
