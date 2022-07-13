@@ -1,11 +1,32 @@
-<%= form_with model: @turn do |form| %>
-  <%= form.label :schedules %>
-  <div>
-    <%= collection_select(:turn, :schedule_id, Schedule.all, :id, :gethours) %>
+<div class="container">
+  <div class="align-items-center align-self-center pt-4">
+
+    <div class="bg-secondary gray-panel">
+    <%= form_with model: @turn do |form| %>
+
+      <div class="control-group fw-bold text-white text-white-80 m-auto pt-4">
+        <div class="text-start m-4">
+          <%= form.label :schedules, class: "control-group text-start" %>
+          <div class="controls mb-3 text-start">
+            <%= collection_select(:turn, :schedule_id, Schedule.all, :id, :gethours, { include_blank: false }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group fw-bold text-white text-white-80 m-auto">
+        <div class="text-start m-4 pt-2">
+          <%= form.label :user, class: "control-group text-start" %>
+          <div class="controls mb-3 text-start">
+            <%= collection_select(:turn, :user_id, User.all, :id, :getname, { include_blank: false }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" })  %>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center pt-4 pb-4"> 
+        <%= form.submit class: "btn color-btn rounded-pill text-white fw-bold" %>
+      </div>    
+
+    <% end %>
+    </div>
   </div>
-  <%= form.label :user %>
-  <div>
-    <%= collection_select(:turn, :user_id, User.all, :id, :getname) %>
-  </div>
-  <%= form.submit %>
-<% end %>
+</div>

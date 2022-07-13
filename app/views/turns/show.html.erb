@@ -1,11 +1,27 @@
-<div>< <%= link_to "back", turns_path %></div>
-<h2>Turn Show</h2>
+<%= render "back_turns_path" %>
 
-<div>
-  <p><%= @turn.schedule.gethours %></p>
-  <p><%= @turn.user.getname %></p>
+<div class="container text-center mb-4">
+  <h2 class="title-white">Turn Show</h2>
 </div>
 
-<%= link_to "edit", edit_turn_path, method: :get %>
-<%= button_to "delete", turn_path, method: :delete %>
+<div class="container justify-content-center align-content-center mb-4">
+  <div class="card text-center" >
+    <div class="card-body m-1">
+      <h5 class="card-title">
+        <%= @turn.schedule.gethours %>
+      </h5>
+      <p class="card-text">
+        <%= @turn.user.getname %>
+      </p>
+    </div>
+  </div>
+</div>
 
+<div class="container text-center row align-items-center">
+  <div class="col mb-4">
+    <%= link_to "Edit", edit_turn_path, method: :get, class: "btn color-btn color-success rounded-pill text-white fw-bold btn-lg" %>
+  </div>
+  <div class="col mb-4">
+    <%= button_to "Delete", turn_path, method: :delete, class: "btn btn-danger rounded-pill text-white fw-bold btn-lg" %>
+  </div>
+</div>
