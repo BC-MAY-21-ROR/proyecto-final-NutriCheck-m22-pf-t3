@@ -1,28 +1,19 @@
-<h1>Managers</h1>
-<div>
-  <% @managers.each do |manager|%>
-    <div>
-      <div>
-        <%= manager.name %>
+<div class="d-grid gap-2 mt-2">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  </p>
+  <h1 class="mx-auto text-white fw-bold">Managers</h1>
+  <a class="center-a" href="<%= new_manager_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
+  <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
+    <% @managers.each do |manager|%>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src="/assets/indice.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-title"><%= manager.name %> <%= manager.last_name %></p>
+          </div>
+          <%= button_to "Check", manager_path(manager), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
+        </div>
       </div>
-      <div>
-        <%= manager.last_name %>
-      </div>
-      <div>
-        <%= manager.phone %>
-      </div>
-      <div>
-        <%= manager.email %>
-      </div>
-      <div class="flex" >
-        <%= button_to "show", manager_path(manager), method: :get, form_class: "", class: "mr-2 bg-blue-600 text-white p-2 rounded  leading-none flex items-center" %>
-        <%= button_to "edit", edit_manager_path(manager), method: :get, class: "mr-2 bg-orange-600 text-white p-2 rounded  leading-none flex items-center" %>
-        <%= button_to "destroy", manager_path(manager), method: :delete, class: "mr-2 bg-red-600 text-white p-2 rounded  leading-none flex items-center" %>
-      </div>
-      <hr>
     <% end %>
   </div>
-</div>
-<div>
-  <%= button_to "New Manager", new_manager_path, method: :get, class: "h-10 px-5 m-2 text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-lg hover:bg-indigo-800 h-12 px-6 m-2 text-lg" %>
-</div>

@@ -58,7 +58,17 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.destroy
-      redirect_to users_path, notice: 'User Deleted Ok'
+      case @user.role
+      when 'administrator'
+        redirect_to administrators_path, notice: 'New Administrator Created'
+      when 'manager'
+        redirect_to managers_path, notice: 'New Manager Created'
+      when 'professional'
+        redirect_to professionals_path, notice: 'New Professional Created'
+      else
+        redirect_to users_path, notice: 'New User Created'
+      end
+
     else
       redirect_to users_path, :unprocessable_entity
     end

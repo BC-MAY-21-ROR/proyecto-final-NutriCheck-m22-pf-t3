@@ -1,34 +1,29 @@
-<h1>Professionals</h1>
-<div>
-  <% @professionals.each do |professional|%>
-    <div>
-      <div>
-        <%= professional.name %>
+<div class="d-grid">
+  <div class="d-grid my-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Professionals</h1>
+  </div>
+  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
+    <% @professionals.each do |professional|%>
+      <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
+        <div class ="card-title fw-bold" >
+          <%= professional.name %>
+          <%= professional.last_name %>
+        </div>
+        <div class="card-text pb-2">
+          <%= professional.phone %><br>
+          <%= professional.email %>
+        </div>
+        <div class="d-grid gap-1">
+          <%= button_to "Edit", edit_professional_path(professional), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Show", professional_path(professional), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Destroy", professional_path(professional), method: :delete, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        </div>
       </div>
-      <div>
-        <%= professional.last_name %>
-      </div>
-      <div>
-        <%= professional.phone %>
-      </div>
-      <div>
-        <%= professional.email %>
-      </div>
-      <div>
-        <%= button_to "Edit", edit_professional_path(professional), method: :get %>
-        <%= button_to "Show", professional_path(professional), method: :get %>
-        <%= button_to "Destroy", professional_path(professional), method: :delete %>
-      </div>
-      <hr>
     <% end %>
   </div>
-</div>
-<div>
-  <%= button_to "New Professional", new_professional_path, method: :get %>
-</div>
-<div>
-  <%= button_to "Manage specialities", specialities_path, method: :get %>
-</div>
-<div>
-  <%= button_to "Go back", administrators_path, method: :get %>
+  <div class="d-grid gap-2 mx-auto mb-3">
+    <%= button_to "New Professional", new_professional_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <%= button_to "Manage specialities", specialities_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <%= button_to "Go back", administrators_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+  </div>
 </div>
