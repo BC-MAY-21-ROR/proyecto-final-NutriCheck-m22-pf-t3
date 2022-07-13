@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   root 'users#index'
   resources :turns
   resources :users
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   resources :licenses
   resources :specialities
   resources :schedules
+  resources :diets
 end
