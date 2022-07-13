@@ -1,41 +1,53 @@
-<div>
-  <h1>Create Professional</h1>
-  <%= form_with(model: @user) do |form| %>
-    <div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
+<div class="bg-white min-vh-100 d-grid">
+  <div class="d-grid">
+    <h1 class="mx-auto my-auto fw-bold px-3">Create Professional</h1>
+  </div>
+  <div class="mx-auto px-3">
+    <%= form_with(model: @user) do |form| %>
+      <div class="d-grid gap-2">
+        <div>
+          <%= form.label :name, class: "fw-bold" %><br>
+          <%= form.text_field :name, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :last_name, class: "fw-bold" %><br>
+          <%= form.text_field :last_name, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :birth_date, class: "fw-bold" %><br>
+          <%= form.text_field :birth_date, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :phone, class: "fw-bold" %><br>
+          <%= form.text_field :phone, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :email, class: "fw-bold" %><br>
+          <%= form.text_field :email, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :password, class: "fw-bold" %><br>
+          <%= form.text_field :password, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :speciality_id, class: "fw-bold" %><br>
+        </div>
+        <div class="mx-auto">
+          <%= collection_select(:user, :speciality_id, Speciality.all, :id, :name) %>
+        </div>
+        <div>
+          <%= form.label :role, class: "fw-bold" %><br>
+          <%= form.text_field :role, class: "form-control bg-light" %>
+        </div>
+        <div  class="d-grid gap-3 col-6 mx-auto pt-4">
+          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
+        </div>
+      </div>
+    <% end %>
+    <div class="d-grid col-6 mx-auto pt-2 mb-3">
+      <div class="mx-auto">
+        <%= button_to "Go back", professionals_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
+      </div>
     </div>
-    <div>
-      <%= form.label :last_name %><br>
-      <%= form.text_field :last_name %>
-    </div>
-    <div>
-      <%= form.label :birth_date %><br>
-      <%= form.text_field :birth_date %>
-    </div>
-    <div>
-      <%= form.label :phone %><br>
-      <%= form.text_field :phone %>
-    </div>
-    <div>
-      <%= form.label :email %><br>
-      <%= form.text_field :email %>
-    </div>
-    <div>
-      <%= form.label :password %><br>
-      <%= form.text_field :password %>
-    </div>
-    <div>
-      <%= form.label :speciality_id %><br>
-      <%= collection_select(:user, :speciality_id, Speciality.all, :id, :name) %>
-    </div>
-    <div>
-      <%= form.label :role %><br>
-      <%= form.text_field :role %>
-    </div>
-    <div>
-      <%= form.submit 'Create'%>
-    </div>
-  <% end %>
+  </div>
 </div>
-<%= button_to "Go back", professionals_path, method: :get%>

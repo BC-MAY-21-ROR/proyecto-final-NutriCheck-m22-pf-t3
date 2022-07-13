@@ -1,21 +1,37 @@
- @import "bootstrap";
+@import "bootstrap";
 
- .color-btn {
-   background-color: #5DB075;
- }
+.color-btn {
+  background-color: #5DB075;
+}
 
- .color-bcg {
-   background-color: #225A43;
- }
+.color-bcg {
+  background-color: #225A43;
+}
 
- .color-btn-2 {
-   background-color: #0DBA52;
- }
+.color-btn-2 {
+  background-color: #0DBA52;
+}
 
- .card-bcg {
-   background-color: #417951;
- }
+.card-bcg {
+  background-color: #417951;
+}
 
- .own-radius {
-   border-radius: 15px;
- }
+.own-radius {
+  border-radius: 15px;
+}
+
+.card-bcg-panel {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.grid-container--fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+}
+
+.grid-element {
+  background-color: rgba(255, 255, 255, 0.49);
+  padding: 20px;
+  color: #000;
+  border: 1px solid #fff;
+}
