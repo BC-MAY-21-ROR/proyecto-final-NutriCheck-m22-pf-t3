@@ -1,0 +1,29 @@
+<div class="d-grid">
+  <div class="d-grid my-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Patients</h1>
+  </div>
+  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
+    <% @patients.each do |patient|%>
+      <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
+        <div class ="card-title fw-bold" >
+          <%= patient.name %> <%= patient.second_name %>
+          <%= patient.last_name %> <%= patient.second_last_name %>
+        </div>
+        <div class="card-text pb-2">
+          <%= patient.phone %><br>
+          <%= patient.email %>
+        </div>
+        <div class="d-grid gap-1">
+          <%= button_to "Edit", edit_patient_path(patient), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Show", patient_path(patient), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Destroy", patient_path(patient), method: :delete, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="d-grid gap-2 mx-auto mb-3">
+    <%= button_to "New Patient", new_patient_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <%= button_to "Manage Diets", diets_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <%= button_to "Go back", professionals_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+  </div>
+</div>

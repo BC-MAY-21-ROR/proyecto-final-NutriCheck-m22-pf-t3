@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :licenses
   resources :specialities
   resources :schedules
+  resources :patients
 end
