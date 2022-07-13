@@ -1,45 +1,52 @@
-<h1>Professional detail</h1>
-<div>
-  <div>
-    <label for="">Name: </label>
-    <%= @professional.name %>
+<div class="d-grid">
+  <div class="d-grid my-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Professional detail</h1>
   </div>
-  <div>
-    <label for="">Last Name: </label>
-    <%= @professional.last_name %>
+  <div class="mx-auto">
+    <div class="d-grid gap-2 text-white px-3">
+    <div>
+      <label for="", class= "fw-bold fs-5">Name: </label>
+      <%= @professional.name %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Last Name: </label>
+      <%= @professional.last_name %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Birth Date: </label>
+      <%= @professional.birth_date %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Phone Number: </label>
+      <%= @professional.phone %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Email: </label>
+      <%= @professional.email %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Password: </label>
+      <%= @professional.password %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Role: </label>
+      <%= @professional.role %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Date of entry: </label>
+      <%= @professional.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Speciality: </label>
+      <%= @professional.speciality.name %>
+    </div>
   </div>
-  <div>
-    <label for="">Birth Date: </label>
-    <%= @professional.birth_date %>
-  </div>
-  <div>
-    <label for="">Phone Number: </label>
-    <%= @professional.phone %>
-  </div>
-  <div>
-    <label for="">Email: </label>
-    <%= @professional.email %>
-  </div>
-  <div>
-    <label for="">Password: </label>
-    <%= @professional.password %>
-  </div>
-  <div>
-    <label for="">Role: </label>
-    <%= @professional.role %>
-  </div>
-  <div>
-    <label for="">Date of entry: </label>
-    <%= @professional.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
-  </div>
-  <div>
-    <label for="">Speciality: </label>
-    <%= @professional.speciality.name %>
-  </div>
-  <div>
-    <%= button_to "Licenses", license_path(params[:id]), method: :get %>
-  </div>
-  <div>
-    <%= button_to "Go back", professionals_path, method: :get%>
+  <div class="d-grid gap-3 col-6 mx-auto pt-4">
+    <div class="mx-auto">
+      <%= button_to "Licenses", license_path(params[:id]), method: :get, class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
+    <div class="mx-auto">
+      <%= button_to "Go back", professionals_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
   </div>
 </div>

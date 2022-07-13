@@ -1,18 +1,27 @@
-<h1>Professional Licenses</h1>
-<div>
-  <div>
+<div class="d-grid">
+  <div class="d-grid my-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Professional Licenses</h1>
+  </div>
+  <div class="card-bcg-panel w-75 my-2 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit ">
     <% @license.each do |lic| %>
-      Name: <%= lic.name %><br>
-      Number: <%= lic.number %>
-      <%= button_to "Edit", edit_license_path(lic), method: :get %>
-      <%= button_to "Destroy", license_path(lic), method: :delete %>
-      <hr>
+      <div class="mx-auto card-user-bcg own-radius grid-element mt-2 text-center ">
+        <div>
+          <%= lic.name %>
+          <%= lic.number %>
+        </div>
+        <div class="d-grid gap-1 mx-auto mb-3">
+          <%= button_to "Edit", edit_license_path(lic), method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Destroy", license_path(lic), method: :delete, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        </div>
+      </div>
     <% end %>
   </div>
-  <div>
-    <%= button_to "Add License", new_license_path, method: :get %>
-  </div>
-  <div>
-    <%= button_to "Go back", professionals_path, method: :get%>
+  <div class="d-grid gap-2 mx-auto mb-3">
+    <div class="mx-auto">
+      <%= button_to "Add License", new_license_path, method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
+    <div class="mx-auto">
+      <%= button_to "Go back", professionals_path, method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
   </div>
 </div>
