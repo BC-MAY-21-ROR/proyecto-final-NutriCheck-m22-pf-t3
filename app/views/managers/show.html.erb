@@ -1,42 +1,60 @@
-<h1>Manager detail</h1>
-<div>
-  <div>
-    <label for="">Name: </label>
-    <%= @manager.name %>
+<div class="bg-white min-vh-100 d-grid">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Manager Info Detail</h1>
   </div>
-  <div>
-    <label for="">Last Name: </label>
-    <%= @manager.last_name %>
-  </div>
-  <div>
-    <label for="">Birth Date: </label>
-    <%= @manager.birth_date %>
-  </div>
-  <div>
-    <label for="">Phone Number: </label>
-    <%= @manager.phone %>
-  </div>
-  <div>
-    <label for="">Email: </label>
-    <%= @manager.email %>
-  </div>
-  <div>
-    <label for="">Password: </label>
-    <%= @manager.password %>
-  </div>
-  <div>
-    <label for="">Role: </label>
-    <%= @manager.role %>
-  </div>
-  <div>
-    <label for="">Date of entry: </label>
-    <%= @manager.created_at %>
-  </div>
-  <div>
-    <label for="">speciality_id: </label>
-    <%= @manager.speciality_id %>
-  </div>
-  <div>
-    <%= button_to "volver a managers", managers_path, method: :get%>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Name: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.name %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Last Name: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.last_name %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Birth Date: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.birth_date %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Phone Number: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.phone %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Email: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.email %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Password: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.password %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Role: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.role %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Speciality: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @manager.speciality_id %>
+    </div>
+    <div class="mx-auto py-2">
+      <%= button_to "Go back to managers", managers_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Edit", edit_manager_path(@manager), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", manager_path(@manager), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
+    </div>
   </div>
 </div>

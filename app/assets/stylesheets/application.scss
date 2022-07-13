@@ -16,6 +16,10 @@
   background-color: #417951;
 }
 
+.bg-container-cards {
+  background-color: #F5F5F5;
+}
+
 .own-radius {
   border-radius: 15px;
 }
@@ -34,4 +38,27 @@
   padding: 20px;
   color: #000;
   border: 1px solid #fff;
+}
+
+.green-back-link {
+  color: #5DB075;
+}
+
+.black-back-link {
+  color: #000000;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+}
+
+.add-manager-icon {
+  width: 46px !important;
+  height: 46px !important;
+}
+
+.center-a {
+  display: grid;
 }
