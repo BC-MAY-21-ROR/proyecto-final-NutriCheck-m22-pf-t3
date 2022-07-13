@@ -1,0 +1,57 @@
+<div class="d-grid">
+  <div class="d-grid my-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Patient detail</h1>
+  </div>
+  <div class="mx-auto">
+    <div class="d-grid gap-2 text-white px-3">
+    <div>
+      <label for="", class= "fw-bold fs-5">Name: </label>
+      <%= @patient.name %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Second name: </label>
+      <%= @patient.second_name %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Last Name: </label>
+      <%= @patient.last_name %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Second last name: </label>
+      <%= @patient.second_last_name %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Birth Date: </label>
+      <%= @patient.birth_date %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Phone Number: </label>
+      <%= @patient.phone %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Email: </label>
+      <%= @patient.email %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Password: </label>
+      <%= @patient.password %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Height: </label>
+      <%= @patient.height %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Observations: </label>
+      <%= @patient.observations %>
+    </div>
+    <div>
+      <label for="", class= "fw-bold fs-5">Date of entry: </label>
+      <%= @patient.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
+    </div>
+  </div>
+  <div class="d-grid gap-3 col-6 mx-auto pt-4">
+    <div class="mx-auto">
+      <%= button_to "Go back", patients_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
+  </div>
+</div>

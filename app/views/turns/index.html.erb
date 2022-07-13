@@ -1,11 +1,21 @@
-<h1>Turns List</h1>
-
-<%= notice %>
-<%= alert %>
-
-<div>
-  <%= render partial: 'turn', collections: @turns %>
+<div class="container text-center p-4">
+  <h2 class="title-white">Manage Turns</h2>
+  <h3 class="title-white">Turns List</h3>
 </div>
-<div>
-  <%= button_to "Create new Turn", new_turn_path, method: :get %>
+
+<div class="text-light">
+  <%= notice  %>
+</div>
+
+<div class="text-danger">
+  <%= alert %>
+</div>
+
+
+<%= render partial: 'turn', collections: @turns %>
+
+<div class="container text-center">
+  <div>
+  <%= link_to "Create new Turn", new_turn_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold p-2 m-4" %>
+  </div>
 </div>
