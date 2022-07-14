@@ -1,0 +1,27 @@
+<div class="d-grid">
+  <div class="d-grid my-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Services</h1>
+  </div>
+  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
+    <% @services.each do |service|%>
+      <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
+        <div class ="card-title fw-bold" >
+          <%= service.name %>
+        </div>
+        <div class="card-text pb-2">
+          <%= service.duration %> hrs<br>
+          $<%= service.price %>
+        </div>
+        <div class="d-grid gap-1">
+          <%= button_to "Edit", edit_service_path(service), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Show", service_path(service), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Destroy", service_path(service), method: :delete, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="d-grid gap-2 mx-auto mb-3">
+    <%= button_to "New Service", new_service_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <%= button_to "Go back", managers_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+  </div>
+</div>
