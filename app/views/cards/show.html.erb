@@ -1,0 +1,42 @@
+<div class="bg-white min-vh-100 d-grid">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Card Info Detail</h1>
+  </div>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Card Date: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @card.created_at %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Weight: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @card.weight %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Diet: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @card.diet_id %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Comments: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @card.comments %>
+    </div>
+    <div class="fw-bold">
+      <label for="">next_appointment: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @card.next_appointment %>
+    </div>
+    <div class="mx-auto py-2">
+      <%= button_to "Go back to managers", cards_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Edit", edit_card_path(@card), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", card_path(@card), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
+    </div>
+  </div>
+</div>
