@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :patients
   resources :cards
   resources :services
+  get 'professionals/:id/profile', to: 'professionals#profile'
 end
