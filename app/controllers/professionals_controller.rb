@@ -7,6 +7,7 @@ class ProfessionalsController < UsersController
   
   def profile
     @professional = User.find(params[:id])
+    @patients = Patient.all
   end
 
   def show
