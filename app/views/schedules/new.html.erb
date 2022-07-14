@@ -1,20 +1,20 @@
-<div id="schedule-new">
-  <h1>Create Schedule</h1>
-  <%= form_with model: @schedule do |form| %>
+<div id="schedule-new" class="bg-white text-dark d-flex flex-column justify-content-center p-4 m-5">
+  <p class="h1">New Schedule</p>
+  <%= form_with model: @schedule, class: "form-group" do |form| %>
     <%= form.label :week_day %>
     <div>
-      <%= form.text_field :week_day %>
+      <%= form.text_field :week_day, class: "form-control"%>
     </div>
     <%= form.label :opening_time %>
     <div>
-      <%= form.text_field :opening_time %>
+      <%= form.text_field :opening_time, class: "form-contr ol" %>
     </div>
     <%= form.label :closing_time %>
     <div>
-      <%= form.text_field :closing_time %>
+      <%= form.text_field :closing_time, class: "form-control" %>
     </div>
     <div>
-      <%= form.submit 'New Schedule'%>
+      <%= form.submit 'Create', class: "btn btn-primary color-btn"%>
     </div>
   <% end %>
 </div>
