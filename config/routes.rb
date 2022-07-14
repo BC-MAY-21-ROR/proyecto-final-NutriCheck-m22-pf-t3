@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :schedules
   resources :diets
   resources :patients
+  resources :cards
 end
