@@ -1,0 +1,18 @@
+<div class="d-grid gap-2 mt-2">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  </p>
+  <h1 class="mx-auto text-white fw-bold">Card</h1>
+  <a class="center-a" href="<%= new_card_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
+  <div class="row row-cols-1 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
+    <% @cards.each do |card|%>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <div class="d-grid">
+            <p class="card-title mx-auto"><%= card.created_at %></p>
+          </div>
+          <%= button_to "Check", card_path(card), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
