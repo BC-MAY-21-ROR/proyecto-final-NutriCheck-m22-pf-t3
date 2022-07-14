@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DietsController < ApplicationController
   def index
     @diets = Diet.all
@@ -46,8 +48,8 @@ class DietsController < ApplicationController
   end
 
   private
+
   def diet_params
     params.require(:diet).permit(:name, :description, :comments)
   end
-
 end

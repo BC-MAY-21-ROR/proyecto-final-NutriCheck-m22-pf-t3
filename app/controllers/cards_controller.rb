@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CardsController < ApplicationController
   def index
     @cards = Card.all
@@ -46,8 +48,8 @@ class CardsController < ApplicationController
   end
 
   private
+
   def card_params
     params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id)
   end
-
 end
