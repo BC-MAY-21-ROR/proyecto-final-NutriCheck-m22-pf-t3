@@ -7,7 +7,7 @@
       <label for="">Card Date: </label>
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
-      <%= @card.created_at %>
+      <%= @card.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
     </div>
     <div class="fw-bold">
       <label for="">Weight: </label>
