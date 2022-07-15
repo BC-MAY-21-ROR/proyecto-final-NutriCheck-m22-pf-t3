@@ -8,4 +8,12 @@ class ManagersController < UsersController
   def show
     @manager = User.find(params[:id])
   end
+
+  def admin
+    @patients = Patient.all
+  end
+
+  def in_construction
+
+  end
 end
