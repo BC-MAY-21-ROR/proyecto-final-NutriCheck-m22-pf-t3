@@ -13,7 +13,5 @@ class ManagersController < UsersController
     @patients = Patient.all
   end
 
-  def in_construction
-
-  end
+  def in_construction; end
 end

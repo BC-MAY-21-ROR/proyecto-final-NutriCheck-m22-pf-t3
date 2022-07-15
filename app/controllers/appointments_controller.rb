@@ -16,9 +16,7 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    if @appointment.save
-      redirect_to appointments_path, notice: 'New appointment created successfully'
-    end
+    redirect_to appointments_path, notice: 'New appointment created successfully' if @appointment.save
   end
 
   def edit
