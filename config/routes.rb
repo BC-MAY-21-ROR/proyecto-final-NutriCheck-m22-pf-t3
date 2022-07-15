@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   resources :patients
   resources :cards
   resources :services
+  get 'managers_admin', to: 'managers#admin'
+  get 'in_construction', to: 'managers#in_construction'
   get 'professionals/:id/profile', to: 'professionals#profile'
 end
