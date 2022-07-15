@@ -27,6 +27,7 @@
   <div class="d-flex">
     <a class="center-a mx-auto" href="<%= new_patient_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
   </div>
+  <h1 class="mx-auto text-white fw-bold mt-2 mb-0">Manage Patients</h1>
   <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
     <% @patients.each do |patient|%>
       <div class="col">
