@@ -30,7 +30,7 @@
           <%= patient.email %>
         </div>
         <div class="d-grid gap-1">
-          <%= button_to "Check", cards_path(patient.id), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Check", cards_path(patient), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
           <%= button_to "Edit", edit_patient_path(patient), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
           <%= button_to "Show", patient_path(patient), method: :get, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
           <%= button_to "Destroy", patient_path(patient), method: :delete, type: "button", form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
