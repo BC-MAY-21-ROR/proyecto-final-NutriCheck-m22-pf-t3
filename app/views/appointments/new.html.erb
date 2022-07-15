@@ -1,0 +1,28 @@
+<div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-4">
+  <p class="h1">New appointment</p>
+  <%= form_with model: @appointment, class: "form-group" do |form| %>
+    <%= form.label :date_time %>
+    <div>
+      <%= form.text_field :date_time, class: "form-control"%>
+    </div>
+    <%= form.label :reason %>
+    <div>
+      <%= form.text_field :reason, class: "form-control" %>
+    </div>
+    <%= form.label :service_id %>
+    <div>
+      <%= form.text_field :service_id, class: "form-control" %>
+    </div>
+    <%= form.label :patient_id %>
+    <div>
+      <%= form.text_field :patient_id, class: "form-control" %>
+    </div>
+    <%= form.label :user_id %>
+    <div>
+      <%= form.text_field :user_id, class: "form-control" %>
+    </div>
+    <div>
+      <%= form.submit 'Create', class: "btn btn-primary color-btn"%>
+    </div>
+  <% end %>
+</div>

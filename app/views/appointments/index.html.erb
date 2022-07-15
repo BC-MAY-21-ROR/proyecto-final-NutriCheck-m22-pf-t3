@@ -1,0 +1,47 @@
+<% @appointments.each do |appointment| %>
+  <div class="card text-black bg-gray container mb-4">
+    <div class="row">
+      <div class="col-auto">
+        <p class="fw-bold">Date and Time:</p>
+      </div>
+      <div class="col-auto">
+        <%=appointment.date_time %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-auto">
+        <p class="fw-bold">Reason:</p>
+      </div>
+      <div class="col-auto">
+        <%=appointment.reason %>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-auto">
+        <p class="fw-bold">Service ID:</p>
+      </div>
+      <div class="col-auto">
+        <%=appointment.service_id %>
+      </div>
+    </div>
+    
+        <div class="row">
+      <div class="col-auto">
+        <p class="fw-bold">Patient ID:</p>
+      </div>
+      <div class="col-auto">
+        <%=appointment.patient_id %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-auto align-self-end">
+        <%= button_to "Edit Appointment", edit_appointment_path(appointment), method: :get, :class => 'btn btn-dark' %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= button_to("Add an appointment", new_appointment_path, method: :get, :class => 'btn btn-primary color-btn ')%>
