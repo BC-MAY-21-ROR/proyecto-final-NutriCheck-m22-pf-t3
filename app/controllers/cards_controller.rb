@@ -2,13 +2,13 @@
 
 class CardsController < ApplicationController
   def index
-    @cards = Card.all
+    @cards = Card.where(patient_id: params[:format])
   end
 
   def show
     @card = Card.find(params[:id])
   end
-
+  
   def new
     @card = Card.new
   end
