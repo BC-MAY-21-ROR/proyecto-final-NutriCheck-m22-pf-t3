@@ -9,7 +9,7 @@
       <div class="col">
         <div class="card h-100 shadow">
           <div class="d-grid">
-            <p class="card-title mx-auto"><%= card.created_at %></p>
+            <p class="card-title mx-auto"><%= card.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %></p>
           </div>
           <%= button_to "Check", card_path(card), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
         </div>
