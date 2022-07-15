@@ -16,8 +16,9 @@ class AppointmentsController < ApplicationController
 
   def create
     @appointment = Appointment.new(appointment_params)
-    @appointment.save
-    redirect_to appointments_path if @appointment.save
+    if @appointment.save
+      redirect_to appointments_path, notice: 'New appointment created successfully'
+    end
   end
 
   def edit
@@ -40,6 +41,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:date_time, :reason, :service_id, :user_id)
+    params.require(:appointment).permit(:date_time, :reason, :service_id, :patient_id, :user_id)
   end
 end
