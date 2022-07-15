@@ -1,0 +1,43 @@
+<div class="d-grid gap-2 mt-4">
+  <h1 class="mx-auto text-white fw-bold">Managers Admin Panel</h1>
+  <div class="mx-2 my-3 bg-container-cards rounded">
+    <div class="d-flex row;">
+      <div class="col-md-4 rounded">
+        <img src="/assets/indice.jpg" class="card-img h-100 cover" alt="...">
+      </div>
+      <div class="card-body bg-container-cards rounded">
+        <h5 class="card-title">Agustin Palma Mardones</h5>
+        <p class="card-text">agustin.palma@nutricheck.com</p>
+        <p class="card-text">98649945</p>
+        <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
+          <%= button_to "Edit", in_construction_path, method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+          <%= button_to "Exit", in_construction_path, method: :get, type: "button", form_class: "col-sm mx-auto w-25", class: "btn btn-sm btn-warning text-white fw-bold w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-group mx-2 gap-1" role="group" aria-label="Basic example" >
+    <%= button_to "Services", services_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "Schedules", schedules_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+  </div>
+  <div class="btn-group mx-2 mb-2 gap-1" role="group" aria-label="Basic example" >
+    <%= button_to "Specialities", specialities_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "Appointments", in_construction_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+  </div>
+  <div class="d-flex">
+    <a class="center-a mx-auto" href="<%= new_patient_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
+  </div>
+  <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
+    <% @patients.each do |patient|%>
+      <div class="col">
+        <div class="card h-100 shadow">
+          <img src="/assets/indice.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-title"><%= patient.name %> <%= patient.last_name %></p>
+          </div>
+          <%= button_to "Check", patient_path(patient), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
