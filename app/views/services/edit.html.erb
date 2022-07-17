@@ -1,6 +1,9 @@
-<div class="bg-white min-vh-100 d-grid">
-  <div class="d-grid">
-    <h1 class="mx-auto my-auto fw-bold px-3">Edit Service</h1>
+<div class="bg-white min-vh-100 d-grid px-3">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", services_path,  class: "green-back-link fw-bold text-decoration-none" %>
+  </p>
+  <div class="d-grid m-auto">
+    <h1 class="mx-auto fw-bold">Edit Service</h1>
   </div>
   <div class="mx-auto px-3">
     <%= form_with model: @service do |form| %>
@@ -9,30 +12,24 @@
           <%= form.label :name, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :name, class: "form-control bg-light"  %>
+          <%= form.text_field :name, class: "form-control bg-light text-black-50"  %>
         </div>
         <div>
           <%= form.label :duration, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :duration, class: "form-control bg-light"  %>
+          <%= form.text_field :duration, class: "form-control bg-light text-black-50" %>
         </div>
         <div>
           <%= form.label :price, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :price, class: "form-control bg-light" %>
+          <%= form.text_field :price, class: "form-control bg-light text-black-50" %>
         </div>
-        
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>
         </div>
       </div>
     <% end %>
-    <div class="d-grid col-6 mx-auto pt-2 mb-3">
-      <div class="mx-auto">
-        <%= button_to "Go back", services_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
-      </div>
-    </div>
   </div>
 </div>

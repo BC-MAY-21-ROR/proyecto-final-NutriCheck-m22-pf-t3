@@ -25,11 +25,11 @@ class LicensesController < ApplicationController
   end
 
   def edit
-    @license = License.find(params[:id])
+    license
   end
 
   def update
-    @license = License.find(params[:id])
+    license
 
     if @license.update(lic_params)
       redirect_to professionals_path, notice: 'License was edited successfully'
@@ -39,7 +39,7 @@ class LicensesController < ApplicationController
   end
 
   def destroy
-    @license = License.find(params[:id])
+    license
     if @license.destroy
       redirect_to professionals_path, notice: 'License was deleted successfully'
     else
@@ -48,6 +48,10 @@ class LicensesController < ApplicationController
   end
 
   private
+
+  def license
+    @license = License.find(params[:id])
+  end
 
   def lic_params
     params.require(:license).permit(:name, :number, :user_id)

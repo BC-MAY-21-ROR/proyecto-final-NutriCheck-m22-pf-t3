@@ -1,21 +1,24 @@
-<div class="container text-center p-4">
-  <h2 class="title-white">Manage Turns</h2>
-  <h3 class="title-white">Turns List</h3>
-</div>
-
-<div class="text-light">
-  <%= notice  %>
-</div>
-
-<div class="text-danger">
-  <%= alert %>
-</div>
-
-
-<%= render partial: 'turn', collections: @turns %>
-
-<div class="container text-center">
-  <div>
-  <%= link_to "Create new Turn", new_turn_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold p-2 m-4" %>
+<div class="d-grid">
+  <div class="d-grid my-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Turns</h1>
+  </div>
+  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
+    <% @turns.each do |turn|%>
+      <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
+        <div class ="card-title fw-bold" >
+          <%= turn.schedule.gethours %>
+        </div>
+        <div class="card-text pb-2">
+          <%= turn.user.getname %><br>
+        </div>
+        <div class="d-grid gap-1">
+          <%= button_to "Check", turn_path(turn), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="d-grid gap-3 mx-auto mb-3">
+    <a class="center-a" href="<%= new_turn_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-icon mx-auto")%></a>
+    <%= button_to "Go back", administrators_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
   </div>
 </div>

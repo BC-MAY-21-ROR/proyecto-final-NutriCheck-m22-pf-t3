@@ -9,4 +9,12 @@ class User < ApplicationRecord
   def getname
     "#{role} #{name} #{last_name}"
   end
+
+  def get_professionals
+    "#{speciality.name} - #{name} #{last_name}" if role == 'professional'
+  end
+
+  def get_speciality_name
+    "#{speciality.name} - #{name} #{last_name}"
+  end
 end

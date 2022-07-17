@@ -1,25 +1,30 @@
-<div class="d-grid">
-  <div class="d-grid my-4">
-    <h1 class="mx-auto fw-bold text-white px-3">Service detail</h1>
+<div class="bg-white min-vh-100 d-grid px-3">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Service detail</h1>
   </div>
-  <div class="mx-auto">
-    <div class="d-grid gap-2 text-white px-3">
-    <div>
-      <label for="", class= "fw-bold fs-5">Name: </label>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Name: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @service.name %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Duration: </label>
+    <div class="fw-bold">
+      <label for="">Duration: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @service.duration %> hrs
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Price: </label>
+    <div class="fw-bold">
+      <label for="">Price: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       $<%= @service.price %>
     </div>
-  </div>
-  <div class="d-grid gap-3 col-6 mx-auto pt-4">
-    <div class="mx-auto">
-      <%= button_to "Go back", services_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <div class="mx-auto py-2">
+      <%= button_to "Go back to services", services_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <%= button_to "Edit", edit_service_path(@service), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
+      <%= button_to "Destroy", service_path(@service), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
     </div>
   </div>
 </div>

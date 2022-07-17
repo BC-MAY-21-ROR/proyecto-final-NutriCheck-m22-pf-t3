@@ -11,34 +11,57 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointment = Appointment.find(params[:id])
+    appointment
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
-    redirect_to appointments_path, notice: 'New appointment created successfully' if @appointment.save
+    if @appointment.save
+      redirect_to appointments_path, notice: 'New appointment created successfully'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
-    @appointment = Appointment.find(params[:id])
+    appointment
   end
 
   def update
-    @appointment = Appointment.find(params[:id])
+    appointment
+
+    if @appointment.update(appointment_params)
+      redirect_to appointments_path, notice: 'Appointment was edited successfully'
+    else
+      render :edit, :unprocessable_entity
+    end
   end
 
   def destroy
-    @appointment = Appointment.find(params[:id])
+    appointment
     if @appointment.destroy
-      notice 'Appointment deleted succesfully'
+      redirect_to appointments_path, notice: 'Appointment was deleted successfully'
     else
-      notice 'ERROR'
+      render :edit, :unprocessable_entity
     end
   end
 
   private
 
+  def appointment
+    @appointment = Appointment.find(params[:id])
+  end
+
   def appointment_params
-    params.require(:appointment).permit(:date_time, :reason, :service_id, :patient_id, :user_id)
+    params.require(:appointment).permit(
+      :date_time,
+      :reason,
+      :service_id,
+      :patient_id,
+      :user_id,
+      :status,
+      :payment_status,
+      :score, :review
+    )
   end
 end
