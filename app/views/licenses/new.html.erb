@@ -1,33 +1,35 @@
-<div class="bg-white min-vh-100 d-grid">
-  <div class="d-grid">
-    <h1 class="mx-auto my-auto fw-bold px-3">Create Licence</h1>
+<div class="bg-white min-vh-100 d-grid px-3">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", professionals_path,  class: "green-back-link fw-bold text-decoration-none" %>
+  </p>
+  <div class="d-grid m-auto">
+    <h1 class="mx-auto fw-bold">Create Licence</h1>
   </div>
-  <div class="mx-auto px-3">
-    <%= form_with(model: @license) do |form| %>
+  <div class="mx-auto">
+    <%= form_with model: @license do |form| %>
       <div class="d-grid gap-2">
         <div>
           <%= form.label :user_id, class: "fw-bold" %>
         </div>
         <div class="mx-auto">
-          <%= collection_select(:license, :user_id, User.all, :id, :name) %>
+          <%= form.collection_select(:user_id, User.all, :id, :get_professionals) %>
         </div>
         <div>
           <%= form.label :name, class: "fw-bold" %>
-          <%= form.text_field :name, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.text_field :name, class: "form-control bg-light text-black-50" %>
         </div>
         <div>
           <%= form.label :number, class: "fw-bold" %>
-          <%= form.text_field :number, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.text_field :number, class: "form-control bg-light text-black-50" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
-          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold mx-auto"%>
+          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>
       </div>
     <% end %>
-    <div class="d-grid col-6 mx-auto pt-2 mb-3">
-      <div class="mx-auto">
-        <%= button_to "Cancel", professionals_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
-      </div>
-    </div>
   </div>
 </div>

@@ -1,0 +1,67 @@
+<div class="bg-white min-vh-100 d-grid px-3">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Appointment detail</h1>
+  </div>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Date and time: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.date_time.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Reason: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.reason %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Service: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.service.name %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Patient: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.patient.patient_full_name %>
+    </div>
+    <div class="fw-bold">
+      <label for="">User: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.user.get_speciality_name %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Status: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.status %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Payment status: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.payment_status %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Score: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.score %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Review: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @appointment.review %>
+    </div>
+    
+    <div class="mx-auto py-2">
+      <%= button_to "Go back to appointments", appointments_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <%= button_to "Edit", edit_appointment_path(@appointment), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
+      <%= button_to "Destroy", appointment_path(@appointment), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
+    </div>
+  </div>
+</div>
