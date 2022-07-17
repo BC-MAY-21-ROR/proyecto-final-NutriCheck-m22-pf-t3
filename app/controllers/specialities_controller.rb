@@ -12,7 +12,7 @@ class SpecialitiesController < ApplicationController
   end
 
   def show
-    @speciality = Speciality.find(params[:id])
+    speciality
   end
 
   def create
@@ -25,11 +25,11 @@ class SpecialitiesController < ApplicationController
   end
 
   def edit
-    @speciality = Speciality.find(params[:id])
+    speciality
   end
 
   def update
-    @speciality = Speciality.find(params[:id])
+    speciality
 
     if @speciality.update(speci_params)
       redirect_to specialities_path, notice: 'Speciality was edited successfully'
@@ -39,7 +39,7 @@ class SpecialitiesController < ApplicationController
   end
 
   def destroy
-    @speciality = Speciality.find(params[:id])
+    speciality
     if @speciality.destroy
       redirect_to specialities_path, notice: 'Speciality was deleted successfully'
     else
@@ -48,6 +48,10 @@ class SpecialitiesController < ApplicationController
   end
 
   private
+
+  def speciality
+    @speciality = Speciality.find(params[:id])
+  end
 
   def speci_params
     params.require(:speciality).permit(:name)

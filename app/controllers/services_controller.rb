@@ -12,7 +12,7 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.find(params[:id])
+    service
   end
 
   def create
@@ -25,11 +25,11 @@ class ServicesController < ApplicationController
   end
 
   def edit
-    @service = Service.find(params[:id])
+    service
   end
 
   def update
-    @service = Service.find(params[:id])
+    service
 
     if @service.update(ser_params)
       redirect_to services_path, notice: 'Service was edited successfully'
@@ -39,7 +39,7 @@ class ServicesController < ApplicationController
   end
 
   def destroy
-    @service = Service.find(params[:id])
+    service
     if @service.destroy
       redirect_to services_path, notice: 'Service was deleted successfully'
     else
@@ -48,6 +48,10 @@ class ServicesController < ApplicationController
   end
 
   private
+
+  def service
+    @service = Service.find(params[:id])
+  end
 
   def ser_params
     params.require(:service).permit(:name, :duration, :price)

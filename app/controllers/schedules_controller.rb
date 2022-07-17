@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
+    schedule
   end
 
   def create
@@ -23,11 +23,11 @@ class SchedulesController < ApplicationController
   end
 
   def edit
-    @schedule = Schedule.find(params[:id])
+    schedule
   end
 
   def update
-    @schedule = Schedule.find(params[:id])
+    schedule
 
     if @schedule.update(schedule_params)
       redirect_to schedules_path, notice: 'Schedule was edited successfully'
@@ -37,7 +37,7 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
-    @schedule = Schedule.find(params[:id])
+    schedule
     if @schedule.destroy
       redirect_to schedules_path, notice: 'Schedule was deleted successfully'
     else
@@ -46,6 +46,10 @@ class SchedulesController < ApplicationController
   end
 
   private
+
+  def schedule
+    @schedule = Schedule.find(params[:id])
+  end
 
   def schedule_params
     params.require(:schedule).permit(:week_day, :opening_time, :closing_time)

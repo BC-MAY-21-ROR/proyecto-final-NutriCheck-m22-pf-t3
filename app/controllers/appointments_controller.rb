@@ -11,7 +11,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    @appointment = Appointment.find(params[:id])
+    appointment
   end
 
   def create
@@ -24,11 +24,11 @@ class AppointmentsController < ApplicationController
   end
 
   def edit
-    @appointment = Appointment.find(params[:id])
+    appointment
   end
 
   def update
-    @appointment = Appointment.find(params[:id])
+    appointment
 
     if @appointment.update(appointment_params)
       redirect_to appointments_path, notice: 'Appointment was edited successfully'
@@ -38,7 +38,7 @@ class AppointmentsController < ApplicationController
   end
 
   def destroy
-    @appointment = Appointment.find(params[:id])
+    appointment
     if @appointment.destroy
       redirect_to appointments_path, notice: 'Appointment was deleted successfully'
     else
@@ -48,8 +48,20 @@ class AppointmentsController < ApplicationController
 
   private
 
+  def appointment
+    @appointment = Appointment.find(params[:id])
+  end
+
   def appointment_params
-    params.require(:appointment).permit(:date_time, :reason, :service_id, :patient_id, :user_id, :status,
-                                        :payment_status, :score, :review)
+    params.require(:appointment).permit(
+      :date_time,
+      :reason,
+      :service_id,
+      :patient_id,
+      :user_id,
+      :status,
+      :payment_status,
+      :score, :review
+    )
   end
 end
