@@ -10,8 +10,8 @@
           <%= lic.number %>
         </div>
         <div class="d-grid gap-1 mx-auto mb-3">
-          <%= button_to "Edit", edit_license_path(lic), method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
-          <%= button_to "Destroy", license_path(lic), method: :delete, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Edit", edit_license_path(lic), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
+          <%= button_to "Destroy", license_path(lic), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
         </div>
       </div>
     <% end %>

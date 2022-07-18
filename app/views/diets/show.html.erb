@@ -1,6 +1,6 @@
-<div class="bg-white min-vh-100 d-grid">
+<div class="bg-white min-vh-100 d-grid px-3">
   <div class="d-grid m-auto">
-    <h1 class=" mx-auto fw-bold">Diet Info Detail</h1>
+    <h1 class=" mx-auto fw-bold">Diet detail</h1>
   </div>
   <div class="mx-auto my-0 d-grid gap-1">
     <div class="fw-bold">
@@ -10,21 +10,21 @@
       <%= @diet.name %>
     </div>
     <div class="fw-bold">
-      <label for="">Description: </label>
+      <label for="">Last Name: </label>
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @diet.description %>
     </div>
     <div class="fw-bold">
-      <label for="">Comments: </label>
+      <label for="">Birth Date: </label>
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @diet.comments %>
     </div>
     <div class="mx-auto py-2">
-      <%= button_to "Go back to managers", diets_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
-      <%= button_to "Edit", edit_diet_path(@diet), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
-      <%= button_to "Destroy", diet_path(@diet), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
+      <%= button_to "Go back to diets", diets_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <%= button_to "Edit", edit_diet_path(@diet), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
+      <%= button_to "Destroy", diet_path(@diet), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
     </div>
   </div>
 </div>

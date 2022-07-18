@@ -30,7 +30,7 @@
           <%= form.label "Id Dieta", class: "fw-bold" %>
         </div>
         <div class="mx-auto">
-          <%= form.collection_select(:diet_id, Diet.all, :id, :name) %>
+          <%= form.collection_select(:diet_id, Diet.all, :id, :name, {class: "form-control"})  %>
         </div>
         <div>
           <%= form.label :next_appointment, class: "fw-bold" %>

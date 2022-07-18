@@ -1,9 +1,9 @@
-<div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-4">
-  <p class="h1">New appointment</p>
+<div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-4 gap-2">
+  <h1 class="mx-auto  fw-bold">New appointment</h1>
   <%= form_with model: @appointment, class: "form-group" do |form| %>
     <%= form.label :date_time %>
     <div>
-      <%= form.text_field :date_time, class: "form-control"%>
+      <%= form.date_field :date_time, class: "form-control"%>
     </div>
     <%= form.label :reason %>
     <div>
@@ -11,18 +11,18 @@
     </div>
     <%= form.label :service_id %>
     <div>
-      <%= form.text_field :service_id, class: "form-control" %>
+      <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control" }) %>
     </div>
     <%= form.label :patient_id %>
     <div>
-      <%= form.text_field :patient_id, class: "form-control" %>
+      <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control" }) %>
     </div>
     <%= form.label :user_id %>
     <div>
-      <%= form.text_field :user_id, class: "form-control" %>
+      <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control" }) %>
     </div>
-    <div>
-      <%= form.submit 'Create', class: "btn btn-primary color-btn"%>
+    <div class="d-grid gap-3 col-6 mx-auto pt-4">
+      <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
     </div>
   <% end %>
 </div>

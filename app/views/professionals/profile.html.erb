@@ -31,6 +31,7 @@
           <div class="card-body">
             <p class="card-title"><%= patient.name %> <%= patient.last_name %></p>
           </div>
+          <%= button_to "Consult", cards_path(patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-primary rounded-pill text-white fw-bold" %>
           <%= button_to "Check", patient_path(patient), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
         </div>
       </div>
