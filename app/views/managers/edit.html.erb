@@ -1,11 +1,11 @@
-<div class="bg-white min-vh-100 d-grid px-3">
+<div class="bg-white min-vh-100 d-grid">
   <p class="m-auto ms-2">
     <%= link_to  "< Back", managers_path,  class: "green-back-link fw-bold text-decoration-none" %>
   </p>
   <div class="d-grid m-auto">
     <h1 class="mx-auto fw-bold">Edit Manager</h1>
   </div>
-  <div class="mx-auto px-3">
+  <div class="mx-auto">
     <%= form_with model: @user do |form| %>
       <div class="d-grid gap-2">
         <div>
@@ -53,11 +53,11 @@
         <div>
           <%= form.label :speciality_id, class: "fw-bold" %>
         </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:speciality_id, Speciality.all, :id, :name) %>
+        <div>
+          <%= form.text_field :speciality_id, class: "form-control bg-light text-black-50" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
-          <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>
       </div>
     <% end %>

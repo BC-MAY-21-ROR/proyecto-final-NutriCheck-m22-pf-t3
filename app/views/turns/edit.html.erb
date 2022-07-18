@@ -1,29 +1,7 @@
-<div class="bg-white min-vh-100 d-grid px-3">
-  <p class="m-auto ms-2">
-    <%= link_to  "< Back", turns_path,  class: "green-back-link fw-bold text-decoration-none" %>
-  </p>
-  <div class="d-grid m-auto">
-    <h1 class="mx-auto fw-bold">Edit Turn</h1>
-  </div>
-  <div class="mx-auto px-3">
-    <%= form_with model: @turn do |form| %>
-      <div class="d-grid gap-2">
-        <div>
-          <%= form.label :schedule_id, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.collection_select(:schedule_id, Schedule.all.order(created_at: :asc), :id, :gethours, { include_blank: false }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
-        </div>
-        <div>
-          <%= form.label :user_id, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.collection_select(:user_id, User.all.order(name: :asc), :id, :getname, { include_blank: false }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" })  %>
-        </div>
-        <div class="d-grid gap-3 col-6 mx-auto pt-4">
-          <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<%= render "back_turn_path" %>
+
+<div class="container text-center m-3">
+  <h2 class="title-white">Edit Turn</h2>
 </div>
+
+  <%= render 'form' %>

@@ -16,8 +16,12 @@
       </div>
     <% end %>
   </div>
-  <div class="d-grid gap-3 mx-auto mb-3">
-      <a class="center-a" href="<%= new_license_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-icon mx-auto")%></a>
+  <div class="d-grid gap-2 mx-auto mb-3">
+    <div class="mx-auto">
+      <%= button_to "Add License", new_license_path, method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
+    <div class="mx-auto">
       <%= button_to "Go back", professionals_path, method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
   </div>
 </div>

@@ -1,35 +1,20 @@
-<div class="bg-white min-vh-100 d-grid px-3">
-  <p class="m-auto ms-2">
-    <%= link_to  "< Back", administrators_path,  class: "green-back-link fw-bold text-decoration-none" %>
-  </p>
-  <div class="d-grid m-auto">
-    <h1 class="mx-auto fw-bold">Create Schedule</h1>
-  </div>
-  <div class="mx-auto">
-    <%= form_with model: @schedule do |form| %>
-      <div class="d-grid gap-2">
-        <div>
-          <%= form.label :week_day, class: "fw-bold" %>
-        </div>
-        <div class="mx-auto">
-          <%= form.select :week_day, options_for_select(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]) %>
-        </div>
-        <div>
-          <%= form.label :opening_time, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.time_field :opening_time, class: "form-control bg-light text-black-50" %>
-        </div>
-        <div>
-          <%= form.label :closing_time, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.time_field :closing_time, class: "form-control bg-light text-black-50" %>
-        </div>
-        <div class="d-grid gap-3 col-6 mx-auto pt-4">
-          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div id="schedule-new" class="bg-white text-dark d-flex flex-column justify-content-center p-4 m-5">
+  <p class="h1">New Schedule</p>
+  <%= form_with model: @schedule, class: "form-group" do |form| %>
+    <%= form.label :week_day %>
+    <div>
+      <%= form.text_field :week_day, class: "form-control"%>
+    </div>
+    <%= form.label :opening_time %>
+    <div>
+      <%= form.text_field :opening_time, class: "form-contr ol" %>
+    </div>
+    <%= form.label :closing_time %>
+    <div>
+      <%= form.text_field :closing_time, class: "form-control" %>
+    </div>
+    <div>
+      <%= form.submit 'Create', class: "btn btn-primary color-btn"%>
+    </div>
+  <% end %>
 </div>

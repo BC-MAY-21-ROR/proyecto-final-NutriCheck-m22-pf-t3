@@ -1,48 +1,28 @@
-<div class="bg-white min-vh-100 d-grid px-3">
-  <p class="m-auto ms-2">
-    <%= link_to  "< Back", appointments_path,  class: "green-back-link fw-bold text-decoration-none" %>
-  </p>
-  <div class="d-grid m-auto">
-    <h1 class="mx-auto fw-bold">Create Appointment</h1>
-  </div>
-  <div class="mx-auto">
-    <%= form_with model: @appointment do |form| %>
-      <div class="d-grid gap-2">
-        <div>
-          <%= form.label :date_time, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.datetime_field :date_time, class: "form-control bg-light text-black-50"  %>
-        </div>
-        <div>
-          <%= form.label :reason, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.text_field :reason, class: "form-control bg-light text-black-50" %>
-        </div>
-        <div>
-          <%= form.label :service_id, class: "fw-bold" %>
-        </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
-        </div>
-        <div>
-          <%= form.label :patient_id, class: "fw-bold" %>
-        </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
-        </div>
-        <div>
-          <%= form.label :user_id, class: "fw-bold" %>
-        </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
-        </div>
-        
-        <div class="d-grid gap-3 col-6 mx-auto pt-4">
-          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-4 gap-2">
+  <h1 class="mx-auto  fw-bold">New appointment</h1>
+  <%= form_with model: @appointment, class: "form-group" do |form| %>
+    <%= form.label :date_time %>
+    <div>
+      <%= form.date_field :date_time, class: "form-control"%>
+    </div>
+    <%= form.label :reason %>
+    <div>
+      <%= form.text_field :reason, class: "form-control" %>
+    </div>
+    <%= form.label :service_id %>
+    <div>
+      <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control" }) %>
+    </div>
+    <%= form.label :patient_id %>
+    <div>
+      <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control" }) %>
+    </div>
+    <%= form.label :user_id %>
+    <div>
+      <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control" }) %>
+    </div>
+    <div class="d-grid gap-3 col-6 mx-auto pt-4">
+      <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
+    </div>
+  <% end %>
 </div>

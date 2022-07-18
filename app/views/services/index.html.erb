@@ -1,25 +1,35 @@
 <div class="d-grid">
-  <div class="d-grid my-4">
-    <h1 class="mx-auto fw-bold text-white px-3">Services</h1>
+  <div class="d-grid mt-4">
+    <h1 class="mx-auto fw-bold text-white px-3">Manage Services</h1>
   </div>
-  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
-    <% @services.each do |service|%>
-      <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
-        <div class ="card-title fw-bold" >
-          <%= service.name %>
-        </div>
-        <div class="card-text pb-2">
-          <%= service.duration %> hrs<br>
-          $<%= service.price %>
-        </div>
-        <div class="d-grid gap-1">
-          <%= button_to "Check", service_path(service), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class="d-grid gap-3 mx-auto mb-3">
-    <a class="center-a" href="<%= new_service_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-icon mx-auto")%></a>
-    <%= button_to "Go back", managers_path, method: :get, type: "button", form_class: "col-sm mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+  <table class="table table-responsive table-hover table-sm table-light mx-2 mt-4 rounded">
+    <thead class="thead-ligth">
+      <tr>
+        <th scope="col">Service</th>
+        <th scope="col">Hours</th>
+        <th scope="col">Price</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @services.each do |service| %>
+        <tr class="align-middle">
+          <th scope="row"><%=service.name %></th>
+          <td><%=service.duration %></td>
+          <td><%=service.price %></td>
+          <td><%= button_to "Edit", edit_service_path(service), method: :get , form_class: "w-20", class: "btn btn-warning  text-white fw-bold w-100" %></td>
+          <td><%= button_to "Destroy", service_path(service), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="d-grid gap-2 mx-auto mb-3">
+    <div class="mx-auto">
+      <%= button_to "New Speciality", new_service_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
+    <div class="mx-auto">
+      <%= button_to "Go back", managers_admin_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
   </div>
 </div>

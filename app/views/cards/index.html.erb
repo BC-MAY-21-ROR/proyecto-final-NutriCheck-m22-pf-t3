@@ -1,24 +1,18 @@
-<div class="d-grid">
-  <div class="d-grid my-4">
-    <h1 class="mx-auto fw-bold text-white px-3">Cards</h1>
-  </div>
-  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
+<div class="d-grid gap-2 mt-2">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  </p>
+  <h1 class="mx-auto text-white fw-bold">Cards</h1>
+  <a class="center-a" href="<%= new_card_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
+  <div class="row row-cols-1 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
     <% @cards.each do |card|%>
-      <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
-        <div class ="card-title fw-bold" >
-          <%= card.created_at.strftime("%a, %d/%m/%Y") %>
-        </div>
-        <div class="card-text pb-2">
-          Next appointment: <%= card.next_appointment.strftime("%a, %d/%m/%Y") %>
-        </div>
-        <div class="d-grid gap-1">
+      <div class="col">
+        <div class="card h-100 shadow">
+          <div class="d-grid">
+            <p class="card-title mx-auto"><%= card.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %></p>
+          </div>
           <%= button_to "Check", card_path(card), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
         </div>
       </div>
     <% end %>
   </div>
-  <div class="d-grid gap-3 mx-auto mb-3">
-    <a class="center-a" href="<%= new_card_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-icon mx-auto")%></a>
-    <%= button_to "Go back administrators", administrators_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
-  </div>
-</div>

@@ -1,6 +1,6 @@
-<div class="bg-white min-vh-100 d-grid px-3">
+<div class="bg-white min-vh-100 d-grid pt-4">
   <div class="d-grid m-auto">
-    <h1 class=" mx-auto fw-bold">Professional detail</h1>
+    <h1 class=" mx-auto fw-bold">Professional Info Detail</h1>
   </div>
   <div class="mx-auto my-0 d-grid gap-1">
     <div class="fw-bold">
@@ -46,22 +46,22 @@
       <%= @professional.role %>
     </div>
     <div class="fw-bold">
-      <label for="">Date of entry: </label>
-    </div>
-    <div class="form-control bg-light text-black-50 m-auto">
-      <%= @professional.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
-    </div>
-    <div class="fw-bold">
       <label for="">Speciality: </label>
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.speciality.name %>
     </div>
+    <div class="fw-bold">
+      <label for="">Date of entry: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @professional.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
+    </div>
     <div class="mx-auto py-2">
-      <%= button_to "Licenses", license_path(params[:id]), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
-      <%= button_to "Go back to professionals", professionals_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
-      <%= button_to "Edit", edit_professional_path(@professional), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
-      <%= button_to "Destroy", professional_path(@professional), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
+      <%= button_to "Licenses", license_path(params[:id]), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Go back to professionals", professionals_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Edit", edit_professional_path(@professional), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", professional_path(@professional), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
     </div>
   </div>
 </div>

@@ -1,9 +1,6 @@
-<div class="bg-white min-vh-100 d-grid px-3">
-  <p class="m-auto ms-2">
-    <%= link_to  "< Back", patients_path,  class: "green-back-link fw-bold text-decoration-none" %>
-  </p>
-  <div class="d-grid m-auto">
-    <h1 class="mx-auto fw-bold">Edit Patient</h1>
+<div class="bg-white min-vh-100 d-grid pt-4">
+  <div class="d-grid">
+    <h1 class="mx-auto my-auto fw-bold px-3">Edit Professional</h1>
   </div>
   <div class="mx-auto px-3">
     <%= form_with model: @patient do |form| %>
@@ -12,66 +9,71 @@
           <%= form.label :name, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :name, class: "form-control bg-light text-black-50"  %>
+          <%= form.text_field :name, class: "form-control bg-light"  %>
         </div>
         <div>
           <%= form.label :second_name, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :second_name, class: "form-control bg-light text-black-50"  %>
+          <%= form.text_field :second_name, class: "form-control bg-light"  %>
         </div>
         <div>
           <%= form.label :last_name, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :last_name, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :last_name, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :second_last_name, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :second_last_name, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :second_last_name, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :birth_date, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :birth_date, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :birth_date, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :phone, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :phone, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :phone, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :email, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :email, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :email, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :password, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :password, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :password, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :height, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :height, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :height, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :observations, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :observations, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :observations, class: "form-control bg-light" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>
         </div>
       </div>
     <% end %>
+    <div class="d-grid col-6 mx-auto pt-2 mb-3">
+      <div class="mx-auto">
+        <%= button_to "Go back", patients_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
+      </div>
+    </div>
   </div>
 </div>

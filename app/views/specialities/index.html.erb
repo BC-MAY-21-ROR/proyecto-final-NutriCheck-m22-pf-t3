@@ -2,21 +2,23 @@
   <div class="d-grid my-4">
     <h1 class="mx-auto fw-bold text-white px-3">Manage specialities</h1>
   </div>
-  <div class="card-bcg-panel w-75 my-2 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit ">
+  <div class="card mx-3 my-3">
     <% @specialities.each do |speciality|%>
-      <div class="mx-auto card-user-bcg own-radius grid-element mt-2 text-center ">
-        <div>
-          <%= speciality.name %>
-        </div>
-        <div class="d-grid gap-1 mx-auto mb-3">
-          <%= button_to "Edit", edit_speciality_path(speciality), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
-          <%= button_to "Destroy", speciality_path(speciality), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
-        </div>
-      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex w-100 gap-2">
+          <p class="w-100 my-auto"><%= speciality.name %></p>
+          <%= button_to "Edit", edit_speciality_path(speciality), method: :get , form_class: "w-20", class: "btn btn-warning  text-white fw-bold w-100" %>
+          <%= button_to "Destroy", speciality_path(speciality), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100" %>
+        </li>
+      </ul>
     <% end %>
   </div>
-  <div class="d-grid gap-3 mx-auto mb-3">
-    <a class="center-a" href="<%= new_speciality_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-icon mx-auto")%></a>
-    <%= button_to "Go back", professionals_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+  <div class="d-grid gap-2 mx-auto mb-3">
+    <div class="mx-auto">
+      <%= button_to "New Speciality", new_speciality_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
+    <div class="mx-auto">
+      <%= button_to "Go back", professionals_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+    </div>
   </div>
 </div>

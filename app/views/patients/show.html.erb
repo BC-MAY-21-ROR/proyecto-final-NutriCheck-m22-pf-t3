@@ -1,6 +1,6 @@
-<div class="bg-white min-vh-100 d-grid px-3">
+<div class="bg-white min-vh-100 d-grid p-4">
   <div class="d-grid m-auto">
-    <h1 class=" mx-auto fw-bold">Patient detail</h1>
+    <h1 class=" mx-auto fw-bold">Patient Info Detail</h1>
   </div>
   <div class="mx-auto my-0 d-grid gap-1">
     <div class="fw-bold">
@@ -8,11 +8,6 @@
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.name %>
-    </div>
-    <div class="fw-bold">
-      <label for="">Second name: </label>
-    </div>
-    <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.second_name %>
     </div>
     <div class="fw-bold">
@@ -20,11 +15,6 @@
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.last_name %>
-    </div>
-    <div class="fw-bold">
-      <label for="">Second name: </label>
-    </div>
-    <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.second_last_name %>
     </div>
     <div class="fw-bold">
@@ -32,6 +22,24 @@
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.birth_date %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Height: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.height %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Observation: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.observations %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Patient Creation Date: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
     </div>
     <div class="fw-bold">
       <label for="">Phone Number: </label>
@@ -51,28 +59,10 @@
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.password %>
     </div>
-    <div class="fw-bold">
-      <label for="">Height: </label>
-    </div>
-    <div class="form-control bg-light text-black-50 m-auto">
-      <%= @patient.height %>
-    </div>
-    <div class="fw-bold">
-      <label for="">Observations: </label>
-    </div>
-    <div class="form-control bg-light text-black-50 m-auto">
-      <%= @patient.observations %>
-    </div>
-    <div class="fw-bold">
-      <label for="">Date of entry: </label>
-    </div>
-    <div class="form-control bg-light text-black-50 m-auto">
-      <%= @patient.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
-    </div>
     <div class="mx-auto py-2">
-      <%= button_to "Go back to patients", patients_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
-      <%= button_to "Edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
-      <%= button_to "Destroy", patient_path(@patient), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
+      <%= button_to "Go back to patients", patients_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", patient_path(@patient), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
     </div>
   </div>
 </div>
