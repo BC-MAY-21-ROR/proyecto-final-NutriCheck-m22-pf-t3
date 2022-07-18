@@ -3,6 +3,7 @@
 class CardsController < ApplicationController
   def index
     @cards = Card.where(patient_id: params[:format])
+    @patients = Patient.all
   end
 
   def show

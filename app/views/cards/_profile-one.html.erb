@@ -1,0 +1,41 @@
+<div class="container text-center text-white">
+  <h2 class="text-capitalize fw-bold">patient check</h2>
+</div>
+
+<% @patients.each do |patient| %>
+<div class="d-grid gap-4">
+  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit card mb-3">
+      <div class="mx-auto card-user-bcg own-radius grid-element mt-2 row no-gutters">
+      <div class="col-md-4 rounded-pill" style="max-width: 540px; max-height: 440px;">
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/5/52/Male_Doctor_Flat_Icon_Vector.svg" 
+          class="card-img rounded-pill pt-4" 
+          alt="Doctor"
+          style="max-height: 540px;"
+        />
+      </div>
+        <div class ="card-title fw-bold col-md-8" >
+          <%= @patients.name %>
+          <div class="card-body">
+
+            <%= patient.name %> <%= patient.second_name %>
+            <%= patient.last_name %> <%= patient.second_last_name  %>
+
+            <div class="d-grid gap-1">
+              <p class="card-text"><large class="text-muted">
+                <%= patient.birth_date %>
+              </large></p>
+            </div>
+            <div class="d-grid gap-1">
+              <p class="card-text"><large class="text-muted">
+                <%= patient.phone %>
+              </large></p>
+            </div>
+            <div class="d-grid gap-1">
+              <p class="card-text"><large class="text-muted"><%= patient.email %></large></p>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<% end %>
