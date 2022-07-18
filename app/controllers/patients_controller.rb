@@ -12,7 +12,7 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient = Patient.find(params[:id])
+    patient
   end
 
   def create
@@ -25,11 +25,11 @@ class PatientsController < ApplicationController
   end
 
   def edit
-    @patient = Patient.find(params[:id])
+    patient
   end
 
   def update
-    @patient = Patient.find(params[:id])
+    patient
 
     if @patient.update(pat_params)
       redirect_to patients_path, notice: 'Patient was edited successfully'
@@ -39,7 +39,7 @@ class PatientsController < ApplicationController
   end
 
   def destroy
-    @patient = Patient.find(params[:id])
+    patient
     if @patient.destroy
       redirect_to patients_path, notice: 'Patient was deleted successfully'
     else
@@ -48,6 +48,10 @@ class PatientsController < ApplicationController
   end
 
   private
+
+  def patient
+    @patient = Patient.find(params[:id])
+  end
 
   def pat_params
     params.require(:patient).permit(
