@@ -1,4 +1,4 @@
-<div class="bg-white min-vh-100 d-grid">
+<div class="bg-white min-vh-100 d-grid pt-4">
   <div class="d-grid">
     <h1 class="mx-auto my-auto fw-bold px-3">Create Patient</h1>
   </div>
@@ -23,7 +23,7 @@
         </div>
         <div>
           <%= form.label :birth_date, class: "fw-bold" %><br>
-          <%= form.text_field :birth_date, class: "form-control bg-light" %>
+          <%= form.date_field :birth_date, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :phone, class: "fw-bold" %><br>
@@ -31,7 +31,7 @@
         </div>
         <div>
           <%= form.label :email, class: "fw-bold" %><br>
-          <%= form.text_field :email, class: "form-control bg-light" %>
+          <%= form.email_field :email, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :password, class: "fw-bold" %><br>
@@ -45,7 +45,6 @@
           <%= form.label :observations, class: "fw-bold" %><br>
           <%= form.text_field :observations, class: "form-control bg-light" %>
         </div>
-        
         <div  class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>

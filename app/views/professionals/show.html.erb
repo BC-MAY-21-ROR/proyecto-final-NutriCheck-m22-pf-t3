@@ -1,52 +1,67 @@
-<div class="d-grid">
-  <div class="d-grid my-4">
-    <h1 class="mx-auto fw-bold text-white px-3">Professional detail</h1>
+<div class="bg-white min-vh-100 d-grid pt-4">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Professional Info Detail</h1>
   </div>
-  <div class="mx-auto">
-    <div class="d-grid gap-2 text-white px-3">
-    <div>
-      <label for="", class= "fw-bold fs-5">Name: </label>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Name: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.name %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Last Name: </label>
+    <div class="fw-bold">
+      <label for="">Last Name: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.last_name %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Birth Date: </label>
+    <div class="fw-bold">
+      <label for="">Birth Date: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.birth_date %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Phone Number: </label>
+    <div class="fw-bold">
+      <label for="">Phone Number: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.phone %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Email: </label>
+    <div class="fw-bold">
+      <label for="">Email: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.email %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Password: </label>
+    <div class="fw-bold">
+      <label for="">Password: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.password %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Role: </label>
+    <div class="fw-bold">
+      <label for="">Role: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.role %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Date of entry: </label>
-      <%= @professional.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
+    <div class="fw-bold">
+      <label for="">Speciality: </label>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Speciality: </label>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @professional.speciality.name %>
     </div>
-  </div>
-  <div class="d-grid gap-3 col-6 mx-auto pt-4">
-    <div class="mx-auto">
-      <%= button_to "Licenses", license_path(params[:id]), method: :get, class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <div class="fw-bold">
+      <label for="">Date of entry: </label>
     </div>
-    <div class="mx-auto">
-      <%= button_to "Go back", professionals_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @professional.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
+    </div>
+    <div class="mx-auto py-2">
+      <%= button_to "Go back to professionals", professionals_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Licenses", license_path(params[:id]), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Edit", edit_professional_path(@professional), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", professional_path(@professional), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
     </div>
   </div>
 </div>
