@@ -27,14 +27,14 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.find(params[:id])
 
     if @schedule.update(schedule_params)
-
+      redirect_to schedule_path(@schedule)
     end
   end
 
   def destroy
     @schedule = Schedule.find(params[:id])
     if @schedule.destroy
-      notice 'Schedule deleted succesfully'
+      redirect_to schedules_path, notice: 'Schedule deleted succesfully'
     else
       notice 'ERROR'
     end
