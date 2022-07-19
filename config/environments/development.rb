@@ -59,7 +59,10 @@ Rails.application.configure do
   config.active_record.verbose_query_logs = true
 
   config.action_mailer.delivery_method = :letter_opener
+
   config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
