@@ -6,12 +6,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
   </head>
   <body class="color-bcg">
-    <main>
-      <div class="pt-20">
-        <%= yield %>
-      </div>
-    </main>
+    <div class="pt-20">
+      <%= yield %>
+    </div>
   </body>
 </html>
