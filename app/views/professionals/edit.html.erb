@@ -53,6 +53,12 @@
         <div class="mx-auto">
           <%= collection_select(:user, :speciality_id, Speciality.all, :id, :name) %>
         </div>
+        <div>
+          <%= form.label :photo, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.file_field :photo, class: "form-control bg-light" %>
+        </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>
         </div>
