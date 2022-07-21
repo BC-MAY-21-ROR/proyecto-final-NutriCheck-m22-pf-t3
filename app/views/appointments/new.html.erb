@@ -3,7 +3,7 @@
   <%= form_with model: @appointment, class: "form-group" do |form| %>
     <%= form.label :date_time %>
     <div>
-      <%= form.date_field :date_time, class: "form-control"%>
+      <%= form.datetime_field :date_time, class: "form-control"%>
     </div>
     <%= form.label :reason %>
     <div>
@@ -11,15 +11,15 @@
     </div>
     <%= form.label :service_id %>
     <div>
-      <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control" }) %>
+      <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
     </div>
     <%= form.label :patient_id %>
     <div>
-      <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control" }) %>
+      <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
     </div>
     <%= form.label :user_id %>
     <div>
-      <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control" }) %>
+      <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
     </div>
     <div class="d-grid gap-3 col-6 mx-auto pt-4">
       <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>

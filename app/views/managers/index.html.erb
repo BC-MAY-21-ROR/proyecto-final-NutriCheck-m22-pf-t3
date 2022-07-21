@@ -8,8 +8,8 @@
     <% @managers.each do |manager|%>
       <div class="col">
         <div class="card h-100 shadow">
-          <img src="/assets/indice.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <%= image_tag(manager.photo, class:"card-img-top pt-2 mx-auto h-50 w-50") if manager.photo.attached?%>
+          <div class="card-body mx-auto">
             <p class="card-title"><%= manager.name %> <%= manager.last_name %></p>
           </div>
           <%= button_to "Check", manager_path(manager), method: :get, form_class: "d-grid mx-auto", class: "btn btn-sm color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>

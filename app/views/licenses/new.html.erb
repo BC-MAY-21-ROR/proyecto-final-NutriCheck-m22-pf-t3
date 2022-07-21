@@ -8,16 +8,16 @@
         <div>
           <%= form.label :user_id, class: "fw-bold" %>
         </div>
-        <div class="mx-auto">
-          <%= collection_select(:license, :user_id, User.all, :id, :name) %>
+        <div>
+          <%= form.collection_select(:user_id, User.all, :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
         </div>
         <div>
           <%= form.label :name, class: "fw-bold" %>
-          <%= form.text_field :name, class: "form-control bg-light" %>
+          <%= form.text_field :name, class: "form-control" %>
         </div>
         <div>
           <%= form.label :number, class: "fw-bold" %>
-          <%= form.text_field :number, class: "form-control bg-light" %>
+          <%= form.text_field :number, class: "form-control" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold mx-auto"%>
