@@ -3,6 +3,7 @@
 </div>
 
 <% @patients.each do |patient| %>
+  
 <div class="d-grid gap-4">
   <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit card mb-3">
       <div class="mx-auto card-user-bcg own-radius grid-element mt-2 row no-gutters">
@@ -11,13 +12,15 @@
           src="https://upload.wikimedia.org/wikipedia/commons/5/52/Male_Doctor_Flat_Icon_Vector.svg" 
           class="card-img rounded-pill pt-4" 
           alt="Doctor"
-          style="max-height: 540px;"
+          style="max-height: 200px;"
         />
       </div>
         <div class ="card-title fw-bold col-md-8" >
           <%= @patients.name %>
           <div class="card-body">
 
+
+            <%= patient.name %> <%= patient.second_name %>
             <%= patient.name %> <%= patient.second_name %>
             <%= patient.last_name %> <%= patient.second_last_name  %>
 

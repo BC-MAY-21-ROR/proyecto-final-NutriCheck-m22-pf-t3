@@ -3,11 +3,14 @@
     <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none text-white" %>
   </p>
 </div>
-  <%# <%= render template: "/patients/profile_card" %> %>
 
 <%= render 'profile-one' %>
+
+
+<%# <%= render 'profile' %> %>
+<%# <%= render template: 'patients/show' %> %>
 <%= render 'cards' %>
 
-<div class="btn color-btn rounded-pill text-white fw-bold" >
-  <%= link_to 'ready', appointments_path, method: :get, class: "text-white"%>
+<div class="d-grid gap-3 col-6 mx-auto pb-4">
+  <%= link_to 'ready', appointments_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
 </div>
