@@ -8,7 +8,7 @@
         <img src="/assets/indice.jpg" class="card-img h-100 cover" alt="...">
       </div>
       <div class="card-body bg-container-cards rounded">
-        <h5 class="card-title"><%=administrator.name %><%=administrator.last_name %></h5>
+        <h5 class="card-title"><%=administrator.name %> <%=administrator.last_name %></h5>
         <p class="card-text"><%=administrator.email %></p>
         <p class="card-text"><%=administrator.phone %></p>
         <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
@@ -32,7 +32,7 @@
     <h2 class="mx-auto my-3 text-white fw-bold">Reports</h2>
     <div class="d-grid gap-3">
       <%= button_to "Patients", in_construction_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
-      <%= button_to "Appointments", appointments_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <%= button_to "Appointments", in_construction_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
       <%= button_to "Sales", in_construction_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold"%>
     </div>
   </div>

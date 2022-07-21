@@ -1,0 +1,15 @@
+<div class="bg-white vh-100 p-0">
+  <p style="color: green"><%= notice %></p>
+  <h1>Meetings</h1>
+  <%= link_to "New meeting", new_meeting_path %>
+  <%= month_calendar events: @meetings do |date, meetings| %>
+    <%= date.day %>
+    <% meetings.each do |meeting| %>
+      <div class="d-flex gap-1">
+        <%= meeting.name %>
+        <%= meeting.start_time.strftime("%H:%M") %>
+        <%= button_to "Check", meeting_path(meeting), method: :get, form_class: "", class: "btn btn-sm color-btn-2  text-white fw-bold mb-1" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

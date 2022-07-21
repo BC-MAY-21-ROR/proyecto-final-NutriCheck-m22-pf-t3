@@ -89,3 +89,6 @@ gem 'pg', '~> 1.3', '>= 1.3.5'
 gem 'pg_search', '~> 2.3'
 gem 'pry', '~> 0.14.1'
 gem 'rails-ujs', '~> 0.1.0'
+
+# Manage calendar
+gem "simple_calendar", "~> 2.4"
