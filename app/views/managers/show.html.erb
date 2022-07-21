@@ -51,6 +51,12 @@
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @manager.speciality_id %>
     </div>
+    <div class="fw-bold">
+      <label for="">Photo: </label>
+    </div>
+    <div class="form-control bg-light m-auto">
+      <%= image_tag(@manager.photo, width: 300) if @manager.photo.attached? %>
+    </div>
     <div class="mx-auto py-2">
       <%= button_to "Go back to managers", managers_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
       <%= button_to "Edit", edit_manager_path(@manager), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
