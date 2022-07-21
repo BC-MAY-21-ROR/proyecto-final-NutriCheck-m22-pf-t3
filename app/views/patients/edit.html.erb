@@ -33,7 +33,7 @@
           <%= form.label :birth_date, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :birth_date, class: "form-control bg-light" %>
+          <%= form.date_field :birth_date, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :phone, class: "fw-bold" %>
@@ -57,13 +57,19 @@
           <%= form.label :height, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :height, class: "form-control bg-light" %>
+          <%= form.number_field :height, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :observations, class: "fw-bold" %>
         </div>
         <div>
           <%= form.text_field :observations, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :photo, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.file_field :photo, class: "form-control bg-light" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>

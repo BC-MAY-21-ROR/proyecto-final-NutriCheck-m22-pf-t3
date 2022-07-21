@@ -5,7 +5,7 @@
   <div class="mx-2 my-3 bg-container-cards rounded">
     <div class="d-flex row;">
       <div class="col-md-4 rounded">
-        <img src="/assets/indice.jpg" class="card-img h-100 cover" alt="...">
+        <%= image_tag(administrator.photo, class:"card-img h-100 cover") if administrator.photo.attached?%>
       </div>
       <div class="card-body bg-container-cards rounded">
         <h5 class="card-title"><%=administrator.name %> <%=administrator.last_name %></h5>

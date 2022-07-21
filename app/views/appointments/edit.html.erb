@@ -12,55 +12,55 @@
           <%= form.label :date_time, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.datetime_field :date_time, class: "form-control bg-light text-black-50"  %>
+          <%= form.datetime_field :date_time, class: "form-control bg-light"  %>
         </div>
         <div>
           <%= form.label :reason, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :reason, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :reason, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :service_id, class: "fw-bold" %><br>
         </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
+        <div>
+          <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center bg-light" }) %>
         </div>
         <div>
           <%= form.label :patient_id, class: "fw-bold" %><br>
         </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
+        <div>
+          <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control rounded-pill text-center bg-light" }) %>
         </div>
         <div>
           <%= form.label :user_id, class: "fw-bold" %><br>
         </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
+        <div>
+          <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control rounded-pill text-center bg-light" }) %>
         </div>
         <div>
           <%= form.label :status, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :status, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :status, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :payment_status, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :payment_status, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :payment_status, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :score, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :score, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :score, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :review, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :review, class: "form-control bg-light text-black-50" %>
+          <%= form.text_field :review, class: "form-control bg-light" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>

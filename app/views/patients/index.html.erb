@@ -8,8 +8,8 @@
     <% @patients.each do |patient|%>
       <div class="col">
         <div class="card h-100 shadow">
-          <img src="/assets/indice.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <%= image_tag(patient.photo, class:"card-img-top pt-2 mx-auto h-50 w-50") if patient.photo.attached?%>
+          <div class="card-body mx-auto">
             <p class="card-title"><%= patient.name %> <%= patient.last_name %></p>
           </div>
           <%= button_to "Check", patient_path(patient), method: :get, form_class: "d-grid mx-auto", class: "btn btn-sm color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>

@@ -8,8 +8,7 @@
     <% @diets.each do |diet|%>
       <div class="col">
         <div class="card h-100 shadow">
-          <img src="/assets/dieta_vegetariana.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body mx-auto">
             <p class="card-title"><%= diet.name %></p>
           </div>
           <%= button_to "Check", diet_path(diet), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>

@@ -7,16 +7,21 @@
       <div class="d-grid gap-2">
         <div>
           <%= form.label :name, class: "fw-bold" %><br>
-          <%= form.text_field :name, class: "form-control bg-light" %>
+          <%= form.text_field :name, class: "form-control" %>
         </div>
         <div>
           <%= form.label :duration, class: "fw-bold" %><br>
-          <%= form.text_field :duration, class: "form-control bg-light" %>
+          <%= form.number_field :duration, class: "form-control" %>
         </div>
         <div>
           <%= form.label :price, class: "fw-bold" %><br>
+<<<<<<< HEAD
           <%= form.text_field :price, class: "form-control bg-light" %>
         </div>
+=======
+          <%= form.number_field :price, class: "form-control" %>
+        </div>        
+>>>>>>> master
         <div  class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>

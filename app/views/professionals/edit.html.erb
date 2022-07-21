@@ -21,7 +21,7 @@
           <%= form.label :birth_date, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :birth_date, class: "form-control bg-light" %>
+          <%= form.date_field :birth_date, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :phone, class: "fw-bold" %>
@@ -45,13 +45,19 @@
           <%= form.label :role, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :role, class: "form-control bg-light" %>
+          <%= form.select :role, [["Administrator", "administrator"], ["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
         </div>
         <div>
           <%= form.label :speciality_id, class: "fw-bold" %><br>
         </div>
-        <div class="mx-auto">
-          <%= collection_select(:user, :speciality_id, Speciality.all, :id, :name) %>
+        <div>
+          <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control  bg-light rounded-pill text-center" }) %>
+        </div>
+        <div>
+          <%= form.label :photo, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.file_field :photo, class: "form-control bg-light" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>
