@@ -12,19 +12,19 @@
           <%= form.label :week_day, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :week_day, class: "form-control bg-light text-black-50"  %>
+          <%= form.select :week_day, [["Monday"], ["Tuesday"], ["Wednesday"], ["Thursday"], ["Friday"], ["Saturday"], ["Sunday"]], {}, {class: "form-control bg-light rounded-pill text-center"} %>
         </div>
         <div>
           <%= form.label :opening_time, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.time_field :opening_time, class: "form-control bg-light text-black-50" %>
+          <%= form.time_field :opening_time, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :closing_time, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.time_field :closing_time, class: "form-control bg-light text-black-50" %>
+          <%= form.time_field :closing_time, class: "form-control bg-light" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold"%>

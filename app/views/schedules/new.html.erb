@@ -3,15 +3,15 @@
   <%= form_with model: @schedule, class: "form-group" do |form| %>
     <%= form.label :week_day %>
     <div>
-      <%= form.text_field :week_day, class: "form-control"%>
+      <%= form.select :week_day, [["Monday"], ["Tuesday"], ["Wednesday"], ["Thursday"], ["Friday"], ["Saturday"], ["Sunday"]], {}, {class: "form-control rounded-pill text-center"} %>
     </div>
     <%= form.label :opening_time %>
     <div>
-      <%= form.text_field :opening_time, class: "form-contr ol" %>
+      <%= form.time_field :opening_time, class: "form-control" %>
     </div>
     <%= form.label :closing_time %>
     <div>
-      <%= form.text_field :closing_time, class: "form-control" %>
+      <%= form.time_field :closing_time, class: "form-control" %>
     </div>
     <div>
       <%= form.submit 'Create', class: "btn btn-primary color-btn"%>
