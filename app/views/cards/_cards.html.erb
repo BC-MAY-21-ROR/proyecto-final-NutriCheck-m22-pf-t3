@@ -1,7 +1,9 @@
-<h2 class="mx-auto text-white fw-bold">Cards</h2>
+
+<div class="container text-center text-white p-4">
+  <h2 class="mx-auto text-white fw-bold">Cards</h2>
+</div>
 
 <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit card mb-3 mx-auto card-user-bcg own-radius grid-element mt-2 row no-gutters">
-<%# <div class="row row-cols-1 row-cols-md-3 g-1 m-2 bg-container-cards rounded"> %>
   <% @cards.each do |card|%>
     <div class="col p-4">
       <div class="card h-100 shadow">
@@ -10,12 +12,13 @@
           <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">weight: </span><%= card.weight %> m</p>
           <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">comment: </span><%= card.comments %></p>
           
-          <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">diet: </span><%= card.diet_id %></p>
+          <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">diet: </span><%= @diet.name %></p>
         </div>
-        <%= button_to "Check", card_path(card), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
+        <%= button_to "Check", cards_path, method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
       </div>
     </div>
   <% end %>
+
 <%# </div> %>
 </div>
 

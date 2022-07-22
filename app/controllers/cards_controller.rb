@@ -3,7 +3,8 @@
 class CardsController < ApplicationController
   def index
     @cards = Card.where(patient_id: params[:format])
-    @patients = Patient.all
+    @patient = Patient.find(params[:format])
+    @diet = Diet.find(params[:format])
   end
 
   def show
@@ -51,6 +52,6 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id)
+    params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id, :created_at)
   end
 end
