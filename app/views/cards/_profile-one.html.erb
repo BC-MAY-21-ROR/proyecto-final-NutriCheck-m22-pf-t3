@@ -1,48 +1,34 @@
 <div class="container text-center text-white">
   <h2 class="text-capitalize fw-bold">patient check</h2>
 </div>
-  
-<div class="d-grid gap-4">
-  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit  mb-3">
-      <div class="row mt-2 mx-auto">
-      <div class="col-md-4 rounded-pill">
-        <img 
-          src="https://upload.wikimedia.org/wikipedia/commons/5/52/Male_Doctor_Flat_Icon_Vector.svg" 
-          class="card-img rounded-pill pt-4" 
-          alt="Doctor"
-          style="max-height: 200px;"
-        />
-      </div>
-        <div class ="card-title fw-bold col-md-8" >
-          <h5 class="mb-0 text-capitalize text-white text-weight">patient</h5>
-          <div class="card-body text-white">
 
+<div class="card-bcg-panel mx-2 my-3 bg-container-cards rounded">
+  <div class="card-bcg-panel d-flex row;">
+    <div class="col-md-4 rounded">
+      <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/5/52/Male_Doctor_Flat_Icon_Vector.svg" 
+      class="card-img rounded-pill pt-4" 
+      alt="Doctor"
+      style="max-height: 100px;"
+    />
+    </div>
+    <div class="card-bcg-panel card-body bg-container-cards rounded">
+      <h5 class="mb-0 text-capitalize text-white text-weight">patient</h5>
+      <h5 class="card-title">
+        <%= @patient.name %> <%= @patient.second_name %>
+        <%= @patient.last_name %> <%= @patient.second_last_name  %>
+      </h5>
+      <p class="card-text">
 
-            <%= @patient.name %> <%= @patient.second_name %>
-            <%= @patient.last_name %> <%= @patient.second_last_name  %>
+        <%= @patient.birth_date %>
 
-            <div class="d-grid gap-1">
-              <p class="card-text">
-                <%= @patient.birth_date %>
-            </p>
-            </div>
-            <div class="d-grid gap-1">
-              <p class="card-text ">
-                <%= @patient.phone %>
-              </p>
-            </div>
-            <div class="d-grid gap-1">
-              <p class="card-text"><%= @patient.email %>
-              </p>
-            </div>
-          </div>
-      </div>
-      <div class="d-grid gap-3 col-6 mx-auto pb-4">
-        <%= button_to "edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
-    
-      </div>
+        <%= @patient.phone %>
+      </p>
+      <p class="card-text">
+        <%= @patient.email %>
+      </p>
+        <%= button_to "edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-10 mx-auto py-1", class: "btn color-btn-2 rounded-pill text-white fw-bold"%>
+        <%= button_to "back", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn-2 rounded-pill text-white fw-bold"%>
+    </div>
   </div>
-
 </div>
-</div>
-
