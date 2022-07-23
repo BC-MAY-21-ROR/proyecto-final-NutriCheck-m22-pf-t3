@@ -1,0 +1,21 @@
+<div class="bg-white p-3">
+  <div class="">
+    <p style="color: green"><%= notice %></p>
+    <h1>Slots Calendar</h1>
+    <%= link_to "New slot", new_meeting_path %>
+    <%= week_calendar events: @slots do |date, slots| %>
+      <%= date.day %>
+      <% slots.each do |slot| %>
+        <div class="d-flex gap-1 border justify-content-left align-items-center">
+          <% if slot.status == 'available' %>
+            <%= slot.start_time.strftime("%H:%M") %>
+            <%= button_to "---", edit_slot_path(slot), method: :get, form_class: "w-100 h-100", class: "btn btn-sm btn-success text-success fw-bold py-0 px-1 h-100" %>
+          <% else %>
+            <%= slot.start_time.strftime("%H:%M") %>
+            <%= button_to "---", slot_path(slot), method: :get, form_class: "", class: "btn btn-sm btn-warning  text-warning fw-bold py-0 px-1" %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

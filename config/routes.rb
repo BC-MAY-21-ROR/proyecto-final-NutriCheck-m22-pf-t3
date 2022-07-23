@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :slots
   resources :meetings
   root 'welcome#home'
   resources :turns
