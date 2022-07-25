@@ -23,6 +23,7 @@ class SlotsController < ApplicationController
   end
 
   def reservations
+    @appointment = Appointment.new()
     set_slot
     @professionals = User.where(role: 'professional')
     @services = Service.all
@@ -87,5 +88,18 @@ class SlotsController < ApplicationController
       params.require(:slot).permit(:service, :professional, :start_time, :status)
     end
 
+    def appointment_params
+      params.require(:appointment).permit(
+        :date_time,
+        :reason,
+        :service_id,
+        :patient_id,
+        :user_id,
+        :status,
+        :payment_status,
+        :score, 
+        :review
+      )
+    end
 
 end
