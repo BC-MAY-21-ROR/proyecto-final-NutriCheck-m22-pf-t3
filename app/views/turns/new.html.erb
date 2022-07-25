@@ -12,13 +12,13 @@
           <%= form.label :schedule_id, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.collection_select(:schedule_id, Schedule.all.order(created_at: :asc), :id, :gethours, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" }) %>
+          <%= form.collection_select(:schedule_id, Schedule.all.order(created_at: :asc), :id, :gethours, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
         </div>
         <div>
           <%= form.label :user_id, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :getname, { include_blank: true }, { class: "rounded-pill border btn-success p-2 m-1 btn-lg border-success border-none" })  %>
+          <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :getname, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>

@@ -1,0 +1,34 @@
+<div class="container text-center text-white">
+  <h2 class="text-capitalize fw-bold">patient check</h2>
+</div>
+
+<div class="card-bcg-panel mx-2 my-3 bg-container-cards rounded">
+  <div class="card-bcg-panel d-flex row;">
+    <div class="col-md-4 rounded">
+      <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/5/52/Male_Doctor_Flat_Icon_Vector.svg" 
+      class="card-img rounded-pill pt-4" 
+      alt="Doctor"
+      style="max-height: 100px;"
+    />
+    </div>
+    <div class="card-bcg-panel card-body bg-container-cards rounded">
+      <h5 class="mb-0 text-capitalize text-white text-weight">patient</h5>
+      <h5 class="card-title">
+        <%= @patient.name %> <%= @patient.second_name %>
+        <%= @patient.last_name %> <%= @patient.second_last_name  %>
+      </h5>
+      <p class="card-text">
+        <%= @patient.birth_date %>
+        <%= @patient.phone %>
+      </p>
+      <p class="card-text">
+        <%= @patient.email %>
+      </p>
+      <div class="d-flex gap-1 btn-sm">
+        <%= button_to "edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-1 col-8 mx-auto py-1", class: "btn color-btn-2 rounded-pill text-white fw-bold text-capitalize"%>
+        <%= button_to "back", patients_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn rounded-pill text-white fw-bold text-capitalize btn-secondary"%>
+        </div>
+    </div>
+  </div>
+</div>

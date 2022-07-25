@@ -51,6 +51,12 @@
     <div class="form-control bg-light text-black-50 m-auto">
       <%= @administrator.speciality_id %>
     </div>
+    <div class="fw-bold">
+      <label for="">Photo: </label>
+    </div>
+    <div class="form-control bg-light m-auto">
+      <%= image_tag(@administrator.photo, width: 300) if @administrator.photo.attached? %>
+    </div>
     <div class="d-grid gap-3 col-15 mx-auto py-2">
       <%= button_to "Go back to admin", administrators_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
     </div>
