@@ -6,6 +6,11 @@ class SlotsController < ApplicationController
     @slots = Slot.all
   end
 
+  def professionals
+    @slots = Slot.all
+    @professionals = User.where(role: 'professional')
+    @services = Service.all
+  end
   # GET /slots/1 or /slots/1.json
   def show
     @professionals = User.where(role: 'professional')

@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get 'managers_admin', to: 'managers#admin'
   get 'in_construction', to: 'managers#in_construction'
   get 'professionals/:id/profile', to: 'professionals#profile'
+  get 'slots_professionals', to: 'slots#professionals'
 end
