@@ -1,7 +1,7 @@
 <div class="bg-white p-3 vh-100">
   <div class="">
     <p style="color: green"><%= notice %></p>
-    <h1 class="text-center">Calendar of availables hours by professional</h1>
+    <h1 class="text-center">Calendar of availables hours by services</h1>
     <%= link_to "New slot", new_slot_path %>
     <div class="">
       <%= week_calendar events: @slots do |date, slots| %>
@@ -10,13 +10,12 @@
             <%= date.day %>
           </p>
           <div class="d-flex flex-wrap gap-2 p-0">
-            <% @professionals.map do |professional|%>
+            <% @services.map do |service|%>
               <div>
-                <p class="text-center m-0 pt-0 w-100"><%= professional.full_name%></p>
-                <p class="text-center m-0 pb-2 w-100"><%= professional.speciality.name%></p>
+                <p class="text-center m-0 pt-0 pb-2 w-100"><%= service.name%></p>
                 <div class="d-flex flex-wrap gap-1 mx-0 my-2">
                   <%slots.map do |slot|%>
-                    <% if slot.professional.to_i == professional.id %>
+                    <% if slot.service.to_i == service.id %>
                       <div class="">
                         <%= button_to slot.start_time.strftime("%H:%M"), slot_path(slot), method: :get, form_class: "", class: "btn btn-sm color-btn-2 text-white fw-bold" %>
                       </div>
