@@ -43,10 +43,11 @@
     border-left-color: rgb(221, 221, 221);
     border-left-style: solid;
     border-left-width: 1px;
+
   }
 
   .day {
-    height: 80px;
+
   }
 
   .wday-0 {}
@@ -75,4 +76,9 @@
   .current-month {}
 
   .has-events {}
+}
+
+.calendar-heading {
+  font-size: x-large;
+  padding-bottom: 10px;
 }

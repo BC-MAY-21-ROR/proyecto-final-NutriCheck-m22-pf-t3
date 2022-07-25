@@ -9,23 +9,26 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :status, style: "display: block" %>
-    <%= form.text_field :status %>
+  <%# <div> %>
+  <%# <%= form.label :status, style: "display: block" %>
+  <%# <%= form.text_field :status %>
+  <%# </div> %>
+  <div class="form-group py-2">
+    <%= form.label :professional, style: "display: block", class: "pb-2 fw-bold" %>
+    <%= form.collection_select(:professional, User.where(role: 'professional').order(name: :asc), :id, :get_speciality_name, { include_blank: true }, { class: "form-control" }) %>
+    <small id="professionalHelp" class="form-text text-muted">Select professional name.</small>
   </div>
-  <div>
-    <%= form.label :service, style: "display: block" %>
-    <%= form.collection_select(:service, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "" }) %>
+  <div class="form-group py-2">
+    <%= form.label :service, style: "display: block", class: "pb-2 fw-bold" %>
+    <%= form.collection_select(:service, Service.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control" }) %>
+    <small id="serviceHelp" class="form-text text-muted">Select service to offer.</small>
   </div>
-  <div>
-    <%= form.label :professional, style: "display: block" %>
-    <%= form.collection_select(:professional, User.where(role: 'professional').order(name: :asc), :id, :name, { include_blank: true }, { class: "" }) %>
-  </div>
-  <div>
+  <%# <div>
     <%= form.label :start_time, style: "display: block" %>
-    <%= form.datetime_field :start_time %>
-  </div>
-  <div>
-    <%= form.submit %>
+  <%# <%= form.datetime_field :start_time %>
+  <%# </div> %>
+  <div class="py-2">
+    <%= form.submit 'Take Space', class: "btn btn-success fw-bold" %>
+    <%= link_to "Back to slots", slots_path, class: "btn btn-primary fw-bold" %>
   </div>
 <% end %>

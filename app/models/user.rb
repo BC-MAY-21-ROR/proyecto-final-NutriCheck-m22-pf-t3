@@ -13,6 +13,10 @@ class User < ApplicationRecord
     "#{role} #{name} #{last_name}"
   end
 
+  def full_name
+    "#{name} #{last_name}"
+  end
+
   def get_professionals
     "#{speciality.name} - #{name} #{last_name}" if role == 'professional'
   end

@@ -8,6 +8,8 @@ class SlotsController < ApplicationController
 
   # GET /slots/1 or /slots/1.json
   def show
+    @professionals = User.where(role: 'professional')
+    @services = Service.all
   end
 
   # GET /slots/new
@@ -39,7 +41,7 @@ class SlotsController < ApplicationController
     respond_to do |format|
       if @slot.update(slot_params)
         @slot.update_column(:status, 'not available')
-        format.html { redirect_to slot_url(@slot), notice: "Slot was successfully updated." }
+        format.html { redirect_to slots_url, notice: "Space was successfully reserved." }
         format.json { render :show, status: :ok, location: @slot }
       else
         format.html { render :edit, status: :unprocessable_entity }
