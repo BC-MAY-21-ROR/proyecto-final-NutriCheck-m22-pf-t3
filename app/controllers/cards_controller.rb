@@ -3,8 +3,7 @@
 class CardsController < ApplicationController
   def index
     @cards = Card.where(patient_id: params[:format])
-    @patient = Patient.find(params[:format])
-    @diet = Diet.find(params[:format])
+    patient
   end
 
   def show
@@ -51,7 +50,14 @@ class CardsController < ApplicationController
 
   private
 
+  def patient
+    @patient = Patient.find(params[:format])
+    @diet = Diet.find(params[:format])
+  rescue ActiveRecord::RecordNotFound => error
+    redirect_to patients_path, notice: error.message
+  end
+  
   def card_params
-    params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id, :created_at)
+    params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id)
   end
 end

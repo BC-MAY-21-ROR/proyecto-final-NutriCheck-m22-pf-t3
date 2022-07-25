@@ -19,16 +19,16 @@
         <%= @patient.last_name %> <%= @patient.second_last_name  %>
       </h5>
       <p class="card-text">
-
         <%= @patient.birth_date %>
-
         <%= @patient.phone %>
       </p>
       <p class="card-text">
         <%= @patient.email %>
       </p>
-        <%= button_to "edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-10 mx-auto py-1", class: "btn color-btn-2 rounded-pill text-white fw-bold"%>
-        <%= button_to "back", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn-2 rounded-pill text-white fw-bold"%>
+      <div class="d-flex gap-1 btn-sm">
+        <%= button_to "edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-1 col-8 mx-auto py-1", class: "btn color-btn-2 rounded-pill text-white fw-bold text-capitalize"%>
+        <%= button_to "back", patients_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn rounded-pill text-white fw-bold text-capitalize btn-secondary"%>
+        </div>
     </div>
   </div>
 </div>
