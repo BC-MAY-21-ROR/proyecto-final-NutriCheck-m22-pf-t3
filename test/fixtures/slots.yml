@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service: MyString
+  professional: MyString
+  start_time: 2022-07-22 17:08:12
+
+two:
+  service: MyString
+  professional: MyString
+  start_time: 2022-07-22 17:08:12

@@ -76,10 +76,8 @@
         </div>
       </div>
     <% end %>
-    <div class="d-grid col-6 mx-auto pt-2 mb-3">
-      <div class="mx-auto">
-        <%= button_to "Go back", patients_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
-      </div>
+    <div class="d-grid gap-3 py-2">
+      <%= button_to "Go back", patients_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
     </div>
   </div>
 </div>

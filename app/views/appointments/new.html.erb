@@ -19,7 +19,7 @@
     </div>
     <%= form.label :user_id %>
     <div>
-      <%= form.collection_select(:user_id, User.all.order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
+      <%= form.collection_select(:user_id, User.where(role: 'professional').order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
     </div>
     <div class="d-grid gap-3 col-6 mx-auto pt-4">
       <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>

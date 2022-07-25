@@ -15,17 +15,20 @@
         </div>
         <div>
           <%= form.label :price, class: "fw-bold" %><br>
+<<<<<<< HEAD
+          <%= form.text_field :price, class: "form-control bg-light" %>
+        </div>
+=======
           <%= form.number_field :price, class: "form-control" %>
         </div>        
+>>>>>>> master
         <div  class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>
       </div>
     <% end %>
-    <div class="d-grid col-6 mx-auto pt-2 mb-3">
-      <div class="mx-auto">
-        <%= button_to "Go back", services_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
-      </div>
+    <div class="d-grid gap-3 pt-2">
+      <%= button_to "Go back", services_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold"%>
     </div>
   </div>
 </div>
