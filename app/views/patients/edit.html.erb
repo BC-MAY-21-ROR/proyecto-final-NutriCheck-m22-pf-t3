@@ -1,4 +1,4 @@
-<div class="bg-white min-vh-100 d-grid">
+<div class="bg-white min-vh-100 d-grid pt-4">
   <div class="d-grid">
     <h1 class="mx-auto my-auto fw-bold px-3">Edit Professional</h1>
   </div>
@@ -33,7 +33,7 @@
           <%= form.label :birth_date, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :birth_date, class: "form-control bg-light" %>
+          <%= form.date_field :birth_date, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :phone, class: "fw-bold" %>
@@ -57,7 +57,7 @@
           <%= form.label :height, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :height, class: "form-control bg-light" %>
+          <%= form.number_field :height, class: "form-control bg-light" %>
         </div>
         <div>
           <%= form.label :observations, class: "fw-bold" %>
@@ -65,16 +65,19 @@
         <div>
           <%= form.text_field :observations, class: "form-control bg-light" %>
         </div>
-        
+        <div>
+          <%= form.label :photo, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.file_field :photo, class: "form-control bg-light" %>
+        </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>
         </div>
       </div>
     <% end %>
-    <div class="d-grid col-6 mx-auto pt-2 mb-3">
-      <div class="mx-auto">
-        <%= button_to "Go back", patients_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
-      </div>
+    <div class="d-grid gap-3 py-2">
+      <%= button_to "Go back", patients_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
     </div>
   </div>
 </div>

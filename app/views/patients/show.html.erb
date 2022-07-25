@@ -1,57 +1,74 @@
-<div class="d-grid">
-  <div class="d-grid my-4">
-    <h1 class="mx-auto fw-bold text-white px-3">Patient detail</h1>
+<div class="bg-white min-vh-100 d-grid p-4">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Patient Info Detail</h1>
   </div>
-  <div class="mx-auto">
-    <div class="d-grid gap-2 text-white px-3">
-    <div>
-      <label for="", class= "fw-bold fs-5">Name: </label>
-      <%= @patient.name %>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Name: </label>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Second name: </label>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.name %>
       <%= @patient.second_name %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Last Name: </label>
-      <%= @patient.last_name %>
+    <div class="fw-bold">
+      <label for="">Last Name: </label>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Second last name: </label>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.last_name %>
       <%= @patient.second_last_name %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Birth Date: </label>
+    <div class="fw-bold">
+      <label for="">Birth Date: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.birth_date %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Phone Number: </label>
-      <%= @patient.phone %>
+    <div class="fw-bold">
+      <label for="">Height: </label>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Email: </label>
-      <%= @patient.email %>
-    </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Password: </label>
-      <%= @patient.password %>
-    </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Height: </label>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.height %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Observations: </label>
+    <div class="fw-bold">
+      <label for="">Observation: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.observations %>
     </div>
-    <div>
-      <label for="", class= "fw-bold fs-5">Date of entry: </label>
+    <div class="fw-bold">
+      <label for="">Patient Creation Date: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
       <%= @patient.created_at.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %>
     </div>
-  </div>
-  <div class="d-grid gap-3 col-6 mx-auto pt-4">
-    <div class="mx-auto">
-      <%= button_to "Go back", patients_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold" %>
+    <div class="fw-bold">
+      <label for="">Phone Number: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.phone %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Email: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.email %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Password: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @patient.password %>
+    </div>
+    <div class="fw-bold">
+      <label for="">Photo: </label>
+    </div>
+    <div class="form-control bg-light m-auto">
+      <%= image_tag(@patient.photo, width: 300) if @patient.photo.attached? %>
+    </div>
+    <div class="mx-auto py-2">
+      <%= button_to "Go back to patients", patients_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", patient_path(@patient), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
     </div>
   </div>
 </div>

@@ -1,27 +1,24 @@
-<%= render "back_turns_path" %>
-
-<div class="container text-center mb-4">
-  <h2 class="title-white">Turn Show</h2>
-</div>
-
-<div class="container justify-content-center align-content-center mb-4">
-  <div class="card text-center" >
-    <div class="card-body m-1">
-      <h5 class="card-title">
-        <%= @turn.schedule.gethours %>
-      </h5>
-      <p class="card-text">
-        <%= @turn.user.getname %>
-      </p>
+<div class="bg-white min-vh-100 d-grid px-3">
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold">Turn detail</h1>
+  </div>
+  <div class="mx-auto my-0 d-grid gap-1">
+    <div class="fw-bold">
+      <label for="">Hours: </label>
     </div>
-  </div>
-</div>
-
-<div class="container text-center row align-items-center">
-  <div class="col mb-4">
-    <%= link_to "Edit", edit_turn_path, method: :get, class: "btn color-btn color-success rounded-pill text-white fw-bold btn-lg" %>
-  </div>
-  <div class="col mb-4">
-    <%= button_to "Delete", turn_path, method: :delete, class: "btn btn-danger rounded-pill text-white fw-bold btn-lg" %>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @turn.schedule.gethours %>
+    </div>
+    <div class="fw-bold">
+      <label for="">User: </label>
+    </div>
+    <div class="form-control bg-light text-black-50 m-auto">
+      <%= @turn.user.getname %>
+    </div>
+    <div class="mx-auto py-2">
+      <%= button_to "Go back to turns", turns_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <%= button_to "Edit", edit_turn_path(@turn), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
+      <%= button_to "Destroy", turn_path(@turn), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
+    </div>
   </div>
 </div>

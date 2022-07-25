@@ -1,46 +1,28 @@
-<div class="container ">
-  <div class="row justify-content-center p-5 m-3">
-    <p class="row h1 text-white ">Manage Schedule</p>
-    <div class="card text-white bg-dark mb-3 row p-3 m-2">
-      <% @schedules.each do |schedule| %>
-        <div class="card text-black bg-gray container mb-4">
-          <div class="row">
-            <div class="col-auto">
-              <p class="fw-bold">Day of the week:</p>
-            </div>
-            <div class="col-auto">
-              <%=schedule.week_day %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-auto">
-              <p class="fw-bold">Opening time:</p>
-            </div>
-            <div class="col-auto">
-              <%=schedule.opening_time %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-auto">
-              <p class="fw-bold">Closing Time:</p>
-            </div>
-            <div class="col-auto">
-              <%=schedule.closing_time %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col"></div>
-            <div class="col-auto align-self-end">
-              <%= button_to "Edit Schedule", edit_schedule_path(schedule), method: :get, :class => 'btn btn-dark' %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <%= button_to("Add a schedule", new_schedule_path, method: :get, :class => 'btn btn-primary color-btn ')%>
-        <%= button_to("Manage turns", turns_path, method: :get, :class => 'btn btn-primary color-btn')%>
-      </div>
-    </div>
+<div class="d-grid pt-2">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  </p>
+  <div class="d-grid m-auto">
+    <h1 class=" mx-auto fw-bold text-white my-2">Company Schedule</h1>
   </div>
+  <table class="table table-responsive table-sm table-light mx-2 mt-4 rounded">
+    <thead class="thead-ligth">
+      <tr>
+        <th scope="col">Dia</th>
+        <th scope="col">Apertura</th>
+        <th scope="col">Cierre</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @schedules.each do |schedule| %>
+        <tr>
+          <th scope="row"><%=schedule.week_day %></th>
+          <td><%=schedule.opening_time.strftime("%H:%M") %></td>
+          <td><%=schedule.closing_time.strftime("%H:%M") %></td>
+          <td><a class="w-100 h-100" href="<%= schedule_path(schedule) %>"><%= image_tag("/assets/settings_48.svg", class: "add-setting-icon mx-auto")%></a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

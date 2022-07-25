@@ -1,0 +1,18 @@
+<div  id="<%= dom_id slot %>">
+  <div class="form-group py-2">
+    <label class="pb-2 fw-bold" >Service:</label>
+    <label for="" class="form-control"> <%= @services.map { |service| (service.id == slot.service.to_i)? service.name : next }.reject { |x| x.nil? }.join %> </label>
+  </div>
+  <div class="form-group py-2">
+    <label class="pb-2 fw-bold" >Professional:</label>
+    <label for="" class="form-control"> <%= @professionals.map { |prof| (prof.id == slot.professional.to_i)? prof.full_name : next }.reject { |x| x.nil?}.join %> </label>
+  </div>
+  <div class="form-group py-2">
+    <label class="pb-2 fw-bold" >Start time:</label>
+    <label for="" class="form-control"> <%= slot.start_time.strftime("%H:%M") %> </label>
+  </div>
+  <div class="form-group py-2">
+    <label  class="pb-2 fw-bold" >Status:</label>
+    <label for="" class="form-control"> <%= slot.status %> </label>
+  </div>
+</div>

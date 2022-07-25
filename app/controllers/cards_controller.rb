@@ -7,7 +7,7 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find(params[:id])
+    card
   end
 
   def new
@@ -25,11 +25,11 @@ class CardsController < ApplicationController
   end
 
   def edit
-    @card = Card.find(params[:id])
+    card
   end
 
   def update
-    @card = Card.find(params[:id])
+    card
 
     if @card.update(card_params)
       redirect_to cards_path, notice: 'Card updated succesfully'
@@ -39,7 +39,7 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    @card = Card.find(params[:id])
+    card
 
     if @card.destroy
       redirect_to cards_path, notice: 'Card deleted succesfully'
@@ -57,6 +57,11 @@ class CardsController < ApplicationController
     redirect_to patients_path, notice: error.message
   end
   
+
+  def card
+    @card = Card.find(params[:id])
+  end
+
   def card_params
     params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id)
   end

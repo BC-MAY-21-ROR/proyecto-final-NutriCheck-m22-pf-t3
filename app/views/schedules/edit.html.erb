@@ -1,20 +1,36 @@
-<div id="schedule-edit" class="bg-white text-dark d-flex flex-column justify-content-center p-4 m-5">
-  <p class="h1">Edit Schedule</p>
-  <%= form_with model: @schedule, class: "form-group" do |form| %>
-    <%= form.label :week_day %>
-    <div>
-      <%= form.text_field :week_day, class: "form-control"%>
-    </div>
-    <%= form.label :opening_time %>
-    <div>
-      <%= form.text_field :opening_time, class: "form-control" %>
-    </div>
-    <%= form.label :closing_time %>
-    <div>
-      <%= form.text_field :closing_time, class: "form-control" %>
-    </div>
-    <div>
-      <%= form.submit ' Edit', class: "btn btn-primary color-btn"%>
-    </div>
-  <% end %>
+<div class="bg-white min-vh-100 p-4">
+  <div class="d-grid">
+    <%= link_to  "< Back", schedule_path(@schedule),  class: "green-back-link fw-bold text-decoration-none" %>
+  </p>
+  <div class="d-grid m-auto">
+    <h1 class="mx-auto fw-bold">Edit Schedule</h1>
+  </div>
+  <div class="mx-auto">
+    <%= form_with model: @schedule do |form| %>
+      <div class="d-grid gap-3">
+        <div>
+          <%= form.label :week_day, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.select :week_day, [["Monday"], ["Tuesday"], ["Wednesday"], ["Thursday"], ["Friday"], ["Saturday"], ["Sunday"]], {}, {class: "form-control bg-light rounded-pill text-center"} %>
+        </div>
+        <div>
+          <%= form.label :opening_time, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.time_field :opening_time, class: "form-control bg-light" %>
+        </div>
+        <div>
+          <%= form.label :closing_time, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.time_field :closing_time, class: "form-control bg-light" %>
+        </div>
+        <div class="d-grid gap-3 col-6 mx-auto pt-4">
+          <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 </div>

@@ -11,32 +11,32 @@
         <div>
           <%= form.label "Id Paciente", class: "fw-bold" %>
         </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:patient_id, Patient.all, :id, :patient_full_name) %>
+        <div>
+          <%= form.collection_select(:patient_id, Patient.all, :id, :patient_full_name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
         </div>
         <div>
           <%= form.label :weight, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :weight, class: "form-control bg-light text-black-50" %>
+          <%= form.number_field :weight, class: "form-control" %>
         </div>
         <div>
           <%= form.label :comments, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_area :comments, class: "form-control bg-light text-black-50" %>
+          <%= form.text_area :comments, class: "form-control" %>
         </div>
         <div>
           <%= form.label "Id Dieta", class: "fw-bold" %>
         </div>
-        <div class="mx-auto">
-          <%= form.collection_select(:diet_id, Diet.all, :id, :name) %>
+        <div>
+          <%= form.collection_select(:diet_id, Diet.all, :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center" })  %>
         </div>
         <div>
           <%= form.label :next_appointment, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.date_field :next_appointment, class: "form-control bg-light text-black-50"  %>
+          <%= form.date_field :next_appointment, class: "form-control"  %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>

@@ -6,7 +6,7 @@ class DietsController < ApplicationController
   end
 
   def show
-    @diet = Diet.find(params[:id])
+    diet
   end
 
   def new
@@ -24,11 +24,11 @@ class DietsController < ApplicationController
   end
 
   def edit
-    @diet = Diet.find(params[:id])
+    diet
   end
 
   def update
-    @diet = Diet.find(params[:id])
+    diet
 
     if @diet.update(diet_params)
       redirect_to diets_path, notice: 'Diet updated succesfully'
@@ -38,7 +38,7 @@ class DietsController < ApplicationController
   end
 
   def destroy
-    @diet = Diet.find(params[:id])
+    diet
 
     if @diet.destroy
       redirect_to diets_path, notice: 'Diet deleted succesfully'
@@ -48,6 +48,10 @@ class DietsController < ApplicationController
   end
 
   private
+
+  def diet
+    @diet = Diet.find(params[:id])
+  end
 
   def diet_params
     params.require(:diet).permit(:name, :description, :comments)

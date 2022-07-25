@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'users#index'
+  resources :slots
+  root 'welcome#home'
   resources :turns
   resources :users
   resources :managers
@@ -18,4 +19,7 @@ Rails.application.routes.draw do
   get 'managers_admin', to: 'managers#admin'
   get 'in_construction', to: 'managers#in_construction'
   get 'professionals/:id/profile', to: 'professionals#profile'
+  get 'slots_professionals', to: 'slots#professionals'
+  get 'slots_services', to: 'slots#services'
+  get 'slots_reservations/:id/', to: 'slots#reservations', as: 'slot_reservation'
 end

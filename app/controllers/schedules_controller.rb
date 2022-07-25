@@ -10,37 +10,46 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
+    schedule
   end
 
   def create
     @schedule = Schedule.new(schedule_params)
-    @schedule.save
-    redirect_to schedules_path if @schedule.save
+    if @schedule.save
+      redirect_to schedules_path, notice: 'New license created successfully'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
-    @schedule = Schedule.find(params[:id])
+    schedule
   end
 
   def update
-    @schedule = Schedule.find(params[:id])
+    schedule
 
     if @schedule.update(schedule_params)
-
+      redirect_to schedules_path, notice: 'Schedule was edited successfully'
+    else
+      render :edit, :unprocessable_entity
     end
   end
 
   def destroy
-    @schedule = Schedule.find(params[:id])
+    schedule
     if @schedule.destroy
-      notice 'Schedule deleted succesfully'
+      redirect_to schedules_path, notice: 'Schedule was deleted successfully'
     else
-      notice 'ERROR'
+      render :edit, :unprocessable_entity
     end
   end
 
   private
+
+  def schedule
+    @schedule = Schedule.find(params[:id])
+  end
 
   def schedule_params
     params.require(:schedule).permit(:week_day, :opening_time, :closing_time)

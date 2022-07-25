@@ -10,15 +10,15 @@
           <%= lic.number %>
         </div>
         <div class="d-grid gap-1 mx-auto mb-3">
-          <%= button_to "Edit", edit_license_path(lic), method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
-          <%= button_to "Destroy", license_path(lic), method: :delete, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+          <%= button_to "Edit", edit_license_path(lic), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
+          <%= button_to "Destroy", license_path(lic), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
         </div>
       </div>
     <% end %>
   </div>
   <div class="d-grid gap-2 mx-auto mb-3">
     <div class="mx-auto">
-      <%= button_to "Add License", new_license_path, method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <a class="center-a" href="<%= new_license_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
     </div>
     <div class="mx-auto">
       <%= button_to "Go back", professionals_path, method: :get, form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
