@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get 'professionals/:id/profile', to: 'professionals#profile'
   get 'slots_professionals', to: 'slots#professionals'
   get 'slots_services', to: 'slots#services'
+  get 'slots_reservations/:id/', to: 'slots#reservations', as: 'slot_reservation'
 end

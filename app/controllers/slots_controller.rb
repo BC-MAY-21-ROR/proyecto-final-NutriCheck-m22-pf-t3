@@ -17,6 +17,13 @@ class SlotsController < ApplicationController
   end
   # GET /slots/1 or /slots/1.json
   def show
+    
+    @professionals = User.where(role: 'professional')
+    @services = Service.all
+  end
+
+  def reservations
+    set_slot
     @professionals = User.where(role: 'professional')
     @services = Service.all
   end
@@ -79,4 +86,6 @@ class SlotsController < ApplicationController
     def slot_params
       params.require(:slot).permit(:service, :professional, :start_time, :status)
     end
+
+
 end

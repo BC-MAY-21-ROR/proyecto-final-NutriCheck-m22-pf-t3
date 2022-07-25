@@ -99,62 +99,62 @@
   Slot.create(start_time: "2022-08-01 17:00:00 UTC")
 end
 
-5.times do 
-  Slot.create(start_time: "2022-08-02 09:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 10:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 11:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 12:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 13:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 14:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 15:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 16:00:00 UTC")
-  Slot.create(start_time: "2022-08-02 17:00:00 UTC")
-end
+# 5.times do 
+#   Slot.create(start_time: "2022-08-02 09:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 10:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 11:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 12:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 13:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 14:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 15:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 16:00:00 UTC")
+#   Slot.create(start_time: "2022-08-02 17:00:00 UTC")
+# end
 
-5.times do 
-  Slot.create(start_time: "2022-08-03 09:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 10:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 11:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 12:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 13:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 14:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 15:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 16:00:00 UTC")
-  Slot.create(start_time: "2022-08-03 17:00:00 UTC")
-end
+# 5.times do 
+#   Slot.create(start_time: "2022-08-03 09:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 10:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 11:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 12:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 13:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 14:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 15:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 16:00:00 UTC")
+#   Slot.create(start_time: "2022-08-03 17:00:00 UTC")
+# end
 
-5.times do 
-  Slot.create(start_time: "2022-08-04 09:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 10:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 11:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 12:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 13:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 14:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 15:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 16:00:00 UTC")
-  Slot.create(start_time: "2022-08-04 17:00:00 UTC")
-end
+# 5.times do 
+#   Slot.create(start_time: "2022-08-04 09:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 10:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 11:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 12:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 13:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 14:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 15:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 16:00:00 UTC")
+#   Slot.create(start_time: "2022-08-04 17:00:00 UTC")
+# end
 
-5.times do 
-  Slot.create(start_time: "2022-08-05 09:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 10:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 11:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 12:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 13:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 14:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 15:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 16:00:00 UTC")
-  Slot.create(start_time: "2022-08-05 17:00:00 UTC")
-end
+# 5.times do 
+#   Slot.create(start_time: "2022-08-05 09:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 10:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 11:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 12:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 13:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 14:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 15:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 16:00:00 UTC")
+#   Slot.create(start_time: "2022-08-05 17:00:00 UTC")
+# end
 
-5.times do 
-  Slot.create(start_time: "2022-08-06 09:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 10:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 11:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 12:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 13:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 14:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 15:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 16:00:00 UTC")
-  Slot.create(start_time: "2022-08-06 17:00:00 UTC")
-end
+# 5.times do 
+#   Slot.create(start_time: "2022-08-06 09:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 10:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 11:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 12:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 13:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 14:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 15:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 16:00:00 UTC")
+#   Slot.create(start_time: "2022-08-06 17:00:00 UTC")
+# end

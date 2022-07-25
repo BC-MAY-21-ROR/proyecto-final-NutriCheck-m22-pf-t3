@@ -18,7 +18,7 @@
                   <%slots.map do |slot|%>
                     <% if slot.service.to_i == service.id %>
                       <div class="">
-                        <%= button_to slot.start_time.strftime("%H:%M"), slot_path(slot), method: :get, form_class: "", class: "btn btn-sm color-btn-2 text-white fw-bold" %>
+                        <%= button_to slot.start_time.strftime("%H:%M"), slot_reservation_path(slot), method: :get, form_class: "", class: "btn btn-sm color-btn-2 text-white fw-bold" %>
                       </div>
                     <% end %>
                   <% end %>
