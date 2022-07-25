@@ -1,20 +1,21 @@
-<div class="bg-white p-3 vh-100">
+<div class="bg-white p-3">
   <div class="">
     <p style="color: green"><%= notice %></p>
     <h1 class="text-center">Calendar of availables hours by professional</h1>
-    <%= link_to "New slot", new_slot_path %>
     <div class="">
       <%= week_calendar events: @slots do |date, slots| %>
         <% if date.strftime("%A") != 'Sunday' %>
           <p class="fw-bold text-center">
             <%= date.day %>
           </p>
-          <div class="d-flex flex-wrap gap-2 p-0">
+          <div class="">
             <% @professionals.map do |professional|%>
-              <div>
-                <p class="text-center m-0 pt-0 w-100"><%= professional.full_name%></p>
-                <p class="text-center m-0 pb-2 w-100"><%= professional.speciality.name%></p>
-                <div class="d-flex flex-wrap gap-1 mx-0 my-2">
+              <div class="card border-success mb-3">
+                <div class="card-header">
+                  <p class="text-center m-0 pt-0 w-100"><%= professional.full_name%></p>
+                  <p class="text-center m-0 pb-2 w-100"><%= professional.speciality.name%></p>
+                </div>
+                <div class="card-body d-flex flex-wrap gap-1">
                   <%slots.map do |slot|%>
                     <% if slot.professional.to_i == professional.id %>
                       <div class="">
@@ -23,11 +24,12 @@
                     <% end %>
                   <% end %>
                 </div>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
         <% end %>
       <% end %>
     </div>
   </div>
+  <%= link_to  "View availability by service", slots_services_path, class: 'btn btn-primary' %>
 </div>
