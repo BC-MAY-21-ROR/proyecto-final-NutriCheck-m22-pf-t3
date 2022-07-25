@@ -3,6 +3,7 @@
 class CardsController < ApplicationController
   def index
     @cards = Card.where(patient_id: params[:format])
+    patient
   end
 
   def show
@@ -48,6 +49,14 @@ class CardsController < ApplicationController
   end
 
   private
+
+  def patient
+    @patient = Patient.find(params[:format])
+    @diet = Diet.find(params[:format])
+  rescue ActiveRecord::RecordNotFound => error
+    redirect_to patients_path, notice: error.message
+  end
+  
 
   def card
     @card = Card.find(params[:id])
