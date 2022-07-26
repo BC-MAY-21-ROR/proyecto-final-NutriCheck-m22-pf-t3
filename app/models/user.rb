@@ -6,12 +6,19 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :speciality
+  
+  has_one_attached :photo
+
   has_many :licenses
   has_many :turns
   has_many :appointments
 
   def getname
     "#{role} #{name} #{last_name}"
+  end
+
+  def full_name
+    "#{name} #{last_name}"
   end
 
   def get_professionals

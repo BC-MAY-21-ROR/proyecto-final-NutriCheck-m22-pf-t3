@@ -14,13 +14,13 @@
         <label for="">Opening Time: </label>
       </div>
       <div class="form-control bg-light text-black-50 m-auto">
-        <%= @schedule.opening_time.strftime("%H:%M") %>
+        <%= @schedule.opening_time.strftime('%l:%M %p') %>
       </div>
       <div class="fw-bold">
         <label for="">Closing Time: </label>
       </div>
       <div class="form-control bg-light text-black-50 m-auto">
-        <%= @schedule.closing_time.strftime("%H:%M") %>
+        <%= @schedule.closing_time.strftime('%l:%M %p') %>
       </div>
       <div class="mx-auto py-2">
         <%= button_to "Go back to schedule", schedules_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>

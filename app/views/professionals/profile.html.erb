@@ -3,7 +3,7 @@
   <div class="mx-2 my-3 bg-container-cards rounded">
     <div class="d-flex row;">
       <div class="col-md-4 rounded">
-        <img src="/assets/indice.jpg" class="card-img h-100 cover" alt="...">
+        <%= image_tag(@professional.photo, class:"card-img h-100 cover") if @professional.photo.attached? %>
       </div>
       <div class="card-body bg-container-cards rounded">
         <h5 class="card-title"><%=@professional.name%> <%=@professional.last_name%></h5>
@@ -27,8 +27,8 @@
     <% @patients.each do |patient|%>
       <div class="col">
         <div class="card h-100 shadow">
-          <img src="/assets/indice.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
+          <%= image_tag(patient.photo, class:"card-img-top pt-2 mx-auto h-50 w-50") if patient.photo.attached?%>
+          <div class="card-body mx-auto">
             <p class="card-title"><%= patient.name %> <%= patient.last_name %></p>
           </div>
           <%= button_to "Consult", cards_path(patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-primary rounded-pill text-white fw-bold" %>

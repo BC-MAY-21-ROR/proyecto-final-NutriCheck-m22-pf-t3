@@ -4,7 +4,7 @@
 
 class PatientsController < ApplicationController
   def index
-    @patients = Patient.all
+    @patients = Patient.all.with_attached_photo
   end
 
   def new
@@ -57,12 +57,12 @@ class PatientsController < ApplicationController
     params.require(:patient).permit(
       :name, :second_name,
       :last_name, :second_last_name,
-      :birth_date,
-      :phone,
+      :birth_date, :phone,
       :email,
       :password,
       :height,
-      :observations
+      :observations,
+      :photo
     )
   end
 end

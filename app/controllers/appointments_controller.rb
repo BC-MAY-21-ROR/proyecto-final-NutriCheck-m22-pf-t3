@@ -61,7 +61,8 @@ class AppointmentsController < ApplicationController
       :user_id,
       :status,
       :payment_status,
-      :score, :review
+      :score, 
+      :review
     )
   end
 end

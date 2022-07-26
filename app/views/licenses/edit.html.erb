@@ -8,8 +8,8 @@
         <div>
           <%= form.label :user_id, class: "fw-bold" %>
         </div>
-        <div class="mx-auto">
-          <%= collection_select(:license, :user_id, User.all, :id, :name) %>
+        <div>
+          <%= form.collection_select(:user_id, User.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center bg-light" }) %>
         </div>
         <div>
           <%= form.label :name, class: "fw-bold" %>
