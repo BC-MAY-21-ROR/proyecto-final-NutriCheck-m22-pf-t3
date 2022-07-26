@@ -1,7 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
+  devise_for :users
+  devise_for :patients
+  devise_for :administrators
+
   resources :slots
+
   root 'welcome#home'
   resources :turns
   resources :users
