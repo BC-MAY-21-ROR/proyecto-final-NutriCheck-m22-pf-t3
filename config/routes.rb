@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   get 'slots_professionals', to: 'slots#professionals'
   get 'slots_services', to: 'slots#services'
   get 'slots_reservations/:id/', to: 'slots#reservations', as: 'slot_reservation'
+  get 'patient/dashboard', to: 'patients#dashboard', as: 'patient_dashboard'
 end

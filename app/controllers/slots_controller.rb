@@ -1,5 +1,6 @@
 class SlotsController < ApplicationController
   before_action :set_slot, only: %i[ show edit update destroy ]
+  before_action :authenticate_patient!, only: %i[services]
 
   # GET /slots or /slots.json
   def index

@@ -10,25 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_19_204827) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "administrators", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_administrators_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
-
-ActiveRecord::Schema[7.0].define(version: 2022_07_11_202652) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-  
 ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-
   end
 
   create_table "appointments", force: :cascade do |t|
@@ -119,7 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
     t.string "password"
     t.float "height"
     t.string "observations"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
@@ -129,75 +108,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
 
-
-  end
-
-  create_table "cards", force: :cascade do |t|
-    t.date "next_appointment"
-    t.float "weight"
-    t.string "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "patient_id", null: false
-    t.bigint "diet_id", null: false
-    t.index ["diet_id"], name: "index_cards_on_diet_id"
-    t.index ["patient_id"], name: "index_cards_on_patient_id"
-  end
-
-  create_table "diets", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "licenses", force: :cascade do |t|
-    t.string "name"
-    t.string "number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.index ["user_id"], name: "index_licenses_on_user_id"
-  end
-
-  create_table "patients", force: :cascade do |t|
-    t.string "name"
-    t.string "second_name"
-    t.string "last_name"
-    t.string "second_last_name"
-    t.date "birth_date"
-    t.string "phone"
-    t.string "email"
-    t.string "password"
-    t.float "height"
-    t.string "observations"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "schedules", force: :cascade do |t|
     t.string "week_day"
     t.time "opening_time"
     t.time "closing_time"
-
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-
-  create_table "schedules", force: :cascade do |t|
-    t.string "week_day"
-    t.time "opening_time"
-    t.time "closing_time"
-  end
-
-
-  create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.string "duration"
-    t.float "price"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -208,8 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-   end
-
+  end
 
   create_table "slots", force: :cascade do |t|
     t.string "service", default: "available"
@@ -246,7 +159,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "speciality_id", null: false
-
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -255,12 +167,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
     t.index ["speciality_id"], name: "index_users_on_speciality_id"
   end
 
-    t.index ["speciality_id"], name: "index_users_on_speciality_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-
   add_foreign_key "appointments", "patients"
   add_foreign_key "appointments", "services"
   add_foreign_key "appointments", "users"
