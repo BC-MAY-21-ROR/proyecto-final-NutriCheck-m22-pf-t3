@@ -1,1 +1,25 @@
-<h1> <%= current_patient.email %> </h1>
+<div class="mx-2 my-3 bg-container-cards rounded">
+  <div class="d-flex row;">
+    <div class="col-md-4 rounded">
+      <%# <img src="/assets/indice.jpg" class="card-img h-100 cover" alt="..."> %>
+      <%= image_tag('manuel_sanhueza.jpg', class: "card-img h-100 cover") %>
+    </div>
+    <div class="card-body bg-container-cards rounded">
+      <h5 class="card-title"><%= current_patient.patient_full_name %></h5>
+      <p class="card-text"><%= current_patient.email %></p>
+      <p class="card-text"><%= current_patient.phone %></p>
+      <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
+        <%= button_to "Edit", edit_patient_path(@patient), method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+        <%= button_to "Exit", destroy_patient_session_path, method: :delete, type: "button", form_class: "col-sm mx-auto w-25", class: "btn btn-sm btn-warning text-white fw-bold w-100" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <p>My appointments</p>
+  <% current_patient.appointments.each do |appointment|%>
+    <%= appointment.date_time%>
+    <%= appointment.reason%>
+    <%= appointment.status%>
+  <% end %>
+</div>

@@ -15,6 +15,7 @@ class SlotsController < ApplicationController
   def services
     @slots = Slot.all
     @services = Service.all
+    @patients = Patient.all
   end
   # GET /slots/1 or /slots/1.json
   def show

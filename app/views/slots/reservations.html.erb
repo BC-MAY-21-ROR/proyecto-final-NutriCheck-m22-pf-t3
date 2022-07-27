@@ -20,8 +20,8 @@
     </div>
     <div class="form-group py-2">
       <%= form.label :patient_id, class: "pb-2 fw-bold" %>
-      <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control" }) %>
-      <small id="patientNameHelp" class="form-text text-muted">Please select your name from the list.</small>
+      <%= form.text_field :patient_id, value: current_patient.patient_full_name, class: 'form-control', readonly: true %>
+      <%= form.hidden_field :patient_id, value: current_patient.id, class: 'form-control' %>
     </div>
     <div class="form-group py-2">
       <%= form.label 'Professional', class: "pb-2 fw-bold" %>
