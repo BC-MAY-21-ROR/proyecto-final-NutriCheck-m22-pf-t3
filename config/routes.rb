@@ -3,8 +3,9 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  devise_for :patients
+  devise_for :patients, controllers: {     registrations: 'patients/registrations'   }
   devise_for :administrators
+  
 
   resources :slots
 
@@ -28,4 +29,5 @@ Rails.application.routes.draw do
   get 'slots_professionals', to: 'slots#professionals'
   get 'slots_services', to: 'slots#services'
   get 'slots_reservations/:id/', to: 'slots#reservations', as: 'slot_reservation'
+  
 end
