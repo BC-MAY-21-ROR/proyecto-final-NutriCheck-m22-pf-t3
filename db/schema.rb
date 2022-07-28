@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -67,6 +67,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
     t.datetime "updated_at", null: false
     t.bigint "patient_id", null: false
     t.bigint "diet_id", null: false
+    t.bigint "appointment_id", null: false
+    t.index ["appointment_id"], name: "index_cards_on_appointment_id"
     t.index ["diet_id"], name: "index_cards_on_diet_id"
     t.index ["patient_id"], name: "index_cards_on_patient_id"
   end
@@ -172,6 +174,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_172231) do
   add_foreign_key "appointments", "patients"
   add_foreign_key "appointments", "services"
   add_foreign_key "appointments", "users"
+  add_foreign_key "cards", "appointments"
   add_foreign_key "cards", "diets"
   add_foreign_key "cards", "patients"
   add_foreign_key "licenses", "users"
