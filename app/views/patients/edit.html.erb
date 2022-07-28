@@ -1,6 +1,6 @@
 <div class="bg-white min-vh-100 d-grid pt-4">
   <div class="d-grid">
-    <h1 class="mx-auto my-auto fw-bold px-3">Edit Professional</h1>
+    <h1 class="mx-auto my-auto fw-bold px-3">Edit Patient</h1>
   </div>
   <div class="mx-auto px-3">
     <%= form_with model: @patient do |form| %>
@@ -47,12 +47,12 @@
         <div>
           <%= form.text_field :email, class: "form-control bg-light" %>
         </div>
-        <div>
-          <%= form.label :password, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.text_field :password, class: "form-control bg-light" %>
-        </div>
+        <%# <div> %>
+        <%# <%= form.label :password, class: "fw-bold" %>
+        <%# </div> %>
+        <%# <div> %>
+        <%# <%= form.text_field :password, class: "form-control bg-light" %>
+        <%# </div> %>
         <div>
           <%= form.label :height, class: "fw-bold" %>
         </div>

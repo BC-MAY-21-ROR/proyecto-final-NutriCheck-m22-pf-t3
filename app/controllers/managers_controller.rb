@@ -9,7 +9,7 @@ class ManagersController < UsersController
     @manager = User.find(params[:id])
   end
 
-  def admin
+  def dashboard
     @patients = Patient.all
   end
 
