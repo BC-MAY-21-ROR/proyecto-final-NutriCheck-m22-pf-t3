@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'slots_professionals', to: 'slots#professionals'
   get 'slots_services', to: 'slots#services'
   get 'slots_reservations/:id/', to: 'slots#reservations', as: 'slot_reservation'
+  get 'administrator/dashboard', to: 'administrators#dashboard', as: 'administrator_dashboard'
   get 'manager/dashboard', to: 'managers#dashboard', as: 'manager_dashboard'
   get 'patient/dashboard', to: 'patients#dashboard', as: 'patient_dashboard'
 end
