@@ -1,26 +1,47 @@
 <div class="d-grid">
-  <div class="d-grid my-4">
-    <h1 class="mx-auto fw-bold text-white px-3">Appointments</h1>
-  </div>
-  <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
-    <% @appointments.each do |appointment|%>
-      <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
-        <div class ="card-title fw-bold" >
-          <%= appointment.date_time.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %><br>
-          <%= appointment.service.name %>
-        </div>
-        <div class="card-text pb-2">
-          <%= appointment.patient.patient_full_name %><br>
-          Reason: <%= appointment.reason %>
-        </div>
-        <div class="d-grid gap-1">
-          <%= button_to "Check", appointment_path(appointment), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
-        </div>
+  <% if current_patient %>
+    <div class="d-grid">
+      <div class="d-grid my-4">
+        <h1 class="mx-auto fw-bold text-white px-3">Historic Appointments</h1>
       </div>
-    <% end %>
-  </div>
-  <div class="d-grid gap-3 mx-auto mb-3">
-    <a class="center-a" href="<%= new_appointment_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
-    <%= button_to "Go back professionals", professionals_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
-  </div>
+      <div class="card mx-3 my-3">
+        <% current_patient.appointments.order('date_time DESC').each do |appointment|%>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex w-100 gap-2">
+              <p class="w-100 my-auto"><%= appointment.date_time.strftime("%d-%m-%Y") %></p>
+              <p class="w-100 my-auto"><%= appointment.service.name %></p>
+              <%= button_to "Check", appointment_path(appointment), method: :get , form_class: "w-20", class: "btn btn-warning  text-white fw-bold w-100" %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+      <div class="d-grid gap-2 mx-auto mb-3">
+      </div>
+    </div>
+  <% else %>
+    <div class="d-grid my-4">
+      <h1 class="mx-auto fw-bold text-white px-3">Appointments</h1>
+      <div class="card-bcg-panel w-75 my-3 px-2 py-2 mx-auto own-radius shadow-lg grid-container--fit">
+        <% @appointments.each do |appointment|%>
+          <div class="mx-auto card-user-bcg own-radius grid-element mt-2">
+            <div class ="card-title fw-bold" >
+              <%= appointment.date_time.strftime("%a, %d/%m/%Y at %l:%M:%S %p") %><br>
+              <%= appointment.service.name %>
+            </div>
+            <div class="card-text pb-2">
+              <%= appointment.patient.patient_full_name %><br>
+              Reason: <%= appointment.reason %>
+            </div>
+            <div class="d-grid gap-1">
+              <%= button_to "Check", appointment_path(appointment), method: :get, form_class: "d-grid mx-auto", class: "btn color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="d-grid gap-3 mx-auto mb-3">
+        <a class="center-a" href="<%= new_appointment_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
+        <%= button_to "Go back professionals", professionals_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      </div>
+    </div>
+  <% end %>
 </div>
