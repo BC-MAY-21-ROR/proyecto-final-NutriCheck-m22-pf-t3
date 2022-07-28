@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :patients, controllers: {
     registrations: 'patients/registrations'
   }
-  devise_for :administrators
+  # devise_for :administrators
 
   resources :slots
 
