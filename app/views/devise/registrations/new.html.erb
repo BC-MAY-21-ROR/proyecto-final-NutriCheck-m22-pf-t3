@@ -21,6 +21,10 @@
       <%= f.label :speciality_id %><br />
       <%= f.text_field :speciality_id, autocomplete: "new-password", class: "form-control"%>
     </div>
+    <div class="field">
+      <%= f.label :photo %><br />
+      <%= f.file_field :photo, autocomplete: "new-password", class: "form-control"%>
+    </div>
     <div class="actions">
       <%= f.submit("Sign up", class: "btn color-btn rounded-pill text-white fw-bold") %>
     </div>
