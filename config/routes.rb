@@ -32,4 +32,5 @@ Rails.application.routes.draw do
   get 'administrator/dashboard', to: 'administrators#dashboard', as: 'administrator_dashboard'
   get 'manager/dashboard', to: 'managers#dashboard', as: 'manager_dashboard'
   get 'patient/dashboard', to: 'patients#dashboard', as: 'patient_dashboard'
+  get 'professional/dashboard', to: 'professionals#dashboard', as: 'professional_dashboard'
 end

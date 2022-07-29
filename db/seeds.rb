@@ -343,4 +343,12 @@
 # end
 
  
-/
+User.all.map do |user|
+  if (user.speciality.name == "Massage Therapist")
+    License.create(name: "Expert Massage Therapist License", number: rand(1000000..9000000), user_id: user.id)
+  elsif (user.speciality.name == "Nutriologist")
+    License.create(name: "Doctor Nutriologist License", number: rand(1000000..9000000), user_id: user.id)
+  elsif (user.speciality.name == "Personal Trainer")
+    License.create(name: "Expert Personal Trainer License", number: rand(1000000..9000000), user_id: user.id)
+  end
+end
