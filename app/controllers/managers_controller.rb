@@ -10,7 +10,9 @@ class ManagersController < UsersController
   end
 
   def dashboard
+    @managers = User.where(role: 'manager')
     @patients = Patient.all
+    @appointments = Appointment.all
   end
 
   def in_construction; end

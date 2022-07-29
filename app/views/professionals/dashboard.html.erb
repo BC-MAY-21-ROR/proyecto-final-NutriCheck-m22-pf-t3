@@ -1,5 +1,5 @@
 <div class="d-grid gap-2 mt-4">
-  <h1 class="mx-auto text-white fw-bold">Manager Admin Panel</h1>
+  <h1 class="mx-auto text-white fw-bold">Professional Admin Panel</h1>
   <div class="mx-2 my-3 bg-container-cards rounded">
     <div class="d-flex row;">
       <div class="col-md-4 rounded">
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="btn-group mx-2 gap-1" role="group" aria-label="Basic example" >
-    <%= button_to "Services", services_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "My Licenses", license_path(current_user), method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
     <%= button_to "Schedules", schedules_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
   </div>
   <div class="btn-group mx-2 gap-1" role="group" aria-label="Basic example" >
@@ -46,7 +46,7 @@
     </thead>
     <tbody>
       <% @appointments.map do |appointment| %>
-        <% if appointment.date_time.strftime("%Y-%m-%d") == Date.today.strftime %>
+        <% if appointment.date_time.strftime("%Y-%m-%d") == Date.today.strftime && appointment.user_id == current_user.id %>
           <tr>
             <th scope="row"><%= appointment.date_time.strftime("%H:%M") %></th>
             <td>
