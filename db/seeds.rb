@@ -280,18 +280,59 @@
 #             role: 'professional',
 #             speciality_id: 4)
 
-# start_date = Date.new(2022, 02, 01)
+# User.create(id: 9,
+# 						name: 'Berta Cecilia',
+#             last_name: 'Coronado Salazar',
+#             birth_date: "#{rand(1977..2002)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
+#             phone: '+56975456787',
+#             email: 'berta.coronado@nutricheck.com',
+#             password: '123456',
+#             role: 'professional',
+#             speciality_id: 2)
+
+# User.create(id: 10,
+# 						name: 'Gonzalo Amador',
+#             last_name: 'Beltran Sanhueza',
+#             birth_date: "#{rand(1977..2002)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
+#             phone: '+56975456787',
+#             email: 'gonzalo.beltran@nutricheck.com',
+#             password: '123456',
+#             role: 'professional',
+#             speciality_id: 4)
+
+# User.create(id: 11,
+# 						name: 'Mileidy Beatriz',
+#             last_name: 'Corvalan Achao',
+#             birth_date: "#{rand(1977..2002)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
+#             phone: '+56975456787',
+#             email: 'mileidy.corvalan@nutricheck.com',
+#             password: '123456',
+#             role: 'professional',
+#             speciality_id: 3)
+
+# User.create(id: 12,
+# 						name: 'Paola Andrea',
+#             last_name: 'Salazar Ahumada',
+#             birth_date: "#{rand(1977..2002)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
+#             phone: '+56975456787',
+#             email: 'paola.salazar@nutricheck.com',
+#             password: '123456',
+#             role: 'professional',
+#             speciality_id: 2)
+
+# To create appointments you can run the following code.
+# start_date = Date.new(2022, 07, 01)
 # end_date = Date.new(2022, 07, 30)
 # while (start_date <= end_date) do 
 # 	i = 9
 # 	if (start_date.strftime("%A") != 'Sunday')
 # 		if (i < 18)
 # 			while (i < 18) do
-# 				Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 1, user_id: 4, patient_id: rand(5929) )
-# 				Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 2, user_id: 5, patient_id: rand(5929) )
-# 				Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 5, user_id: 6, patient_id: rand(5929) )
-# 				Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 4, user_id: 7, patient_id: rand(5929) )
-# 				Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 3, user_id: 8, patient_id: rand(5929) )
+# 				Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 1, user_id: 12, patient_id: rand(5929) )
+# 				# Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 2, user_id: 5, patient_id: rand(5929) )
+# 				# Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 5, user_id: 6, patient_id: rand(5929) )
+# 				# Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 4, user_id: 7, patient_id: rand(5929) )
+# 				# Appointment.create(date_time: "#{start_date} #{i}:00:00 UTC", reason: 'Consulta por sobrepeso', status: 'open', payment_status: false, score: nil, review: nil, service_id: 3, user_id: 8, patient_id: rand(5929) )
 # 				i+=1
 # 			end
 # 		else
@@ -302,13 +343,4 @@
 # end
 
  
-# 1	"Complementary Therapies"	"1"	30	"2022-07-25 06:03:29.628722"	"2022-07-25 06:04:31.173432"
-# 2	"Reducing Massage"	"1"	40	"2022-07-18 18:08:59.493388"	"2022-07-18 18:08:59.493388"
-# 3	"Physical Trainer Consultation"	"1"	25	"2022-07-18 18:09:30.973541"	"2022-07-18 18:09:30.973541"
-# 4	"Lymphatic Massages"	"1"	40	"2022-07-18 18:10:53.756907"	"2022-07-18 18:10:53.756907"
-# 5	"Consulting Diet Specialist"	"1"	35	"2022-07-18 18:11:55.101704"	"2022-07-18 18:11:55.101704"
-# 4	"Susana Veronica"	"Bravo Santander"	"2002-02-14"	"+56975456787"	"susana.bravo@nutricheck.com"		"professional"
-# 5	"Carla Macarena"	"Mateluna Santis"	"1979-04-07"	"+56975456787"	"carla.mateluna@nutricheck.com"		"professional"
-# 6	"Oscar Alejandro"	"Cerda Orostica"	"1988-12-13"	"+56975456787"	"oscar.carda@nutricheck.com"		"professional"
-# 7	"Mariano Hernan"	"Villegas Solari"	"2001-03-20"	"+56975456787"	"mariano.villegas@nutricheck.com"		"professional"
-# 8	"Amelia Josefina"	"Zapata Soteldo"	"1979-12-17"	"+56975456787"	"amelia.zapata@nutricheck.com"		"professional"
+/

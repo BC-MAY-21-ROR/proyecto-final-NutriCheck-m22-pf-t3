@@ -3,14 +3,20 @@
     <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none" %>
   </p>
   <h1 class="mx-auto text-white fw-bold">Managers</h1>
-  <a class="center-a" href="<%= new_manager_path %>"><%= image_tag("/assets/21a921f165298b0110b80821cc5bd761.svg", class: "add-manager-icon mx-auto")%></a>
+  <a class="center-a" href="<%= new_manager_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
   <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
-    <% @managers.each do |manager|%>
+    <% @managers.sort_by { |manag| manag.name }.each do |manager|%>
       <div class="col">
         <div class="card h-100 shadow">
-          <%= image_tag(manager.photo, class:"card-img-top pt-2 mx-auto h-50 w-50") if manager.photo.attached?%>
+          <div class="h-50">
+            <% if manager.photo.attached? %>
+              <%= image_tag(manager.photo, class:"card-img-top pt-2 mx-auto h-100 w-100") %>
+            <% else %>
+              <%= image_tag('coming_soon_2.png', class:"card-img-top pt-2 mx-auto h-100 w-100") %>
+            <% end %>
+          </div>
           <div class="card-body mx-auto">
-            <p class="card-title"><%= manager.name %> <%= manager.last_name %></p>
+            <p class="card-title text-center"><%= manager.name %> <%= manager.last_name %></p>
           </div>
           <%= button_to "Check", manager_path(manager), method: :get, form_class: "d-grid mx-auto", class: "btn btn-sm color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>
         </div>

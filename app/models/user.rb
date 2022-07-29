@@ -17,6 +17,11 @@ class User < ApplicationRecord
     "#{role} #{name} #{last_name}"
   end
 
+  def short_name
+    
+    "#{name.split(' ')[0]} #{last_name.split(' ')[0]}"
+  end
+
   def full_name
     "#{name} #{last_name}"
   end
