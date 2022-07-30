@@ -16,9 +16,9 @@
     
  <div class="field">
     <%= f.label :birth_date %><br />
-    <%= f.datetime_local_field :birth_date %>
+    <%= f.date_field :birth_date %>
   </div>
-          
+
  <div class="field">
     <%= f.label :role %><br />
     <%= f.select :role, ['Manager', 'Professional'] %>
@@ -36,7 +36,7 @@
 
     <div class="field">
     <%= f.label :speciality_id %><br />
-    <%= f.email_field :speciality_id %>
+    <%= f.text_field :speciality_id %>
   </div>
 
 
