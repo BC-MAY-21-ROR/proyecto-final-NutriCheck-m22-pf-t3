@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'users/users_sanitizer'
+require 'patients/patients_sanitizer'
+
 class ApplicationController < ActionController::Base
   protected
 
