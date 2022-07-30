@@ -1,28 +1,31 @@
-<div id="main_div">
-  <div class="masthead">
-    <div class="masthead-content text-white">
-      <div class="container-fluid px-4 px-lg-0">
-        <h1 class="fst-italic lh-1 mb-4">NUTRICHECK</h1>
-        <p class="mb-5">The ideal website for your control and health</p>
-        <p class="mb-5">Number phone: (312)1478963</p>
-        <!-- * * * * * * * * * * * * * * *-->
-        <%= button_to "Administrators", administrators_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+<div class="vh-100 m-0 p-0">
+  <div id="main_div" class="h-50">
+    <div class="masthead">
+      <div class="masthead-content text-white">
+        <div class="container-fluid px-4 px-lg-0">
+          <h1 class="fst-italic lh-1 mb-4 text-center">NUTRICHECK</h1>
+          <p class="mb-5 text-center">The ideal website for your control and health</p>
+          <p class="mb-0 text-center">Phone Number:</p>
+          <p class="mb-7 text-center">(312)1478963</p>
+          <!-- * * * * * * * * * * * * * * *-->
+          <%= button_to "Log In", new_patient_session_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- Social Icons-->
-  <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
-  <div class="social-icons">
+  <div class="social-icons h-auto">
     <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
       <a class="btn btn-dark m-3" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
       <a class="btn btn-dark m-3" href="https://m.facebook.com/"><i class="fab fa-facebook-f"></i></a>
       <a class="btn btn-dark m-3" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
       <a class="btn btn-dark m-3" href="https://www.google.com.mx/maps/search/Glorieta+De+Los+Perritos+Bailarines/@19.2840153,-103.7465035,17z"><i class="fa-solid fa-map-location"></i></a>
     </div>
+    <%= @patient.class %>
+    <%= @user.class%>
+    <footer class="text-center text-white fixed-bottom" style="background-color: #163D2D;">
+      © <%= Time.now.strftime("%Y")%> Nutricheck:
+    </footer>
   </div>
-
-  <footer class="text-center text-white fixed-bottom" style="background-color: #163D2D;">
-      © 2022 Nutricheck:
-  </footer>
+  <!-- Social Icons-->
+  <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
 </div>
