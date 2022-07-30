@@ -20,6 +20,33 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_date %><br />
+    <%= f.date_field :birth_date %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.telephone_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
