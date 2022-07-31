@@ -9,8 +9,10 @@ class ManagersController < UsersController
     @manager = User.find(params[:id])
   end
 
-  def admin
+  def dashboard
+    @managers = User.where(role: 'manager')
     @patients = Patient.all
+    @appointments = Appointment.all
   end
 
   def in_construction; end
