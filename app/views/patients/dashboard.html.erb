@@ -2,8 +2,11 @@
   <div class="mx-2 my-3 bg-container-cards rounded">
     <div class="d-flex row;">
       <div class="col-md-4 rounded">
-        <%# <img src="/assets/indice.jpg" class="card-img h-100 cover" alt="..."> %>
-        <%= image_tag(current_patient.photo, class: "card-img h-100 cover") %>
+        <% if current_patient.photo.attached? %>
+          <%= image_tag(current_patient.photo, class: "card-img h-100 cover") %>
+        <% else %>
+          <%= image_tag('coming_soon_2.png', class: "card-img h-100 cover") %>
+        <% end %>
       </div>
       <div class="card-body bg-container-cards rounded">
         <h5 class="card-title"><%= current_patient.patient_full_name %></h5>
