@@ -1,13 +1,21 @@
 # frozen_string_literal: true
 
-class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
-  protect_from_forgery with: :exception
 
+require 'users/users_sanitizer'
+require 'patients/patients_sanitizer'
+
+
+class ApplicationController < ActionController::Base
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[speciality_id photo])
+  def devise_parameter_sanitizer
+    if resource_class == Patient
+      PatientParameterSanitizer.new(Patient, :patient, params)
+    elsif resource_class == User
+      UserParameterSanitizer.new(User, :user, params)
+    else
+      super
+    end
   end
 
   def after_sign_in_path_for(resource)
@@ -24,4 +32,5 @@ class ApplicationController < ActionController::Base
       patient_dashboard_path
     end
   end
+
 end
