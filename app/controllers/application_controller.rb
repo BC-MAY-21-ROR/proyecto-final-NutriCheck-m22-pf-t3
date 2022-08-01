@@ -3,16 +3,14 @@
 
 require 'users/users_sanitizer'
 require 'patients/patients_sanitizer'
-
-
 class ApplicationController < ActionController::Base
   protected
 
   def devise_parameter_sanitizer
     if resource_class == Patient
-      PatientParameterSanitizer.new(Patient, :patient, params)
+      Patients::PatientsSanitizer.new(Patient, :patient, params)
     elsif resource_class == User
-      UserParameterSanitizer.new(User, :user, params)
+      Users::UsersSanitizer.new(User, :user, params)
     else
       super
     end

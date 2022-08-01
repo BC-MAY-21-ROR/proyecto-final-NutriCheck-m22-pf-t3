@@ -1,4 +1,4 @@
-class PatientParameterSanitizer < Devise::ParameterSanitizer
+class Patients::PatientsSanitizer < Devise::ParameterSanitizer
   def initialize(*)
     super
 
