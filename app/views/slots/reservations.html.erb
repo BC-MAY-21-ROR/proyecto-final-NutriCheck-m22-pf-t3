@@ -1,8 +1,8 @@
-<div class="bg-white  p-5">
-  <h1>Reservation space detail</h1>
-  <p style="color: green"><%= notice %></p>
+<div class="bg-white p-2">
+  <h1 class="text-center">Reservation space detail</h1>
+  <p style="color: green p-0 m-0"><%= notice %></p>
 </div>
-<div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-4 gap-2">
+<div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-3 gap-2">
   <%= form_with model: @appointment, class: "form-group" do |form| %>
     <div class="form-group py-2" >
       <%= form.label :date_time, class: "pb-2 fw-bold" %>
@@ -20,17 +20,17 @@
     </div>
     <div class="form-group py-2">
       <%= form.label :patient_id, class: "pb-2 fw-bold" %>
-      <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control" }) %>
-      <small id="patientNameHelp" class="form-text text-muted">Please select your name from the list.</small>
+      <%= form.text_field :patient_id, value: current_patient.patient_full_name, class: 'form-control', readonly: true %>
+      <%= form.hidden_field :patient_id, value: current_patient.id, class: 'form-control' %>
     </div>
     <div class="form-group py-2">
       <%= form.label 'Professional', class: "pb-2 fw-bold" %>
       <%= form.text_field :user_id, value: @professionals.map { |professional| (professional.id == @slot.professional.to_i)? professional.full_name : next }.reject { |x| x.nil? }.join, readonly: true, class: "form-control" %>
       <%= form.hidden_field :user_id, value: @professionals.map { |professional| (professional.id == @slot.professional.to_i)? professional.id.to_i : next }.reject { |x| x.nil? }.join, class: "form-control" %>
     </div>
-    <div class="class="form-group py-2"">
-      <%= form.submit 'Create appointment', class: "btn btn-success text-white fw-bold"%>
-      <%= link_to 'Go back to hours', slots_services_path, class: "btn btn-primary text-white fw-bold"%>
+    <div class="d-flex flex-column form-group py-2 gap-2">
+      <%= form.submit 'Create appointment',class: "btn btn-success text-white fw-bold w-100"%>
+      <%= link_to 'Go back to hours', slots_services_path, class: "btn btn-primary text-white fw-bold w-100"%>
     </div>
   <% end %>
 </div>

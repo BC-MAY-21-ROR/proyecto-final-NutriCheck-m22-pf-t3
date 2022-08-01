@@ -1,0 +1,52 @@
+<div class="">
+  <div class="mx-2 my-3 bg-container-cards rounded">
+    <div class="d-flex row;">
+      <div class="col-md-4 rounded">
+        <% if current_patient.photo.attached? %>
+          <%= image_tag(current_patient.photo, class: "card-img h-100 cover") %>
+        <% else %>
+          <%= image_tag('coming_soon_2.png', class: "card-img h-100 cover") %>
+        <% end %>
+      </div>
+      <div class="card-body bg-container-cards rounded">
+        <h5 class="card-title"><%= current_patient.patient_full_name %></h5>
+        <p class="card-text m-0"><%= current_patient.email %></p>
+        <p class="card-text m-0"><%= current_patient.phone %></p>
+        <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
+          <%= button_to "Edit", edit_patient_path(@patient), method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+          <%= button_to "Exit", destroy_patient_session_path, method: :delete, type: "button", form_class: "col-sm mx-auto w-25", class: "btn btn-sm btn-warning text-white fw-bold w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <h3 class="text-center text-white fw-bold">My next appointments</h3>
+  </div>
+  <% current_patient.appointments.each do |appointment|%>
+    <div class="mx-2 bg-container-cards rounded mb-1">
+      <div class="card-body bg-container-cards rounded">
+        <p class="card-text my-1 p-0"> <strong> Date & Hour: </strong><%= appointment.date_time.strftime("%d-%m-%y %H:%M hrs")%></p>
+        <p class="card-text my-1 p-0"> <strong> Professional: </strong><%= appointment.user.full_name%></p>
+        <p class="card-text my-1 p-0"> <strong> Service: </strong><%= appointment.service.name%></p>
+        <div class="btn-group gap-1 w-100 p-0" role="group" aria-label="Basic example" >
+          <%= link_to  "View detail", appointment_path(appointment),form_class: 'w-25', class: 'btn color-btn btn-sm fw-bold text-white '%>
+          <%= link_to  "Edit", edit_appointment_path(appointment), form_class: 'w-25',class: 'btn btn-warning btn-sm fw-bold text-white '%>
+          <%= button_to "Delete", appointment_path(appointment), method: :delete, form_class: 'w-25', class: "btn btn-danger btn-sm fw-bold text-white " %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="my-3">
+    <h3 class="text-center text-white fw-bold">Schedule a new appointment</h3>
+    <div class="d-flex flex-column gap-1 mx-2">
+      <%= link_to  "Search by service", slots_services_path, class:"btn color-btn btn-lg btn-block text-white fw-bold w-100" %>
+      <%= link_to  "Search by professional", slots_professionals_path, class:"btn color-btn btn-lg btn-block text-white fw-bold w-100" %>
+    </div>
+  </div>
+  <div class="my-3">
+    <hr class="text-white">
+    <div class="d-flex flex-column gap-1 mx-2">
+      <%= link_to "Check historic appointments", appointments_path, class:"btn btn-warning btn-lg btn-block text-white fw-bold w-100" %>
+    </div>
+  </div>
+</div>

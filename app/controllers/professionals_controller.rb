@@ -13,4 +13,10 @@ class ProfessionalsController < UsersController
   def show
     @professional = User.find(params[:id])
   end
+
+  def dashboard
+      @managers = User.where(role: 'profesional')
+      @patients = Patient.all
+      @appointments = Appointment.all
+  end
 end

@@ -1,0 +1,66 @@
+<div class="d-grid gap-2 mt-4">
+  <h1 class="mx-auto text-white fw-bold">Manager Admin Panel</h1>
+  <div class="mx-2 my-3 bg-container-cards rounded">
+    <div class="d-flex row;">
+      <div class="col-md-4 rounded">
+        <% if current_user.photo.attached? %>
+          <%= image_tag(current_user.photo, class: "card-img h-100 cover") %>
+        <% else %>
+          <%= image_tag('coming_soon_2.png', class: "card-img h-100 cover") %>
+        <% end %>
+      </div>
+      <div class="card-body bg-container-cards rounded">
+        <h5 class="card-title p-0 m-0"><%= current_user.full_name %></h5>
+        <p class="card-text  p-0 m-0"><%= current_user.email %></p>
+        <p class="card-text  p-0 m-0"><%= current_user.phone %></p>
+        <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
+          <%= button_to "Edit", edit_manager_path(current_user), method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+          <%= button_to "Exit", destroy_user_session_path, method: :delete, type: "button", form_class: "col-sm mx-auto w-25", class: "btn btn-sm btn-warning text-white fw-bold w-100" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn-group mx-2 gap-1" role="group" aria-label="Basic example" >
+    <%= button_to "Services", services_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "Schedules", schedules_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+  </div>
+  <div class="btn-group mx-2 gap-1" role="group" aria-label="Basic example" >
+    <%= button_to "Specialities", specialities_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "Appointments", appointments_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+  </div>
+  <div class="btn-group mx-2 mb-2 gap-1" role="group" aria-label="Basic example" >
+    <%= button_to "Patients", specialities_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "Professionals", appointments_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+  </div>
+  <h1 class="mx-auto text-white fw-bold my-2">Appointments of today</h1>
+</div>
+</div>
+<div class="bg-container-cards mx-2">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Hour</th>
+        <th scope="col">Patient</th>
+        <th scope="col">Manage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @appointments.map do |appointment| %>
+        <% if appointment.date_time.strftime("%Y-%m-%d") == Date.today.strftime %>
+          <tr>
+            <th scope="row"><%= appointment.date_time.strftime("%H:%M") %></th>
+            <td>
+              <%= appointment.patient.name %>
+              <%= appointment.patient.last_name %>
+              <%= appointment.patient.second_last_name %>
+            </td>
+            <td>
+              <%= link_to "P", patient_path(appointment.patient), class: 'btn btn-sm btn-primary' %>
+              <%= link_to "A", appointment_path(appointment), class: 'btn btn-sm btn-success' %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

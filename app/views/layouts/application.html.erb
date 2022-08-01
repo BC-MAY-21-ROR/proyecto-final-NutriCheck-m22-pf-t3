@@ -9,12 +9,15 @@
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
   </head>
-  <body class="color-bcg">
-  <%= button_to "Log-Out User", destroy_user_session_path, method: :delete  %>
-  <%= button_to "Log-Out Patient", destroy_patient_session_path, method: :delete  %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="pt-20">
+  <body class="color-bcg ">
+    <% if notice %>
+      <p class=""><%= notice %></p>
+    <% elsif alert %>
+      <p class=""><%= alert %></p>
+    <% end %>
+    <%= button_to "Log-Out User", destroy_user_session_path, method: :delete  %>
+    <%= button_to "Log-Out Patient", destroy_patient_session_path, method: :delete  %>
+    <div class="">
       <%= yield %>
     </div>
   </body>

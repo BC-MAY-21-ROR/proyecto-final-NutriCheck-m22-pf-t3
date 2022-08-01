@@ -8,4 +8,8 @@ class AdministratorsController < UsersController
   def show
     @administrator = User.find(params[:id])
   end
+
+  def dashboard
+    @administrators = User.where(role: 'administrator')
+  end
 end
