@@ -2,9 +2,10 @@
 @import "simple_calendar";
 
 #main_div {
-  height: 1150px;
+  height: 100%;
   width: 100%;
 }
+
 
 .color-btn {
   background-color: #5DB075;
@@ -185,6 +186,7 @@
 @media (min-width: 1200px) {
   .masthead {
     width: 65vw;
+    
   }
 }
 
