@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
-
 require 'users/users_sanitizer'
 require 'patients/patients_sanitizer'
 class ApplicationController < ActionController::Base
+
   protected
+
+  def require_login
+    redirect_to root_url, notice: 'Please log-in as an User to view that page!' unless current_user
+  end
 
   def devise_parameter_sanitizer
     if resource_class == Patient
@@ -30,5 +34,4 @@ class ApplicationController < ActionController::Base
       patient_dashboard_path
     end
   end
-
 end
