@@ -4,6 +4,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   def index
+    require_admin_session
     @users = User.all.with_attached_photo
   end
 
