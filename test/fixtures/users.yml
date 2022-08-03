@@ -1,19 +1,23 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   name: MyString
   last_name: MyString
+  specialty_id: 1
   birth_date: 2022-07-04
   phone: MyString
   email: MyString
   password: MyString
-  role: MyString
+  role: 'Admin'
 
 two:
+  id: 2
   name: MyString
   last_name: MyString
+  specialty_id: 2
   birth_date: 2022-07-04
   phone: MyString
   email: MyString
   password: MyString
-  role: MyString
+  role: 'Manager'

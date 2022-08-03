@@ -2,16 +2,16 @@
 
 one:
   date_time: 2022-07-04 18:16:23
-  reason: MyString
-  status: MyString
+  reason: 'Check status health'
+  status: 'Good status'
   payment_status: false
   score: 1
-  review: MyString
+  review: 'Very good attention'
 
 two:
   date_time: 2022-07-04 18:16:23
-  reason: MyString
-  status: MyString
+  reason: 'Monthly checkup'
+  status: 'Good health'
   payment_status: false
   score: 1
-  review: MyString
+  review: 'The registration and appointment booking process is efficient.'

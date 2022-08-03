@@ -1,9 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  type: 
-  number: MyString
+  id: 1
+  user_id: 2
+  name: 'Viktor'
+  number: '503 45698712'
 
 two:
-  type: 
-  number: MyString
+  id: 2
+  user_id: 2
+  name: 'Zara'
+  number: '503 23452345'
+
+three:
+  id: 3
+  user_id: 3
+  name: 'Zara'
+  number: '503 23452345'

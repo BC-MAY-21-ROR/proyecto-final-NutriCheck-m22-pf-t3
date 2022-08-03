@@ -3,9 +3,9 @@
 one:
   next_appointment: 2022-07-04
   weight: 1.5
-  comments: MyString
+  comments: 'Good attention'
 
 two:
   next_appointment: 2022-07-04
   weight: 1.5
-  comments: MyString
+  comments: 'Very good attention'
