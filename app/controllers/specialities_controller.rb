@@ -3,6 +3,7 @@
 # Controller for SPECIALITIES
 
 class SpecialitiesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @specialities = Speciality.all
   end
