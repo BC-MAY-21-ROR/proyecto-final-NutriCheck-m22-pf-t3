@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  
   devise_for :users
-  devise_for :patients, controllers: {     registrations: 'patients/registrations'   }
+  devise_for :patients, controllers: { registrations: 'patients/registrations' }
   devise_for :administrators
-  
+
   resources :slots
 
   root 'welcome#home'
@@ -32,5 +31,4 @@ Rails.application.routes.draw do
   get 'manager/dashboard', to: 'managers#dashboard', as: 'manager_dashboard'
   get 'patient/dashboard', to: 'patients#dashboard', as: 'patient_dashboard'
   get 'professional/dashboard', to: 'professionals#dashboard', as: 'professional_dashboard'
-
 end
