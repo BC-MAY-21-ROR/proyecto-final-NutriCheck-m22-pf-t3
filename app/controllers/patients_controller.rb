@@ -5,6 +5,7 @@
 class PatientsController < ApplicationController
   before_action :authenticate_patient!
   def index
+    require_admin_session
     @patients = Patient.all.with_attached_photo
   end
 
