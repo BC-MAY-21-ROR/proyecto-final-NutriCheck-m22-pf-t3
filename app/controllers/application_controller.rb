@@ -3,11 +3,15 @@
 require 'users/users_sanitizer'
 require 'patients/patients_sanitizer'
 class ApplicationController < ActionController::Base
-
   protected
 
   def require_login
     redirect_to root_url, notice: 'Please log-in as an User to view that page!' unless current_user
+  end
+
+  def require_admin_session
+    return if current_user.role == 'administrator'
+    redirect_to root_url, notice: 'You have no permission to access that page.'
   end
 
   def devise_parameter_sanitizer
