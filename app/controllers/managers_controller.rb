@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ManagersController < UsersController
+  before_action :authenticate_user!
   def index
     @managers = User.where(role: 'manager')
   end

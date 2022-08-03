@@ -2,6 +2,7 @@
 
 # Appointment class controller
 class AppointmentsController < ApplicationController
+  before_action :authenticate_patient!
   def index
     @appointments = Appointment.all
   end
