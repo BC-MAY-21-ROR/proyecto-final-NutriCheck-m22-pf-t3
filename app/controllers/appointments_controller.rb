@@ -3,7 +3,12 @@
 # Appointment class controller
 class AppointmentsController < ApplicationController
   def index
-    @appointments = Appointment.all
+    
+    @pagy, @appointments = pagy(Appointment.order(date_time: :desc),items: 50)
+  end
+
+  def search
+    @pagy, @appointments = pagy(Appointment.order(date_time: :desc),items: 50)
   end
 
   def new

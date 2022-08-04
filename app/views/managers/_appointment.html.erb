@@ -1,0 +1,14 @@
+<div>
+  <tr>
+    <th scope="row"><%= appointment.date_time.strftime("%H:%M") %></th>
+    <td>
+      <%= appointment.patient.name %>
+      <%= appointment.patient.last_name %>
+      <%= appointment.patient.second_last_name %>
+    </td>
+    <td>
+      <%= link_to "P", patient_path(appointment.patient), class: 'btn btn-sm btn-primary' %>
+      <%= link_to "A", appointment_path(appointment), class: 'btn btn-sm btn-success' %>
+    </td>
+  </tr>
+</div>

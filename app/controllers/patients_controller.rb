@@ -4,7 +4,15 @@
 
 class PatientsController < ApplicationController
   def index
-    @patients = Patient.all.with_attached_photo
+   
+    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc),items: 25)
+
+  end
+
+  def search
+   
+    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc),items: 25)
+
   end
 
   def new
