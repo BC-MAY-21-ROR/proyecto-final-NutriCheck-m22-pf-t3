@@ -29,13 +29,13 @@
     <%= button_to "Appointments", appointments_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
   </div>
   <div class="btn-group mx-2 mb-2 gap-1" role="group" aria-label="Basic example" >
-    <%= button_to "Patients", specialities_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "Patients", patients_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
     <%= button_to "Professionals", appointments_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
   </div>
-  <h1 class="mx-auto text-white fw-bold my-2">Appointments of today</h1>
+  <h1 class="mx-auto text-white fw-bold mt-2 mb-0 pb-0">Appointments of today</h1>
+  <p class="mx-auto text-white fw-bold p-0 my-0">Today we have <%= @appointments_today_count %> Patients</p>
 </div>
-</div>
-<div class="bg-container-cards mx-2">
+<div class="bg-container-cards m-2">
   <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
@@ -45,22 +45,17 @@
       </tr>
     </thead>
     <tbody>
-      <% @appointments.map do |appointment| %>
-        <% if appointment.date_time.strftime("%Y-%m-%d") == Date.today.strftime %>
-          <tr>
-            <th scope="row"><%= appointment.date_time.strftime("%H:%M") %></th>
-            <td>
-              <%= appointment.patient.name %>
-              <%= appointment.patient.last_name %>
-              <%= appointment.patient.second_last_name %>
-            </td>
-            <td>
-              <%= link_to "P", patient_path(appointment.patient), class: 'btn btn-sm btn-primary' %>
-              <%= link_to "A", appointment_path(appointment), class: 'btn btn-sm btn-success' %>
-            </td>
-          </tr>
-        <% end %>
-      <% end %>
+      <%= render partial: 'appointment', collection: @appointments %>
     </tbody>
   </table>
+  <div class="d-flex justify-content-center gap-1 pb-2">
+    <% if @pagy.prev.present? && @pagy.next.present? %>
+      <%= button_to "Prev", pagy_url_for(@pagy, @pagy.prev), class: "btn btn-sm color-btn fw-bold text-white" %>
+      <%= button_to "Next", pagy_url_for(@pagy, @pagy.next), class: "btn btn-sm color-btn fw-bold text-white" %>
+    <% elsif @pagy.prev.present? %>
+      <%= button_to "Prev", pagy_url_for(@pagy, @pagy.prev), class: "btn btn-sm color-btn fw-bold text-white" %>
+    <% elsif @pagy.next.present? %>
+      <%= button_to "Next", pagy_url_for(@pagy, @pagy.next), class: "btn btn-sm color-btn fw-bold text-white" %>
+    <% end %>
+  </div>
 </div>
