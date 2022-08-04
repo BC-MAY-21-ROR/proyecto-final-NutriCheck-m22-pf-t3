@@ -4,6 +4,8 @@ require 'users/users_sanitizer'
 require 'patients/patients_sanitizer'
 class ApplicationController < ActionController::Base
 
+  include Pagy::Backend
+
   protected
 
   def require_login
@@ -24,14 +26,14 @@ class ApplicationController < ActionController::Base
     # check for the class of the object to determine what type it is
     if resource.instance_of?(User)
       if resource.role == 'manager'
-        manager_dashboard_path
+        dashboard_managers_path
       elsif resource.role == 'administrator'
-        administrator_dashboard_path
+        dashboard_administrators_path
       else
-        professional_dashboard_path
+        dashboard_professionals_path
       end
     elsif resource.instance_of?(Patient)
-      patient_dashboard_path
+      dashboard_patients_path
     end
   end
 end
