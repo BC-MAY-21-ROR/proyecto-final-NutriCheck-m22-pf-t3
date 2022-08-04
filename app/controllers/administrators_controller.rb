@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class AdministratorsController < UsersController
+  before_action :require_login
   def index
     @administrators = User.where(role: 'administrator')
   end

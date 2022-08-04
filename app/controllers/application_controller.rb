@@ -1,19 +1,22 @@
 # frozen_string_literal: true
 
-
 require 'users/users_sanitizer'
 require 'patients/patients_sanitizer'
-
-
 class ApplicationController < ActionController::Base
+
   include Pagy::Backend
+
   protected
+
+  def require_login
+    redirect_to root_url, notice: 'Please log-in as an User to view that page!' unless current_user
+  end
 
   def devise_parameter_sanitizer
     if resource_class == Patient
-      PatientParameterSanitizer.new(Patient, :patient, params)
+      Patients::PatientsSanitizer.new(Patient, :patient, params)
     elsif resource_class == User
-      UserParameterSanitizer.new(User, :user, params)
+      Users::UsersSanitizer.new(User, :user, params)
     else
       super
     end
@@ -33,5 +36,4 @@ class ApplicationController < ActionController::Base
       dashboard_patients_path
     end
   end
-
 end
