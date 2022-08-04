@@ -1,17 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
+  patient_id: 1
+  user_id: 1
   date_time: 2022-07-04 18:16:23
   reason: 'Check status health'
   status: 'Good status'
   payment_status: false
   score: 1
+  service_id: 1
   review: 'Very good attention'
 
 two:
+  id: 2
+  patient_id: 2
+  user_id: 2
   date_time: 2022-07-04 18:16:23
   reason: 'Monthly checkup'
   status: 'Good health'
   payment_status: false
+  service_id: 1
   score: 1
   review: 'The registration and appointment booking process is efficient.'

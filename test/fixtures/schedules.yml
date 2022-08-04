@@ -2,12 +2,12 @@
 
 one:
   id: 1
-  week_day: MyString
+  week_day: 'Monday'
   opening_time: 2022-07-04 18:08:17
   closing_time: 2022-07-04 18:08:17
 
 two:
   id: 2
-  week_day: MyString
+  week_day: 'Friday'
   opening_time: 2022-07-04 18:08:17
   closing_time: 2022-07-04 18:08:17

@@ -18,14 +18,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-    
-  test 'can delete users' do
-    assert_difference('user.count', -1) do
-      delete user_path(users(:one))
-    end
-
-    assert_redirected_to users_path
-    assert_equal flash[:notice], 'New Administrator Creadted'
-  end
-
 end
