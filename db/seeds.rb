@@ -7,12 +7,12 @@ Speciality.create(name: 'Massagist')
 Speciality.create(name: 'Nutritionist')
 
 User.create(name: 'Carlos',    last_name: 'Perez',    birth_date: '1985-01-24', phone: '3121457851', email: 'carlos@gmail.com',    password: '123456789', role: 'administrator', speciality_id: 1)
-User.create(name: 'Henry',     last_name: 'Jimenez',  birth_date: '1986-05-06', phone: '3122154782', email: 'henry@gmail.com',     password: '123456',    role: 'professional',  speciality_id: 3)
-User.create(name: 'Oliver',    last_name: 'Cardenas', birth_date: '1987-02-18', phone: '3123154873', email: 'oliver@gmail.com',    password: '123456',    role: 'professional',  speciality_id: 4)
-User.create(name: 'Ximena',    last_name: 'Pizano',   birth_date: '1988-05-20', phone: '3124155624', email: 'ximena@gmail.com',    password: '123456',    role: 'professional',  speciality_id: 5)
-User.create(name: 'Alejandra', last_name: 'Garcia',   birth_date: '1989-06-13', phone: '3125762555', email: 'alejandra@gmail.com', password: '123456',    role: 'professional',  speciality_id: 5)
-User.create(name: 'Axel',      last_name: 'Lisboa',   birth_date: '1990-10-01', phone: '3126788216', email: 'axel@gmail.com',      password: '123',       role: 'manager',       speciality_id: 2)
-User.create(name: 'Andrea',    last_name: 'Lisboa',   birth_date: '1990-10-01', phone: '3127152057', email: 'andrea@gmail.com',    password: '123',       role: 'manager',       speciality_id: 2)
+User.create(name: 'Henry',     last_name: 'Jimenez',  birth_date: '1986-05-06', phone: '3122154782', email: 'henry@gmail.com',     password: '12345678',  role: 'professional',  speciality_id: 3)
+User.create(name: 'Oliver',    last_name: 'Cardenas', birth_date: '1987-02-18', phone: '3123154873', email: 'oliver@gmail.com',    password: '12345678',  role: 'professional',  speciality_id: 4)
+User.create(name: 'Ximena',    last_name: 'Pizano',   birth_date: '1988-05-20', phone: '3124155624', email: 'ximena@gmail.com',    password: '12345678',  role: 'professional',  speciality_id: 5)
+User.create(name: 'Alejandra', last_name: 'Garcia',   birth_date: '1989-06-13', phone: '3125762555', email: 'alejandra@gmail.com', password: '12345678',  role: 'professional',  speciality_id: 5)
+User.create(name: 'Axel',      last_name: 'Lisboa',   birth_date: '1990-10-01', phone: '3126788216', email: 'axel@gmail.com',      password: '1234567',   role: 'manager',       speciality_id: 2)
+User.create(name: 'Andrea',    last_name: 'Lisboa',   birth_date: '1990-10-01', phone: '3127152057', email: 'andrea@gmail.com',    password: '1234567',   role: 'manager',       speciality_id: 2)
 
 License.create(name: 'HJT', number: '12et84f6w', user_id: 2)
 License.create(name: 'OCM', number: '23sd46u4x', user_id: 3)
@@ -111,31 +111,38 @@ Turn.create(schedule_id: 18, user_id: 5)
 Turn.create(schedule_id: 19, user_id: 5)
 Turn.create(schedule_id: 23, user_id: 5)
 
-Patient.create(name: 'Remedios', second_name: 'Andrea',   last_name: 'Mesa',      second_last_name: 'Hernández', birth_date: '1971-01-01', phone: '3121237641', email: 'remedios@gmail.com', password: '12345', height: 170.8, observations: 'No observations')
-Patient.create(name: 'Mari',     second_name: 'Ximena',   last_name: 'Campos',    second_last_name: 'García',    birth_date: '1972-02-02', phone: '3122854512', email: 'mari@gmail.com',     password: '12345', height: 165.5, observations: 'No observations')
-Patient.create(name: 'Nerea',    second_name: 'Lourdes',  last_name: 'Ojeda',     second_last_name: 'Martínez',  birth_date: '1973-03-03', phone: '3123147753', email: 'nerea@gmail.com',    password: '12345', height: 175.2, observations: 'No observations')
-Patient.create(name: 'Nayara',   second_name: 'Paula',    last_name: 'Vega',      second_last_name: 'López',     birth_date: '1974-04-04', phone: '3124122044', email: 'nayara@gmail.com',   password: '12345', height: 180,   observations: 'No observations')
-Patient.create(name: 'Judith',   second_name: 'Andrea',   last_name: 'Osorio',    second_last_name: 'González',  birth_date: '1975-05-05', phone: '3125457885', email: 'judith@gmail.com',   password: '12345', height: 170.5, observations: 'No observations')
-Patient.create(name: 'Marco',    second_name: 'Alberto',  last_name: 'Solorio',   second_last_name: 'Pérez',     birth_date: '1976-06-06', phone: '3126100546', email: 'marco@gmail.com',    password: '12345', height: 163.4, observations: 'No observations')
-Patient.create(name: 'Paul',     second_name: 'Javier',   last_name: 'Martinez',  second_last_name: 'Rodríguez', birth_date: '1977-07-07', phone: '3127451027', email: 'paul@gmail.com',     password: '12345', height: 178.2, observations: 'No observations')
-Patient.create(name: 'Ivan',     second_name: 'Valdemar', last_name: 'Montoro',   second_last_name: 'Sánchez',   birth_date: '1978-08-08', phone: '3128102358', email: 'ivan@gmail.com',     password: '12345', height: 173,   observations: 'No observations')
-Patient.create(name: 'Maria',    second_name: 'Rosalba',  last_name: 'Rosales',   second_last_name: 'Ramírez',   birth_date: '1979-09-09', phone: '3129456189', email: 'maria@gmail.com',    password: '12345', height: 165.3, observations: 'No observations')
-Patient.create(name: 'Abraham',  second_name: 'Paul',     last_name: 'Caballero', second_last_name: 'Cruz',      birth_date: '1980-10-10', phone: '3121057810', email: 'abraham@gmail.com',  password: '12345', height: 152.1, observations: 'No observations')
-Patient.create(name: 'Jessie',   second_name: 'Alma',     last_name: 'Hoyos',     second_last_name: 'Gómez',     birth_date: '1981-11-11', phone: '3121148211', email: 'jess@gmail.com',     password: '12345', height: 181.5, observations: 'No observations')
-Patient.create(name: 'Maria',    second_name: 'Paula',    last_name: 'Diaz',      second_last_name: 'Morales',   birth_date: '1982-12-12', phone: '3121241812', email: 'maria@gmail.com',    password: '12345', height: 170.5, observations: 'No observations')
-Patient.create(name: 'Arantza',  second_name: 'Flor',     last_name: 'Mendez',    second_last_name: 'Vázquez',   birth_date: '1983-01-13', phone: '3121310513', email: 'arantza@gmail.com',  password: '12345', height: 169.7, observations: 'No observations')
-Patient.create(name: 'Adolfo',   second_name: 'Carlos',   last_name: 'Jimenez',   second_last_name: 'Reyes',     birth_date: '1984-02-14', phone: '3121403014', email: 'adolfo@gmail.com',   password: '12345', height: 170.5, observations: 'No observations')
-Patient.create(name: 'Karla',    second_name: 'Ignacia',  last_name: 'Palacios',  second_last_name: 'Torres',    birth_date: '1985-03-15', phone: '3121521815', email: 'karla@gmail.com',    password: '12345', height: 179.4, observations: 'No observations')
+@first_name_man = %w[Adolfo Adrián  Agustín Alberto Alejandro Alexander Alexis  Alonso  Andrés  Angel Anthony Antonio Bautista  Benicio Benjamín  Carlos  Cesar César Cristóbal Daniel  David Diego Dylan Eduardo Emiliano  Emilio  Emmanuel  Enrique Erik  Ernesto Esteban Ethan Evaristo  Fabián  Facundo Felipe  Félix Fernando  Francisco Gabriel Gaspar  Geronimo  Giorgio Gregorio  Gustavo Hugo  Ian Ignacio Iker  Isaac Jacob Javier  Jayden  Jeremy  Jerónimo  Jesus Jesús Joaquín John  Jorge Jose  José  Josué Juan  Julián  Julio Justin  Kevin Lautaro Liam  Lian  Lorenzo Lucas Luciano Luis  Manuel  Marco María Mario Martin  Martín  Mateo Matías  Maximiliano Máximo  Maykel  Melquiades  Miguel  Nelson  Noah  Oscar Pablo Pedro Rafael  Ramón Raúl  Ricardo Rigoberto Roberto Rolando Ronny Samuel  Santiago  Santino Santos  Sebastián Sergio  Thiago  Tomás Valentino Vicente]
+@second_name_man = %w[Victor  Víctor  Acton Adam  Aiken Alein Alan  Andrew  Arnold  Austin  Baldwin Barden  Barnett Barton  Basil Bishop  Bolton  Brent Bruce Caden Carlton Carter  Casper  Chad  Chase Clark Clint Cole  Conrad  Cooper  Curtis  Cypril  Dawson  Dean  Denis Dominic Donald  Drake Dunstan Eban  Edgar Edwin Elton Emil  Eton  Ferdinand Francis Fraser  Frederick Fulbert Gary  Gilbert Giles Gray  Guy Hanson  Harald  Harrison  Harry Henniker  Herbert Homer Hugh  Indiana Jaden James Jasper  Jett  Jordan  Joshua  Jude  Kurtis  Lauren  Leighton  Leonard Leonel  Lewis Lionel  Locke Luke  Mark  Marlon  Morris  Moses Nick  Paris Patrick Pierce  Raven Ray Rayner  River Roger Scott Stuart  Sutton  Taylor  Terence Terry Trent Ulric Usher Vincent Walt  Walter  Warden  Weldon  Wes Wesley  Wyatt Zayden]
+@last_name = %w[Acosta  Aguilar Aguirre Alonso  Alvarado  Alvarez Andrade Angeles Antonio Arellano  Arias Arroyo  Avalos  Avila Ayala Barajas Barrera Bautista  Becerra Beltrán Benítez Bernal  Bravo Cabrera Calderón  Camacho Campos  Cano  Cárdenas  Carmona Carrillo  Castañeda Castellanos Castillo  Castro  Cervantes Chan  Chávez  Cisneros  Contreras Córdova Corona  Cortés  Cortez  Cruz  Cuevas  Dávila  Delgado Diaz  Domínguez Durán Enríquez  Escobar Esparza Espinosa  Espinoza  Esquivel  Estrada Félix Fernández Figueroa  Flores  Franco  Fuentes Galindo Gallardo  Gallegos  Galván  García  Garza Gómez González  Guerra  Guerrero  Guevara Gutiérrez Guzmán  Hernández Herrera Huerta  Ibarra  Jiménez Juárez  Lara  Leon  Leyva López Lozano  Lugo  Luna  Macías  Magaña  Maldonado Marín Márquez Martínez  Mata  Medina  Mejía Méndez  Mendoza Mercado Meza  Miranda Molina  Montes  Montiel Montoya Mora  Morales Moreno  Muñoz Murillo Nava  Navarrete Navarro Nuñez Ochoa Olivares  Olvera  Orozco  Ortega  Ortiz Osorio  Pacheco Padilla Palacios  Paredes Parra Peña  Peralta Pérez Pineda  Ponce Quintero  Quiroz  Ramírez Ramos Rangel  Reséndiz  Reyes Reyna Ríos  Rivas Rivera  Robles  Rocha Rodríguez Rojas Román Romero  Rosales Rosas Rubio Ruiz  Salas Salazar Salgado Salinas Sánchez Sandoval  Santiago  Santos  Saucedo Segura  Serrano Silva Solis Sosa  Soto  Suarez  Tapia Téllez  Torres  Tovar Trejo Trujillo  Valdez  Valencia  Valenzuela  Vargas  Vásquez Vázquez Vega  Velasco Velázquez Vera  Villa Villalobos  Villanueva  Villarreal  Villegas  Zamora  Zárate  Zavala  Zúñiga]
+@second_last_name = %w[Acosta Aguilar Aguirre Alonso  Alvarado  Alvarez Andrade Angeles Antonio Arellano  Arias Arroyo  Avalos  Avila Ayala Barajas Barrera Bautista  Becerra Beltrán Benítez Bernal  Bravo Cabrera Calderón  Camacho Campos  Cano  Cárdenas  Carmona Carrillo  Castañeda Castellanos Castillo  Castro  Cervantes Chan  Chávez  Cisneros  Contreras Córdova Corona  Cortés  Cortez  Cruz  Cuevas  Dávila  Delgado Diaz  Domínguez Durán Enríquez  Escobar Esparza Espinosa  Espinoza  Esquivel  Estrada Félix Fernández Figueroa  Flores  Franco  Fuentes Galindo Gallardo  Gallegos  Galván  García  Garza Gómez González  Guerra  Guerrero  Guevara Gutiérrez Guzmán  Hernández Herrera Huerta  Ibarra  Jiménez Juárez  Lara  Leon  Leyva López Lozano  Lugo  Luna  Macías  Magaña  Maldonado Marín Márquez Martínez  Mata  Medina  Mejía Méndez  Mendoza Mercado Meza  Miranda Molina  Montes  Montiel Montoya Mora  Morales Moreno  Muñoz Murillo Nava  Navarrete Navarro Nuñez Ochoa Olivares  Olvera  Orozco  Ortega  Ortiz Osorio  Pacheco Padilla Palacios  Paredes Parra Peña  Peralta Pérez Pineda  Ponce Quintero  Quiroz  Ramírez Ramos Rangel  Reséndiz  Reyes Reyna Ríos  Rivas Rivera  Robles  Rocha Rodríguez Rojas Román Romero  Rosales Rosas Rubio Ruiz  Salas Salazar Salgado Salinas Sánchez Sandoval  Santiago  Santos  Saucedo Segura  Serrano Silva Solis Sosa  Soto  Suarez  Tapia Téllez  Torres  Tovar Trejo Trujillo  Valdez  Valencia  Valenzuela  Vargas  Vásquez Vázquez Vega Velasco  Velázquez Vera  Villa Villalobos  Villanueva  Villarreal  Villegas  Zamora  Zárate  Zavala  Zúñiga]
+@i = 2
+while(@i <= 15) do
+  first_name = @first_name_man[rand(19)]
+  second_name = @second_name_man[rand(19)]
+  last_name = @last_name[rand(15)]
+  second_last_name = @second_last_name[rand(15)]
+  Patient.create( id: @i,
+                  name: first_name,
+                  second_name: second_name,
+                  last_name: last_name,
+                  second_last_name: second_last_name,
+                  birth_date: "#{rand(1962..2015)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
+                  phone: "#{rand(900000000..999999999)}",
+                  email: "#{first_name}.#{last_name}.#{second_last_name}@gmail.com",
+                  password: "123456",
+                  height: rand(110..200).to_f, observations: "Creation Patient")
+  @i+=1
+end
 
-Diet.create(name: 'A1', description: 'Eat 3 times meat per day',                comments:'Carnivorous')
-Diet.create(name: 'A2', description: 'Eat 3 times vegetables per day',          comments:'Vegetarian')
-Diet.create(name: 'A3', description: 'Eat 3 times meat and vegetables per day', comments:'Mixed')
-Diet.create(name: 'B1', description: 'Eat all you can per day',                 comments:'Fat')
-Diet.create(name: 'B2', description: 'Eat only when you are hungry',            comments:'Fit')
-Diet.create(name: 'B3', description: 'Eat what you want per day',               comments:'Normal')
-Diet.create(name: 'C1', description: 'Eat 2 carbohidates and 3 protein',        comments:'No comments')
-Diet.create(name: 'C2', description: 'Eat 1 vegetable, 1 fruit and 3 protein',  comments:'No comments')
-Diet.create(name: 'C2', description: 'Eat 1 thing of all per day',              comments:'No comments')
+Diet.create(name: 'A1', description: 'Eat 3 times meat per day',                comments: 'Carnivorous')
+Diet.create(name: 'A2', description: 'Eat 3 times vegetables per day',          comments: 'Vegetarian')
+Diet.create(name: 'A3', description: 'Eat 3 times meat and vegetables per day', comments: 'Mixed')
+Diet.create(name: 'B1', description: 'Eat all you can per day',                 comments: 'Fat')
+Diet.create(name: 'B2', description: 'Eat only when you are hungry',            comments: 'Fit')
+Diet.create(name: 'B3', description: 'Eat what you want per day',               comments: 'Normal')
+Diet.create(name: 'C1', description: 'Eat 2 carbohidates and 3 protein',        comments: 'No comments')
+Diet.create(name: 'C2', description: 'Eat 1 vegetable, 1 fruit and 3 protein',  comments: 'No comments')
+Diet.create(name: 'C2', description: 'Eat 1 thing of all per day',              comments: 'No comments')
 
 Card.create(created_at: '2022-01-03 07:00:00', next_appointment: '2022-01-10', weight: 53.71, comments: 'No comments', patient_id: 1, diet_id: 3)
 Card.create(created_at: '2022-01-10 07:00:00', next_appointment: '2022-01-17', weight: 61.51, comments: 'No comments', patient_id: 1, diet_id: 2)
