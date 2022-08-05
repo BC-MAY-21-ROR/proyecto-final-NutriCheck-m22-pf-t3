@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#home'
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations'}
   devise_for :patients, controllers: { registrations: 'patients/registrations' }
 
 
@@ -31,9 +31,9 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users
   resources :slots
   resources :turns
-  resources :users
   resources :licenses
   resources :specialities
   resources :schedules

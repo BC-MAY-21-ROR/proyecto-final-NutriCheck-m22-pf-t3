@@ -3,6 +3,7 @@
 # Users controllers with crud functions
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  
   def index
     require_admin_session
     @users = User.all.with_attached_photo
@@ -85,4 +86,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :last_name, :birth_date, :phone, :email, :password, :role, :speciality_id, :photo)
   end
+
+
+
+
+
 end
