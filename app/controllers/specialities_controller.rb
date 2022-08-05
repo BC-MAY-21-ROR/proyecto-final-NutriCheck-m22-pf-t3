@@ -19,7 +19,7 @@ class SpecialitiesController < ApplicationController
   def create
     @speciality = Speciality.new(speci_params)
     if @speciality.save
-      redirect_specialities(1)
+      redirect_to specialities_path, notice: 'New speciality created successfully'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class SpecialitiesController < ApplicationController
     speciality
 
     if @speciality.update(speci_params)
-      redirect_specialities(2)
+      redirect_to specialities_path, notice: 'Speciality was edited successfully'
     else
       render :edit, stauts: :unprocessable_entity
     end
@@ -42,24 +42,13 @@ class SpecialitiesController < ApplicationController
   def destroy
     speciality
     if @speciality.destroy
-      redirect_specialities(3)
+      redirect_to specialities_path, notice: 'Speciality was deleted successfully'
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   private
-
-  def redirect_specialities(option)
-    case option
-    when 1
-      redirect_to specialities_path, notice: 'New speciality created successfully'
-    when 2
-      redirect_to specialities_path, notice: 'Speciality was edited successfully'
-    else
-      redirect_to specialities_path, notice: 'Speciality was deleted successfully'
-    end
-  end
 
   def speciality
     @speciality = Speciality.find(params[:id])
