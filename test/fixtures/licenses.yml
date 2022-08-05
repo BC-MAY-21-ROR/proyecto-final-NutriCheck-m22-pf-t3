@@ -1,19 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+license_one:
   id: 1
   user_id: 2
   name: 'Viktor'
   number: '503 45698712'
+  created_at: 2022-07-01
+  updated_at: 2022-09-01
 
-two:
+license_two:
   id: 2
   user_id: 2
   name: 'Zara'
   number: '503 23452345'
+  created_at: 2022-07-01
+  updated_at: 2022-09-01  
 
-three:
+
+license_three:
   id: 3
   user_id: 3
   name: 'Ivan'
   number: '503 23452345'
+  created_at: 2022-07-01
+  updated_at: 2022-09-01
+  

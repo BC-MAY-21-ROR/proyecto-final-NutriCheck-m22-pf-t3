@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+slot_one:
   service: MyString
   professional: MyString
   start_time: 2022-07-22 17:08:12
+  created_at: 2022-07-01 08:00:50
+  updated_at: 2022-07-20 17:32:25
 
-two:
+slot_two:
   service: MyString
   professional: MyString
   start_time: 2022-07-22 17:08:12
+  created_at: 2022-07-01 08:00:50
+  updated_at: 2022-07-20 17:32:25
+  

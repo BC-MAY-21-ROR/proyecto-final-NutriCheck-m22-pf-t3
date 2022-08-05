@@ -1,13 +1,18 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+service_one:
   id: 1
   name: MyString
   duration: MyString
   price: 1.5
+  created_at: 2022-07-01 08:00:50
+  updated_at: 2022-07-20 17:32:25
 
-two:
+service_two:
   id: 2
   name: MyString
   duration: MyString
   price: 1.5
+  created_at: 2022-07-01 08:00:50
+  updated_at: 2022-07-20 17:32:25
+  

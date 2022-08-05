@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+appointment_one:
   id: 1
   patient_id: 1
   user_id: 1
@@ -10,9 +10,11 @@ one:
   payment_status: false
   score: 1
   service_id: 1
-  review: 'Very good attention'
+  review: MyString
+  created_at: 2022-07-01
+  updated_at: 2022-09-01
 
-two:
+appointment_two:
   id: 2
   patient_id: 2
   user_id: 2
@@ -22,4 +24,6 @@ two:
   payment_status: false
   service_id: 1
   score: 1
-  review: 'The registration and appointment booking process is efficient.'
+  review: MyString
+  created_at: 2022-07-01
+  updated_at: 2022-09-01

@@ -1,6 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+patient_one:
   id: 1
   name: MyString
   second_name: MyString
@@ -12,8 +12,11 @@ one:
   password: MyString
   height: 1.5
   observations: MyString
+  created_at: 2022-07-01 08:00:50
+  updated_at: 2022-07-20 17:32:25
 
-two:
+
+patient_two:
   id: 2
   name: MyString
   second_name: MyString
@@ -25,3 +28,5 @@ two:
   password: MyString
   height: 1.5
   observations: MyString
+  created_at: 2022-07-01 08:00:50
+  updated_at: 2022-07-20 17:32:25

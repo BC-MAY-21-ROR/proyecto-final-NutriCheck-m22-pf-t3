@@ -1,12 +1,12 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+meetings_one:
   name: MyString
   start_time: 2022-07-20 17:32:25
   created_at: 2022-07-01 08:00:50
   updated_at: 2022-07-20 17:32:25
 
-two:
+meetings_two:
   name: MyString
   start_time: 2022-07-20 17:32:25
   created_at: 2022-07-01 08:00:50
