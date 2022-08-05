@@ -3,7 +3,11 @@
 # Controller for PATIENTS
 
 class PatientsController < ApplicationController
+  before_action :authenticate_patient!
   def index
+    require_admin_session
+    @patients = Patient.all.with_attached_photo
+
    
     @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc),items: 25)
 

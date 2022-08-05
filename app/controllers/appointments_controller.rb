@@ -2,6 +2,7 @@
 
 # Appointment class controller
 class AppointmentsController < ApplicationController
+  before_action :authenticate_patient!
   def index
     
     @pagy, @appointments = pagy(Appointment.order(date_time: :desc),items: 50)

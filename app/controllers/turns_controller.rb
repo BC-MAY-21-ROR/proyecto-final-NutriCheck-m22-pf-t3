@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TurnsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @turns = Turn.all
   end

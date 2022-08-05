@@ -3,6 +3,7 @@
 # Controller for SERVICES
 
 class ServicesController < ApplicationController
+  before_action :authenticate_patient!
   def index
     @services = Service.all
   end
