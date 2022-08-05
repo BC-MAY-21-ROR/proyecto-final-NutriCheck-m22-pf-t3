@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, notice: 'Please log-in as an User to view that page!' unless current_user
   end
 
+  def require_admin_session
+    return if current_user.role == 'administrator'
+    redirect_to root_url, notice: 'You have no permission to access that page.'
+  end
+
   def devise_parameter_sanitizer
     if resource_class == Patient
       Patients::PatientsSanitizer.new(Patient, :patient, params)

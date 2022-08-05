@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ProfessionalsController < UsersController
+  before_action :authenticate_user!
   def index
     @professionals = User.where(role: 'professional')
   end

@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  
+
   root 'welcome#home'
   devise_for :users
-  devise_for :patients, controllers: {     registrations: 'patients/registrations'   } 
-  
+  devise_for :patients, controllers: { registrations: 'patients/registrations' }
+
+
   
   resources :managers, :professionals, :administrators do
     collection do
@@ -45,5 +46,9 @@ Rails.application.routes.draw do
   get 'slots_reservations/:id/', to: 'slots#reservations', as: 'slot_reservation'
 
 
+  get 'administrator/dashboard', to: 'administrators#dashboard', as: 'administrator_dashboard'
+  get 'manager/dashboard', to: 'managers#dashboard', as: 'manager_dashboard'
+  get 'patient/dashboard', to: 'patients#dashboard', as: 'patient_dashboard'
+  get 'professional/dashboard', to: 'professionals#dashboard', as: 'professional_dashboard'
 
 end
