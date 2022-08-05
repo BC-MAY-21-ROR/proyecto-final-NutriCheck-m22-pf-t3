@@ -7,6 +7,11 @@
   </div>
   <div class="mx-auto">
     <%= form_with model: @user do |form| %>
+      <% @user.errors.full_messages.each do |error| %>
+        <div class="text-danger">
+          <%= error %>
+        </div>
+      <% end %>
       <div class="d-grid gap-2">
         <div>
           <%= form.label :name, class: "fw-bold" %>

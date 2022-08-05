@@ -35,7 +35,7 @@ class LicensesController < ApplicationController
     if @license.update(lic_params)
       redirect_to professionals_path, notice: 'License was edited successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -44,7 +44,7 @@ class LicensesController < ApplicationController
     if @license.destroy
       redirect_to professionals_path, notice: 'License was deleted successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

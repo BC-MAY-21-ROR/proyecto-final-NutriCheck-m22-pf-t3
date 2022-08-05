@@ -6,11 +6,11 @@ class AppointmentsController < ApplicationController
   skip_before_action :authenticate_patient!, only: [:search]
 
   def index
-    @pagy, @appointments = pagy(Appointment.order(date_time: :desc), items: 50)
+    pagination
   end
 
   def search
-    @pagy, @appointments = pagy(Appointment.order(date_time: :desc), items: 50)
+    pagination
   end
 
   def new
@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
   def create
     @appointment = Appointment.new(appointment_params)
     if @appointment.save
-      redirect_to appointments_path, notice: 'New appointment created successfully'
+      redirect_appointment(1)
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,22 +38,37 @@ class AppointmentsController < ApplicationController
     appointment
 
     if @appointment.update(appointment_params)
-      redirect_to appointments_path, notice: 'Appointment was edited successfully'
+      redirect_appointment(2)
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     appointment
     if @appointment.destroy
-      redirect_to appointments_path, notice: 'Appointment was deleted successfully'
+      redirect_appointment(3)
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   private
+
+  def redirect_appointment(option)
+    case option
+    when 1
+      redirect_to appointments_path, notice: 'New appointment created successfully'
+    when 2
+      redirect_to appointments_path, notice: 'Appointment was edited successfully'
+    else
+      redirect_to appointments_path, notice: 'Appointment was deleted successfully'
+    end
+  end
+
+  def pagination
+    @pagy, @appointments = pagy(Appointment.order(date_time: :desc), items: 50)
+  end
 
   def appointment
     @appointment = Appointment.find(params[:id])

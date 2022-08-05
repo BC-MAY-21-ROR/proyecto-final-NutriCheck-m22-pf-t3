@@ -3,7 +3,6 @@
 require 'users/users_sanitizer'
 require 'patients/patients_sanitizer'
 class ApplicationController < ActionController::Base
-
   include Pagy::Backend
 
   protected
@@ -14,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   def require_admin_session
     return if current_user.role == 'administrator'
+
     redirect_to root_url, notice: 'You have no permission to access that page.'
   end
 
@@ -30,9 +30,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     # check for the class of the object to determine what type it is
     if resource.instance_of?(User)
-      if resource.role == 'manager'
+      case resource.role
+      when 'manager'
         dashboard_managers_path
-      elsif resource.role == 'administrator'
+      when 'administrator'
         dashboard_administrators_path
       else
         dashboard_professionals_path

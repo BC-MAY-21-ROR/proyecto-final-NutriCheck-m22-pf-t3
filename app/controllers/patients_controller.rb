@@ -8,16 +8,11 @@ class PatientsController < ApplicationController
   def index
     require_admin_session
     @patients = Patient.all.with_attached_photo
-
-   
-    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc),items: 25)
-
+    pagination
   end
 
   def search
-   
-    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc),items: 25)
-
+    pagination
   end
 
   def new
@@ -31,7 +26,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(pat_params)
     if @patient.save
-      redirect_to patients_path, notice: 'New patient created successfully'
+      redirect_patients(1)
     else
       render :new, status: :unprocessable_entity
     end
@@ -45,26 +40,41 @@ class PatientsController < ApplicationController
     patient
 
     if @patient.update(pat_params)
-      redirect_to patients_path, notice: 'Patient was edited successfully'
+      redirect_patients(2)
     else
-      render :edit, :unprocessable_entity
+      render :edit, stauts: :unprocessable_entity
     end
   end
 
   def destroy
     patient
     if @patient.destroy
-      redirect_to patients_path, notice: 'Patient was deleted successfully'
+      redirect_patients(3)
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def dashboard
     @patient = current_patient
   end
-  
+
   private
+
+  def redirect_patients(option)
+    case option
+    when 1
+      redirect_to patients_path, notice: 'New patient created successfully'
+    when 2
+      redirect_to patients_path, notice: 'Patient was edited successfully'
+    else
+      redirect_to patients_path, notice: 'Patient was deleted successfully'
+    end
+  end
+
+  def pagination
+    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc), items: 25)
+  end
 
   def patient
     @patient = Patient.find(params[:id])

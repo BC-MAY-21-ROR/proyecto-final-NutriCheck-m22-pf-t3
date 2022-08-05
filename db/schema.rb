@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_05_214605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,10 +43,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
   end
 
   create_table "appointments", force: :cascade do |t|
-    t.datetime "date_time"
-    t.string "reason"
-    t.string "status"
-    t.boolean "payment_status"
+    t.datetime "date_time", null: false
+    t.string "reason", null: false
+    t.string "status", null: false
+    t.boolean "payment_status", null: false
     t.integer "score"
     t.string "review"
     t.datetime "created_at", null: false
@@ -60,9 +60,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.date "next_appointment"
-    t.float "weight"
-    t.string "comments"
+    t.date "next_appointment", null: false
+    t.float "weight", null: false
+    t.string "comments", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "patient_id", null: false
@@ -73,40 +73,41 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
     t.index ["patient_id"], name: "index_cards_on_patient_id"
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.text "fecha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "diets", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "comments"
+    t.string "name", null: false
+    t.string "description", null: false
+    t.string "comments", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "licenses", force: :cascade do |t|
-    t.string "name"
-    t.string "number"
+    t.string "name", null: false
+    t.string "number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_licenses_on_user_id"
   end
 
-  create_table "patients", force: :cascade do |t|
+  create_table "meetings", force: :cascade do |t|
     t.string "name"
-    t.string "second_name"
-    t.string "last_name"
-    t.string "second_last_name"
-    t.date "birth_date"
-    t.string "phone"
-    t.string "email"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "second_name", null: false
+    t.string "last_name", null: false
+    t.string "second_last_name", null: false
+    t.date "birth_date", null: false
+    t.string "phone", null: false
+    t.string "email", null: false
     t.string "password"
-    t.float "height"
-    t.string "observations"
+    t.float "height", null: false
+    t.string "observations", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
@@ -117,17 +118,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.string "week_day"
-    t.time "opening_time"
-    t.time "closing_time"
+    t.string "week_day", null: false
+    t.time "opening_time", null: false
+    t.time "closing_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "services", force: :cascade do |t|
-    t.string "name"
-    t.string "duration"
-    t.float "price"
+    t.string "name", null: false
+    t.string "duration", null: false
+    t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -142,7 +143,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
   end
 
   create_table "specialities", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -157,13 +158,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_28_003132) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "last_name"
-    t.date "birth_date"
-    t.string "phone"
-    t.string "email"
+    t.string "name", null: false
+    t.string "last_name", null: false
+    t.date "birth_date", null: false
+    t.string "phone", null: false
+    t.string "email", null: false
     t.string "password"
-    t.string "role"
+    t.string "role", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "speciality_id", null: false
