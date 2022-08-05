@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 
-
-class Patients::PasswordsController < Devise::PasswordsController
- 
+module Patients
+  class PasswordsController < Devise::PasswordsController
+  end
 end

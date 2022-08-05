@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :speciality
-  
+
   has_one_attached :photo
 
   has_many :licenses
@@ -32,5 +32,4 @@ class User < ApplicationRecord
   def get_speciality_name
     "#{speciality.name} - #{name} #{last_name}"
   end
-
 end

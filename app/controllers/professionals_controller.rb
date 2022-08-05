@@ -16,8 +16,8 @@ class ProfessionalsController < UsersController
   end
 
   def dashboard
-      @managers = User.where(role: 'profesional')
-      @patients = Patient.all
-      @appointments = Appointment.all
+    @managers = User.where(role: 'profesional')
+    @patients = Patient.all
+    @appointments = Appointment.all
   end
 end

@@ -4,12 +4,11 @@
 class AppointmentsController < ApplicationController
   before_action :authenticate_patient!
   def index
-    
-    @pagy, @appointments = pagy(Appointment.order(date_time: :desc),items: 50)
+    @pagy, @appointments = pagy(Appointment.order(date_time: :desc), items: 50)
   end
 
   def search
-    @pagy, @appointments = pagy(Appointment.order(date_time: :desc),items: 50)
+    @pagy, @appointments = pagy(Appointment.order(date_time: :desc), items: 50)
   end
 
   def new
@@ -67,7 +66,7 @@ class AppointmentsController < ApplicationController
       :user_id,
       :status,
       :payment_status,
-      :score, 
+      :score,
       :review
     )
   end

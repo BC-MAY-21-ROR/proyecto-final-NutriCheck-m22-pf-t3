@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 
-
-class Patients::UnlocksController < Devise::UnlocksController
- 
+module Patients
+  class UnlocksController < Devise::UnlocksController
+  end
 end

@@ -8,15 +8,11 @@ class PatientsController < ApplicationController
     require_admin_session
     @patients = Patient.all.with_attached_photo
 
-   
-    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc),items: 25)
-
+    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc), items: 25)
   end
 
   def search
-   
-    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc),items: 25)
-
+    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc), items: 25)
   end
 
   def new
@@ -62,7 +58,7 @@ class PatientsController < ApplicationController
   def dashboard
     @patient = current_patient
   end
-  
+
   private
 
   def patient
