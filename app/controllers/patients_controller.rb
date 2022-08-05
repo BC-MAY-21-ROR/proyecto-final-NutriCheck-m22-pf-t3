@@ -46,7 +46,7 @@ class PatientsController < ApplicationController
     if @patient.update(pat_params)
       redirect_to patients_path, notice: 'Patient was edited successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, stauts: :unprocessable_entity
     end
   end
 
@@ -55,7 +55,7 @@ class PatientsController < ApplicationController
     if @patient.destroy
       redirect_to patients_path, notice: 'Patient was deleted successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

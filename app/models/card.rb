@@ -5,4 +5,9 @@ class Card < ApplicationRecord
   belongs_to :diet
   belongs_to :appointment
 
+  validates :next_appointment, presence: true
+  validates :weight, presence: true
+  validates :comments, presence: true
+  validates :patient_id, presence: true
+  validates :diet_id, presence: true
 end

@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         redirect_to users_path, notice: 'New User Created'
       end
     else
-      render :new, :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -44,16 +44,16 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       case @user.role
       when 'administrator'
-        redirect_to administrator_path(@user), notice: 'New Administrator Created'
+        redirect_to administrator_path(@user), notice: 'Administrator updated'
       when 'manager'
-        redirect_to manager_path(@user), notice: 'New Manager Created'
+        redirect_to manager_path(@user), notice: 'Manager updated'
       when 'professional'
-        redirect_to professional_path(@user), notice: 'New Professional Created'
+        redirect_to professional_path(@user), notice: 'Professional updated'
       else
-        redirect_to users_path, notice: 'New User Created'
+        redirect_to users_path, notice: 'User updated'
       end
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -62,13 +62,13 @@ class UsersController < ApplicationController
     if @user.destroy
       case @user.role
       when 'administrator'
-        redirect_to administrators_path, notice: 'New Administrator Created'
+        redirect_to administrators_path, notice: 'Administrator deleted'
       when 'manager'
-        redirect_to managers_path, notice: 'New Manager Created'
+        redirect_to managers_path, notice: 'Manager deleted'
       when 'professional'
-        redirect_to professionals_path, notice: 'New Professional Created'
+        redirect_to professionals_path, notice: 'Professional deleted'
       else
-        redirect_to users_path, notice: 'New User Created'
+        redirect_to users_path, notice: 'User deleted'
       end
 
     else

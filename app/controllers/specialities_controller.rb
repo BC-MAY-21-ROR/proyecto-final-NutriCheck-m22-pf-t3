@@ -35,7 +35,7 @@ class SpecialitiesController < ApplicationController
     if @speciality.update(speci_params)
       redirect_to specialities_path, notice: 'Speciality was edited successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, stauts: :unprocessable_entity
     end
   end
 
@@ -44,7 +44,7 @@ class SpecialitiesController < ApplicationController
     if @speciality.destroy
       redirect_to specialities_path, notice: 'Speciality was deleted successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

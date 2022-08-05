@@ -32,7 +32,7 @@ class SchedulesController < ApplicationController
     if @schedule.update(schedule_params)
       redirect_to schedules_path, notice: 'Schedule was edited successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -41,7 +41,7 @@ class SchedulesController < ApplicationController
     if @schedule.destroy
       redirect_to schedules_path, notice: 'Schedule was deleted successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

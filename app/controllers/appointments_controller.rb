@@ -39,7 +39,7 @@ class AppointmentsController < ApplicationController
     if @appointment.update(appointment_params)
       redirect_to appointments_path, notice: 'Appointment was edited successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -48,7 +48,7 @@ class AppointmentsController < ApplicationController
     if @appointment.destroy
       redirect_to appointments_path, notice: 'Appointment was deleted successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -67,7 +67,7 @@ class AppointmentsController < ApplicationController
       :user_id,
       :status,
       :payment_status,
-      :score, 
+      :score,
       :review
     )
   end

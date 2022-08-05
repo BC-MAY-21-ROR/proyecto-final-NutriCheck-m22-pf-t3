@@ -35,7 +35,7 @@ class ServicesController < ApplicationController
     if @service.update(ser_params)
       redirect_to services_path, notice: 'Service was edited successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -44,7 +44,7 @@ class ServicesController < ApplicationController
     if @service.destroy
       redirect_to services_path, notice: 'Service was deleted successfully'
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
