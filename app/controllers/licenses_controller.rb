@@ -19,7 +19,7 @@ class LicensesController < ApplicationController
   def create
     @license = License.new(lic_params)
     if @license.save
-      redirect_to professionals_path, notice: 'New license created successfully'
+      redirect_professionals(1)
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class LicensesController < ApplicationController
     license
 
     if @license.update(lic_params)
-      redirect_to professionals_path, notice: 'License was edited successfully'
+      redirect_professionals(2)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,13 +42,25 @@ class LicensesController < ApplicationController
   def destroy
     license
     if @license.destroy
-      redirect_to professionals_path, notice: 'License was deleted successfully'
+      redirect_professionals(3)
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   private
+
+  def redirect_professionals(option)
+    case option
+    when 1
+      redirect_to professionals_path, notice: 'New license created successfully'
+    when 2
+      redirect_to professionals_path, notice: 'License was edited successfully'
+    else
+      redirect_to professionals_path, notice: 'License was deleted successfully'
+    end
+  end
+
 
   def license
     @license = License.find(params[:id])

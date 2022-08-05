@@ -18,7 +18,7 @@ class DietsController < ApplicationController
     @diet = Diet.new(diet_params)
 
     if @diet.save
-      redirect_to diets_path, notice: 'Diet create succesfully'
+      redirect_diets(1)
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class DietsController < ApplicationController
     diet
 
     if @diet.update(diet_params)
-      redirect_to diets_path, notice: 'Diet updated succesfully'
+      redirect_diets(2)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,13 +42,24 @@ class DietsController < ApplicationController
     diet
 
     if @diet.destroy
-      redirect_to diets_path, notice: 'Diet deleted succesfully'
+      redirect_diets(3)
     else
       redirect_to diets_path, status: :unprocessable_entity
     end
   end
 
   private
+
+  def redirect_diets(option)
+    case option
+    when 1
+      redirect_to diets_path, notice: 'Diet create succesfully'
+    when 2
+      redirect_to diets_path, notice: 'Diet updated succesfully'
+    else
+      redirect_to diets_path, notice: 'Diet deleted succesfully'
+    end
+  end
 
   def diet
     @diet = Diet.find(params[:id])

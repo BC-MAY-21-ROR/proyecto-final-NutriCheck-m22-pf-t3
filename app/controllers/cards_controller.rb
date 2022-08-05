@@ -18,7 +18,7 @@ class CardsController < ApplicationController
     @card = Card.new(card_params)
 
     if @card.save
-      redirect_to cards_path, notice: 'Card create succesfully'
+      redirect_cards(1)
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class CardsController < ApplicationController
     card
 
     if @card.update(card_params)
-      redirect_to cards_path, notice: 'Card updated succesfully'
+      redirect_cards(2)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class CardsController < ApplicationController
     card
 
     if @card.destroy
-      redirect_to cards_path, notice: 'Card deleted succesfully'
+      redirect_cards(3)
     else
       redirect_to cards_path, status: :unprocessable_entity
     end
@@ -50,13 +50,23 @@ class CardsController < ApplicationController
 
   private
 
+  def redirect_cards(option)
+    case option
+    when 1
+      redirect_to cards_path, notice: 'Card create succesfully'
+    when 2
+      redirect_to cards_path, notice: 'Card updated succesfully'
+    else
+      redirect_to cards_path, notice: 'Card deleted succesfully'
+    end
+  end
+
   def patient
     @patient = Patient.find(params[:format])
     @diet = Diet.find(params[:format])
-  rescue ActiveRecord::RecordNotFound => error
-    redirect_to patients_path, notice: error.message
+  rescue ActiveRecord::RecordNotFound => e
+    redirect_to patients_path, notice: e.message
   end
-  
 
   def card
     @card = Card.find(params[:id])

@@ -16,7 +16,7 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
     if @schedule.save
-      redirect_to schedules_path, notice: 'New license created successfully'
+      redirect_schedules(1)
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class SchedulesController < ApplicationController
     schedule
 
     if @schedule.update(schedule_params)
-      redirect_to schedules_path, notice: 'Schedule was edited successfully'
+      redirect_schedules(2)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,13 +39,24 @@ class SchedulesController < ApplicationController
   def destroy
     schedule
     if @schedule.destroy
-      redirect_to schedules_path, notice: 'Schedule was deleted successfully'
+      redirect_schedules(3)
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   private
+
+  def redirect_schedules(option)
+    case option
+    when 1
+      redirect_to schedules_path, notice: 'New license created successfully'
+    when 2
+      redirect_to schedules_path, notice: 'Schedule was edited successfully'
+    else
+      redirect_to schedules_path, notice: 'Schedule was deleted successfully'
+    end
+  end
 
   def schedule
     @schedule = Schedule.find(params[:id])
