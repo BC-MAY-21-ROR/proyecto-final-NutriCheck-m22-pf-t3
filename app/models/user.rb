@@ -41,5 +41,4 @@ class User < ApplicationRecord
   def get_speciality_name
     "#{speciality.name} - #{name} #{last_name}"
   end
-
 end

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
 
-class Patients::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+module Patients
+  class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  end
 end

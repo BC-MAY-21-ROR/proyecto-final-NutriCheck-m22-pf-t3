@@ -92,6 +92,6 @@ gem 'pry', '~> 0.14.1'
 gem 'rails-ujs', '~> 0.1.0'
 
 # Manage calendar
-gem "simple_calendar", "~> 2.4"
+gem 'simple_calendar', '~> 2.4'
 
-gem "pagy", "~> 5.10"
+gem 'pagy', '~> 5.10'

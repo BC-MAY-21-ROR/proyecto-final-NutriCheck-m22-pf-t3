@@ -1,3 +1,6 @@
+# frozen_string_literal: true
 
-class Patients::SessionsController < Devise::SessionsController
+module Patients
+  class SessionsController < Devise::SessionsController
+  end
 end
