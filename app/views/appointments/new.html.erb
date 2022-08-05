@@ -1,6 +1,11 @@
 <div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-4 gap-2">
   <h1 class="mx-auto  fw-bold">New appointment</h1>
   <%= form_with model: @appointment, class: "form-group" do |form| %>
+    <% @appointment.errors.full_messages.each do |error| %>
+      <div class="text-danger">
+        <%= error %>
+      </div>
+    <% end %>
     <%= form.label :date_time %>
     <div>
       <%= form.datetime_field :date_time, class: "form-control"%>

@@ -9,4 +9,7 @@ class Turn < ApplicationRecord
 
   belongs_to :user
   belongs_to :schedule
+
+  validates :schedule_id, presence: true
+  validates :user_id, presence: true
 end

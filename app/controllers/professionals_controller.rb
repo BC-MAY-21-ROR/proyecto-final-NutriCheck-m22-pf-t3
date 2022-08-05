@@ -19,5 +19,7 @@ class ProfessionalsController < UsersController
     @managers = User.where(role: 'profesional')
     @patients = Patient.all
     @appointments = Appointment.all
+    @appointments_today_count = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day).where(user_id: current_user.id).count
+    @appointments = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day)
   end
 end

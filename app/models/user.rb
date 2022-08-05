@@ -13,6 +13,15 @@ class User < ApplicationRecord
   has_many :turns
   has_many :appointments
 
+  validates :name, presence: true
+  validates :last_name, presence: true
+  validates :birth_date, presence: true
+  validates :phone, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :role, presence: true
+  validates :speciality_id, presence: true
+
   def getname
     "#{role} #{name} #{last_name}"
   end

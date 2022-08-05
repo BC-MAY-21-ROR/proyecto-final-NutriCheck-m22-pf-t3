@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(ser_params)
     if @service.save
-      redirect_to services_path, notice: 'New service created successfully'
+      redirect_services(1)
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,22 +33,33 @@ class ServicesController < ApplicationController
     service
 
     if @service.update(ser_params)
-      redirect_to services_path, notice: 'Service was edited successfully'
+      redirect_services(2)
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     service
     if @service.destroy
-      redirect_to services_path, notice: 'Service was deleted successfully'
+      redirect_services(3)
     else
-      render :edit, :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
   private
+
+  def redirect_services(option)
+    case option
+    when 1
+      redirect_to services_path, notice: 'New service created successfully'
+    when 2
+      redirect_to services_path, notice: 'Service was edited successfully'
+    else
+      redirect_to services_path, notice: 'Service was deleted successfully'
+    end
+  end
 
   def service
     @service = Service.find(params[:id])
