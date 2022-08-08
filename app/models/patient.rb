@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class Patient < ApplicationRecord
+  include PgSearch::Model
+
+  pg_search_scope :search_full_text, against: {
+    last_name: 'A',
+    name: 'B', 
+    second_name: 'C'
+  }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
