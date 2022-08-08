@@ -3,11 +3,10 @@
 class Appointment < ApplicationRecord
   include PgSearch::Model
 
-  pg_search_scope :search_full_text, against: {
-    
-    # name: 'B', 
-    # second_name: 'C'
+  pg_search_scope :search_full_text, associated_against: {
+    patient: [ :name, :last_name ]
   }
+
   belongs_to :patient
   belongs_to :user
   belongs_to :service
