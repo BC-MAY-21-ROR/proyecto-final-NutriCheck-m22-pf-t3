@@ -19,6 +19,9 @@
   <% else %>
     <div class="d-grid my-4">
       <h1 class="mx-auto fw-bold text-white px-3">Appointments</h1>
+      <%= form_with url: search_appointments_path, method: :get, class: 'd-flex' do |form| %>
+        <%= form.text_field :query_text, placeholder: 'write a surname or first name', onChange: 'this.form.requestSubmit()', value: params[:query_text], class: 'form-control mx-2 px-2' %>
+      <% end %>
       <div class="bg-container-cards m-2">
         <table class="table table-striped">
           <thead class="thead-dark">

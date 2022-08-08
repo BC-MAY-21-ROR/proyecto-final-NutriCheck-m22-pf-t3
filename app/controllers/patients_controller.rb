@@ -3,8 +3,8 @@
 # Controller for PATIENTS
 
 class PatientsController < ApplicationController
-  before_action :authenticate_patient!
-  skip_before_action :authenticate_patient!, only: [:search]
+  # before_action :authenticate_patient!
+  # skip_before_action :authenticate_patient!, only: [:search]
   def index
     require_admin_session
     @patients = Patient.all.with_attached_photo
@@ -12,6 +12,10 @@ class PatientsController < ApplicationController
   end
 
   def search
+    @patients = Patient.all.with_attached_photo.order(created_at: :desc)
+    if params[:query_text].present?
+      @patients = @patients.search_full_text(params[:query_text])
+    end
     pagination
   end
 
@@ -73,7 +77,7 @@ class PatientsController < ApplicationController
   end
 
   def pagination
-    @pagy, @patients = pagy(Patient.all.with_attached_photo.order(created_at: :desc), items: 25)
+    @pagy, @patients = pagy(@patients, items: 25)
   end
 
   def patient
