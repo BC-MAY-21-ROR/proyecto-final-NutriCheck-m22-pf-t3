@@ -34,6 +34,9 @@
   </div>
   <h1 class="mx-auto text-white fw-bold mt-2 mb-0 pb-0">Appointments of today</h1>
   <p class="mx-auto text-white fw-bold p-0 my-0">Today we have <%= @appointments_today_count %> Patients</p>
+  <%= form_with url: dashboard_managers_path, method: :get, class: 'd-flex' do |form| %>
+    <%= form.text_field :query_text, placeholder: 'write a surname or first name', onChange: 'this.form.requestSubmit()', value: params[:query_text], class: 'form-control mx-2 px-2' %>
+  <% end %>
 </div>
 <div class="bg-container-cards m-2">
   <table class="table table-striped">
