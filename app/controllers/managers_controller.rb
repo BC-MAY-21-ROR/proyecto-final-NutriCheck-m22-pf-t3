@@ -12,7 +12,11 @@ class ManagersController < UsersController
 
   def dashboard
     @appointments_today_count = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day).count
-    @pagy, @appointments = pagy(Appointment.order(date_time: :asc).where(date_time: Date.today.all_day), items: 10)
+    @appointments = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day)
+    if params[:query_text].present?
+      @appointments = @appointments.search_full_text(params[:query_text])
+    end
+    @pagy, @appointments = pagy(@appointments, items: 10)
     respond_to do |format|
       format.html
       format.turbo_stream

@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
   end
 
   def search
-    @appointments = Appointment.order(date_time: :desc)
+    @appointments = Appointment.all.order(date_time: :desc)
     if params[:query_text].present?
       @appointments = @appointments.search_full_text(params[:query_text])
     end
@@ -71,7 +71,7 @@ class AppointmentsController < ApplicationController
   end
 
   def pagination
-    @pagy, @appointments = pagy(Appointment.order(date_time: :desc), items: 50)
+    @pagy, @appointments = pagy(@appointments, items: 50)
   end
 
   def appointment
