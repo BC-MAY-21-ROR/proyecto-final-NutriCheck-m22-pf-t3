@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class Appointment < ApplicationRecord
+  include PgSearch::Model
+
+  pg_search_scope :search_full_text, against: {
+    
+    # name: 'B', 
+    # second_name: 'C'
+  }
   belongs_to :patient
   belongs_to :user
   belongs_to :service
