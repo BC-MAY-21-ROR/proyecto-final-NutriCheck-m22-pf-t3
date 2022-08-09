@@ -14,7 +14,7 @@
         <p class="card-text  p-0 m-0"><%= current_user.email %></p>
         <p class="card-text  p-0 m-0"><%= current_user.phone %></p>
         <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
-          <%= button_to "Edit", edit_manager_path(current_user), method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+          <%= button_to "Edit", edit_user_path(current_user), method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
           <%= button_to "Exit", destroy_user_session_path, method: :delete, type: "button", form_class: "col-sm mx-auto w-25", class: "btn btn-sm btn-warning text-white fw-bold w-100" %>
         </div>
       </div>
