@@ -5,7 +5,7 @@ module Patients
     def initialize(*)
       super
 
-      permit(:sign_up, keys: %i[username email name last_name birth_date phone height])
+      permit(:sign_up, keys: %i[username email name second_name last_name second_last_name birth_date phone height photo])
     end
   end
 end
