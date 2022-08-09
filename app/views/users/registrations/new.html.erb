@@ -1,61 +1,86 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
-
-
- <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+<div class="bg-white min-vh-100 d-grid">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", managers_path,  class: "green-back-link fw-bold text-decoration-none" %>
+  </p>
+  <div class="d-grid m-auto">
+    <h1 class="mx-auto fw-bold">Create New User</h1>
   </div>
-  
- <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field:last_name %>
+  <div class="mx-auto">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+      
+      <% @user.errors.full_messages.each do |error| %>
+        <div class="text-danger">
+          <%= error %>
+        </div>
+      <% end %>
+      
+      <div class="d-grid gap-2">
+        <div>
+          <%= form.label :name, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :name, class: "form-control"  %>
+        </div>
+        <div>
+          <%= form.label :last_name, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :last_name, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :birth_date, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.date_field :birth_date, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :phone, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :phone, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :email, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.email_field :email, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :password, class: "fw-bold" %>
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+        </div>
+        <div>
+          <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :role, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.select :role, [["Manager", "manager"],["Professional", "professional"]], {}, {class: "form-control rounded-pill text-center"} %>
+        </div>
+        <div>
+          <%= form.label :speciality_id, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
+        </div>
+        <div>
+          <%= form.label :photo, class: "fw-bold" %><br>
+          <%= form.file_field :photo, class: "form-control" %>
+        </div>
+        <div class="d-grid gap-3 col-6 mx-auto pt-4">
+          <%= form.submit 'Sign up', class: "btn color-btn rounded-pill text-white fw-bold"%>
+          <%= render "users/shared/links" %>
+        </div>
+      </div>
+    <% end %>
   </div>
-    
- <div class="field">
-    <%= f.label :birth_date %><br />
-    <%= f.date_field :birth_date %>
-  </div>
-
- <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select :role, ['Manager', 'Professional'] %>
-  </div>
-  
- <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.telephone_field :phone %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-    <div class="field">
-    <%= f.label :speciality_id %><br />
-    <%= f.text_field :speciality_id %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
