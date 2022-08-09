@@ -18,15 +18,12 @@ class Patient < ApplicationRecord
   has_one_attached :photo
 
   validates :name, presence: true
-  validates :second_name, presence: true
   validates :last_name, presence: true
-  validates :second_last_name, presence: true
   validates :birth_date, presence: true
   validates :phone, presence: true
   validates :email, presence: true
   validates :password, presence: true
   validates :height, presence: true
-  validates :observations, presence: true
 
   def patient_full_name
     "#{name} #{second_name} #{last_name} #{second_last_name}"
