@@ -4,8 +4,12 @@ require 'users/users_sanitizer'
 require 'patients/patients_sanitizer'
 class ApplicationController < ActionController::Base
   include Pagy::Backend
-
+  # before_action :configure_permitted_parameters, if :devise_controller?
   protected
+  
+    # def configure_permitted_parameters
+    #   devise_parameter_sanitizer.permit(:account_update, keys: %i[email name last_name birth_date phone role speciality_id])
+    # end
 
   def require_login
     redirect_to root_url, notice: 'Please log-in as an User to view that page!' unless current_user
