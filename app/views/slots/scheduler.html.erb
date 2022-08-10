@@ -4,52 +4,59 @@
     <%= form.label "How many rooms are availables:", class: '' %>
     <%= form.number_field :rooms, in: 1..100, class: 'form-control' %>
     <div>
+      <%= form.label "Dates:" , class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.date_field :start_date , class: 'form-control', placeholder: 'Start Date'%>
+        <%= form.date_field :end_date , class: 'form-control'%>
+      </div>
+    </div>
+    <div>
       <%= form.label "Monday:" , class: ''%>
       <div class="d-flex gap-2">
-        <%= form.number_field :monday_in , class: 'form-control'%>
-        <%= form.number_field :monday_out , class: 'form-control'%>
+        <%= form.time_field :monday_in , class: 'form-control', placeholder: 'Date In Monday'%>
+        <%= form.time_field :monday_out , class: 'form-control'%>
       </div>
     </div>
     <div>
       <%= form.label "Tuesday:" , class: ''%>
       <div class="d-flex gap-2">
-        <%= form.number_field :tuesday_in , class: 'form-control'%>
-        <%= form.number_field :tuesday_out , class: 'form-control'%>
+        <%= form.time_field :tuesday_in , class: 'form-control'%>
+        <%= form.time_field :tuesday_out , class: 'form-control'%>
       </div>
     </div>
     <div>
       <%= form.label "Wednesday:", class: ''%>
       <div class="d-flex gap-2">
-        <%= form.number_field :wednesday_in , class: 'form-control'%>
-        <%= form.number_field :wednesday_out , class: 'form-control'%>
+        <%= form.time_field :wednesday_in , class: 'form-control'%>
+        <%= form.time_field :wednesday_out , class: 'form-control'%>
       </div>
     </div>
     <div>
       <%= form.label "Thursday:", class: ''%>
       <div class="d-flex gap-2">
-        <%= form.number_field :thursday_in , class: 'form-control'%>
-        <%= form.number_field :thursday_out , class: 'form-control'%>
+        <%= form.time_field :thursday_in , class: 'form-control'%>
+        <%= form.time_field :thursday_out , class: 'form-control'%>
       </div>
     </div>
     <div>
       <%= form.label "Friday:", class: ''%>
       <div class="d-flex gap-2">
-        <%= form.number_field :friday_in , class: 'form-control'%>
-        <%= form.number_field :friday_out , class: 'form-control'%>
+        <%= form.time_field :friday_in , class: 'form-control'%>
+        <%= form.time_field :friday_out , class: 'form-control'%>
       </div>
     </div>
     <div>
       <%= form.label "Saturday:", class: ''%>
       <div class="d-flex gap-2">
-        <%= form.number_field :saturday_in , class: 'form-control'%>
-        <%= form.number_field :saturday_out , class: 'form-control'%>
+        <%= form.time_field :saturday_in , class: 'form-control'%>
+        <%= form.time_field :saturday_out , class: 'form-control'%>
       </div>
     </div>
     <div>
       <%= form.label "Sunday:" , class: ''%>
       <div class="d-flex gap-2">
-        <%= form.number_field :sunday_in , class: 'form-control'%>
-        <%= form.number_field :sunday_out , class: 'form-control'%>
+        <%= form.time_field :sunday_in , class: 'form-control'%>
+        <%= form.time_field :sunday_out , class: 'form-control'%>
       </div>
     </div>
     <%= form.submit "Create" , class: 'btn color-btn w-25 fw-bold text-white my-2'%>
