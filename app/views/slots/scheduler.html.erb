@@ -1,33 +1,57 @@
 <div class="vh-100 bg-white px-2">
-  <h1>Schedule Generator</h1>
-  <%= form_with url: scheduler_slots_path , method: :get, class: 'form-group' do |form| %>
+  <h1 class="text-center" >Schedule Generator</h1>
+  <%= form_with url: scheduler_slots_path , method: :get, class: 'form-group w-50 mx-auto' do |form| %>
     <%= form.label "How many rooms are availables:", class: '' %>
     <%= form.number_field :rooms, in: 1..100, class: 'form-control' %>
     <div>
       <%= form.label "Monday:" , class: ''%>
       <div class="d-flex gap-2">
-        <%= form.text_field :monday_in , class: 'form-control'%>
-        <%= form.text_field :monday_out , class: 'form-control'%>
+        <%= form.number_field :monday_in , class: 'form-control'%>
+        <%= form.number_field :monday_out , class: 'form-control'%>
       </div>
     </div>
-    <%= form.label "Tuesday:" , class: ''%>
-    <%= form.text_field :tuesday_in , class: 'form-control'%>
-    <%= form.text_field :tuesday_out , class: 'form-control'%>
-    <%= form.label :query, "Wednesday:" , class: ''%>
-    <%= form.text_field :wednesday_in , class: 'form-control'%>
-    <%= form.text_field :wednesday_out , class: 'form-control'%>
-    <%= form.label "Thursday:" , class: ''%>
-    <%= form.text_field :thursday_in , class: 'form-control'%>
-    <%= form.text_field :thursday_out , class: 'form-control'%>
-    <%= form.label :query, "Friday:" , class: ''%>
-    <%= form.text_field :friday_in , class: 'form-control'%>
-    <%= form.text_field :friday_out , class: 'form-control'%>
-    <%= form.label "Saturday:" , class: ''%>
-    <%= form.text_field :saturday_in , class: 'form-control'%>
-    <%= form.text_field :saturday_out , class: 'form-control'%>
-    <%= form.label "Sunday:" , class: ''%>
-    <%= form.text_field :sunday_in , class: 'form-control'%>
-    <%= form.text_field :sunday_out , class: 'form-control'%>
+    <div>
+      <%= form.label "Tuesday:" , class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.number_field :tuesday_in , class: 'form-control'%>
+        <%= form.number_field :tuesday_out , class: 'form-control'%>
+      </div>
+    </div>
+    <div>
+      <%= form.label "Wednesday:", class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.number_field :wednesday_in , class: 'form-control'%>
+        <%= form.number_field :wednesday_out , class: 'form-control'%>
+      </div>
+    </div>
+    <div>
+      <%= form.label "Thursday:", class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.number_field :thursday_in , class: 'form-control'%>
+        <%= form.number_field :thursday_out , class: 'form-control'%>
+      </div>
+    </div>
+    <div>
+      <%= form.label "Friday:", class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.number_field :friday_in , class: 'form-control'%>
+        <%= form.number_field :friday_out , class: 'form-control'%>
+      </div>
+    </div>
+    <div>
+      <%= form.label "Saturday:", class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.number_field :saturday_in , class: 'form-control'%>
+        <%= form.number_field :saturday_out , class: 'form-control'%>
+      </div>
+    </div>
+    <div>
+      <%= form.label "Sunday:" , class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.number_field :sunday_in , class: 'form-control'%>
+        <%= form.number_field :sunday_out , class: 'form-control'%>
+      </div>
+    </div>
     <%= form.submit "Create" , class: 'btn color-btn w-25 fw-bold text-white my-2'%>
   <% end %>
 </div>
