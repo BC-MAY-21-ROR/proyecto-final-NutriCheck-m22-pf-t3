@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   root 'welcome#home'
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'patients/registrations' }
   devise_for :patients, controllers: { registrations: 'patients/registrations' }
 
   resources :managers, :professionals, :administrators do

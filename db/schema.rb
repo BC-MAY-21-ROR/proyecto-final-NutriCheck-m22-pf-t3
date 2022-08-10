@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_05_214605) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -62,7 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_05_214605) do
   create_table "cards", force: :cascade do |t|
     t.date "next_appointment", null: false
     t.float "weight", null: false
-    t.string "comments", null: false
+    t.string "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "patient_id", null: false
@@ -76,7 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_05_214605) do
   create_table "diets", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
-    t.string "comments", null: false
+    t.string "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -99,15 +99,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_05_214605) do
 
   create_table "patients", force: :cascade do |t|
     t.string "name", null: false
-    t.string "second_name", null: false
+    t.string "second_name"
     t.string "last_name", null: false
-    t.string "second_last_name", null: false
+    t.string "second_last_name"
     t.date "birth_date", null: false
     t.string "phone", null: false
     t.string "email", null: false
     t.string "password"
     t.float "height", null: false
-    t.string "observations", null: false
+    t.string "observations"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
