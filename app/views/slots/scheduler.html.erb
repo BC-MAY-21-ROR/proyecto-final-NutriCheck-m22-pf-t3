@@ -1,0 +1,14 @@
+<div class="vh-100 bg-white">
+  <h1>Schedule Generator</h1>
+  <%= form_with url: scheduler_slots_path , method: :get do |form| %>
+    <%= form.label :rooms, "How many rooms are availables:" %>
+    <%= form.text_field :rooms %>
+    <%= form.label :query, "Number:" %>
+    <%= form.text_field :num %>
+    <%= form.label :query, "Name One:" %>
+    <%= form.text_field :name_one %>
+    <%= form.label :query, "Name One:" %>
+    <%= form.text_field :name_two %>
+    <%= form.submit "Search" %>
+  <% end %>
+</div>
