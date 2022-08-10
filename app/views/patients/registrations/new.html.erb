@@ -1,66 +1,77 @@
-<div class="vh-100 m-0 p-0">
-  <div class="masthead">
-    <div class="masthead-content text-white h-75">
-      <div class="container-fluid px-4 px-lg-0">
-        <h2 class="fst-italic lh-1 mb-4 text-center">Sign up pacientes</h2>
+<div class="bg-white min-vh-100 d-grid pt-4">
+  <div class="d-grid">
+    <h1 class="mx-auto my-auto fw-bold px-3">Create Patient</h1>
+  </div>
+  <div class="mx-auto px-3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+      
+      <% @patient.errors.full_messages.each do |error| %>
+        <div class="text-danger">
+          <%= error %>
+        </div>
+      <% end %>
 
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "patients/shared/error_messages", resource: resource %>
-        
-          <div class="field pb-2">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "example@nutricheck.com" %>
-          </div>
-
-          <div class="field pb-2">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
+      <div class="d-grid gap-2">
+        <div>
+          <%= form.label :name, class: "fw-bold" %><br>
+          <%= form.text_field :name, class: "form-control", placeholder: "David" %>
+        </div>
+        <div>
+          <%= form.label :second_name, class: "fw-bold" %><br>
+          <%= form.text_field :second_name, class: "form-control", placeholder: "Oscar" %>
+        </div>
+        <div>
+          <%= form.label :last_name, class: "fw-bold" %><br>
+          <%= form.text_field :last_name, class: "form-control", placeholder: "Gomez" %>
+        </div>
+        <div>
+          <%= form.label :second_last_name, class: "fw-bold" %><br>
+          <%= form.text_field :second_last_name, class: "form-control", placeholder: "Velasquez" %>
+        </div>
+        <div>
+          <%= form.label :birth_date, class: "fw-bold" %><br>
+          <%= form.date_field :birth_date, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :phone, class: "fw-bold" %><br>
+          <%= form.text_field :phone, class: "form-control", placeholder: "+503 23568945" %>
+        </div>
+        <div>
+          <%= form.label :email, class: "fw-bold" %><br>
+          <%= form.email_field :email, class: "form-control", placeholder: "example@nutricheck.com" %>
+        </div>
+        <div>
+          <%= form.label :password, class: "fw-bold" %><br>
+          <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
-          </div>
-
-          <div class="field pb-2">
-            <%= f.label :password_confirmation %><br />
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-          </div>
-          
-
-          <div class="field pb-2">
-            <%= f.label :name %><br />
-            <%= f.text_field :name, class: "form-control", placeholder: "David" %>
-          </div>
-
-          <div class="field pb-2">
-            <%= f.label :last_name %><br />
-            <%= f.text_field :last_name, class: "form-control", placeholder: "Gomez" %>
-          </div>
-
-          <div class="field pb-2">
-            <%= f.label :birth_date %><br />
-            <%= f.date_field :birth_date, class: "form-control" %>
-          </div>
-
-
-          <div class="field pb-2">
-            <%= f.label :phone %><br />
-            <%= f.telephone_field :phone, class: "form-control", placeholder: "+503 56892314" %>
-          </div>
-
-          <div class="field pb-4">
-            <%= f.label :height %><br />
-            <%= f.number_field :height, class: "form-control", placeholder: "180" %>
-          </div>
-
-          <div class="actions col-sm mx-auto w-100 pb-2">
-            <%= f.submit "Sign up", class: "btn color-btn text-white fw-bold w-100" %>
-          </div>
-        <% end %>
-
-        <div class="d-flex flex-column my-2">
-          <%= render "patients/shared/links" %>
+          <% end %>
+          <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, class: "fw-bold"  %><br>
+          <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"  %>
+        </div>
+        <div>
+          <%= form.label :height, class: "fw-bold" %><br>
+          <%= form.number_field :height, class: "form-control", placeholder: "175" %>
+        </div>
+        <div>
+          <%= form.label :observations, class: "fw-bold" %><br>
+          <%= form.text_field :observations, class: "form-control", placeholder: "Good Health" %>
+        </div>
+        <div>
+          <%= form.label :photo, class: "fw-bold" %><br>
+          <%= form.file_field :photo, class: "form-control" %>
+        </div>
+        <div  class="d-grid gap-3 col-6 mx-auto pt-2">
+          <%= form.submit 'Sign up', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>
       </div>
+    <% end %>
+    
+    <div class="d-grid gap-3 py-2">
+      <%= button_to "Go back", patients_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= render "patients/shared/links" %>
     </div>
   </div>
 </div>

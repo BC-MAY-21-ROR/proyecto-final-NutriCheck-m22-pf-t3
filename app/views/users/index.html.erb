@@ -4,7 +4,7 @@
 
 <div class="card-group">
   <% @users.each do |user|%>
-    <div class="col col-sm-6 col-md-3 p-4">
+    <div class="col col-sm-6 col-md-4 p-4 col-lg-3 col-xs-12">
       <div class="card h-100 shadow ">
         <div class="d-grid p-2 m-2">
           <h3 class="text-center p-2">User</h3>
@@ -32,4 +32,3 @@
 <div class="container text-center text-white p-4">
   <%= button_to "Create new User", new_user_path, method: :get, class: "btn color-btn text-white fw-bold w-25 pb-2" %>
 </div>
-

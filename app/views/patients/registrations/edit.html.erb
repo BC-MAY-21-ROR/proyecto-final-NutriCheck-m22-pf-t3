@@ -1,178 +1,86 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "patients/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="bg-white min-vh-100 d-grid pt-4">
+  <div class="d-grid">
+    <h1 class="mx-auto my-auto fw-bold px-3">Edit <%= resource_name.to_s.humanize %></h1>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :birth_date %><br />
-    <%= f.date_field :birth_date %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.telephone_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :height %><br />
-    <%= f.number_field :height %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
-<div class="bg-white min-vh-100 d-grid">
-  <p class="m-auto ms-2">
-    <%= link_to  "< Back", patients_path,  class: "green-back-link fw-bold text-decoration-none" %>
-  </p>
-  <div class="d-grid m-auto">
-    <h1 class="mx-auto fw-bold">Edit <%= resource_name.to_s.humanize %></h1>
-  </div>
-  <div class="mx-auto">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "patients/shared/error_messages", resource: resource %>
-
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
+  <div class="mx-auto px-3">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
       
-      <% @user.errors.full_messages.each do |error| %>
+      <% @patient.errors.full_messages.each do |error| %>
         <div class="text-danger">
           <%= error %>
         </div>
       <% end %>
-      
+
       <div class="d-grid gap-2">
         <div>
-          <%= form.label :name, class: "fw-bold" %>
+          <%= form.label :name, class: "fw-bold" %><br>
+          <%= form.text_field :name, class: "form-control" %>
         </div>
         <div>
-          <%= form.text_field :name, class: "form-control"  %>
+          <%= form.label :second_name, class: "fw-bold" %><br>
+          <%= form.text_field :second_name, class: "form-control" %>
         </div>
         <div>
-          <%= form.label :last_name, class: "fw-bold" %>
-        </div>
-        <div>
+          <%= form.label :last_name, class: "fw-bold" %><br>
           <%= form.text_field :last_name, class: "form-control" %>
         </div>
         <div>
-          <%= form.label :birth_date, class: "fw-bold" %>
+          <%= form.label :second_last_name, class: "fw-bold" %><br>
+          <%= form.text_field :second_last_name, class: "form-control" %>
         </div>
         <div>
+          <%= form.label :birth_date, class: "fw-bold" %><br>
           <%= form.date_field :birth_date, class: "form-control" %>
         </div>
         <div>
-          <%= form.label :phone, class: "fw-bold" %>
-        </div>
-        <div>
+          <%= form.label :phone, class: "fw-bold" %><br>
           <%= form.text_field :phone, class: "form-control" %>
         </div>
         <div>
-          <%= form.label :email, class: "fw-bold" %>
-        </div>
-        <div>
+          <%= form.label :email, class: "fw-bold" %><br>
           <%= form.email_field :email, class: "form-control" %>
         </div>
-        <div>
+          <div class="field">
           <%= form.label :password, class: "fw-bold" %> <i>(leave blank if you don't want to change it)</i><br />
-        </div>
-        <div>
           <%= form.password_field :password, autocomplete: "new-password", class: "form-control" %>
           <% if @minimum_password_length %>
-            <br />
-            <em><%= @minimum_password_length %> characters minimum</em>
           <% end %>
         </div>
-
         <div>
-          <%= form.label :password, class: "fw-bold" %>
+          <%= form.label :password, class: "fw-bold" %><br>
           <% if @minimum_password_length %>
             <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %>
-        </div>
-        <div>
           <%= form.password_field :password, class: "form-control" %>
         </div>
         <div>
-          <%= form.label :password_confirmation, class: "fw-bold" %>
+          <%= form.label :password_confirmation, class: "fw-bold"  %><br>
+          <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control"  %>
         </div>
         <div>
-          <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+          <%= form.label :height, class: "fw-bold" %><br>
+          <%= form.number_field :height, class: "form-control" %>
         </div>
         <div>
-          <%= form.label :role, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.select :role, [["Manager", "manager"],["Professional", "professional"]], {}, {class: "form-control rounded-pill text-center"} %>
+          <%= form.label :observations, class: "fw-bold" %><br>
+          <%= form.text_field :observations, class: "form-control" %>
         </div>
         <div>
           <%= form.label :photo, class: "fw-bold" %><br>
           <%= form.file_field :photo, class: "form-control" %>
         </div>
-        <div class="d-grid gap-3 col-6 mx-auto pt-4">
+        <div  class="d-grid gap-3 col-6 mx-auto pt-2">
           <%= form.submit "Update", class: "btn color-btn rounded-pill text-white fw-bold" %>
         </div>
       </div>
     <% end %>
+    
+    <div class="d-grid gap-3 py-2">
+      <%= button_to "Go back", patients_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold"%>
+    </div>
 
-  <h3 class="mx-auto fw-bold p-4 m-4 text-center">Cancel my account</h3>
+    <h3>Cancel my account</h3>
 
-  <p class="fw-bold">Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger rounded-pill text-white fw-bold" %></p>
+    <p >Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger rounded-pill text-white fw-bold" %></p>
   </div>
 </div>
