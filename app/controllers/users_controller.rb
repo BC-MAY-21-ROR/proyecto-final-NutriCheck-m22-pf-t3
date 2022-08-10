@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   def user_role
     case @user.role
     when 'administrator'
-      redirect_to administrators_path, notice: 'Administrator successfully'
+      redirect_to administrator_dashboard_path, notice: 'Administrator was edited successfully'
     when 'manager'
       redirect_to managers_path, notice: 'Manager successfully'
     when 'professional'
