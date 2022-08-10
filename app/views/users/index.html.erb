@@ -1,21 +1,34 @@
-<h1>Users List</h1>
-<div>
+<div class="container text-center text-white p-4">
+  <h2 class="mx-auto text-white fw-bold">Users List</h2>
+</div>
+
+<div class="card-group">
   <% @users.each do |user|%>
-    <div>
-      <div>
-        <%= user.name %>
-        <%= user.last_name %>
-        <%= user.email %>
-        <%= user.phone %>
-        <%= user.role %>
-        <%= button_to "show", user_path(user), method: :get %>
-        <%= button_to "edit", edit_user_path(user), method: :get %>
-        <%= button_to "delete", user, method: :delete %>
+    <div class="col col-sm-6 col-md-4 p-4 col-lg-3 col-xs-12">
+      <div class="card h-100 shadow ">
+        <div class="d-grid p-2 m-2">
+          <h3 class="text-center p-2">User</h3>
+          <p class="card-title m-2 mf-4"><span class="m-2 fw-bold text-capitalize">name: </span><%= user.name %></p>
+          <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">last_name: </span><%= user.last_name %></p>
+          <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">email: </span><%= user.email %></p>
+          <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">phone: </span><%= user.phone %></p>
+          <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">user: </span><%= user.role %></p>
+        </div>
+        <div class="d-flex flex-row justify-content-center bd-highlight justify-content-around mb-3 text-center m-4">
+            <%= button_to "show", user_path(user), method: :get, class: "btn color-btn text-white fw-bold 
+            w-100 pb-2 p-2 bd-highlight" %><br>
+
+            <%= button_to "edit", edit_user_path(user), method: :get, class: " col btn btn-warning text-white fw-bold w-100 pb-2 p-2 bd-highlight" %><br>
+
+            <%= button_to "delete", user, method: :delete, class: "btn btn-danger text-white fw-bold w-100 pb-2 p-2 bd-highlight" %>
+          </div>
       </div>
-      <hr>
     </div>
+    <div>
+  </div>
   <% end %>
 </div>
-<div>
-  <%= button_to "Create new User", new_user_path, method: :get %>
+
+<div class="container text-center text-white p-4">
+  <%= button_to "Create new User", new_user_path, method: :get, class: "btn color-btn text-white fw-bold w-25 pb-2" %>
 </div>

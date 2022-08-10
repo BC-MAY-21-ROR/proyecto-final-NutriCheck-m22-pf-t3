@@ -1,42 +1,25 @@
-<h1>User Detail</h1>
-<div>
-  <div>
-    <label for="">Name: </label>
-    <%= @user.name %>
-  </div>
-  <div>
-    <label for="">Last Name: </label>
-    <%= @user.last_name %>
-  </div>
-  <div>
-    <label for="">Birth Date: </label>
-    <%= @user.birth_date %>
-  </div>
-  <div>
-    <label for="">Phone Number: </label>
-    <%= @user.phone %>
-  </div>
-  <div>
-    <label for="">Email: </label>
-    <%= @user.email %>
-  </div>
-  <div>
-    <label for="">Password: </label>
-    <%= @user.password %>
-  </div>
-  <div>
-    <label for="">Role: </label>
-    <%= @user.role %>
-  </div>
-  <div>
-    <label for="">speciality_id: </label>
-    <%= @user.speciality_id %>
-  </div>
-  <div>
-    <label for="">Date of entry: </label>
-    <%= @user.created_at %>
-  </div>
-  <div>
-    <%= button_to "volver a users", users_path, method: :get%>
+<div class="container text-center text-white p-4">
+  <h2 class="mx-auto text-white fw-bold">User Detail</h2>
+</div>
+
+<div class="container d-flex justify-content-center col col-sm-6 col-md-4 p-4 col-lg-3 col-xs-12">
+  <div class="card-group">
+    <div class="card h-750 shadow">
+      <div class="d-grid p-2 m-2 ms-2">
+        <label for="" class="card-title pb-2 m-2 "><span class="m-2 fw-bold text-capitalize">name: </span><%= @user.name %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">last name: </span><%= @user.last_name %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Birth Date: </span><%= @user.birth_date %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Phone: </span><%= @user.phone %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Email: </span><%= @user.email %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Password: </span><%= @user.password %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Role: </span><%= @user.role %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Speciality ID: </span><%= @user.speciality_id %></label>
+        <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Date of Entry: </span><%= @user.created_at %></label>
+        <div class="d-flex flex-column my-2 text-center">
+          <%= button_to "volver a users", users_path, method: :get, class: "btn color-btn text-white fw-bold w-50"%>
+        </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
