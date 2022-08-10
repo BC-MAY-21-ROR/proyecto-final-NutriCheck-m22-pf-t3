@@ -1,14 +1,33 @@
-<div class="vh-100 bg-white">
+<div class="vh-100 bg-white px-2">
   <h1>Schedule Generator</h1>
-  <%= form_with url: scheduler_slots_path , method: :get do |form| %>
-    <%= form.label :rooms, "How many rooms are availables:" %>
-    <%= form.text_field :rooms %>
-    <%= form.label :query, "Number:" %>
-    <%= form.text_field :num %>
-    <%= form.label :query, "Name One:" %>
-    <%= form.text_field :name_one %>
-    <%= form.label :query, "Name One:" %>
-    <%= form.text_field :name_two %>
-    <%= form.submit "Search" %>
+  <%= form_with url: scheduler_slots_path , method: :get, class: 'form-group' do |form| %>
+    <%= form.label "How many rooms are availables:", class: '' %>
+    <%= form.number_field :rooms, in: 1..100, class: 'form-control' %>
+    <div>
+      <%= form.label "Monday:" , class: ''%>
+      <div class="d-flex gap-2">
+        <%= form.text_field :monday_in , class: 'form-control'%>
+        <%= form.text_field :monday_out , class: 'form-control'%>
+      </div>
+    </div>
+    <%= form.label "Tuesday:" , class: ''%>
+    <%= form.text_field :tuesday_in , class: 'form-control'%>
+    <%= form.text_field :tuesday_out , class: 'form-control'%>
+    <%= form.label :query, "Wednesday:" , class: ''%>
+    <%= form.text_field :wednesday_in , class: 'form-control'%>
+    <%= form.text_field :wednesday_out , class: 'form-control'%>
+    <%= form.label "Thursday:" , class: ''%>
+    <%= form.text_field :thursday_in , class: 'form-control'%>
+    <%= form.text_field :thursday_out , class: 'form-control'%>
+    <%= form.label :query, "Friday:" , class: ''%>
+    <%= form.text_field :friday_in , class: 'form-control'%>
+    <%= form.text_field :friday_out , class: 'form-control'%>
+    <%= form.label "Saturday:" , class: ''%>
+    <%= form.text_field :saturday_in , class: 'form-control'%>
+    <%= form.text_field :saturday_out , class: 'form-control'%>
+    <%= form.label "Sunday:" , class: ''%>
+    <%= form.text_field :sunday_in , class: 'form-control'%>
+    <%= form.text_field :sunday_out , class: 'form-control'%>
+    <%= form.submit "Create" , class: 'btn color-btn w-25 fw-bold text-white my-2'%>
   <% end %>
 </div>
