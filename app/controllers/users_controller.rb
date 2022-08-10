@@ -35,7 +35,13 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       user_role
     else
-      render :edit, status: :unprocessable_entity
+      if @user.role=="administrator"
+        redirect_to edit_administrator_path, notice: "Edit fail"
+      if @user.role=="professional"
+        redirect_to edit_professional_path, notice: "Edit fail"
+      if @user.role=="manager"
+        redirect_to edit_manager_path, notice: "Edit fail"
+      end
     end
   end
 
