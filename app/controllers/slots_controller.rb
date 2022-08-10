@@ -37,7 +37,15 @@ class SlotsController < ApplicationController
 
   def scheduler
     @rooms = params[:rooms].to_i
-
+    @schedule = { monday:     [params[:monday_in].to_i, params[:monday_out].to_i], 
+                  tuesday:    [params[:tuesday_in].to_i, params[:tuesday_out].to_i],
+                  wednesday:  [params[:wednesday_in].to_i, params[:wednesday_out].to_i],
+                  thursday:   [params[:thursday_in].to_i, params[:thursday_out].to_i],
+                  friday:     [params[:friday_in].to_i, params[:friday_out].to_i],
+                  saturday:   [params[:saturday_in].to_i, params[:saturday_out].to_i],
+                  sunday:     [params[:sunday_in].to_i, params[:sunday_out].to_i]
+                }
+    pp @schedule
   end
 
   # GET /slots/new
