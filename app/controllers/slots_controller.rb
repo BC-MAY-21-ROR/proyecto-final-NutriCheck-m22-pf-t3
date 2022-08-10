@@ -36,7 +36,8 @@ class SlotsController < ApplicationController
   end
 
   def scheduler
-    
+    @rooms = params[:rooms].to_i
+
   end
 
   # GET /slots/new
