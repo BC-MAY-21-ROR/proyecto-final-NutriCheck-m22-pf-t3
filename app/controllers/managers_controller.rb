@@ -13,6 +13,7 @@ class ManagersController < UsersController
   def dashboard
     @appointments_today_count = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day).count
     @appointments = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day)
+
     if params[:query_text].present?
       @appointments = @appointments.search_full_text(params[:query_text])
     end
