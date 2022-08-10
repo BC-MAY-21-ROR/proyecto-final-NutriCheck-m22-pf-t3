@@ -35,6 +35,10 @@ class SlotsController < ApplicationController
     @services = Service.all
   end
 
+  def scheduler
+    
+  end
+
   # GET /slots/new
   def new
     @slot = Slot.new
