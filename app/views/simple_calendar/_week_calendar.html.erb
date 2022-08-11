@@ -11,13 +11,13 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <% date_range.slice(0, 6).each do |day| %>
+        <% date_range.slice(0, 7).each do |day| %>
           <th class="text-center"><%= day.strftime("%A") %> </th>
         <% end %>
       </tr>
     </thead>
     <tbody>
-      <% date_range.each_slice(6) do |week| %>
+      <% date_range.each_slice(7) do |week| %>
         <tr>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>

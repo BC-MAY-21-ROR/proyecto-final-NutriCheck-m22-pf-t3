@@ -5,20 +5,18 @@
     <%= link_to "New slot", new_slot_path %>
     <div>
       <%= week_calendar events: @slots do |date, slots| %>
-        <% if date.strftime("%A") != 'Sunday' %>
-          <p class="fw-bold text-center">
-            <%= date.day %>
-          </p>
-          <div class="d-flex flex-wrap gap-1 align-items-center justify-content-center">
-            <% slots.each do |slot| %>
-              <% if slot.status == 'available' %>
-                <%= button_to slot.start_time.strftime("%H:%M"), edit_slot_path(slot), method: :get, form_class: "", class: "btn btn-sm btn-success text-white  " %>
-              <% else %>
-                <%= button_to slot.start_time.strftime("%H:%M"), slot_path(slot), method: :get, form_class: "", class: "btn btn-sm btn-warning text-black " %>
-              <% end %>
+        <p class="fw-bold text-center">
+          <%= date.day %>
+        </p>
+        <div class="d-flex flex-wrap gap-1 align-items-center justify-content-center">
+          <% slots.each do |slot| %>
+            <% if slot.status == 'available' %>
+              <%= button_to slot.start_time.strftime("%H:%M"), edit_slot_path(slot), method: :get, form_class: "", class: "btn btn-sm btn-success text-white  " %>
+            <% else %>
+              <%= button_to slot.start_time.strftime("%H:%M"), slot_path(slot), method: :get, form_class: "", class: "btn btn-sm btn-warning text-black " %>
             <% end %>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
