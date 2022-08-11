@@ -10,7 +10,7 @@
   </p>
   <div class="d-grid m-auto">
     <h1 class=" mx-auto fw-bold text-white my-2">Company Schedule</h1>
-    <% if current_user.role == 'administrator'%>
+    <% if current_user.role == 'administrator' or current_user.role == 'manager'%>
       <a class="center-a" href="<%= new_schedule_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a><br>
     <% end %>
   </div>
