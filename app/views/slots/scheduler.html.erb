@@ -1,64 +1,76 @@
-<div class="vh-100 bg-white px-2">
+<div class="vh-100 bg-white px-2 py-2">
   <h1 class="text-center" >Schedule Generator</h1>
   <%= form_with url: scheduler_slots_path , method: :get, class: 'form-group w-50 mx-auto' do |form| %>
-    <%= form.label "How many rooms are availables:", class: '' %>
-    <%= form.number_field :rooms, in: 1..100, class: 'form-control' %>
     <div>
-      <%= form.label "Dates:" , class: ''%>
+      <%= form.label "Dates:" , class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.date_field :start_date , class: 'form-control', placeholder: 'Start Date'%>
         <%= form.date_field :end_date , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter first and last date to generate schedule.</small>
     </div>
     <div>
-      <%= form.label "Monday:" , class: ''%>
+      <%= form.label "Monday:" , class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.time_field :monday_in , class: 'form-control', placeholder: 'Date In Monday'%>
         <%= form.time_field :monday_out , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter hour in and hour out on monday.</small>
     </div>
     <div>
-      <%= form.label "Tuesday:" , class: ''%>
+      <%= form.label "Tuesday:" , class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.time_field :tuesday_in , class: 'form-control'%>
         <%= form.time_field :tuesday_out , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter hour in and hour out on tuesday.</small>
     </div>
     <div>
-      <%= form.label "Wednesday:", class: ''%>
+      <%= form.label "Wednesday:", class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.time_field :wednesday_in , class: 'form-control'%>
         <%= form.time_field :wednesday_out , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter hour in and hour out on wednesday.</small>
     </div>
     <div>
-      <%= form.label "Thursday:", class: ''%>
+      <%= form.label "Thursday:", class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.time_field :thursday_in , class: 'form-control'%>
         <%= form.time_field :thursday_out , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter hour in and hour out on thursday.</small>
     </div>
     <div>
-      <%= form.label "Friday:", class: ''%>
+      <%= form.label "Friday:", class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.time_field :friday_in , class: 'form-control'%>
         <%= form.time_field :friday_out , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter hour in and hour out on friday.</small>
     </div>
     <div>
-      <%= form.label "Saturday:", class: ''%>
+      <%= form.label "Saturday:", class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.time_field :saturday_in , class: 'form-control'%>
         <%= form.time_field :saturday_out , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter hour in and hour out on saturday.</small>
     </div>
     <div>
-      <%= form.label "Sunday:" , class: ''%>
+      <%= form.label "Sunday:" , class: 'py-1 fw-bold'%>
       <div class="d-flex gap-2">
         <%= form.time_field :sunday_in , class: 'form-control'%>
         <%= form.time_field :sunday_out , class: 'form-control'%>
       </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter hour in and hour out on sunday.</small>
     </div>
-    <%= form.submit "Create" , class: 'btn color-btn w-25 fw-bold text-white my-2'%>
+    <div>
+      <%= form.label "How many rooms are availables:", class: 'py-1 fw-bold' %>
+      <div class="d-flex gap-2">
+        <%= form.number_field :rooms, in: 1..100, class: 'form-control' %>
+        <%= form.submit "Create" , class: 'btn color-btn w-100 fw-bold text-white '%>
+      </div>
+    </div>
   <% end %>
 </div>
