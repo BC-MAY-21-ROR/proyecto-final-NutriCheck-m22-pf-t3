@@ -35,6 +35,10 @@ class SlotsController < ApplicationController
     @services = Service.all
   end
 
+  def schedule_new
+
+  end
+
   def scheduler
     @rooms = params[:rooms].to_i
     @start_date = params[:start_date].to_date
@@ -123,6 +127,8 @@ class SlotsController < ApplicationController
       end
       @start_date += 1
     end
+
+    redirect_to slots_path
   end
 
   # GET /slots/new

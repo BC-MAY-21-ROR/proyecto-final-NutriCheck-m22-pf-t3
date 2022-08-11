@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   resources :slots do
     collection do
       get 'scheduler'
+      get 'schedule_new'
     end
   end
   resources :turns
