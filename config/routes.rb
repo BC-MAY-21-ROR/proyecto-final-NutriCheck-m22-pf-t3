@@ -27,7 +27,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :slots
+  resources :slots do
+    collection do
+      get 'scheduler'
+      get 'schedule_new'
+    end
+  end
   resources :turns
   resources :users
   resources :licenses
