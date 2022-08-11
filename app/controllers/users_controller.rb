@@ -63,11 +63,11 @@ class UsersController < ApplicationController
     when 'administrator'
       redirect_to administrator_dashboard_path, notice: 'Administrator was edited successfully'
     when 'manager'
-      redirect_to managers_path, notice: 'Manager successfully'
+      redirect_to managers_path, notice: 'Manager was edited successfully'
     when 'professional'
-      redirect_to professionals_path, notice: 'Professional successfully'
+      redirect_to professionals_path, notice: 'Professional was edited successfully'
     else
-      redirect_to users_path, notice: 'User successfully'
+      redirect_to users_path, notice: 'User was edited successfully'
     end
   end
 
