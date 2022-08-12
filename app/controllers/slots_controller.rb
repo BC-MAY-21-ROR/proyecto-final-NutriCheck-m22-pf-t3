@@ -44,14 +44,8 @@ class SlotsController < ApplicationController
     @start_date = params[:start_date].to_date
     @end_date = params[:end_date].to_date.end_of_day unless params[:end_date].to_date.nil?
 
-    @schedule = { 'Monday' => [params[:monday_in].to_i, params[:monday_out].to_i],
-                  'Tuesday' => [params[:tuesday_in].to_i, params[:tuesday_out].to_i],
-                  'Wednesday' => [params[:wednesday_in].to_i, params[:wednesday_out].to_i],
-                  'Thursday' => [params[:thursday_in].to_i, params[:thursday_out].to_i],
-                  'Friday' => [params[:friday_in].to_i, params[:friday_out].to_i],
-                  'Saturday' => [params[:saturday_in].to_i, params[:saturday_out].to_i],
-                  'Sunday' => [params[:sunday_in].to_i, params[:sunday_out].to_i] }
-
+    @schedule = schedule(params)
+    pp @schedule
     while @start_date <= @end_date
       if @start_date.monday?
         unless @schedule['Monday'].first.nil?
@@ -212,5 +206,15 @@ class SlotsController < ApplicationController
       :score,
       :review
     )
+  end
+
+  def schedule(params)
+    Date::DAYNAMES.map(&:downcase).to_h do |day|
+      day_in, day_out = params
+        .values_at("#{day}_in".to_sym, "#{day}_out".to_sym)
+        .map(&:to_i)
+  
+      [day.capitalize, [day_in, day_out]]
+    end
   end
 end
