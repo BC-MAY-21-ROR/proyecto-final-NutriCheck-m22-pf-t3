@@ -18,7 +18,7 @@
         <div class="d-flex justify-content-between w-100 fw-bold">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= label_tag '', "#{@i}:00", class: ''%>
+            <%= label_tag '', "#{@i}:00", false %>
             <% @i += 1%>
           <% end %>
         </div>
@@ -28,7 +28,7 @@
         <div class="d-flex justify-content-between w-100">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= check_box_tag 'Monday[]',"#{@i}", id: 'expertise_physics' %>
+            <%= check_box_tag 'Monday[]',"#{@i}" %>
             <% @i += 1%>
           <% end %>
         </div>
@@ -38,7 +38,7 @@
         <div class="d-flex justify-content-between w-100">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= check_box_tag 'Tuesday[]',"#{@i}", id: 'expertise_physics' %>
+            <%= check_box_tag 'Tuesday[]',"#{@i}" %>
             <% @i += 1%>
           <% end %>
         </div>
@@ -48,7 +48,7 @@
         <div class="d-flex justify-content-between w-100">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= check_box_tag 'Wednesday[]',"#{@i}", id: 'expertise_physics' %>
+            <%= check_box_tag 'Wednesday[]',"#{@i}" %>
             <% @i += 1%>
           <% end %>
         </div>
@@ -58,7 +58,7 @@
         <div class="d-flex justify-content-between w-100">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= check_box_tag 'Thursday[]',"#{@i}", id: 'expertise_physics' %>
+            <%= check_box_tag 'Thursday[]',"#{@i}" %>
             <% @i += 1%>
           <% end %>
         </div>
@@ -68,7 +68,7 @@
         <div class="d-flex justify-content-between w-100">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= check_box_tag 'Friday[]',"#{@i}", id: 'expertise_physics' %>
+            <%= check_box_tag 'Friday[]',"#{@i}" %>
             <% @i += 1%>
           <% end %>
         </div>
@@ -78,7 +78,7 @@
         <div class="d-flex justify-content-between w-100">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= check_box_tag 'Saturday[]',"#{@i}", id: 'expertise_physics' %>
+            <%= check_box_tag 'Saturday[]',"#{@i}" %>
             <% @i += 1%>
           <% end %>
         </div>
@@ -88,7 +88,7 @@
         <div class="d-flex justify-content-between w-100">
           <% @i = 9 %>
           <% while @i < 18 %>
-            <%= check_box_tag 'Sunday[]',"#{@i}", id: 'expertise_physics' %>
+            <%= check_box_tag 'Sunday[]',"#{@i}" %>
             <% @i += 1%>
           <% end %>
         </div>
