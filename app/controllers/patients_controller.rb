@@ -5,6 +5,7 @@
 class PatientsController < ApplicationController
   # before_action :authenticate_patient!
   # skip_before_action :authenticate_patient!, only: [:search]
+
   def index
     require_admin_session
     @patients = Patient.all.with_attached_photo
@@ -42,7 +43,6 @@ class PatientsController < ApplicationController
 
   def update
     patient
-
     if @patient.update(pat_params)
       redirect_patients(2)
     else
