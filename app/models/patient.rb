@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Patient < ApplicationRecord
+  attr_accessor :current_password
   include PgSearch::Model
 
   pg_search_scope :search_full_text, against: {
@@ -18,7 +19,9 @@ class Patient < ApplicationRecord
   has_one_attached :photo
 
   validates :name, presence: true
+  validates :second_name, presence: false
   validates :last_name, presence: true
+  validates :second_last_name, presence: false
   validates :birth_date, presence: true
   validates :phone, presence: true
   validates :email, presence: true

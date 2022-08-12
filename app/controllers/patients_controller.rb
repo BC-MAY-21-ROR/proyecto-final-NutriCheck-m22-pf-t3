@@ -46,7 +46,7 @@ class PatientsController < ApplicationController
     if @patient.update(pat_params)
       redirect_patients(2)
     else
-      render :edit, stauts: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -90,7 +90,7 @@ class PatientsController < ApplicationController
       :last_name, :second_last_name,
       :birth_date, :phone,
       :email,
-      :password,
+      :current_password,
       :height,
       :observations,
       :photo
