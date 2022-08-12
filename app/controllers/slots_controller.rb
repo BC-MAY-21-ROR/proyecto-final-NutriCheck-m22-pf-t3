@@ -131,6 +131,11 @@ class SlotsController < ApplicationController
     redirect_to slots_path
   end
 
+  def professionals_reservations
+    @slots = Slot.all
+    @slots_availables = Slot.where(status: 'available')
+  end
+
   # GET /slots/new
   def new
     @slot = Slot.new
