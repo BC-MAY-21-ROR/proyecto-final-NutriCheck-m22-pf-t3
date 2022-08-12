@@ -71,6 +71,7 @@ class AppointmentsController < ApplicationController
   end
 
   def pagination
+    @appointments = Appointment.all
     @pagy, @appointments = pagy(@appointments, items: 50)
   end
 
