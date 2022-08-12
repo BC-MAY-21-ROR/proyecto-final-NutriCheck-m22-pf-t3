@@ -2,6 +2,9 @@
   <%= link_to  "< Back", professional_path,  class: "black-back-link fw-bold text-decoration-none" %>
 </p>
 <h1 class="mx-auto text-white fw-bold my-2 pb-2 text-center">Manage my licenses</h1>
+<% if current_user.role == 'professional'%>
+  <a class="center-a" href="<%= new_license_path(current_user.id) %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a><br>
+<% end %>
 <div class="bg-container-cards mx-2">
   <table class="table table-striped">
     <thead class="thead-dark">
@@ -22,8 +25,10 @@
           </td>
           <td>
             <div class="d-flex gap-1">
-              <%= link_to "Edit", edit_license_path(lic), class: 'btn btn-sm btn-warning' %>
-              <%= button_to "Delete", license_path(lic), method: :delete, class: 'btn btn-sm btn-danger' %>
+              <% if current_user.role == 'professional' %>
+                <%= link_to "Edit", edit_license_path(lic), class: 'btn btn-sm btn-warning' %>
+                <%= button_to "Delete", license_path(lic), method: :delete, class: 'btn btn-sm btn-danger' %>
+              <% end %>
             </div>
           </td>
         </tr>

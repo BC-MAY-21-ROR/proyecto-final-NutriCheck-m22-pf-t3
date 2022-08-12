@@ -1,6 +1,6 @@
 <div class="bg-white min-vh-100 d-grid">
   <p class="m-auto ms-2">
-    <%= link_to  "< Back", administrators_path,  class: "green-back-link fw-bold text-decoration-none" %>
+    <%= link_to  "< Back", administrator_dashboard_path,  class: "green-back-link fw-bold text-decoration-none" %>
   </p>
   <div class="d-grid m-auto">
     <h1 class="mx-auto fw-bold">Edit Admin</h1>
@@ -42,16 +42,14 @@
           <%= form.label :role, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :role, class: "form-control bg-light text-black-50" %>
+          <%= form.select :role, [["Administrator", "administrator"], ["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
         </div>
         <div>
           <%= form.label :speciality_id, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :speciality_id, class: "form-control bg-light text-black-50" %>
+          <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control  bg-light rounded-pill text-center" }) %>
         </div>
-
-
         <div>
           <%= form.label :photo, class: "fw-bold" %>
         </div>

@@ -71,19 +71,14 @@ class UsersController < ApplicationController
       user_role
 
     else
-
-      if @user.role=="administrator"
-
-        redirect_to edit_administrator_path, notice: "Edit fail"
-
-      if @user.role=="professional"
-
-        redirect_to edit_professional_path, notice: "Edit fail"
-
-      if @user.role=="manager"
-
-        redirect_to edit_manager_path, notice: "Edit fail"
-
+      if @user.role == 'administrator'
+        redirect_to edit_administrator_path, notice: 'Edit administrator fail'
+      elsif @user.role == 'professional'
+        redirect_to edit_professional_path, notice: 'Edit professional fail'
+      elsif @user.role == 'manager'
+        redirect_to edit_manager_path, notice: 'Edit manager fail'
+      else
+        render :new, notice: 'No exist'
       end
 
     end
@@ -123,17 +118,13 @@ class UsersController < ApplicationController
       redirect_to administrator_dashboard_path, notice: 'Administrator was edited successfully'
 
     when 'manager'
-
-      redirect_to managers_path, notice: 'Manager successfully'
-
+      redirect_to manager_dashboard_path, notice: 'Manager was edited successfully'
     when 'professional'
 
-      redirect_to professionals_path, notice: 'Professional successfully'
+      redirect_to professional_dashboard_path, notice: 'Professional was edited successfully'
 
     else
-
-      redirect_to users_path, notice: 'User successfully'
-
+      redirect_to users_path, notice: 'User was edited successfully'
     end
 
   end
