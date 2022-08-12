@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Controller for SLOTS
-
+require 'pry'
 class SlotsController < ApplicationController
   before_action :set_slot, only: %i[show edit update destroy]
   before_action :authenticate_patient!, only: %i[services]
@@ -43,95 +43,35 @@ class SlotsController < ApplicationController
     @rooms = params[:rooms].to_i
     @start_date = params[:start_date].to_date
     @end_date = params[:end_date].to_date.end_of_day unless params[:end_date].to_date.nil?
-
     @schedule = schedule(params)
-    pp @schedule
+  
     while @start_date <= @end_date
-      if @start_date.monday?
-        unless @schedule['Monday'].first.nil?
-          start_time = @schedule['Monday'].first
-          while start_time < @schedule['Monday'].last
-            @rooms.times do
-              Slot.create(start_time: "#{@start_date} #{start_time}:00:00 UTC")
+      @schedule.keys.each do |day|
+        if @start_date.public_send("#{day.downcase}?")
+          next if @schedule[day].blank?
+  
+          day_in, day_out = @schedule[day] 
+          start_time = day_in
+          while start_time < day_out
+            Slot.create(
+                @rooms.times.map { |index| { start_time: "#{@start_date} #{start_time}:00:00 UTC" } }
+              )
+              start_time += 1
             end
-            start_time += 1
           end
-        end
-      elsif @start_date.tuesday?
-        unless @schedule['Tuesday'].first.nil?
-          start_time = @schedule['Tuesday'].first
-          while start_time < @schedule['Tuesday'].last
-            @rooms.times do
-              Slot.create(start_time: "#{@start_date} #{start_time}:00:00 UTC")
-            end
-            start_time += 1
-          end
-        end
-      elsif @start_date.wednesday?
-        unless @schedule['Wednesday'].first.nil?
-          start_time = @schedule['Wednesday'].first
-          while start_time < @schedule['Wednesday'].last
-            @rooms.times do
-              Slot.create(start_time: "#{@start_date} #{start_time}:00:00 UTC")
-            end
-            start_time += 1
-          end
-        end
-      elsif @start_date.thursday?
-        unless @schedule['Thursday'].first.nil?
-          start_time = @schedule['Thursday'].first
-          while start_time < @schedule['Thursday'].last
-            @rooms.times do
-              Slot.create(start_time: "#{@start_date} #{start_time}:00:00 UTC")
-            end
-            start_time += 1
-          end
-        end
-      elsif @start_date.friday?
-        unless @schedule['Friday'].first.nil?
-          start_time = @schedule['Friday'].first
-          while start_time < @schedule['Friday'].last
-            @rooms.times do
-              Slot.create(start_time: "#{@start_date} #{start_time}:00:00 UTC")
-            end
-            start_time += 1
-          end
-        end
-      elsif @start_date.saturday?
-        unless @schedule['Saturday'].first.nil?
-          start_time = @schedule['Saturday'].first
-          while start_time < @schedule['Saturday'].last
-            @rooms.times do
-              Slot.create(start_time: "#{@start_date} #{start_time}:00:00 UTC")
-            end
-            start_time += 1
-          end
-        end
-      elsif @start_date.sunday?
-        unless @schedule['Sunday'].first.nil?
-          start_time = @schedule['Sunday'].first
-          while start_time < @schedule['Sunday'].last
-            @rooms.times do
-              Slot.create(start_time: "#{@start_date} #{start_time}:00:00 UTC")
-            end
-            start_time += 1
-          end
-        end
-
       end
       @start_date += 1
     end
-
     redirect_to slots_path
   end
 
   def professionals_reservations
     @slots = Slot.all
     @slots_availables = Slot.where(status: 'available')
-    @value = params['Sunday'].map { |x| x.to_i}
-    pp @value.map { |x| x.class}
-    pp @value.class
-    pp 'hola mundo'
+    # @value = params['Sunday'].map { |x| x.to_i}
+    # pp @value.map { |x| x.class}
+    # pp @value.class
+    # pp 'hola mundo'
     
   end
 
