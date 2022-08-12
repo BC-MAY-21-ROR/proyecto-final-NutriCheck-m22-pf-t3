@@ -1,24 +1,102 @@
 <div class="vh-100 bg-white">
   <h1>Professionals schedule generator</h1>
   <div>
-    <h3>Total Slots: <%= @slots_availables.count %></h3>
+    <h3>Total Slots: <%= @slots.count %></h3>
     <h3>Availables Slots: <%= @slots_availables.count %></h3>
     <h3>Mondays this month? <%= monday_availables %> </h3>
-    <h3>Tuesdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.tuesday? }.reject { |x| x.nil? }.uniq.count %> </h3>
-    <h3>Wednesdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.wednesday? }.reject { |x| x.nil? }.uniq.count %> </h3>
-    <h3>Thursdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.thursday? }.reject { |x| x.nil? }.uniq.count %> </h3>
-    <h3>Fridays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.friday? }.reject { |x| x.nil? }.uniq.count %> </h3>
-    <h3>Saturdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.saturday? }.reject { |x| x.nil? }.uniq.count %> </h3>
-    <h3>Sundays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.sunday?}.reject { |x| x.nil? }.uniq.count %> </h3>
+    <h3>Tuesdays this month? <%= tuesday_availables %> </h3>
+    <h3>Wednesdays this month? <%= wednesday_availables %> </h3>
+    <h3>Thursdays this month? <%= thursday_availables %> </h3>
+    <h3>Fridays this month? <%= friday_availables %> </h3>
+    <h3>Saturdays this month? <%= saturday_availables %> </h3>
+    <h3>Sundays this month? <%= sunday_availables %> </h3>
   </div>
-  <%= form_with url: scheduler_slots_path , method: :get, class: 'form-group w-50 mx-auto' do |form| %>
-    <div>
-      <%= form.label "Dates:" , class: 'py-1 fw-bold'%>
-      <div class="d-flex gap-2">
-        <%= form.date_field :start_date , class: 'form-control', placeholder: 'Start Date'%>
-        <%= form.date_field :end_date , class: 'form-control'%>
+  <div class="">
+    <%= form_with url: professionals_reservations_slots_path , method: :get, class: 'w-50 mx-auto d-flex flex-column gap-3' do |form| %>
+      <div class="d-flex" >
+        <%= form.label "Horario:" , class: 'fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100 fw-bold">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= label_tag '', "#{@i}:00", class: ''%>
+            <% @i += 1%>
+          <% end %>
+        </div>
       </div>
-      <small id="reasonHelp" class="form-text text-muted">Enter first and last date to generate schedule.</small>
-    </div>
-  <% end %>
+      <div class="d-flex" >
+        <%= form.label "Monday:" , class: 'py-1 fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= check_box_tag 'Monday[]',"#{@i}", id: 'expertise_physics' %>
+            <% @i += 1%>
+          <% end %>
+        </div>
+      </div>
+      <div class="d-flex" >
+        <%= form.label "Tuesday:" , class: 'py-1 fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= check_box_tag 'Tuesday[]',"#{@i}", id: 'expertise_physics' %>
+            <% @i += 1%>
+          <% end %>
+        </div>
+      </div>
+      <div class="d-flex" >
+        <%= form.label "Wednesday:" , class: 'py-1 fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= check_box_tag 'Wednesday[]',"#{@i}", id: 'expertise_physics' %>
+            <% @i += 1%>
+          <% end %>
+        </div>
+      </div>
+      <div class="d-flex" >
+        <%= form.label "Thursday:" , class: 'py-1 fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= check_box_tag 'Thursday[]',"#{@i}", id: 'expertise_physics' %>
+            <% @i += 1%>
+          <% end %>
+        </div>
+      </div>
+      <div class="d-flex" >
+        <%= form.label "Friday:" , class: 'py-1 fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= check_box_tag 'Friday[]',"#{@i}", id: 'expertise_physics' %>
+            <% @i += 1%>
+          <% end %>
+        </div>
+      </div>
+      <div class="d-flex" >
+        <%= form.label "Saturday:" , class: 'py-1 fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= check_box_tag 'Saturday[]',"#{@i}", id: 'expertise_physics' %>
+            <% @i += 1%>
+          <% end %>
+        </div>
+      </div>
+      <div class="d-flex" >
+        <%= form.label "Sunday:" , class: 'py-1 fw-bold w-25'%>
+        <div class="d-flex justify-content-between w-100">
+          <% @i = 9 %>
+          <% while @i < 18 %>
+            <%= check_box_tag 'Sunday[]',"#{@i}", id: 'expertise_physics' %>
+            <% @i += 1%>
+          <% end %>
+        </div>
+      </div>
+      <%= form.submit 'Take hours', class: 'btn color-btn text-white fw-bold' %>
+    <% end %>
+  </div>
+</div>
+<small id="reasonHelp" class="form-text text-muted">Enter first and last date to generate schedule.</small>
+</div>
 </div>
