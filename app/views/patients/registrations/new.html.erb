@@ -29,18 +29,6 @@
           <%= form.text_field :second_last_name, class: "form-control", placeholder: "Velasquez" %>
         </div>
         <div>
-          <%= form.label :second_name, class: "fw-bold" %><br>
-          <%= form.text_field :second_name, class: "form-control" %>
-        </div>
-        <div>
-          <%= form.label :last_name, class: "fw-bold" %><br>
-          <%= form.text_field :last_name, class: "form-control" %>
-        </div>
-        <div>
-          <%= form.label :second_last_name, class: "fw-bold" %><br>
-          <%= form.text_field :second_last_name, class: "form-control" %>
-        </div>
-        <div>
           <%= form.label :birth_date, class: "fw-bold" %><br>
           <%= form.date_field :birth_date, class: "form-control" %>
         </div>
@@ -70,24 +58,19 @@
         <div>
           <%= form.label :observations, class: "fw-bold" %><br>
           <%= form.text_field :observations, class: "form-control", placeholder: "Good Health" %>
-          <%= form.number_field :height, class: "form-control" %>
         </div>
-        <div>
-          <%= form.label :observations, class: "fw-bold" %><br>
-          <%= form.text_field :observations, class: "form-control" %>
-        </div>
+
         <div>
           <%= form.label :photo, class: "fw-bold" %><br>
           <%= form.file_field :photo, class: "form-control" %>
         </div>
-        <div  class="d-grid gap-3 col-6 mx-auto pt-2">
-          <%= form.submit 'Sign up', class: "btn color-btn rounded-pill text-white fw-bold"%>
+        <div  class="d-grid gap-3 col-6 mx-auto pb-2">
+          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>
       </div>
     <% end %>
     <div class="d-grid gap-3 py-2">
-      <%= button_to "Go back", patients_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold"%>
-      <%= render "patients/shared/links" %>
+      <%= button_to "Go back", patient_session_path, method: :get, type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill pb-2 text-white fw-bold mb-4"%>
     </div>
   </div>
 </div>
