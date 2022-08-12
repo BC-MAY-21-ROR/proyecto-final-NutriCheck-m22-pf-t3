@@ -1,5 +1,10 @@
 <p class="m-auto ms-2">
-  <%= link_to  "< Back", professional_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  <% if current_user.role == 'professional'%>
+    <%= link_to  "< Back", professional_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  <% else %>
+    <%= link_to  "< Back", professional_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  <% end %>
+  
 </p>
 <h1 class="mx-auto text-white fw-bold my-2 pb-2 text-center">Manage my licenses</h1>
 <% if current_user.role == 'professional'%>

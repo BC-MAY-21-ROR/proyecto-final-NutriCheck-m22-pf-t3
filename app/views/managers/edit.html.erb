@@ -1,6 +1,10 @@
 <div class="bg-white min-vh-100 d-grid">
   <p class="m-auto ms-2">
+  <% if current_user.role == 'manager' %>
     <%= link_to  "< Back", manager_dashboard_path,  class: "green-back-link fw-bold text-decoration-none" %>
+  <% else %>
+    <%= link_to  "< Back", manager_path,  class: "green-back-link fw-bold text-decoration-none" %>
+  <% end %>
   </p>
   <div class="d-grid m-auto">
     <h1 class="mx-auto fw-bold">Edit Manager</h1>

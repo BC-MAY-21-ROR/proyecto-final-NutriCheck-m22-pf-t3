@@ -48,7 +48,11 @@
       </div>
       <div class="d-grid gap-3 mx-auto mb-3">
         <a class="center-a" href="<%= new_appointment_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
-        <%= button_to "Go back", manager_dashboard_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        <% if current_user.role == 'manager'%>
+          <%= button_to "Go back", manager_dashboard_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        <% else %>
+          <%= button_to "Go back", professional_dashboard_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        <% end %>
       </div>
     </div>
   <% end %>

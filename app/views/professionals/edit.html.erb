@@ -60,7 +60,11 @@
     <% end %>
     <div class="d-grid col-6 mx-auto pt-2 mb-3">
       <div class="mx-auto">
+      <% if current_user.role == 'administrator' %>
         <%= button_to "Go back", professional_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
+      <% else %>
+        <%= button_to "Go back", professional_dashboard_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
+      <% end %>
       </div>
     </div>
   </div>
