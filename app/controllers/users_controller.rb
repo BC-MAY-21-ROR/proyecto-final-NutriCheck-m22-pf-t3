@@ -66,15 +66,20 @@ class UsersController < ApplicationController
   def user_role
     case current_user.role
     when 'administrator'
-      if @user.role == 'manager'
+      case @user.role
+      when 'manager'
         redirect_to managers_path, notice: 'Manager was edited successfully'
-      elsif @user.role == 'professional'
+      when 'professional'
         redirect_to professionals_path, notice: 'Professional was edited successfully'
       else
         redirect_to administrator_dashboard_path, notice: 'Administrador was edited successfully'
       end
     when 'manager'
-      redirect_to manager_dashboard_path, notice: 'Manager was edited successfully'
+      if @user.role == 'professional'
+        redirect_to professionals_path, notice: 'Professional was edited successfully'
+      else
+        redirect_to manager_dashboard_path, notice: 'Manager was edited successfully'
+      end
     when 'professional'
       redirect_to professional_dashboard_path, notice: 'Professional was edited successfully'
     else
