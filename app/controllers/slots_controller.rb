@@ -134,6 +134,9 @@ class SlotsController < ApplicationController
   def professionals_reservations
     @slots = Slot.all
     @slots_availables = Slot.where(status: 'available')
+    @value = params['Sunday'].map { |x| x.to_i}
+    pp @value.map { |x| x.class}
+    pp @value.class
     pp 'hola mundo'
     
   end
