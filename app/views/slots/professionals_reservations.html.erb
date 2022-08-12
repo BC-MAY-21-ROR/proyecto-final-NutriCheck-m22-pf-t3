@@ -1,0 +1,24 @@
+<div class="vh-100 bg-white">
+  <h1>Professionals schedule generator</h1>
+  <div>
+    <h3>Total Slots: <%= @slots_availables.count %></h3>
+    <h3>Availables Slots: <%= @slots_availables.count %></h3>
+    <h3>Mondays this month? <%= monday_availables %> </h3>
+    <h3>Tuesdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.tuesday? }.reject { |x| x.nil? }.uniq.count %> </h3>
+    <h3>Wednesdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.wednesday? }.reject { |x| x.nil? }.uniq.count %> </h3>
+    <h3>Thursdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.thursday? }.reject { |x| x.nil? }.uniq.count %> </h3>
+    <h3>Fridays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.friday? }.reject { |x| x.nil? }.uniq.count %> </h3>
+    <h3>Saturdays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.saturday? }.reject { |x| x.nil? }.uniq.count %> </h3>
+    <h3>Sundays this month? <%= @slots_availables.map {|x|x.start_time.strftime("%A %d") if x.start_time.sunday?}.reject { |x| x.nil? }.uniq.count %> </h3>
+  </div>
+  <%= form_with url: scheduler_slots_path , method: :get, class: 'form-group w-50 mx-auto' do |form| %>
+    <div>
+      <%= form.label "Dates:" , class: 'py-1 fw-bold'%>
+      <div class="d-flex gap-2">
+        <%= form.date_field :start_date , class: 'form-control', placeholder: 'Start Date'%>
+        <%= form.date_field :end_date , class: 'form-control'%>
+      </div>
+      <small id="reasonHelp" class="form-text text-muted">Enter first and last date to generate schedule.</small>
+    </div>
+  <% end %>
+</div>
