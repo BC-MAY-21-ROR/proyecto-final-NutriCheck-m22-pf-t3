@@ -134,6 +134,8 @@ class SlotsController < ApplicationController
   def professionals_reservations
     @slots = Slot.all
     @slots_availables = Slot.where(status: 'available')
+    pp 'hola mundo'
+    
   end
 
   # GET /slots/new
