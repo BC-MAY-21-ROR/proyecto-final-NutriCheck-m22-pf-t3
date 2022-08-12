@@ -25,7 +25,7 @@ class Patient < ApplicationRecord
   validates :birth_date, presence: true
   validates :phone, presence: true
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
   validates :height, presence: true
 
   def patient_full_name
