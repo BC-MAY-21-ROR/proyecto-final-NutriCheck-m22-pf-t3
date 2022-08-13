@@ -68,11 +68,14 @@ class SlotsController < ApplicationController
   def professionals_reservations
     @slots = Slot.all
     @slots_availables = Slot.where(status: 'available')
-    # @value = params['Sunday'].map { |x| x.to_i}
-    # pp @value.map { |x| x.class}
-    # pp @value.class
-    # pp 'hola mundo'
-    
+    @start_date = params[:start_date].to_date unless params[:start_date].nil?
+    @end_date = params[:end_date].to_date unless params[:end_date].nil?
+    current_user_schedule = Date::DAYNAMES.map.to_h do |day|
+      [day.to_sym, params[day].map(&:to_i)]
+    end
+    current_user_schedule.map do |k,v|
+      v.map { |x| pp x }
+    end
   end
 
   # GET /slots/new

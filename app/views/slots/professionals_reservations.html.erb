@@ -10,9 +10,12 @@
     <h3>Fridays this month? <%= friday_availables %> </h3>
     <h3>Saturdays this month? <%= saturday_availables %> </h3>
     <h3>Sundays this month? <%= sunday_availables %> </h3>
+    <h3>Current User <%= current_user.full_name %></h3>
   </div>
   <div class="">
     <%= form_with url: professionals_reservations_slots_path , method: :get, class: 'w-50 mx-auto d-flex flex-column gap-3' do |form| %>
+      <%= form.date_field :start_date , class: 'form-control', placeholder: 'Start Date'%>
+      <%= form.date_field :end_date , class: 'form-control'%>
       <div class="d-flex" >
         <%= form.label "Horario:" , class: 'fw-bold w-25'%>
         <div class="d-flex justify-content-between w-100 fw-bold">

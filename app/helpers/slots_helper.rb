@@ -6,7 +6,7 @@ module SlotsHelper
   def monday_availables
     @slots_availables.map do |x|
       x.start_time.strftime('%A %d') if x.start_time.monday?
-    end.reject(&:nil?).uniq.count
+    end.reject(&:nil?)
   end
 
   def tuesday_availables
@@ -44,4 +44,6 @@ module SlotsHelper
       x.start_time.strftime('%A %d') if x.start_time.sunday?
     end.reject(&:nil?).uniq.count
   end
+
+  
 end
