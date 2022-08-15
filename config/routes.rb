@@ -31,8 +31,11 @@ Rails.application.routes.draw do
     collection do
       get 'scheduler'
       get 'schedule_new'
+      get 'professionals_reservations'
+      post 'professionals_reservations_new'
     end
   end
+  
   resources :turns
   resources :users
   resources :licenses
