@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       get 'scheduler'
       get 'schedule_new'
       get 'professionals_reservations'
+      post 'professionals_reservations_new'
     end
   end
   
