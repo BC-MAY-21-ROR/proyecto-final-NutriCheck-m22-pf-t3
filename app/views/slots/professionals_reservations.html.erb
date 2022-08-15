@@ -1,17 +1,5 @@
 <div class="vh-100 bg-white">
-  <h1>Professionals schedule generator</h1>
-  <div>
-    <h3>Total Slots: <%= @slots.count %></h3>
-    <h3>Availables Slots: <%= @slots_availables.count %></h3>
-    <h3>Mondays this month? <%= monday_availables %> </h3>
-    <h3>Tuesdays this month? <%= tuesday_availables %> </h3>
-    <h3>Wednesdays this month? <%= wednesday_availables %> </h3>
-    <h3>Thursdays this month? <%= thursday_availables %> </h3>
-    <h3>Fridays this month? <%= friday_availables %> </h3>
-    <h3>Saturdays this month? <%= saturday_availables %> </h3>
-    <h3>Sundays this month? <%= sunday_availables %> </h3>
-    <h3>Current User <%= current_user.full_name %></h3>
-  </div>
+  <h1 class="text-center">Professionals schedule generator</h1>
   <div class="">
     <%= form_with url: professionals_reservations_new_slots_path , method: :post, class: 'w-50 mx-auto d-flex flex-column gap-3' do |form| %>
       <%= form.collection_select(:service_id, Service.order(name: :asc), :name, :name, { include_blank: true }, { class: "form-control" }) %>
