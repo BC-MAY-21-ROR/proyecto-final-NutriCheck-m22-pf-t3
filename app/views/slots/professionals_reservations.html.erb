@@ -13,7 +13,8 @@
     <h3>Current User <%= current_user.full_name %></h3>
   </div>
   <div class="">
-    <%= form_with url: professionals_reservations_slots_path , method: :get, class: 'w-50 mx-auto d-flex flex-column gap-3' do |form| %>
+    <%= form_with url: professionals_reservations_new_slots_path , method: :post, class: 'w-50 mx-auto d-flex flex-column gap-3' do |form| %>
+      <%= form.collection_select(:service_id, Service.order(name: :asc), :name, :name, { include_blank: true }, { class: "form-control" }) %>
       <%= form.date_field :start_date , class: 'form-control', placeholder: 'Start Date'%>
       <%= form.date_field :end_date , class: 'form-control'%>
       <div class="d-flex" >
