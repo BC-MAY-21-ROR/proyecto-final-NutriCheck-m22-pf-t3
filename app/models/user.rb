@@ -41,4 +41,9 @@ class User < ApplicationRecord
   def get_speciality_name
     "#{speciality.name} - #{name} #{last_name}"
   end
+
+  def admin?
+    role.name == 'administrator'
+  end
+  
 end

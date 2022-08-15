@@ -6,10 +6,8 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
-
+  load_and_authorize_resource
   def index
-    require_admin_session
-    @users = User.all.with_attached_photo
   end
 
   def show
@@ -17,13 +15,10 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
   end
 
 
-
   def create
-    @user = User.new(user_params)
     if @user.save
       user_role
     else
@@ -54,7 +49,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user
     if @user.destroy
       user_role
     else
@@ -88,9 +82,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def user
-    @user = User.find(params[:id])
-  end
 
   def user_params
     params.require(:user).permit(:name, :last_name, :birth_date, :password, :password_confirmation ,:phone, :current_password, :email, :speciality_id, :photo, :role)
