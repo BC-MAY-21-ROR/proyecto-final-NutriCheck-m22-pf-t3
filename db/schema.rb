@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_15_230323) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.bigint "service_id", null: false
     t.bigint "user_id", null: false
     t.bigint "patient_id", null: false
+    t.datetime "deleted_at"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
     t.index ["service_id"], name: "index_appointments_on_service_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
@@ -73,18 +74,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.index ["patient_id"], name: "index_cards_on_patient_id"
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.text "fecha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "diets", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
     t.string "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
   create_table "licenses", force: :cascade do |t|
@@ -94,6 +90,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_licenses_on_user_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -113,6 +116,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "deleted_at"
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
   end
 
@@ -122,6 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.time "closing_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
   create_table "services", force: :cascade do |t|
@@ -130,6 +135,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.float "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
   create_table "slots", force: :cascade do |t|
@@ -145,6 +151,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
   create_table "turns", force: :cascade do |t|
@@ -171,6 +178,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_220753) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "deleted_at"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["speciality_id"], name: "index_users_on_speciality_id"
   end
