@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 # Controller for SLOTS
-require 'pry'
 class SlotsController < ApplicationController
   before_action :set_slot, only: %i[show edit update destroy]
   before_action :authenticate_patient!, only: %i[services]
@@ -68,16 +67,25 @@ class SlotsController < ApplicationController
   def professionals_reservations
     @slots = Slot.all
     @slots_availables = Slot.where(status: 'available')
-    @start_date = params[:start_date].to_date unless params[:start_date].nil?
-    @end_date = params[:end_date].to_date unless params[:end_date].nil?
-    current_user_schedule = Date::DAYNAMES.map.to_h do |day|
-      [day.to_sym, params[day].map(&:to_i)]
-    end
-    current_user_schedule.map do |k,v|
-      v.map { |x| pp x }
-    end
   end
 
+  def professionals_reservations_new
+    @slots = Slot.all
+    @slots_availables = Slot.where(status: 'available')
+    params
+    .select { |key| key.in?(Date::DAYNAMES) }  
+    .each do |day, hours| 
+      slots = Slot.where(<<~SQL, params[:start_date], params[:end_date], day,hours)
+        date(start_time) >= ? AND 
+        date(start_time) <= ? AND 
+        trim(to_char(start_time, 'Day')) = ? AND 
+        extract(hour from start_time ) in (?)
+      SQL
+      .select('distinct on (start_time) id')
+      Slot.where(id: slots).update_all(service: params[:service_id], professional: current_user.full_name, status: 'not available')
+    end
+    redirect_to slots_path
+  end
   # GET /slots/new
   def new
     @slot = Slot.new
