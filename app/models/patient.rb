@@ -3,6 +3,8 @@
 class Patient < ApplicationRecord
   include PgSearch::Model
 
+  acts_as_paranoid
+
   pg_search_scope :search_full_text, against: {
     last_name: 'A',
     name: 'B', 
