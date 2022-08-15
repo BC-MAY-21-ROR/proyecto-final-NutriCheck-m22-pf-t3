@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   validates :phone, presence: true
   validates :email, presence: true
-  # validates :password, presence: false
+  validates :password, presence: true, on: :create
   validates :role, presence: true
   validates :speciality_id, presence: true
 

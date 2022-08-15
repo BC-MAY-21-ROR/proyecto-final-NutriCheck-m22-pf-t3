@@ -47,7 +47,13 @@
           <%= form.label :password, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :password , class: "form-control bg-light text-black-50" %>
+          <%= form.password_field :password , class: "form-control bg-light text-black-50" %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.password_field :password_confirmation , class: "form-control bg-light text-black-50" %>
         </div>
         <div>
           <%= form.label :speciality_id, class: "fw-bold" %>
@@ -61,7 +67,6 @@
         <div>
           <%= form.text_field :role, class: "form-control bg-light text-black-50", placeholder: "Adminitrator" %>
         </div>
-
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
         </div>

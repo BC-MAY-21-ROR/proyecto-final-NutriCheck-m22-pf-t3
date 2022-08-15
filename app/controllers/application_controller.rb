@@ -14,7 +14,10 @@ class ApplicationController < ActionController::Base
   def require_login
     redirect_to root_url, notice: 'Please log-in as an User to view that page!' unless current_user
   end
-
+  
+  def is_admin
+    current_user.admin?
+  end
   def require_admin_session
     return if current_user.role == 'administrator'
 
