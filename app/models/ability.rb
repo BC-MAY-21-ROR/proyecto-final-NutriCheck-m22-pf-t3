@@ -23,6 +23,7 @@ class Ability
      end
     when Patient
     can :manage, Patient, id: model.id
+    can :see, Appointment
     end
 end
 end

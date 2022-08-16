@@ -3,7 +3,7 @@
 # Controller for SERVICES
 
 class ServicesController < ApplicationController
-  before_action :authenticate_patient!
+  load_and_authorize_resource
   def index
     @services = Service.all
   end
