@@ -2,8 +2,6 @@
 
 # Appointment class controller
 class AppointmentsController < ApplicationController
-  before_action :authenticate_patient!
-  skip_before_action :authenticate_patient!, only: [:search]
 
   def index
     pagination

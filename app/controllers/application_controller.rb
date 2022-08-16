@@ -23,6 +23,13 @@ class ApplicationController < ActionController::Base
 
     redirect_to root_url, notice: 'You have no permission to access that page.'
   end
+  def current_ability
+    if patient_signed_in?
+      @current_ability ||= Ability.new(current_patient)
+    else
+      @current_ability ||= Ability.new(current_user)
+    end
+  end
 
   def devise_parameter_sanitizer
     if resource_class == Patient

@@ -3,17 +3,26 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
-    if user.admin?
-      can :manage, :all
-    elsif user.manager?
-      can [:read, :update], Patient
-      can :manage, User, id: user.id
-      can :manage, Card, License, Diet, License, Slot
-    elsif user.professional?
-      can [:read, :update], Patient
-      can :manage, User, id: user.id
-      can :manage, Card, License, Diet, License, Slot
-   end
-  end
+  def initialize(model)
+    case model
+    when User
+      if model.admin?
+        can :manage, :all
+      elsif model.manager?
+        can :manage, Patient
+        can :manage, User, id: model.id
+        can :read, User
+        can :manage, Card, License, Diet, Slot, Schedule
+        can :manage, Speciality
+      elsif model.professional?
+        can :manage, Patient
+        can :manage, User, id: model.id
+        can :read, User
+        can :manage, Card, License, Diet, Slot, Schedule
+        can :manage, Speciality
+     end
+    when Patient
+    can :manage, Patient, id: model.id
+    end
+end
 end
