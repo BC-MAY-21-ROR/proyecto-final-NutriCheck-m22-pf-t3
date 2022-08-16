@@ -3,9 +3,8 @@
 # Controller for PATIENTS
 
 class PatientsController < ApplicationController
-  # before_action :authenticate_patient!
-  # skip_before_action :authenticate_patient!, only: [:search]
-
+  before_action :authenticate_patient!
+  load_and_authorize_resource
   def index
     require_admin_session
     @patients = Patient.all.with_attached_photo

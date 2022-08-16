@@ -6,8 +6,14 @@ class Ability
   def initialize(user)
     if user.admin?
       can :manage, :all
-    else
-      can :read, :all
-    end
+    elsif user.manager?
+      can [:read, :update], Patient
+      can [:read, :edit], Manager
+      can :manage, User, user: user
+    elsif user.professional?
+      can [:read, :update], Patient
+      can [:read, :edit], Professional
+      can :manage, User, user: user
+   end
   end
 end

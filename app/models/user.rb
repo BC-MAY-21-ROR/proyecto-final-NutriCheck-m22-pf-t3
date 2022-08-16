@@ -43,7 +43,13 @@ class User < ApplicationRecord
   end
 
   def admin?
-    role.name == 'administrator'
+    role == 'administrator'
+  end
+  def professional?
+    role == 'professional'
+  end
+  def manager?
+    role == 'manager'
   end
   
 end

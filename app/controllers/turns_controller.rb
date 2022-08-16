@@ -2,12 +2,12 @@
 
 class TurnsController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @turns = Turn.all
   end
 
   def new
-    @turn = Turn.new
   end
 
   def show
@@ -15,8 +15,6 @@ class TurnsController < ApplicationController
   end
 
   def create
-    @turn = Turn.new(schedule_params)
-
     if @turn.save
       redirect_to turns_path, notice: 'Turn create succesfully'
     else
@@ -52,9 +50,5 @@ class TurnsController < ApplicationController
 
   def schedule_params
     params.require(:turn).permit(:schedule_id, :user_id)
-  end
-
-  def turn
-    @turn = Turn.find(params[:id])
   end
 end

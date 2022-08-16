@@ -2,12 +2,13 @@
 
 class ProfessionalsController < UsersController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @professionals = User.where(role: 'professional')
   end
 
   def profile
-    @professional = User.find(params[:id])
+    @professional = User.find(params[:id])git 
     @patients = Patient.all
   end
 

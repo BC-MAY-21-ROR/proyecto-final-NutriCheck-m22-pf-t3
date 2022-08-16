@@ -2,6 +2,7 @@
 
 class ManagersController < UsersController
   before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @managers = User.where(role: 'manager')
   end
