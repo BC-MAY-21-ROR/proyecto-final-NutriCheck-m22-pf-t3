@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AdministratorsController < UsersController
-  before_action :require_admin_session
+  skip_load_and_authorize_resource
   def index
     @administrators = User.where(role: 'administrator')
   end

@@ -3,13 +3,13 @@
 # Controller for SPECIALITIES
 
 class SpecialitiesController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
+  
   def index
     @specialities = Speciality.all
   end
 
   def new
-    @speciality = Speciality.new
   end
 
   def show
@@ -17,7 +17,6 @@ class SpecialitiesController < ApplicationController
   end
 
   def create
-    @speciality = Speciality.new(speci_params)
     if @speciality.save
       redirect_to specialities_path, notice: 'New speciality created successfully'
     else
@@ -49,10 +48,6 @@ class SpecialitiesController < ApplicationController
   end
 
   private
-
-  def speciality
-    @speciality = Speciality.find(params[:id])
-  end
 
   def speci_params
     params.require(:speciality).permit(:name)

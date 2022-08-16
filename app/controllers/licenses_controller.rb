@@ -3,7 +3,7 @@
 # Controller for LICENSES
 
 class LicensesController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
   def index
     @licenses = License.all
   end
@@ -19,7 +19,7 @@ class LicensesController < ApplicationController
   def create
     @license = License.new(lic_params)
     if @license.save
-      redirect_to professionals_path, notice: 'New license created successfully'
+      redirect_to license_path(current_user.id), notice: 'New license created successfully'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class LicensesController < ApplicationController
     license
 
     if @license.update(lic_params)
-      redirect_to professionals_path, notice: 'License was edited successfully'
+      redirect_to license_path(current_user.id), notice: 'License was edited successfully'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,7 +42,7 @@ class LicensesController < ApplicationController
   def destroy
     license
     if @license.destroy
-      redirect_to professionals_path, notice: 'License was deleted successfully'
+      redirect_to license_path(current_user.id), notice: 'License was deleted successfully'
     else
       render :edit, status: :unprocessable_entity
     end

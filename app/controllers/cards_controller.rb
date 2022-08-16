@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class CardsController < ApplicationController
+  load_and_authorize_resource
   def index
     @cards = Card.where(patient_id: params[:format])
     patient

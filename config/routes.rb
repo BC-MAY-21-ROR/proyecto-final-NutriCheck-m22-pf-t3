@@ -2,9 +2,10 @@
 
 Rails.application.routes.draw do
   root 'welcome#home'
-  devise_for :users, controllers: { registrations: 'patients/registrations' }
-  devise_for :patients, controllers: { registrations: 'patients/registrations' }
 
+  devise_for :users, :path => 'u'
+  devise_for :patients, :path => 'p'
+  # devise_group :entity, contains: [:user, :patient]
   resources :managers, :professionals, :administrators do
     collection do
       get 'dashboard'
