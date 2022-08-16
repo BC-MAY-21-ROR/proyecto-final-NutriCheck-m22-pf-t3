@@ -21,8 +21,9 @@
       <% if current_user.role == 'manager'%>
         <%= button_to "Go back", manager_dashboard_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
       <% else %>
-        <%= button_to "Go back", professional_dashboard_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+        <%= button_to "Go back", 'javascript:history.back()', method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
       <% end %>
     </div>
   </div>
 </div>
+<%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>

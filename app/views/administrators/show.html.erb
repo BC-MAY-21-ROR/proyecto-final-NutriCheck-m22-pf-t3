@@ -58,7 +58,7 @@
       <%= image_tag(@administrator.photo, width: 300) if @administrator.photo.attached? %>
     </div>
     <div class="d-grid gap-3 col-15 mx-auto py-2">
-      <%= button_to "Go back to admin", administrators_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Go back", 'javascript:history.back()', method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
     </div>
   </div>
 </div>

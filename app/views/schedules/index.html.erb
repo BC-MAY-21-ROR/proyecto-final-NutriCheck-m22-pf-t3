@@ -1,12 +1,6 @@
 <div class="d-grid pt-2">
   <p class="m-auto ms-2">
-    <% if current_user.role == 'administrator'%>
-      <%= link_to  "< Back", administrator_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
-    <% elsif current_user.role == 'professional'%>
-      <%= link_to  "< Back", professional_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
-    <% else %>
-      <%= link_to  "< Back", manager_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
-    <% end %>
+    <%= link_to  "< Back", 'javascript:history.back()';  class: "black-back-link fw-bold text-decoration-none" %>
   </p>
   <div class="d-grid m-auto">
     <h1 class=" mx-auto fw-bold text-white my-2">Company Schedule</h1>

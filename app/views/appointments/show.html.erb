@@ -58,7 +58,7 @@
       <%= @appointment.review %>
     </div>
     <div class="mx-auto py-2">
-      <%= button_to "Go back to appointments", appointments_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
       <%= button_to "Edit", edit_appointment_path(@appointment), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
       <%= button_to "Destroy", appointment_path(@appointment), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
     </div>
