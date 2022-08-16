@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ManagersController < UsersController
-  before_action :authenticate_user!
+  skip_load_and_authorize_resource
   def index
     @managers = User.where(role: 'manager')
   end
@@ -13,6 +13,7 @@ class ManagersController < UsersController
   def dashboard
     @appointments_today_count = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day).count
     @appointments = Appointment.order(date_time: :asc).where(date_time: Date.today.all_day)
+
     if params[:query_text].present?
       @appointments = @appointments.search_full_text(params[:query_text])
     end

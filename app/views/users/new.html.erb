@@ -1,45 +1,76 @@
-<div>
-  <h1>user New Create</h1>
-  <%= form_with(model: @user) do |form| %>
-    <% @user.errors.full_messages.each do |error| %>
-      <div class="text-danger">
-        <%= error %>
+<div class="bg-white min-vh-100 d-grid">
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", users_path,  class: "green-back-link fw-bold text-decoration-none" %>
+  </p>
+  <div class="d-grid m-auto">
+    <h1 class="mx-auto fw-bold text-capitalize">create new user</h1>
+  </div>
+  <div class="mx-auto">
+    <%= form_with(model: @user) do |form| %>
+      <% @user.errors.full_messages.each do |error| %>
+        <div class="text-danger">
+          <%= error %>
+        </div>
+      <% end %>
+      <div class="d-grid gap-2">
+        <div>
+          <%= form.label :name, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :name, class: "form-control bg-light text-black-50", placeholder: "Victor" %>
+        </div>
+        <div>
+          <%= form.label :last_name, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :last_name, class: "form-control bg-light text-black-50", placeholder: "Bonilla" %>
+        </div>
+        <div>
+          <%= form.label :birth_date, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.date_field :birth_date, class: "form-control bg-light text-black-50"%>
+        </div>
+        <div>
+          <%= form.label :phone, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :phone, class: "form-control bg-light text-black-50", placeholder: "56891236" %>
+        </div>
+        <div>
+          <%= form.label :email, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.email_field :email, class: "form-control bg-light text-black-50", placeholder: "victor@nutricheck.com" %>
+        </div>
+        <div>
+          <%= form.label :password, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.password_field :password , class: "form-control bg-light text-black-50" %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.password_field :password_confirmation , class: "form-control bg-light text-black-50" %>
+        </div>
+        <div>
+          <%= form.label :speciality_id, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :speciality_id, class: "form-control bg-light text-black-50", placeholder: "1" %>
+        </div>
+        <div>
+          <%= form.label :role, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.text_field :role, class: "form-control bg-light text-black-50", placeholder: "Adminitrator" %>
+        </div>
+        <div class="d-grid gap-3 col-6 mx-auto pt-4">
+          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
+        </div>
       </div>
     <% end %>
-    <%= form.label :name %>
-    <div>
-      <%= form.text_field :name %>
-    </div>
-    <%= form.label :last_name %>
-    <div>
-      <%= form.text_field :last_name %>
-    </div>
-    <%= form.label :birth_date %>
-    <div>
-      <%= form.text_field :birth_date %>
-    </div>
-    <%= form.label :phone %>
-    <div>
-      <%= form.text_field :phone %>
-    </div>
-    <%= form.label :email %>
-    <div>
-      <%= form.text_field :email %>
-    </div>
-    <%= form.label :password %>
-    <div>
-      <%= form.text_field :password %>
-    </div>
-    <%= form.label :speciality_id %>
-    <div>
-      <%= form.text_field :speciality_id %>
-    </div>
-    <%= form.label :role %>
-    <div>
-      <%= form.text_field :role %>
-    </div>
-    <div>
-      <%= form.submit 'Create'%>
-    </div>
-  <% end %>
+  </div>
 </div>

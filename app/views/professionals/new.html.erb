@@ -32,7 +32,11 @@
         </div>
         <div>
           <%= form.label :password, class: "fw-bold" %><br>
-          <%= form.text_field :password, class: "form-control" %>
+          <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, class: "fw-bold" %><br>
+          <%= form.password_field :password_confirmation, class: "form-control" %>
         </div>
         <div>
           <%= form.label :speciality_id, class: "fw-bold" %><br>

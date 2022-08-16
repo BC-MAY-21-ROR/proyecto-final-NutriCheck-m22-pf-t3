@@ -1,5 +1,5 @@
 <div class="d-grid gap-2 mt-4">
-  <h1 class="mx-auto text-white fw-bold">Professional Admin Panel</h1>
+  <h1 class="mx-auto text-white fw-bold">Professional Panel</h1>
   <div class="mx-2 my-3 bg-container-cards rounded">
     <div class="d-flex row;">
       <div class="col-md-4 rounded">
@@ -22,7 +22,7 @@
   </div>
   <div class="btn-group mx-2 gap-1" role="group" aria-label="Basic example" >
     <%= button_to "My Licenses", license_path(current_user), method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
-    <%= button_to "Schedules", schedules_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "New Schedules", professionals_reservations_slots_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
   </div>
   <div class="btn-group mx-2 gap-1" role="group" aria-label="Basic example" >
     <%= button_to "Specialities", specialities_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
@@ -30,7 +30,6 @@
   </div>
   <div class="btn-group mx-2 mb-2 gap-1" role="group" aria-label="Basic example" >
     <%= button_to "Patients", search_patients_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
-    <%= button_to "Professionals", appointments_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
   </div>
   <h1 class="mx-auto text-white fw-bold my-2">Appointments of today</h1>
   <p class="mx-auto text-white fw-bold p-0 my-0">Today we have <%= @appointments_today_count %> Patients</p>

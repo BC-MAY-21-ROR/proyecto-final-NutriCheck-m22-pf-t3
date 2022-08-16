@@ -1,24 +1,23 @@
 # frozen_string_literal: true
 
+
+
 # Users controllers with crud functions
+
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  load_and_authorize_resource
   def index
-    require_admin_session
-    @users = User.all.with_attached_photo
+    @users = User.accessible_by(current_ability)
   end
 
   def show
-    user
   end
 
   def new
-    @user = User.new
   end
 
-  def create
-    @user = User.new(user_params)
 
+  def create
     if @user.save
       user_role
     else
@@ -27,20 +26,27 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user
   end
 
   def update
-    user
+    @user = User.find(params[:id])
     if @user.update(user_params)
       user_role
     else
-      render :edit, status: :unprocessable_entity
+      case @user.role
+      when 'administrator'
+        redirect_to edit_administrator_path, notice: 'Edit administrator fail'
+      when 'professional'
+        redirect_to edit_professional_path, notice: 'Edit professional fail'
+      when 'manager'
+        redirect_to edit_manager_path, notice: 'Edit manager fail'
+      else
+        render :new, notice: 'No exist'
+      end
     end
   end
 
   def destroy
-    user
     if @user.destroy
       user_role
     else
@@ -51,24 +57,31 @@ class UsersController < ApplicationController
   private
 
   def user_role
-    case @user.role
+    case current_user.role
     when 'administrator'
-      redirect_to administrators_path, notice: 'Administrator successfully'
+      case @user.role
+      when 'manager'
+        redirect_to managers_path, notice: 'Manager was edited successfully'
+      when 'professional'
+        redirect_to professionals_path, notice: 'Professional was edited successfully'
+      else
+        redirect_to administrator_dashboard_path, notice: 'Administrador was edited successfully'
+      end
     when 'manager'
-      redirect_to managers_path, notice: 'Manager successfully'
+      if @user.role == 'professional'
+        redirect_to professionals_path, notice: 'Professional was edited successfully'
+      else
+        redirect_to manager_dashboard_path, notice: 'Manager was edited successfully'
+      end
     when 'professional'
-      redirect_to professionals_path, notice: 'Professional successfully'
+      redirect_to professional_dashboard_path, notice: 'Professional was edited successfully'
     else
-      redirect_to users_path, notice: 'User successfully'
+      redirect_to users_path, notice: 'User was edited successfully'
     end
   end
 
-  def user
-    @user = User.find(params[:id])
-  end
 
   def user_params
-    params.require(:user).permit(:name, :last_name, :birth_date, :phone, :email, :password, :role, :speciality_id,
-                                 :photo)
+    params.require(:user).permit(:name, :last_name, :birth_date, :password, :password_confirmation ,:phone, :current_password, :email, :speciality_id, :photo, :role)
   end
 end
