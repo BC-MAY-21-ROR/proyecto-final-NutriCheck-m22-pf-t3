@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    user
+
   end
 
   def new
@@ -27,11 +27,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user
   end
 
   def update
-    user
     if @user.update(user_params)
       user_role
     else
