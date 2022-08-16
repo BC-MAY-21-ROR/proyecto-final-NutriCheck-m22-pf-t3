@@ -6,7 +6,12 @@ class ProfessionalsController < UsersController
   def index
     @professionals = User.where(role: 'professional')
   end
-
+  def edit
+    @professional = User.find(params[:id])
+  end
+  def update
+        @professional = User.find(params[:id])
+  end
   def profile
     @professional = User.find(params[:id])
     @patients = Patient.all

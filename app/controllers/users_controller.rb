@@ -5,13 +5,12 @@
 # Users controllers with crud functions
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!
   load_and_authorize_resource
   def index
+    @users = Users.all
   end
 
   def show
-
   end
 
   def new
@@ -30,6 +29,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     if @user.update(user_params)
       user_role
     else
