@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'confirmations' %>
+
 <div class="d-grid">
   <div class="d-grid my-4">
     <h1 class="mx-auto fw-bold text-white px-3">Manage specialities</h1>
@@ -8,7 +10,7 @@
         <li class="list-group-item d-flex w-100 gap-2">
           <p class="w-100 my-auto"><%= speciality.name %></p>
           <%= button_to "Edit", edit_speciality_path(speciality), method: :get , form_class: "w-20", class: "btn btn-warning  text-white fw-bold w-100" %>
-          <%= button_to "Destroy", speciality_path(speciality), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100" %>
+          <%= button_to "Delete", speciality_path(speciality), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100", :onclick => "return ConfirmAction();"%>
         </li>
       </ul>
     <% end %>
