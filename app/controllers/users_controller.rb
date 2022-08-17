@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @user = User.new
   end
 
 
@@ -30,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       user_role
     else
@@ -83,6 +83,6 @@ class UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:name, :last_name, :birth_date, :password, :password_confirmation ,:phone, :current_password, :email, :speciality_id, :photo, :role)
+    params.require(:user).permit(:name, :last_name, :birth_date, :password, :password_confirmation ,:phone, :email, :speciality_id, :photo, :role)
   end
 end
