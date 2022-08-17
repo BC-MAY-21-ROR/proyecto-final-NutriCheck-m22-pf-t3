@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'confirmations' %>
+
 <div class="bg-white min-vh-100 d-grid">
   <div class="d-grid m-auto">
     <h1 class=" mx-auto fw-bold">Manager Info Detail</h1>
@@ -54,7 +56,7 @@
     <div class="mx-auto py-2">
       <%= button_to "Go back to managers", managers_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
       <%= button_to "Edit", edit_manager_path(@manager), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
-      <%= button_to "Destroy", manager_path(@manager), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", manager_path(@manager), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold", :onclick => "return ConfirmAction();" %>
     </div>
   </div>
 </div>
