@@ -3,10 +3,8 @@
 # Controller for PATIENTS
 
 class PatientsController < ApplicationController
-  # before_action :authenticate_patient!
-  # skip_before_action :authenticate_patient!, only: [:search]
+  load_and_authorize_resource
   def index
-    require_admin_session
     @patients = Patient.all.with_attached_photo
     pagination
   end
@@ -42,11 +40,10 @@ class PatientsController < ApplicationController
 
   def update
     patient
-
     if @patient.update(pat_params)
       redirect_patients(2)
     else
-      render :edit, stauts: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -90,7 +87,7 @@ class PatientsController < ApplicationController
       :last_name, :second_last_name,
       :birth_date, :phone,
       :email,
-      :password,
+      :current_password,
       :height,
       :observations,
       :photo

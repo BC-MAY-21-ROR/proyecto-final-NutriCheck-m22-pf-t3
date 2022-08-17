@@ -2,9 +2,7 @@
 
 # Appointment class controller
 class AppointmentsController < ApplicationController
-  before_action :authenticate_patient!
-  skip_before_action :authenticate_patient!, only: [:search]
-
+  load_and_authorize_resource
   def index
     pagination
   end
@@ -71,6 +69,7 @@ class AppointmentsController < ApplicationController
   end
 
   def pagination
+    @appointments = Appointment.all
     @pagy, @appointments = pagy(@appointments, items: 50)
   end
 

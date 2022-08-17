@@ -9,7 +9,7 @@
           <%= form.label :user_id, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.collection_select(:user_id, User.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center bg-light" }) %>
+          <%= form.collection_select(:user_id, User.where(id: current_user.id), :id, :name, { include_blank: false }, { class: "form-control rounded-pill text-center bg-light" }) %>
         </div>
         <div>
           <%= form.label :name, class: "fw-bold" %>
@@ -30,7 +30,7 @@
     <% end %>
     <div class="d-grid col-6 mx-auto pt-2 mb-3">
       <div class="mx-auto">
-        <%= button_to "Cancel", professionals_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
+        <%= button_to "Cancel", license_path(current_user.id), method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
       </div>
     </div>
   </div>
