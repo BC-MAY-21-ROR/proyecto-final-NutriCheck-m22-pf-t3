@@ -1,6 +1,12 @@
 <div class="d-grid gap-2 mt-2">
   <p class="m-auto ms-2">
-    <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  <% if current_user.role == 'administrator'%>
+    <%= link_to  "< Back", administrator_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  <% elsif current_user.role == 'professional'%>
+    <%= link_to  "< Back", professional_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  <% else%>
+    <%= link_to  "< Back", manager_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
+  <% end %>
   </p>
   <h1 class="mx-auto text-white fw-bold">Professionals</h1>
   <a class="center-a" href="<%= new_professional_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>

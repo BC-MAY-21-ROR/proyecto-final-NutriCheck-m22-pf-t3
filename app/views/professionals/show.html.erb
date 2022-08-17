@@ -34,16 +34,10 @@
       <%= @professional.email %>
     </div>
     <div class="fw-bold">
-      <label for="">Password: </label>
-    </div>
-    <div class="form-control bg-light text-black-50 m-auto">
-      <%= @professional.password %>
-    </div>
-    <div class="fw-bold">
       <label for="">Role: </label>
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
-      <%= @professional.role %>
+      <%= @professional.role.capitalize %>
     </div>
     <div class="fw-bold">
       <label for="">Speciality: </label>
@@ -66,8 +60,8 @@
     <div class="mx-auto py-2">
       <%= button_to "Licenses", license_path(params[:id]), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
       <%= button_to "Go back to professionals", professionals_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
-      <%= button_to "Edit", edit_professional_path(@professional), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
-      <%= button_to "Destroy", professional_path(@professional), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
+      <%= button_to "Edit", edit_user_path(@professional), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
+      <%= button_to "Destroy", user_path(@professional), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold"%>
     </div>
   </div>
 </div>
