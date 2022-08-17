@@ -4,6 +4,8 @@ class Patient < ApplicationRecord
   attr_accessor :current_password
   include PgSearch::Model
 
+  acts_as_paranoid
+
   pg_search_scope :search_full_text, against: {
     last_name: 'A',
     name: 'B', 

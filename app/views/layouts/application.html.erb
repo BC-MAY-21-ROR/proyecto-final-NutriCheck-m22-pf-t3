@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- --------------- Javascrip bootstrap --------->
@@ -13,7 +14,6 @@
   </head>
   <body class="color-bcg ">
     <%= render 'shared/flash' %>
-    
     <%= yield %>
     </div>
   </body>
