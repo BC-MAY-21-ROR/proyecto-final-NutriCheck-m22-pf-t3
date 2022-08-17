@@ -3,6 +3,8 @@
 class Appointment < ApplicationRecord
   include PgSearch::Model
 
+  acts_as_paranoid
+
   pg_search_scope :search_full_text, associated_against: {
     patient: %i[name last_name]
   }

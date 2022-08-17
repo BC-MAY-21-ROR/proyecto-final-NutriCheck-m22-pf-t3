@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'confirmations'%>
+
 <p class="m-auto ms-2">
   <% if current_user.role == 'professional'%>
     <%= link_to  "< Back", professional_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
@@ -32,7 +34,7 @@
             <div class="d-flex gap-1">
               <% if current_user.role == 'professional' %>
                 <%= link_to "Edit", edit_license_path(lic), class: 'btn btn-sm btn-warning' %>
-                <%= button_to "Delete", license_path(lic), method: :delete, class: 'btn btn-sm btn-danger' %>
+                <%= button_to "Delete", license_path(lic), method: :delete, class: 'btn btn-sm btn-danger', :onclick => "return ConfirmAction();" %>
               <% end %>
             </div>
           </td>
