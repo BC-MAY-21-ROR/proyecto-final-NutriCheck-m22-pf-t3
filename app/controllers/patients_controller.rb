@@ -3,7 +3,6 @@
 # Controller for PATIENTS
 
 class PatientsController < ApplicationController
-  before_action :authenticate_patient!
   load_and_authorize_resource
   def index
     @patients = Patient.all.with_attached_photo

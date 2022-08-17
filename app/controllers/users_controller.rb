@@ -5,7 +5,7 @@
 # Users controllers with crud functions
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authorize_user, only: :create
   load_and_authorize_resource
   def index
     @users = User.accessible_by(current_ability)

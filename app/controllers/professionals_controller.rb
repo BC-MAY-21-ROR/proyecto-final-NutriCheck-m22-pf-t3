@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ProfessionalsController < UsersController
-  before_action :authenticate_user!
   skip_load_and_authorize_resource
   
   def index
