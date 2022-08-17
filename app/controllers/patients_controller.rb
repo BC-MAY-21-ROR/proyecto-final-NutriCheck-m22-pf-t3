@@ -26,7 +26,7 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.new(pat_params)
+    @patient = Patient.new(patient_params)
     if @patient.save
       redirect_patients(1)
     else
@@ -40,7 +40,7 @@ class PatientsController < ApplicationController
 
   def update
     patient
-    if @patient.update(pat_params)
+    if @patient.update(patient_params)
       redirect_patients(2)
     else
       render :edit, status: :unprocessable_entity
@@ -85,13 +85,12 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
-  def pat_params
+  def patient_params
     params.require(:patient).permit(
       :name, :second_name,
       :last_name, :second_last_name,
       :birth_date, :phone,
       :email,
-      :current_password,
       :height,
       :observations,
       :photo
