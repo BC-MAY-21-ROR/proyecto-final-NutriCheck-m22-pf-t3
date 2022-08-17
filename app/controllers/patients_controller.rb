@@ -67,7 +67,11 @@ class PatientsController < ApplicationController
     when 1
       redirect_to patients_path, notice: 'New patient created successfully'
     when 2
-      redirect_to patients_path, notice: 'Patient was edited successfully'
+      if current_patient == @patient
+        redirect_to patient_dashboard_path, notice: 'Edited successfully'
+      else
+        redirect_to patients_path, notice: 'Patient was edited successfully'
+      end
     else
       redirect_to patients_path, notice: 'Patient was deleted successfully'
     end
