@@ -1,11 +1,12 @@
 <div class="bg-white min-vh-100 d-grid">
   <p class="m-auto ms-2">
-    <%= link_to  "< Back", users_path,  class: "green-back-link fw-bold text-decoration-none" %>
+    <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
   </p>
   <div class="d-grid m-auto">
     <h1 class="mx-auto fw-bold text-capitalize">create new user</h1>
   </div>
   <div class="mx-auto">
+
     <%= form_with(model: @user) do |form| %>
       <% @user.errors.full_messages.each do |error| %>
         <div class="text-danger">

@@ -1,4 +1,5 @@
 <div class="vh-100 bg-white">
+  <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
   <h1 class="text-center">Professionals schedule generator</h1>
   <div class="">
     <%= form_with url: professionals_reservations_new_slots_path , method: :post, class: 'w-50 mx-auto d-flex flex-column gap-3' do |form| %>

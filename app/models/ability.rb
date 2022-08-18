@@ -11,13 +11,20 @@ class Ability
       elsif model.manager?
         can :manage, Patient
         can :manage, User, id: model.id
-        can :read, User
-        can :manage, Card, License, Diet, Slot, Schedule
+        can :manage, User, role: 'professional'
+        cannot :index, User
+        can :manage, Card
+        can :read, License
+        can :manage, Appointment
         can :manage, Speciality
+        can :manage, Service
       elsif model.professional?
         can :manage, Patient
         can :manage, User, id: model.id
-        can :read, User
+        can :manage, Appointment
+        can :manage, Slot
+        can :manage, License
+        cannot :index, User
         can :manage, Card, License, Diet, Slot, Schedule
         can :manage, Speciality
      end

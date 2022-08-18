@@ -62,7 +62,7 @@
       <%= image_tag(@patient.photo, width: 300) if @patient.photo.attached? %>
     </div>
     <div class="mx-auto py-2">
-      <%= button_to "Go back", search_patients_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
+      <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold"%>
       <%= button_to "Edit", edit_patient_path(@patient), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold"%>
       <%= button_to "Destroy", patient_path(@patient), method: :delete, data: { confirm: 'Are you sure?' }, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold", :onclick => "return ConfirmAction();" %>
     </div>

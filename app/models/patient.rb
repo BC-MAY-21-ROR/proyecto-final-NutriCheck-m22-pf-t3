@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Patient < ApplicationRecord
-  attr_accessor :current_password
   include PgSearch::Model
 
   acts_as_paranoid

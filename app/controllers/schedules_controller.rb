@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-load_and_authorize_resource
 class SchedulesController < ApplicationController
   def index
     @schedules = Schedule.all

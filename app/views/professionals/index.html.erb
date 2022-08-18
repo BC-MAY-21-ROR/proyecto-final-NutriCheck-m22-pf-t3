@@ -1,15 +1,9 @@
 <div class="d-grid gap-2 mt-2">
   <p class="m-auto ms-2">
-  <% if current_user.role == 'administrator'%>
-    <%= link_to  "< Back", administrator_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
-  <% elsif current_user.role == 'professional'%>
-    <%= link_to  "< Back", professional_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
-  <% else%>
-    <%= link_to  "< Back", manager_dashboard_path,  class: "black-back-link fw-bold text-decoration-none" %>
-  <% end %>
+    <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
   </p>
   <h1 class="mx-auto text-white fw-bold">Professionals</h1>
-  <a class="center-a" href="<%= new_professional_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
+  <a class="center-a" href="<%= new_user_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
   <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
     <% @professionals.sort_by { |prof| prof.speciality.name }.each do |professional|%>
       <div class="col">

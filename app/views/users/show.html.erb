@@ -16,7 +16,7 @@
         <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Speciality ID: </span><%= @user.speciality_id %></label>
         <label for="" class="card-title pb-2 m-2"><span class="m-2 fw-bold text-capitalize pb-2">Date of Entry: </span><%= @user.created_at %></label>
         <div class="d-flex flex-column my-2 text-center">
-          <%= button_to "volver a users", users_path, method: :get, class: "btn color-btn text-white fw-bold w-50"%>
+          <%= button_to "Volver", 'javascript:history.back()', method: :get, class: "btn color-btn text-white fw-bold w-50"%>
         </div>
         </div>
       </div>
