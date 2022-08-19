@@ -6,6 +6,12 @@
     <%= card.patient.second_last_name %>
   </td>
   <td>
+    <%= card.weight %>
+  </td>
+  <td>
+    <%= card.next_appointment %>
+  </td>
+  <td>
     <%= link_to "P", patient_path(card.patient), class: 'btn btn-sm btn-primary' %>
     <%= link_to "A", card_path(card), class: 'btn btn-sm btn-success' %>
   </td>
