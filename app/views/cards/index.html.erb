@@ -27,7 +27,7 @@
       <div class="d-grid gap-2 mx-auto mb-3">
       </div>
     </div>
-  <% else %>
+  <% elsif current_user %>
     <div class="d-grid my-4">
       <h1 class="mx-auto fw-bold text-white px-3">Cards</h1>
       <%= form_with url: cards_path, method: :get, class: 'd-flex' do |form| %>
