@@ -25,61 +25,160 @@
         </div>
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center name-profile">
-            <strong><span class=""><%= current_user.full_name %></span></strong>
+            <% if current_user %>
+              <strong><span class=""><%= current_user.full_name %></span></strong>
+            <% elsif current_patient  %>
+              <strong><span class=""><%= current_patient.patient_full_name %></span></strong>
+            <% end %>
             <div class="nav-link nav-profile d-flex align-items-center pe-0">
-              <% if current_user.photo.attached? %>
-                <%= image_tag(current_user.photo, class: "rounded-circle") %>
-              <% else %>
-                <%= image_tag('coming_soon_2.png', class: "rounded-circle") %>
+              <% if current_user %>
+                <% if current_user.photo.attached? %>
+                  <%= image_tag(current_user.photo, class: "rounded-circle") %>
+                <% else %>
+                  <%= image_tag('coming_soon_2.png', class: "rounded-circle") %>
+                <% end %>
+              <% elsif current_patient %>
+                <% if current_patient.photo.attached? %>
+                  <%= image_tag(current_patient.photo, class: "rounded-circle") %>
+                <% else %>
+                  <%= image_tag('coming_soon_2.png', class: "rounded-circle") %>
+                <% end %>
               <% end %>
             </div>
           </div>
-          <!-- End Profile Iamge Icon -->
-          <!-- End Profile Dropdown Items -->
-          <!-- End Profile Nav -->
         </ul>
-        <!-- End Icons Navigation -->
       </header>
-      <!-- End Header -->
-      <!-- ======= Sidebar ======= -->
       <aside id="sidebar" class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
-          <li class="nav-item">
-            <div class="nav-link " href="index.html">
-              <i class="bi bi-grid"></i>
-              <span><%= link_to  "Services", services_path %> </span>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link " href="index.html">
-              <i class="bi bi-grid"></i>
-              <span><%= link_to  "Schedules", schedules_path %> </span>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link " href="index.html">
-              <i class="bi bi-grid"></i>
-              <span><%= link_to  "Specialities", specialities_path %> </span>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link " href="index.html">
-              <i class="bi bi-grid"></i>
-              <span><%= link_to  "Appointments", search_appointments_path %> </span>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link " href="index.html">
-              <i class="bi bi-grid"></i>
-              <span><%= link_to  "Patients", search_patients_path %> </span>
-            </div>
-          </li>
-          <li class="nav-item">
-            <div class="nav-link " href="index.html">
-              <i class="bi bi-grid"></i>
-              <span><%= link_to  "Professionals", professionals_path %> </span>
-            </div>
-          </li>
+          <% if current_user %>
+            <% if current_user.role == 'manager' %>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Services", services_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Schedules", schedules_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Specialities", specialities_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Appointments", search_appointments_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Patients", search_patients_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Professionals", professionals_path %> </span>
+                </div>
+              </li>
+            <% elsif current_user.role == 'administrator' %>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Manage Managers", managers_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Manage Professionals", professionals_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Manage Schedules", schedules_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Patients", in_construction_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Appointments", in_construction_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Sales", in_construction_path %> </span>
+                </div>
+              </li>
+            <% elsif current_user.role == 'professional' %>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "My Licenses", license_path(current_user) %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "New Schedules", professionals_reservations_slots_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Specialities", specialities_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Appointments", search_appointments_path %> </span>
+                </div>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link " href="index.html">
+                  <i class="bi bi-grid"></i>
+                  <span><%= link_to  "Patients", search_patients_path %> </span>
+                </div>
+              </li>
+            <% end %>
+          <% elsif current_patient %>
+            <strong>New appointment</strong>
+            <li class="nav-item">
+              <div class="nav-link " href="index.html">
+                <i class="bi bi-grid"></i>
+                <span><%= link_to  "Search by service", slots_services_path %> </span>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link " href="index.html">
+                <i class="bi bi-grid"></i>
+                <span><%= link_to  "Search by professional", slots_professionals_path %> </span>
+              </div>
+            </li>
+            <strong>Historic appointments</strong>
+            <li class="nav-item">
+              <div class="nav-link " href="index.html">
+                <i class="bi bi-grid"></i>
+                <span><%= link_to  "Check ", appointments_path %> </span>
+              </div>
+            </li>
+          <% end %>
           <!-- End Dashboard Nav -->
         </ul>
       </aside>
