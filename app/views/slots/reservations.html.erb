@@ -10,13 +10,13 @@
     </div>
     <div class="form-group py-2">
       <%= form.label :reason, class: "pb-2 fw-bold" %>
-      <%= form.text_field :reason, class: "form-control" %>
+      <%= form.text_field :reason, required: true, class: "form-control" %>
       <small id="reasonHelp" class="form-text text-muted">Enter a brief description of the reason for your visit.</small>
     </div>
     <div class="form-group py-2">
       <%= form.label :service_id, class: "pb-2 fw-bold" %>
-      <%= form.text_field :service_id, value: @services.map { |service| (service.id == @slot.service.to_i)? service.name : next }.reject { |x| x.nil? }.join, readonly: true, class: "form-control" %>
-      <%= form.hidden_field :service_id, value: @services.map { |service| (service.id == @slot.service.to_i)? service.id.to_i : next }.reject { |x| x.nil? }.join, class: "form-control" %>
+      <%= form.text_field :service_id, value: @services.map { |service| (service.name == @slot.service)? service.name : next }.reject { |x| x.nil? }.join, readonly: true, class: "form-control" %>
+      <%= form.hidden_field :service_id, value: @services.map { |service| (service.name == @slot.service)? service.id.to_i : next }.reject { |x| x.nil? }.join, class: "form-control" %>
     </div>
     <div class="form-group py-2">
       <%= form.label :patient_id, class: "pb-2 fw-bold" %>
@@ -25,8 +25,12 @@
     </div>
     <div class="form-group py-2">
       <%= form.label 'Professional', class: "pb-2 fw-bold" %>
-      <%= form.text_field :user_id, value: @professionals.map { |professional| (professional.id == @slot.professional.to_i)? professional.full_name : next }.reject { |x| x.nil? }.join, readonly: true, class: "form-control" %>
-      <%= form.hidden_field :user_id, value: @professionals.map { |professional| (professional.id == @slot.professional.to_i)? professional.id.to_i : next }.reject { |x| x.nil? }.join, class: "form-control" %>
+      <%= form.text_field :user_id, value: @professionals.map { |professional| (professional.full_name == @slot.professional)? professional.full_name : next }.reject { |x| x.nil? }.join, readonly: true, class: "form-control" %>
+      <%= form.hidden_field :user_id, value: @professionals.map { |professional| (professional.full_name == @slot.professional)? professional.id.to_i : next }.reject { |x| x.nil? }.join, class: "form-control" %>
+    </div>
+    <div class="form-group py-2">
+      <%= form.hidden_field :payment_status, value: 'false' %>
+      <%= form.hidden_field :status, value: 'open' %>
     </div>
     <div class="d-flex flex-column form-group py-2 gap-2">
       <%= form.submit 'Create appointment',class: "btn btn-success text-white fw-bold w-100"%>

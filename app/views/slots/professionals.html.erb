@@ -5,25 +5,25 @@
     <%= button_to "Search by services", slots_services_path, method: :get, form_class: "d-flex justify-content-center", class: 'btn btn-primary w-75' %>
   </div>
   <%= calendar(number_of_days: 2) do |date| %>
-    <%= date.day %>
-    <div>
-      <% @professionals.map do |professional|%>
-        <div class="d-flex justify-content-center my-1">
-          <strong><%= professional.full_name %></strong>
-        </div>
-        <div class="d-flex flex-wrap gap-1 p-0">
-          <% @slots.map do |slot| %>
-            <% if slot.start_time.strftime("%Y-%m-%d") == date.to_s && slot.professional.to_i == professional.id %>
-              <%= button_to slot.start_time.strftime("%H:%M"), slot_reservation_path(slot), method: :get, form_class: "", class: "btn btn-sm color-btn-2 text-white fw-bold" %>
+    <strong><%= date.strftime("%d")%>
+      <div>
+        <% @professionals.map do |professional|%>
+          <div class="d-flex justify-content-center my-1">
+            <strong><%= professional.full_name %></strong>
+          </div>
+          <div class="d-flex flex-wrap gap-1 p-0">
+            <% @slots.map do |slot| %>
+              <% if slot.start_time.strftime("%Y-%m-%d") == date.to_s && slot.professional == professional.full_name %>
+                <%= button_to slot.start_time.strftime("%H:%M"), slot_reservation_path(slot), method: :get, form_class: "", class: "btn btn-sm color-btn-2 text-white fw-bold" %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-<%# View for desktop %>
-<!--
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%# View for desktop %>
+  <!--
 <div class="bg-white p-3">
   <div class="">
     <p style="color: green"><%= notice %></p>
