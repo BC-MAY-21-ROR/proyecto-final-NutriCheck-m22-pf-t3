@@ -60,36 +60,17 @@
       <%= @appointment.review %>
     </div>
     <div class="mx-auto py-2">
-      <%= button_to "Generate new card from this appointment", appointment_path(@appointment), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-primary rounded-pill text-white fw-bold", :onclick => "return ConfirmAction();" %>
+      <%= form_with model: @card do |form| %>
+        <% @card.errors.full_messages.each do |error| %>
+          <%= error %>
+        <% end %>
+        <%= form.hidden_field :appointment_id, value: @appointment.id.to_i, class: "form-control" %>
+        <%= form.hidden_field :patient_id, value: @appointment.patient.id %>
+        <%= form.submit "Generate new card from this appointment", class: "btn btn-primary rounded-pill text-white fw-bold"%>
+      <% end %>
       <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
       <%= button_to "Edit", edit_appointment_path(@appointment), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
       <%= button_to "Destroy", appointment_path(@appointment), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold", :onclick => "return ConfirmAction();" %>
     </div>
-  </div>
-  <div class="mx-auto">
-    <%= form_with model: @card do |form| %>
-      <% @card.errors.full_messages.each do |error| %>
-        <div class="text-danger">
-          <%= error %>
-        </div>
-      <% end %>
-      <div class="d-grid gap-2">
-        <div>
-          <%= form.label :appointment, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.number_field :appointment_id, value: @appointment.id.to_i, class: "form-control" %>
-        </div>
-        <div>
-          <%= form.label "Id Paciente", class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.text_field :patient_id, value: @appointment.patient.id %>
-        </div>
-        <div class="d-grid gap-3 col-6 mx-auto pt-4">
-          <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>
-        </div>
-      </div>
-    <% end %>
   </div>
 </div>
