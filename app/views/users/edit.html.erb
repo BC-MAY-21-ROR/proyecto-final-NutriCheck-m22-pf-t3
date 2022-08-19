@@ -3,7 +3,7 @@
     <%= link_to  "< Back", users_path,  class: "green-back-link fw-bold text-decoration-none" %>
   </p>
   <div class="d-grid m-auto">
-    <h1 class="mx-auto fw-bold">Edit User</h1>
+    <h1 class="mx-auto fw-bold">Edit <%=current_user.role%></h1>
   </div>
   <div class="mx-auto">
     <%= form_with(model: @user) do |form| %>
@@ -39,16 +39,22 @@
           <%= form.email_field :email, class: "form-control bg-light text-black-50" %>
         </div>
         <div>
-          <%= form.label :password, class: "fw-bold" %>
-        </div>
-        <div>
-          <%= form.text_field :password , class: "form-control bg-light text-black-50" %>
-        </div>
-        <div>
           <%= form.label :speciality_id, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :speciality_id, class: "form-control bg-light text-black-50" %>
+          <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: false }, { class: "form-control  bg-light rounded-pill text-center" }) %>
+        </div>
+        <div>
+          <%= form.label :role, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.select :role, [["Administrator", "administrator"], ["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+        </div>
+        <div>
+          <%= form.label :photo, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.file_field :photo, class: "form-control  bg-light" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold"%>

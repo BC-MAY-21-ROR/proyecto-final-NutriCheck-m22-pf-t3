@@ -4,7 +4,7 @@ module Users
   class UsersSanitizer < Devise::ParameterSanitizer
     def initialize(*)
       super
-      permit(:sign_up, keys: %i[email name last_name birth_date phone role speciality_id])
+      permit(:sign_up, keys: %i[name last_name birth_date phone email speciality_id role])
     end
   end
 end
