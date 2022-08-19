@@ -1,12 +1,56 @@
-<div class="d-grid gap-2 mt-2">
-  <p class="m-auto ms-2">
-    <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none text-white" %>
-  </p>
-</div>
-
-<%= render 'profile-one' %>
-<%= render 'cards' %>
-
-<div class="d-grid gap-3 col-6 mx-auto pb-4">
-  <%= link_to 'ready', appointments_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
+<div class="d-grid">
+  <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
+  <% if current_patient %>
+    <div class="d-grid">
+      <div class="d-grid my-4">
+        <h1 class="mx-auto fw-bold text-white px-3">Historic Appointments</h1>
+      </div>
+      <div class="card mx-3 my-3">
+        <% current_patient.cards.order('date_time DESC').each do |card|%>
+          <div class="list-group-item d-flex w-100 gap-2 align-items-center px-1">
+            <p class="my-auto w-25"><%= card.id("%d-%m-%Y") %></p>
+            <p class="my-auto w-50"><%= card.next_appointment %></p>
+            <%= button_to "Check", card_path(card), method: :get , form_class: "w-25", class: "btn btn-warning text-white fw-bold w-100" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="d-grid gap-2 mx-auto mb-3">
+      </div>
+    </div>
+  <% else %>
+    <div class="d-grid my-4">
+      <h1 class="mx-auto fw-bold text-white px-3">Cards</h1>
+      <%= form_with url: cards_path, method: :get, class: 'd-flex' do |form| %>
+        <%= form.text_field :query_text, placeholder: 'write a surname or first name', onChange: 'this.form.requestSubmit()', value: params[:query_text], class: 'form-control mx-2 px-2' %>
+      <% end %>
+      <div class="bg-container-cards m-2">
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Hour</th>
+              <th scope="col">Patient</th>
+              <th scope="col">Manage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: 'card', collection: @cards %>
+          </tbody>
+        </table>
+        <div class="d-flex justify-content-center gap-1 pb-2">
+          <% if @pagy.prev.present? && @pagy.next.present? %>
+            <%= button_to "Prev", pagy_url_for(@pagy, @pagy.prev), class: "btn btn-sm color-btn fw-bold text-white" %>
+            <%= button_to "Next", pagy_url_for(@pagy, @pagy.next), class: "btn btn-sm color-btn fw-bold text-white" %>
+          <% elsif @pagy.prev.present? %>
+            <%= button_to "Prev", pagy_url_for(@pagy, @pagy.prev), class: "btn btn-sm color-btn fw-bold text-white" %>
+          <% elsif @pagy.next.present? %>
+            <%= button_to "Next", pagy_url_for(@pagy, @pagy.next), class: "btn btn-sm color-btn fw-bold text-white" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="d-grid gap-3 mx-auto mb-3">
+        <a class="center-a" href="<%= new_card_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
+        <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
 class CardsController < ApplicationController
-  load_and_authorize_resource
   def index
-    @cards = Card.where(patient_id: params[:format])
-    patient
+    @cards = Card.all
+    @pagy, @cards = pagy(@cards, items: 15)
+    if params[:query_text].present?
+      @cards = @cards.search_full_text(params[:query_text])
+    end
   end
 
   def show
-    card
+    @card = Card.find(params[:id])
   end
 
   def new
@@ -62,18 +64,12 @@ class CardsController < ApplicationController
     end
   end
 
-  def patient
-    @patient = Patient.find(params[:format])
-    @diet = Diet.find(params[:format])
-  rescue ActiveRecord::RecordNotFound => e
-    redirect_to patients_path, notice: e.message
-  end
 
   def card
     @card = Card.find(params[:id])
   end
 
   def card_params
-    params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id)
+    params.require(:card).permit(:next_appointment, :weight, :comments, :patient_id, :diet_id, :appointment_id)
   end
 end

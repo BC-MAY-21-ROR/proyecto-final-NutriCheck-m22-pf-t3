@@ -1,0 +1,12 @@
+<tr>
+  <th scope="row"><%= card.id %></th>
+  <td>
+    <%= card.patient.name %>
+    <%= card.patient.last_name %>
+    <%= card.patient.second_last_name %>
+  </td>
+  <td>
+    <%= link_to "P", patient_path(card.patient), class: 'btn btn-sm btn-primary' %>
+    <%= link_to "A", card_path(card), class: 'btn btn-sm btn-success' %>
+  </td>
+</tr>
