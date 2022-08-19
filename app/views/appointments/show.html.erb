@@ -1,8 +1,6 @@
-
 <%= javascript_include_tag 'confirmations' %>
-
 <div class="bg-white min-vh-100 d-grid px-3">
-<%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
+  <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
   <div class="d-grid m-auto">
     <h1 class=" mx-auto fw-bold">Appointment detail</h1>
   </div>
@@ -62,6 +60,14 @@
       <%= @appointment.review %>
     </div>
     <div class="mx-auto py-2">
+      <%= form_with model: @card do |form| %>
+        <% @card.errors.full_messages.each do |error| %>
+          <%= error %>
+        <% end %>
+        <%= form.hidden_field :appointment_id, value: @appointment.id.to_i, class: "form-control" %>
+        <%= form.hidden_field :patient_id, value: @appointment.patient.id %>
+        <%= form.submit "Generate new card from this appointment", class: "btn btn-primary rounded-pill text-white fw-bold"%>
+      <% end %>
       <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
       <%= button_to "Edit", edit_appointment_path(@appointment), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
       <%= button_to "Destroy", appointment_path(@appointment), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold", :onclick => "return ConfirmAction();" %>

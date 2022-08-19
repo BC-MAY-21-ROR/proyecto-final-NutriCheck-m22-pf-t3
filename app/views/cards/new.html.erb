@@ -14,6 +14,12 @@
       <% end %>
       <div class="d-grid gap-2">
         <div>
+          <%= form.label :appointment, class: "fw-bold" %>
+        </div>
+        <div>
+          <%= form.number_field :appointment_id, class: "form-control" %>
+        </div>
+        <div>
           <%= form.label "Id Paciente", class: "fw-bold" %>
         </div>
         <div>

@@ -20,6 +20,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    @card = Card.new
     appointment
   end
 

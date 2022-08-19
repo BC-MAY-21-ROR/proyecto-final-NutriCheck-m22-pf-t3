@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_15_230323) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_19_230738) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_230323) do
     t.datetime "date_time", null: false
     t.string "reason", null: false
     t.string "status", null: false
-    t.boolean "payment_status", null: false
+    t.string "payment_status", null: false
     t.integer "score"
     t.string "review"
     t.datetime "created_at", null: false
@@ -61,17 +61,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_230323) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.date "next_appointment", null: false
-    t.float "weight", null: false
+    t.date "next_appointment"
+    t.float "weight"
     t.string "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "patient_id", null: false
-    t.bigint "diet_id", null: false
+    t.bigint "diet_id"
     t.bigint "appointment_id", null: false
     t.index ["appointment_id"], name: "index_cards_on_appointment_id"
     t.index ["diet_id"], name: "index_cards_on_diet_id"
     t.index ["patient_id"], name: "index_cards_on_patient_id"
+  end
+
+  create_table "cars", force: :cascade do |t|
+    t.text "fecha"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "diets", force: :cascade do |t|
@@ -90,13 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_230323) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_licenses_on_user_id"
-  end
-
-  create_table "meetings", force: :cascade do |t|
-    t.string "name"
-    t.datetime "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|
