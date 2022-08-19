@@ -3,7 +3,7 @@
   <% if current_patient %>
     <div class="d-grid">
       <div class="d-grid my-4">
-        <h1 class="mx-auto fw-bold text-white px-3">Historic Appointments</h1>
+        <h1 class="mx-auto fw-bold text-white px-3">My Historic Cards</h1>
       </div>
       <div class="card mx-3 my-3">
         <% current_patient.cards.order('created_at DESC').each do |card|%>
@@ -59,7 +59,6 @@
         </div>
       </div>
       <div class="d-grid gap-3 mx-auto mb-3">
-        <a class="center-a" href="<%= new_card_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
         <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
       </div>
     </div>
