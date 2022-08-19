@@ -8,10 +8,22 @@
           <p class="mb-0 text-center">Phone Number:</p>
           <p class="mb-7 text-center">(312)1478963</p>
           <!-- * * * * * * * * * * * * * * *-->
-          <%= button_to "Dashboard", patient_dashboard_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" if patient_signed_in?%>
-          <%= button_to "Staff Dashboard", professional_dashboard_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" if user_signed_in?%>
-          <%= button_to "Log out", destroy_patient_session_path, :method => :delete, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" if patient_signed_in? %>
-          <%= button_to "Log out", destroy_user_session_path, :method => :delete, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" if user_signed_in? %>
+          <% if patient_signed_in?%>
+            <%= button_to "Dashboard", patient_dashboard_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+            <%= button_to "Log out", destroy_patient_session_path, :method => :delete, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+          <% end %>
+          <% if user_signed_in?%>
+            <% if current_user.role == "administrator"%>
+              <%= button_to "Staff Dashboard", administrator_dashboard_path, method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+            <% end %>
+            <% if current_user.role == "professional"%>
+              <%= button_to "Staff Dashboard", professional_dashboard_path, method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+            <% end %>
+            <% if current_user.role == "manager"%>
+              <%= button_to "Staff Dashboard", manager_dashboard_path, method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+            <% end %>
+            <%= button_to "Log out", destroy_user_session_path, :method => :delete, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+          <% end %>
           <%= button_to "Log In", new_patient_session_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" unless patient_signed_in? || user_signed_in? %>
         </div>
       </div>

@@ -2,9 +2,7 @@
 
 # Controller for SLOTS
 class SlotsController < ApplicationController
-  before_action :set_slot, only: %i[show edit update destroy]
-  before_action :authenticate_patient!, only: %i[services]
-
+  load_and_authorize_resource
   # GET /slots or /slots.json
   def index
     @slots = Slot.all

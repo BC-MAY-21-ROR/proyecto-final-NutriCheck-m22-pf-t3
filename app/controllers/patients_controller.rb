@@ -3,10 +3,8 @@
 # Controller for PATIENTS
 
 class PatientsController < ApplicationController
-  # before_action :authenticate_patient!
-  # skip_before_action :authenticate_patient!, only: [:search]
+  load_and_authorize_resource
   def index
-    require_admin_session
     @patients = Patient.all.with_attached_photo
     pagination
   end
@@ -28,7 +26,7 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.new(pat_params)
+    @patient = Patient.new(patient_params)
     if @patient.save
       redirect_patients(1)
     else
@@ -42,11 +40,10 @@ class PatientsController < ApplicationController
 
   def update
     patient
-
-    if @patient.update(pat_params)
+    if @patient.update(patient_params)
       redirect_patients(2)
     else
-      render :edit, stauts: :unprocessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -70,7 +67,11 @@ class PatientsController < ApplicationController
     when 1
       redirect_to patients_path, notice: 'New patient created successfully'
     when 2
-      redirect_to patients_path, notice: 'Patient was edited successfully'
+      if current_patient == @patient
+        redirect_to patient_dashboard_path, notice: 'Edited successfully'
+      else
+        redirect_to patients_path, notice: 'Patient was edited successfully'
+      end
     else
       redirect_to patients_path, notice: 'Patient was deleted successfully'
     end
@@ -84,13 +85,12 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
-  def pat_params
+  def patient_params
     params.require(:patient).permit(
       :name, :second_name,
       :last_name, :second_last_name,
       :birth_date, :phone,
       :email,
-      :password,
       :height,
       :observations,
       :photo

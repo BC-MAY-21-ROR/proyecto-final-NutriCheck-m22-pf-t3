@@ -1,6 +1,6 @@
 <div class="d-grid gap-2 mt-2">
   <p class="m-auto ms-2">
-    <%= link_to  "< Back", administrators_path,  class: "black-back-link fw-bold text-decoration-none" %>
+    <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
   </p>
   <h1 class="mx-auto text-white fw-bold">Managers</h1>
   <a class="center-a" href="<%= new_manager_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>

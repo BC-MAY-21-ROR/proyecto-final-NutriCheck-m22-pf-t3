@@ -3,10 +3,11 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  acts_as_paranoid
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :speciality
-
   has_one_attached :photo
 
   has_many :licenses
@@ -18,7 +19,7 @@ class User < ApplicationRecord
   validates :birth_date, presence: true
   validates :phone, presence: true
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
   validates :role, presence: true
   validates :speciality_id, presence: true
 
@@ -41,4 +42,15 @@ class User < ApplicationRecord
   def get_speciality_name
     "#{speciality.name} - #{name} #{last_name}"
   end
+
+  def admin?
+    role == 'administrator'
+  end
+  def professional?
+    role == 'professional'
+  end
+  def manager?
+    role == 'manager'
+  end
+  
 end

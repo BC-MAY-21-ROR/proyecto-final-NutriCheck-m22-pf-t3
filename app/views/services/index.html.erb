@@ -1,5 +1,8 @@
+<%= javascript_include_tag 'confirmations' %>
+
 <div class="d-grid">
   <div class="d-grid mt-4">
+  <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
     <h1 class="mx-auto fw-bold text-white px-3">Manage Services</h1>
   </div>
   <table class="table table-responsive table-hover table-sm table-light mx-2 mt-4 rounded">
@@ -19,7 +22,7 @@
           <td><%=service.duration %></td>
           <td><%=service.price %></td>
           <td><%= button_to "Edit", edit_service_path(service), method: :get , form_class: "w-20", class: "btn btn-warning  text-white fw-bold w-100" %></td>
-          <td><%= button_to "Destroy", service_path(service), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100" %></td>
+          <td><%= button_to "Destroy", service_path(service), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100", :onclick => "return ConfirmAction();" %></td>
         </tr>
       <% end %>
     </tbody>

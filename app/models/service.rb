@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Service < ApplicationRecord
+  acts_as_paranoid
+  
   has_many :appointments
 
   validates :name, presence: true

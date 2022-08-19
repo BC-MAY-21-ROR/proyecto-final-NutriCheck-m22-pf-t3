@@ -32,7 +32,11 @@
         </div>
         <div>
           <%= form.label :password, class: "fw-bold" %><br>
-          <%= form.text_field :password, class: "form-control" %>
+          <%= form.password_field :password, class: "form-control" %>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, class: "fw-bold" %><br>
+          <%= form.password_field :password_confirmation, class: "form-control" %>
         </div>
         <div>
           <%= form.label :speciality_id, class: "fw-bold" %><br>
@@ -55,7 +59,7 @@
     <% end %>
     <div class="d-grid col-6 mx-auto pt-2 mb-3">
       <div class="mx-auto">
-        <%= button_to "Go back", professionals_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
+        <%= button_to "Go back", 'javascript:history.back()', method: :get, class: "btn color-btn rounded-pill text-white fw-bold"%>
       </div>
     </div>
   </div>

@@ -39,7 +39,7 @@
           <%= form.label :role, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.select :role, [["Administrator", "administrator"], ["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+          <%= form.select :role, [["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
         </div>
         <div>
           <%= form.label :speciality_id, class: "fw-bold" %><br>
@@ -60,7 +60,7 @@
     <% end %>
     <div class="d-grid col-6 mx-auto pt-2 mb-3">
       <div class="mx-auto">
-        <%= button_to "Go back", professionals_path, method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
+        <%= button_to "Go back", 'javascript:history.back()', method: :get, class: "btn color-btn rounded-pill text-white fw-bold mx-auto" %>
       </div>
     </div>
   </div>

@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'confirmations' %>
+
 <div class="d-grid">
   <div class="d-grid my-4">
     <h1 class="mx-auto fw-bold text-white px-3">Manage specialities</h1>
@@ -8,7 +10,7 @@
         <li class="list-group-item d-flex w-100 gap-2">
           <p class="w-100 my-auto"><%= speciality.name %></p>
           <%= button_to "Edit", edit_speciality_path(speciality), method: :get , form_class: "w-20", class: "btn btn-warning  text-white fw-bold w-100" %>
-          <%= button_to "Destroy", speciality_path(speciality), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100" %>
+          <%= button_to "Destroy", speciality_path(speciality), method: :delete , form_class: "w-20", class: "btn btn-danger  text-white fw-bold w-100", :onclick => "return ConfirmAction();" %>
         </li>
       </ul>
     <% end %>
@@ -18,7 +20,12 @@
       <a class="center-a" href="<%= new_speciality_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
     </div>
     <div class="mx-auto">
-      <%= button_to "Go back", professionals_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <% if current_user.role == 'manager'%>
+        <%= button_to "Go back", manager_dashboard_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <% else %>
+        <%= button_to "Go back", 'javascript:history.back()', method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
+      <% end %>
     </div>
   </div>
 </div>
+<%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>

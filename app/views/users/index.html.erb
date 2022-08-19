@@ -1,3 +1,6 @@
+
+<%= javascript_include_tag 'confirmations' %>
+<%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
 <div class="container text-center text-white p-4">
   <h2 class="mx-auto text-white fw-bold">Users List</h2>
 </div>
@@ -15,12 +18,9 @@
           <p class="card-title m-2"><span class="m-2 fw-bold text-capitalize">user: </span><%= user.role %></p>
         </div>
         <div class="d-flex flex-row justify-content-center bd-highlight justify-content-around mb-3 text-center m-4">
-            <%= button_to "show", user_path(user), method: :get, class: "btn color-btn text-white fw-bold 
-            w-100 pb-2 p-2 bd-highlight" %><br>
-
+            <%= button_to "show", user_path(user), method: :get, class: "btn color-btn text-white fw-bold w-100 pb-2 p-2 bd-highlight" %><br>
             <%= button_to "edit", edit_user_path(user), method: :get, class: " col btn btn-warning text-white fw-bold w-100 pb-2 p-2 bd-highlight" %><br>
-
-            <%= button_to "delete", user, method: :delete, class: "btn btn-danger text-white fw-bold w-100 pb-2 p-2 bd-highlight" %>
+            <%= button_to "delete", user, method: :delete, class: "btn btn-danger text-white fw-bold w-100 pb-2 p-2 bd-highlight", :onclick => "return ConfirmAction();" %>
           </div>
       </div>
     </div>

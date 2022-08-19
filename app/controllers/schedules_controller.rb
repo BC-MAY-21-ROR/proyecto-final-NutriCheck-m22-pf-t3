@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 class SchedulesController < ApplicationController
   def index
     @schedules = Schedule.all
@@ -16,7 +15,7 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
     if @schedule.save
-      redirect_to schedules_path, notice: 'New license created successfully'
+      redirect_to schedules_path, notice: 'New schedule created successfully'
     else
       render :new, status: :unprocessable_entity
     end

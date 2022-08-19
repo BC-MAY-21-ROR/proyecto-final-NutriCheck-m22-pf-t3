@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'confirmations' %>
+
 <div class="bg-white min-vh-100 d-grid px-3">
   <div class="d-grid m-auto">
     <h1 class=" mx-auto fw-bold">Diet detail</h1>
@@ -24,7 +26,7 @@
     <div class="mx-auto py-2">
       <%= button_to "Go back to diets", diets_path, method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
       <%= button_to "Edit", edit_diet_path(@diet), method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-warning rounded-pill text-white fw-bold" %>
-      <%= button_to "Destroy", diet_path(@diet), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" %>
+      <%= button_to "Destroy", diet_path(@diet), method: :delete, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn btn-danger rounded-pill text-white fw-bold" , :onclick => "return ConfirmAction();" %>
     </div>
   </div>
 </div>

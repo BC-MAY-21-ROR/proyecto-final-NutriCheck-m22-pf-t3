@@ -3,6 +3,8 @@
 class Patient < ApplicationRecord
   include PgSearch::Model
 
+  acts_as_paranoid
+
   pg_search_scope :search_full_text, against: {
     last_name: 'A',
     name: 'B', 
@@ -18,11 +20,13 @@ class Patient < ApplicationRecord
   has_one_attached :photo
 
   validates :name, presence: true
+  validates :second_name, presence: false
   validates :last_name, presence: true
+  validates :second_last_name, presence: false
   validates :birth_date, presence: true
   validates :phone, presence: true
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
   validates :height, presence: true
 
   def patient_full_name

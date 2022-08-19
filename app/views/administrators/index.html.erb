@@ -1,3 +1,4 @@
+<%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
 <div class="d-grid gap-2 my-9 mt-4">
   <h1 class="mx-auto text-white fw-bold">Administrator Panel</h1>
 </div>
@@ -5,21 +6,21 @@
   <div class="d-flex row;">
     <div class="col-md-4 rounded">
       <img src="/assets/indice.jpg" class="card-img h-100 cover" alt="...">
-     <% if current_user.photo != nil %>
+      <% if current_user.photo != nil %>
         <%= image_tag(current_user.photo) %>
         <%= image_tag(current_user.photo, class: "card-img h-100 cover") %>
-    <% end %>
-  </div>
-  <div class="card-body bg-container-cards rounded">
-    <h5 class="card-title"><%= current_user.full_name %></h5>
-    <p class="card-text m-0"><%= current_user.email %></p>
-    <p class="card-text m-0"><%= current_user.phone %></p>
-    <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
-      <%= button_to "Edit", edit_administrator_path(current_user), method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
-      <%= button_to "Exit", destroy_user_session_path, method: :delete, type: "button", form_class: "col-sm mx-auto w-25", class: "btn btn-sm btn-warning text-white fw-bold w-100" %>
+      <% end %>
+    </div>
+    <div class="card-body bg-container-cards rounded">
+      <h5 class="card-title"><%= current_user.full_name %></h5>
+      <p class="card-text m-0"><%= current_user.email %></p>
+      <p class="card-text m-0"><%= current_user.phone %></p>
+      <div class="btn-group gap-1 w-100" role="group" aria-label="Basic example" >
+        <%= button_to "Edit", edit_administrator_path(current_user), method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" %>
+        <%= button_to "Exit", destroy_user_session_path, method: :delete, type: "button", form_class: "col-sm mx-auto w-25", class: "btn btn-sm btn-warning text-white fw-bold w-100" %>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <div class="d-grid gap-4">
   <div class="d-grid gap-2">
