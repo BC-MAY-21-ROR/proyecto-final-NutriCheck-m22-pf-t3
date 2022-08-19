@@ -48,7 +48,15 @@
           <%= form.label :role, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.select :role, [["Administrator", "administrator"], ["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+          <%if @user.admin?%>
+            <div>
+              <%= form.select :role, [["Administrator", "administrator"], ["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+            </div>
+          <%else%>
+            <div>
+              <%= form.select :role, [["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+            </div>
+          <%end%>
         </div>
         <div>
           <%= form.label :photo, class: "fw-bold" %>
