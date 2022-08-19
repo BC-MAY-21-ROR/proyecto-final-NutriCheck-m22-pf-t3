@@ -30,6 +30,7 @@
   </div>
   <div class="btn-group mx-2 mb-2 gap-1" role="group" aria-label="Basic example" >
     <%= button_to "Patients", search_patients_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
+    <%= button_to "Cards", cards_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
   </div>
   <h1 class="mx-auto text-white fw-bold my-2">Appointments of today</h1>
   <p class="mx-auto text-white fw-bold p-0 my-0">Today we have <%= @appointments_today_count %> Patients</p>
