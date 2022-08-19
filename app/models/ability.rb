@@ -30,8 +30,10 @@ class Ability
      end
     when Patient
     can :manage, Patient, id: model.id
-    can :read, Appointment
+    can :manage, Appointment
     can [:professionals, :services], Slot
+    can :manage, Slot
+
     end
 end
 end
