@@ -74,12 +74,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_19_230738) do
     t.index ["patient_id"], name: "index_cards_on_patient_id"
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.text "fecha"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "diets", force: :cascade do |t|
     t.string "name", null: false
     t.string "description", null: false
@@ -96,6 +90,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_19_230738) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_licenses_on_user_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|

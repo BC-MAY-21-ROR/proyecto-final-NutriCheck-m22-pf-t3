@@ -28,7 +28,7 @@ class TurnsController < ApplicationController
   def update
     turn
 
-    if @turn.update(schedule_params)
+    if @turn.update(turn_params)
       redirect_to turns_path, notice: 'Turn edit'
     else
       redirect_to edit_turn, :unprocessable_entity
@@ -47,7 +47,7 @@ class TurnsController < ApplicationController
 
   private
 
-  def schedule_params
+  def turn_params
     params.require(:turn).permit(:schedule_id, :user_id)
   end
 end

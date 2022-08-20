@@ -2,8 +2,9 @@
 
 <div class="d-grid">
   <div class="d-grid mt-4">
-  <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
+    <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
     <h1 class="mx-auto fw-bold text-white px-3">Manage Services</h1>
+    <a class="center-a" href="<%= new_service_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
   </div>
   <table class="table table-responsive table-hover table-sm table-light mx-2 mt-4 rounded">
     <thead class="thead-ligth">
@@ -27,10 +28,4 @@
       <% end %>
     </tbody>
   </table>
-  <div class="d-grid gap-2">
-    <%= button_to "New Service", new_service_path, method: :get , type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
-    <%= button_to "Go back", manager_dashboard_path, method: :get , type: "button",  form_class: "d-grid gap-2 col-6 mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
-    <div class="mx-auto">
-    </div>
-  </div>
 </div>
