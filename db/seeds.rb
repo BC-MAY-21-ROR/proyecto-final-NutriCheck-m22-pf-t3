@@ -675,54 +675,54 @@ end
   Slot.create(start_time: "2022-08-06 17:00:00 UTC")
 end
 
-# Run seed to create Patient, can create women and men
-@first_name_man = %w[Adolfo	Adrián	Agustín	Alberto	Alejandro	Alexander	Alexis	Alonso	Andrés	Angel	Anthony	Antonio	Bautista	Benicio	Benjamín	Carlos	Cesar	César	Cristóbal	Daniel	David	Diego	Dylan	Eduardo	Emiliano	Emilio	Emmanuel	Enrique	Erik	Ernesto	Esteban	Ethan	Evaristo	Fabián	Facundo	Felipe	Félix	Fernando	Francisco	Gabriel	Gaspar	Geronimo	Giorgio	Gregorio	Gustavo	Hugo	Ian	Ignacio	Iker	Isaac	Jacob	Javier	Jayden	Jeremy	Jerónimo	Jesus	Jesús	Joaquín	John	Jorge	Jose	José	Josué	Juan	Julián	Julio	Justin	Kevin	Lautaro	Liam	Lian	Lorenzo	Lucas	Luciano	Luis	Manuel	Marco	María	Mario	Martin	Martín	Mateo	Matías	Maximiliano	Máximo	Maykel	Melquiades	Miguel	Nelson	Noah	Oscar	Pablo	Pedro	Rafael	Ramón	Raúl	Ricardo	Rigoberto	Roberto	Rolando	Ronny	Samuel	Santiago	Santino	Santos	Sebastián	Sergio	Thiago	Tomás	Valentino	Vicente]
-@second_name_man = %w[Victor	Víctor	Acton	Adam	Aiken	Alein	Alan	Andrew	Arnold	Austin	Baldwin	Barden	Barnett	Barton	Basil	Bishop	Bolton	Brent	Bruce	Caden	Carlton	Carter	Casper	Chad	Chase	Clark	Clint	Cole	Conrad	Cooper	Curtis	Cypril	Dawson	Dean	Denis	Dominic	Donald	Drake	Dunstan	Eban	Edgar	Edwin	Elton	Emil	Eton	Ferdinand	Francis	Fraser	Frederick	Fulbert	Gary	Gilbert	Giles	Gray	Guy	Hanson	Harald	Harrison	Harry	Henniker	Herbert	Homer	Hugh	Indiana	Jaden	James	Jasper	Jett	Jordan	Joshua	Jude	Kurtis	Lauren	Leighton	Leonard	Leonel	Lewis	Lionel	Locke	Luke	Mark	Marlon	Morris	Moses	Nick	Paris	Patrick	Pierce	Raven	Ray	Rayner	River	Roger	Scott	Stuart	Sutton	Taylor	Terence	Terry	Trent	Ulric	Usher	Vincent	Walt	Walter	Warden	Weldon	Wes	Wesley	Wyatt	Zayden]
+# # Run seed to create Patient, can create women and men
+# @first_name_man = %w[Adolfo	Adrián	Agustín	Alberto	Alejandro	Alexander	Alexis	Alonso	Andrés	Angel	Anthony	Antonio	Bautista	Benicio	Benjamín	Carlos	Cesar	César	Cristóbal	Daniel	David	Diego	Dylan	Eduardo	Emiliano	Emilio	Emmanuel	Enrique	Erik	Ernesto	Esteban	Ethan	Evaristo	Fabián	Facundo	Felipe	Félix	Fernando	Francisco	Gabriel	Gaspar	Geronimo	Giorgio	Gregorio	Gustavo	Hugo	Ian	Ignacio	Iker	Isaac	Jacob	Javier	Jayden	Jeremy	Jerónimo	Jesus	Jesús	Joaquín	John	Jorge	Jose	José	Josué	Juan	Julián	Julio	Justin	Kevin	Lautaro	Liam	Lian	Lorenzo	Lucas	Luciano	Luis	Manuel	Marco	María	Mario	Martin	Martín	Mateo	Matías	Maximiliano	Máximo	Maykel	Melquiades	Miguel	Nelson	Noah	Oscar	Pablo	Pedro	Rafael	Ramón	Raúl	Ricardo	Rigoberto	Roberto	Rolando	Ronny	Samuel	Santiago	Santino	Santos	Sebastián	Sergio	Thiago	Tomás	Valentino	Vicente]
+# @second_name_man = %w[Victor	Víctor	Acton	Adam	Aiken	Alein	Alan	Andrew	Arnold	Austin	Baldwin	Barden	Barnett	Barton	Basil	Bishop	Bolton	Brent	Bruce	Caden	Carlton	Carter	Casper	Chad	Chase	Clark	Clint	Cole	Conrad	Cooper	Curtis	Cypril	Dawson	Dean	Denis	Dominic	Donald	Drake	Dunstan	Eban	Edgar	Edwin	Elton	Emil	Eton	Ferdinand	Francis	Fraser	Frederick	Fulbert	Gary	Gilbert	Giles	Gray	Guy	Hanson	Harald	Harrison	Harry	Henniker	Herbert	Homer	Hugh	Indiana	Jaden	James	Jasper	Jett	Jordan	Joshua	Jude	Kurtis	Lauren	Leighton	Leonard	Leonel	Lewis	Lionel	Locke	Luke	Mark	Marlon	Morris	Moses	Nick	Paris	Patrick	Pierce	Raven	Ray	Rayner	River	Roger	Scott	Stuart	Sutton	Taylor	Terence	Terry	Trent	Ulric	Usher	Vincent	Walt	Walter	Warden	Weldon	Wes	Wesley	Wyatt	Zayden]
 
-@last_name = %w[Acosta	Aguilar	Aguirre	Alonso	Alvarado	Alvarez	Andrade	Angeles	Antonio	Arellano	Arias	Arroyo	Avalos	Avila	Ayala	Barajas	Barrera	Bautista	Becerra	Beltrán	Benítez	Bernal	Bravo	Cabrera	Calderón	Camacho	Campos	Cano	Cárdenas	Carmona	Carrillo	Castañeda	Castellanos	Castillo	Castro	Cervantes	Chan	Chávez	Cisneros	Contreras	Córdova	Corona	Cortés	Cortez	Cruz	Cuevas	Dávila	Delgado	Diaz	Domínguez	Durán	Enríquez	Escobar	Esparza	Espinosa	Espinoza	Esquivel	Estrada	Félix	Fernández	Figueroa	Flores	Franco	Fuentes	Galindo	Gallardo	Gallegos	Galván	García	Garza	Gómez	González	Guerra	Guerrero	Guevara	Gutiérrez	Guzmán	Hernández	Herrera	Huerta	Ibarra	Jiménez	Juárez	Lara	Leon	Leyva	López	Lozano	Lugo	Luna	Macías	Magaña	Maldonado	Marín	Márquez	Martínez	Mata	Medina	Mejía	Méndez	Mendoza	Mercado	Meza	Miranda	Molina	Montes	Montiel	Montoya	Mora	Morales	Moreno	Muñoz	Murillo	Nava	Navarrete	Navarro	Nuñez	Ochoa	Olivares	Olvera	Orozco	Ortega	Ortiz	Osorio	Pacheco	Padilla	Palacios	Paredes	Parra	Peña	Peralta	Pérez	Pineda	Ponce	Quintero	Quiroz	Ramírez	Ramos	Rangel	Reséndiz	Reyes	Reyna	Ríos	Rivas	Rivera	Robles	Rocha	Rodríguez	Rojas	Román	Romero	Rosales	Rosas	Rubio	Ruiz	Salas	Salazar	Salgado	Salinas	Sánchez	Sandoval	Santiago	Santos	Saucedo	Segura	Serrano	Silva	Solis	Sosa	Soto	Suarez	Tapia	Téllez	Torres	Tovar	Trejo	Trujillo	Valdez	Valencia	Valenzuela	Vargas	Vásquez	Vázquez	Vega	Velasco	Velázquez	Vera	Villa	Villalobos	Villanueva	Villarreal	Villegas	Zamora	Zárate	Zavala	Zúñiga]
-@second_last_name = %w[Acosta	Aguilar	Aguirre	Alonso	Alvarado	Alvarez	Andrade	Angeles	Antonio	Arellano	Arias	Arroyo	Avalos	Avila	Ayala	Barajas	Barrera	Bautista	Becerra	Beltrán	Benítez	Bernal	Bravo	Cabrera	Calderón	Camacho	Campos	Cano	Cárdenas	Carmona	Carrillo	Castañeda	Castellanos	Castillo	Castro	Cervantes	Chan	Chávez	Cisneros	Contreras	Córdova	Corona	Cortés	Cortez	Cruz	Cuevas	Dávila	Delgado	Diaz	Domínguez	Durán	Enríquez	Escobar	Esparza	Espinosa	Espinoza	Esquivel	Estrada	Félix	Fernández	Figueroa	Flores	Franco	Fuentes	Galindo	Gallardo	Gallegos	Galván	García	Garza	Gómez	González	Guerra	Guerrero	Guevara	Gutiérrez	Guzmán	Hernández	Herrera	Huerta	Ibarra	Jiménez	Juárez	Lara	Leon	Leyva	López	Lozano	Lugo	Luna	Macías	Magaña	Maldonado	Marín	Márquez	Martínez	Mata	Medina	Mejía	Méndez	Mendoza	Mercado	Meza	Miranda	Molina	Montes	Montiel	Montoya	Mora	Morales	Moreno	Muñoz	Murillo	Nava	Navarrete	Navarro	Nuñez	Ochoa	Olivares	Olvera	Orozco	Ortega	Ortiz	Osorio	Pacheco	Padilla	Palacios	Paredes	Parra	Peña	Peralta	Pérez	Pineda	Ponce	Quintero	Quiroz	Ramírez	Ramos	Rangel	Reséndiz	Reyes	Reyna	Ríos	Rivas	Rivera	Robles	Rocha	Rodríguez	Rojas	Román	Romero	Rosales	Rosas	Rubio	Ruiz	Salas	Salazar	Salgado	Salinas	Sánchez	Sandoval	Santiago	Santos	Saucedo	Segura	Serrano	Silva	Solis	Sosa	Soto	Suarez	Tapia	Téllez	Torres	Tovar	Trejo	Trujillo	Valdez	Valencia	Valenzuela	Vargas	Vásquez	Vázquez	Vega Velasco	Velázquez	Vera	Villa	Villalobos	Villanueva	Villarreal	Villegas	Zamora	Zárate	Zavala	Zúñiga]
-@i = 1
-while(@i <= 5000) do
-  first_name = @first_name_man[rand(19)]
-  second_name = @second_name_man[rand(19)]
-  last_name = @last_name[rand(15)]
-  second_last_name = @second_last_name[rand(15)]
-  Patient.create( id: @i,
-                  name: first_name,
-                  second_name: second_name,
-                  last_name: last_name,
-                  second_last_name: second_last_name,
-                  birth_date: "#{rand(1962..2015)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
-                  phone: "#{rand(900000000..999999999)}",
-                  email: "#{first_name}.#{last_name}.#{second_last_name}@gmail.com",
-                  password: "123456",
-                  height: rand(110..200).to_f, observations: "Creation Patient")
-  @i+=1
-end
+# @last_name = %w[Acosta	Aguilar	Aguirre	Alonso	Alvarado	Alvarez	Andrade	Angeles	Antonio	Arellano	Arias	Arroyo	Avalos	Avila	Ayala	Barajas	Barrera	Bautista	Becerra	Beltrán	Benítez	Bernal	Bravo	Cabrera	Calderón	Camacho	Campos	Cano	Cárdenas	Carmona	Carrillo	Castañeda	Castellanos	Castillo	Castro	Cervantes	Chan	Chávez	Cisneros	Contreras	Córdova	Corona	Cortés	Cortez	Cruz	Cuevas	Dávila	Delgado	Diaz	Domínguez	Durán	Enríquez	Escobar	Esparza	Espinosa	Espinoza	Esquivel	Estrada	Félix	Fernández	Figueroa	Flores	Franco	Fuentes	Galindo	Gallardo	Gallegos	Galván	García	Garza	Gómez	González	Guerra	Guerrero	Guevara	Gutiérrez	Guzmán	Hernández	Herrera	Huerta	Ibarra	Jiménez	Juárez	Lara	Leon	Leyva	López	Lozano	Lugo	Luna	Macías	Magaña	Maldonado	Marín	Márquez	Martínez	Mata	Medina	Mejía	Méndez	Mendoza	Mercado	Meza	Miranda	Molina	Montes	Montiel	Montoya	Mora	Morales	Moreno	Muñoz	Murillo	Nava	Navarrete	Navarro	Nuñez	Ochoa	Olivares	Olvera	Orozco	Ortega	Ortiz	Osorio	Pacheco	Padilla	Palacios	Paredes	Parra	Peña	Peralta	Pérez	Pineda	Ponce	Quintero	Quiroz	Ramírez	Ramos	Rangel	Reséndiz	Reyes	Reyna	Ríos	Rivas	Rivera	Robles	Rocha	Rodríguez	Rojas	Román	Romero	Rosales	Rosas	Rubio	Ruiz	Salas	Salazar	Salgado	Salinas	Sánchez	Sandoval	Santiago	Santos	Saucedo	Segura	Serrano	Silva	Solis	Sosa	Soto	Suarez	Tapia	Téllez	Torres	Tovar	Trejo	Trujillo	Valdez	Valencia	Valenzuela	Vargas	Vásquez	Vázquez	Vega	Velasco	Velázquez	Vera	Villa	Villalobos	Villanueva	Villarreal	Villegas	Zamora	Zárate	Zavala	Zúñiga]
+# @second_last_name = %w[Acosta	Aguilar	Aguirre	Alonso	Alvarado	Alvarez	Andrade	Angeles	Antonio	Arellano	Arias	Arroyo	Avalos	Avila	Ayala	Barajas	Barrera	Bautista	Becerra	Beltrán	Benítez	Bernal	Bravo	Cabrera	Calderón	Camacho	Campos	Cano	Cárdenas	Carmona	Carrillo	Castañeda	Castellanos	Castillo	Castro	Cervantes	Chan	Chávez	Cisneros	Contreras	Córdova	Corona	Cortés	Cortez	Cruz	Cuevas	Dávila	Delgado	Diaz	Domínguez	Durán	Enríquez	Escobar	Esparza	Espinosa	Espinoza	Esquivel	Estrada	Félix	Fernández	Figueroa	Flores	Franco	Fuentes	Galindo	Gallardo	Gallegos	Galván	García	Garza	Gómez	González	Guerra	Guerrero	Guevara	Gutiérrez	Guzmán	Hernández	Herrera	Huerta	Ibarra	Jiménez	Juárez	Lara	Leon	Leyva	López	Lozano	Lugo	Luna	Macías	Magaña	Maldonado	Marín	Márquez	Martínez	Mata	Medina	Mejía	Méndez	Mendoza	Mercado	Meza	Miranda	Molina	Montes	Montiel	Montoya	Mora	Morales	Moreno	Muñoz	Murillo	Nava	Navarrete	Navarro	Nuñez	Ochoa	Olivares	Olvera	Orozco	Ortega	Ortiz	Osorio	Pacheco	Padilla	Palacios	Paredes	Parra	Peña	Peralta	Pérez	Pineda	Ponce	Quintero	Quiroz	Ramírez	Ramos	Rangel	Reséndiz	Reyes	Reyna	Ríos	Rivas	Rivera	Robles	Rocha	Rodríguez	Rojas	Román	Romero	Rosales	Rosas	Rubio	Ruiz	Salas	Salazar	Salgado	Salinas	Sánchez	Sandoval	Santiago	Santos	Saucedo	Segura	Serrano	Silva	Solis	Sosa	Soto	Suarez	Tapia	Téllez	Torres	Tovar	Trejo	Trujillo	Valdez	Valencia	Valenzuela	Vargas	Vásquez	Vázquez	Vega Velasco	Velázquez	Vera	Villa	Villalobos	Villanueva	Villarreal	Villegas	Zamora	Zárate	Zavala	Zúñiga]
+# @i = 1
+# while(@i <= 5000) do
+#   first_name = @first_name_man[rand(19)]
+#   second_name = @second_name_man[rand(19)]
+#   last_name = @last_name[rand(15)]
+#   second_last_name = @second_last_name[rand(15)]
+#   Patient.create( id: @i,
+#                   name: first_name,
+#                   second_name: second_name,
+#                   last_name: last_name,
+#                   second_last_name: second_last_name,
+#                   birth_date: "#{rand(1962..2015)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
+#                   phone: "#{rand(900000000..999999999)}",
+#                   email: "#{first_name}.#{last_name}.#{second_last_name}@gmail.com",
+#                   password: "123456",
+#                   height: rand(110..200).to_f, observations: "Creation Patient")
+#   @i+=1
+# end
 
 @first_name_woman = %w[Enriqueta Marlene Siomara Nariana Denisse Patricia Pilar Geovana Olivia Marta Roxana Sonia Luciana Salomé Isabella Mariana Gabriela Emily Abigail Abril Agustina Alaia Alana Alba Luz Alejandra Alicia Alma Altagracia Amala Amalia Amanda Ana Andrea Angeles Antonella Antonia Ariana Ashley Bárbara Beatriz Belén Briana Brithany Camila Caridad Carmen Carolina Catalina Celeste Claudia Concepción Daniela Danna Dayana Delfina Domenica Dulce Elizabeth Emma Esmeralda Evelyn Florencia Francesca Francisca Génesis Guadalupe Isidora Jimena Josefa Josefina Juana Julia Julieta Kamila Karla Kiara]
 @second_name_woman = %w[Danna Mía Domenica Elizabeth Beatriz Ramona Liz Ariana Briana María Julieta Martina Emma Camila Sofía Valentina Victoria Maria Ana Rosa Juana Mar Guadalupe Kimberly Laura Leticia Lidia Lisandra Liz Luana Lucía Luciana Luisa Fernanda Luz Luz María Mabel Maite Margarita María Mariangel Mariapaz Maritza Martha Martina Mayelin Melany Mercedes Mia Mikaela Morena Noemí Odalys Olga Olivia Patricia Paula Ramona Raquel Reina Isabel Rosa Rosmery Roxana Salomé Samantha Sara Silvia Sofía Sonia Sophia Tania Teresa Trinidad Valentina Valeria Vanessa Verónica Victoria Ximena Yadira Yaima Yamileth Yanelis Yanet Zoe]
 @last_name = %w[Hernandez Garcia Martinez Lopez Gonzalez Perez Rodriguez Sanchez Ramirez Cruz Flores Gomez Morales Vazquez Reyes Jimenez Torres Diaz Gutierrez Ruiz Mendoza Aguilar Ortiz Moreno Castillo Romero Alvarez Mendez Chavez Rivera]
 @second_last_name = %w[Hernandez Garcia Martinez Lopez Gonzalez Perez Rodriguez Sanchez Ramirez Cruz Flores Gomez Morales Vazquez Reyes Jimenez Torres Diaz Gutierrez Ruiz Mendoza Aguilar Ortiz Moreno Castillo Romero Alvarez Mendez Chavez Rivera]
 
-@i = 20000
-while(@i <= 23000) do
-  first_name = @first_name_woman[rand(78)]
-  second_name = @second_name_woman[rand(88)]
-  last_name = @last_name[rand(31)]
-  second_last_name = @second_last_name[rand(31)]
-  Patient.create( id: @i,
-                  name: first_name,
-                  second_name: second_name,
-                  last_name: last_name,
-                  second_last_name: second_last_name,
-                  birth_date: "#{rand(1962..2015)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
-                  phone: "#{rand(900000000..999999999)}",
-                  email: "#{first_name}.#{last_name}.#{second_last_name}@gmail.com",
-                  password: "123456",
-                  height: rand(110..200).to_f, observations: "Creation Patient")
-  @i+=1
-end
+# @i = 20000
+# while(@i <= 23000) do
+#   first_name = @first_name_woman[rand(78)]
+#   second_name = @second_name_woman[rand(88)]
+#   last_name = @last_name[rand(31)]
+#   second_last_name = @second_last_name[rand(31)]
+#   Patient.create( id: @i,
+#                   name: first_name,
+#                   second_name: second_name,
+#                   last_name: last_name,
+#                   second_last_name: second_last_name,
+#                   birth_date: "#{rand(1962..2015)}-#{rand(1..12)}-#{rand(1..28)} 17:00:00 UTC",
+#                   phone: "#{rand(900000000..999999999)}",
+#                   email: "#{first_name}.#{last_name}.#{second_last_name}@gmail.com",
+#                   password: "123456",
+#                   height: rand(110..200).to_f, observations: "Creation Patient")
+#   @i+=1
+# end
 
 # Create User team for the company
 User.create(id: 1,
