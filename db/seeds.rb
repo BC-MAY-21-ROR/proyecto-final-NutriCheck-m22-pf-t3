@@ -675,7 +675,7 @@ end
   Slot.create(start_time: "2022-08-06 17:00:00 UTC")
 end
 
-Run seed to create Patient, can create women and men
+# Run seed to create Patient, can create women and men
 @first_name_man = %w[Adolfo	Adrián	Agustín	Alberto	Alejandro	Alexander	Alexis	Alonso	Andrés	Angel	Anthony	Antonio	Bautista	Benicio	Benjamín	Carlos	Cesar	César	Cristóbal	Daniel	David	Diego	Dylan	Eduardo	Emiliano	Emilio	Emmanuel	Enrique	Erik	Ernesto	Esteban	Ethan	Evaristo	Fabián	Facundo	Felipe	Félix	Fernando	Francisco	Gabriel	Gaspar	Geronimo	Giorgio	Gregorio	Gustavo	Hugo	Ian	Ignacio	Iker	Isaac	Jacob	Javier	Jayden	Jeremy	Jerónimo	Jesus	Jesús	Joaquín	John	Jorge	Jose	José	Josué	Juan	Julián	Julio	Justin	Kevin	Lautaro	Liam	Lian	Lorenzo	Lucas	Luciano	Luis	Manuel	Marco	María	Mario	Martin	Martín	Mateo	Matías	Maximiliano	Máximo	Maykel	Melquiades	Miguel	Nelson	Noah	Oscar	Pablo	Pedro	Rafael	Ramón	Raúl	Ricardo	Rigoberto	Roberto	Rolando	Ronny	Samuel	Santiago	Santino	Santos	Sebastián	Sergio	Thiago	Tomás	Valentino	Vicente]
 @second_name_man = %w[Victor	Víctor	Acton	Adam	Aiken	Alein	Alan	Andrew	Arnold	Austin	Baldwin	Barden	Barnett	Barton	Basil	Bishop	Bolton	Brent	Bruce	Caden	Carlton	Carter	Casper	Chad	Chase	Clark	Clint	Cole	Conrad	Cooper	Curtis	Cypril	Dawson	Dean	Denis	Dominic	Donald	Drake	Dunstan	Eban	Edgar	Edwin	Elton	Emil	Eton	Ferdinand	Francis	Fraser	Frederick	Fulbert	Gary	Gilbert	Giles	Gray	Guy	Hanson	Harald	Harrison	Harry	Henniker	Herbert	Homer	Hugh	Indiana	Jaden	James	Jasper	Jett	Jordan	Joshua	Jude	Kurtis	Lauren	Leighton	Leonard	Leonel	Lewis	Lionel	Locke	Luke	Mark	Marlon	Morris	Moses	Nick	Paris	Patrick	Pierce	Raven	Ray	Rayner	River	Roger	Scott	Stuart	Sutton	Taylor	Terence	Terry	Trent	Ulric	Usher	Vincent	Walt	Walter	Warden	Weldon	Wes	Wesley	Wyatt	Zayden]
 
@@ -724,7 +724,7 @@ while(@i <= 23000) do
   @i+=1
 end
 
-Create User team for the company
+# Create User team for the company
 User.create(id: 1,
 						name: 'Javier Andres',
             last_name: 'Bellarta Sotelo',
@@ -845,7 +845,7 @@ User.create(id: 12,
             role: 'professional',
             speciality_id: 2)
 
-To create appointments you can run the following code.
+# To create appointments you can run the following code.
 start_date = Date.new(2022, 07, 01)
 end_date = Date.new(2022, 07, 30)
 while (start_date <= end_date) do
