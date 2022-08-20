@@ -42,7 +42,7 @@
           <%= form.label :speciality_id, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: false }, { class: "form-control  bg-light rounded-pill text-center" }) %>
+          <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control  bg-light rounded-pill text-center" }) %>
         </div>
         <div>
           <%= form.label :role, class: "fw-bold" %>

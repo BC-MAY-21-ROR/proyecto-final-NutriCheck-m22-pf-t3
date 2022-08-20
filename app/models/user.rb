@@ -7,7 +7,7 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :speciality
+  belongs_to :speciality, optional: true
   has_one_attached :photo
 
   has_many :licenses

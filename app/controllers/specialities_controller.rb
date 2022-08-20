@@ -13,10 +13,10 @@ class SpecialitiesController < ApplicationController
   end
 
   def show
-    speciality
   end
 
   def create
+    @speciality = Speciality.new(speciality_params)
     if @speciality.save
       redirect_to specialities_path, notice: 'New speciality created successfully'
     else
@@ -25,13 +25,10 @@ class SpecialitiesController < ApplicationController
   end
 
   def edit
-    speciality
   end
 
   def update
-    speciality
-
-    if @speciality.update(speci_params)
+    if @speciality.update(speciality_params)
       redirect_to specialities_path, notice: 'Speciality was edited successfully'
     else
       render :edit, stauts: :unprocessable_entity
@@ -39,7 +36,6 @@ class SpecialitiesController < ApplicationController
   end
 
   def destroy
-    speciality
     if @speciality.destroy
       redirect_to specialities_path, notice: 'Speciality was deleted successfully'
     else
@@ -49,7 +45,7 @@ class SpecialitiesController < ApplicationController
 
   private
 
-  def speci_params
+  def speciality_params
     params.require(:speciality).permit(:name)
   end
 end

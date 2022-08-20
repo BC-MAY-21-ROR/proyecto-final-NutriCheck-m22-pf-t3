@@ -91,6 +91,8 @@ class PatientsController < ApplicationController
       :last_name, :second_last_name,
       :birth_date, :phone,
       :email,
+      :password, 
+      :password_confirmation,
       :height,
       :observations,
       :photo
