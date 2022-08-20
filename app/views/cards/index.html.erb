@@ -1,5 +1,5 @@
 <div class="d-grid">
-  <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
+  <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
   <% if current_patient %>
     <div class="d-grid">
       <div class="d-grid my-4">
@@ -57,9 +57,6 @@
             <%= button_to "Next", pagy_url_for(@pagy, @pagy.next), class: "btn btn-sm color-btn fw-bold text-white" %>
           <% end %>
         </div>
-      </div>
-      <div class="d-grid gap-3 mx-auto mb-3">
-        <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
       </div>
     </div>
   <% end %>

@@ -65,20 +65,20 @@ class PatientsController < ApplicationController
   def redirect_patients(option)
     case option
     when 1
-      redirect_to patients_path, notice: 'New patient created successfully'
+      redirect_to search_patients_path, notice: 'New patient created successfully'
     when 2
       if current_patient == @patient
         redirect_to patient_dashboard_path, notice: 'Edited successfully'
       else
-        redirect_to patients_path, notice: 'Patient was edited successfully'
+        redirect_to patient_path, notice: 'Patient was edited successfully'
       end
     else
-      redirect_to patients_path, notice: 'Patient was deleted successfully'
+      redirect_to search_patients_path, notice: 'Patient was deleted successfully'
     end
   end
 
   def pagination
-    @pagy, @patients = pagy(@patients, items: 25)
+    @pagy, @patients = pagy(@patients, items: 6)
   end
 
   def patient

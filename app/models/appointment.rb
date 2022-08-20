@@ -20,5 +20,4 @@ class Appointment < ApplicationRecord
   validates :patient_id, presence: true
   validates :user_id, presence: true
   validates :status, presence: true
-  validates :payment_status, presence: true
 end

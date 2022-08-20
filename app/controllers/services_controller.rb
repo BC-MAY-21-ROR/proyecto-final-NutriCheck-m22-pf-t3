@@ -17,7 +17,7 @@ class ServicesController < ApplicationController
   end
 
   def create
-    @service = Service.new(ser_params)
+    @service = Service.new(service_params)
     if @service.save
       redirect_services(1)
     else
@@ -32,7 +32,7 @@ class ServicesController < ApplicationController
   def update
     service
 
-    if @service.update(ser_params)
+    if @service.update(service_params)
       redirect_services(2)
     else
       render :edit, status: :unprocessable_entity
@@ -65,7 +65,7 @@ class ServicesController < ApplicationController
     @service = Service.find(params[:id])
   end
 
-  def ser_params
+  def service_params
     params.require(:service).permit(:name, :duration, :price)
   end
 end

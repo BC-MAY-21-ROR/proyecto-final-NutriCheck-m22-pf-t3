@@ -4,12 +4,13 @@
 
 class SpecialitiesController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @specialities = Speciality.all
   end
 
   def new
+    @speciality = Speciality.new
   end
 
   def show
@@ -31,7 +32,7 @@ class SpecialitiesController < ApplicationController
   def update
     speciality
 
-    if @speciality.update(speci_params)
+    if @speciality.update(speciality_params)
       redirect_to specialities_path, notice: 'Speciality was edited successfully'
     else
       render :edit, stauts: :unprocessable_entity
@@ -49,7 +50,11 @@ class SpecialitiesController < ApplicationController
 
   private
 
-  def speci_params
+  def speciality
+    @speciality = Speciality.find(params[:id])
+  end
+
+  def speciality_params
     params.require(:speciality).permit(:name)
   end
 end

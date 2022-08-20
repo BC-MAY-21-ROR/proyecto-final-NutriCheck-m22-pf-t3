@@ -3,7 +3,8 @@
 # Controller for LICENSES
 
 class LicensesController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
+
   def index
     @licenses = License.all
   end
@@ -17,7 +18,7 @@ class LicensesController < ApplicationController
   end
 
   def create
-    @license = License.new(lic_params)
+    @license = License.new(license_params)
     if @license.save
       redirect_to license_path(current_user.id), notice: 'New license created successfully'
     else
@@ -32,7 +33,7 @@ class LicensesController < ApplicationController
   def update
     license
 
-    if @license.update(lic_params)
+    if @license.update(license_params)
       redirect_to license_path(current_user.id), notice: 'License was edited successfully'
     else
       render :edit, status: :unprocessable_entity
@@ -54,7 +55,7 @@ class LicensesController < ApplicationController
     @license = License.find(params[:id])
   end
 
-  def lic_params
-    params.require(:license).permit(:name, :number, :user_id)
+  def license_params
+    params.require(:license).permit(:user_id, :name, :number)
   end
 end
