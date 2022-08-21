@@ -1,6 +1,7 @@
-
 <div class="d-grid">
-<%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
+  <p class="m-auto ms-2">
+    <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
+  </p>
   <% if current_patient %>
     <div class="d-grid">
       <div class="d-grid my-4">
@@ -21,6 +22,7 @@
   <% else %>
     <div class="d-grid my-4">
       <h1 class="mx-auto fw-bold text-white px-3">Appointments</h1>
+      <a class="center-a" href="<%= new_appointment_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a><br>
       <%= form_with url: search_appointments_path, method: :get, class: 'd-flex' do |form| %>
         <%= form.text_field :query_text, placeholder: 'write a surname or first name', onChange: 'this.form.requestSubmit()', value: params[:query_text], class: 'form-control mx-2 px-2' %>
       <% end %>
@@ -47,10 +49,6 @@
             <%= button_to "Next", pagy_url_for(@pagy, @pagy.next), class: "btn btn-sm color-btn fw-bold text-white" %>
           <% end %>
         </div>
-      </div>
-      <div class="d-grid gap-3 mx-auto mb-3">
-        <a class="center-a" href="<%= new_appointment_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
-        <%= button_to "Go back", 'javascript:history.back()', method: :get, form_class: "d-grid gap-2 col-15 mx-auto py-1", class: "btn color-btn rounded-pill text-white fw-bold" %>
       </div>
     </div>
   <% end %>

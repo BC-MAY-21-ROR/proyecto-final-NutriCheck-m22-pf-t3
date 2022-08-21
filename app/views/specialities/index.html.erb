@@ -2,7 +2,9 @@
 
 <div class="d-grid">
   <div class="d-grid my-4">
-    <h1 class="mx-auto fw-bold text-white px-3">Manage specialities</h1>
+    <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
+    <h1 class="mx-auto fw-bold text-white px-3">Manage specialities</h1><br>
+    <a class="center-a" href="<%= new_speciality_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
   </div>
   <div class="card mx-3 my-3">
     <% @specialities.each do |speciality|%>
@@ -15,17 +17,4 @@
       </ul>
     <% end %>
   </div>
-  <div class="d-grid gap-2 mx-auto mb-3">
-    <div class="mx-auto">
-      <a class="center-a" href="<%= new_speciality_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
-    </div>
-    <div class="mx-auto">
-      <% if current_user.role == 'manager'%>
-        <%= button_to "Go back", manager_dashboard_path, method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
-      <% else %>
-        <%= button_to "Go back", 'javascript:history.back()', method: :get , form_class: "mx-auto", class: "btn color-btn rounded-pill text-white fw-bold" %>
-      <% end %>
-    </div>
-  </div>
 </div>
-<%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>

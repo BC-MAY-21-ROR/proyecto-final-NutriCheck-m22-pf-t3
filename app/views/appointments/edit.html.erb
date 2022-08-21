@@ -43,25 +43,25 @@
           <%= form.label :status, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :status, class: "form-control bg-light" %>
+          <%= form.select :status, [["Pending", "Pending"], ["Canceled", "Canceled"], ["Finished", "Finished"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
         </div>
         <div>
           <%= form.label :payment_status, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :payment_status, class: "form-control bg-light" %>
+          <%= form.select :payment_status, [["Missing", "Pending"], ["Paid", "Paid"]], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
         </div>
         <div>
           <%= form.label :score, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :score, class: "form-control bg-light" %>
+          <%= form.select :score, [["1 point", 1], ["2 points", 2], ["3 points", 3], ["4 points", 4], ["5 points", 5], ["6 points", 6], ["7 points", 7], ["8 points", 8], ["9 points", 9], ["10 points", 10]], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
         </div>
         <div>
           <%= form.label :review, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :review, class: "form-control bg-light" %>
+          <%= form.text_area :review, class: "form-control bg-light" %>
         </div>
         <div class="d-grid gap-3 col-6 mx-auto pt-4">
           <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold" %>

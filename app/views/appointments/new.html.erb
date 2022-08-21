@@ -1,5 +1,5 @@
 <div id="schedule-new" class="min-vh-100 bg-white text-dark d-flex flex-column align-content-center p-4 gap-2">
-  <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
+  <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
   <h1 class="mx-auto  fw-bold">New appointment</h1>
   <%= form_with model: @appointment, class: "form-group" do |form| %>
     <% @appointment.errors.full_messages.each do |error| %>
@@ -7,12 +7,12 @@
         <%= error %>
       </div>
     <% end %>
-    <%= form.label :date_time %>
     <div>
+      <%= form.label :date_time %>
       <%= form.datetime_field :date_time, class: "form-control"%>
     </div>
-    <%= form.label :reason %>
     <div>
+      <%= form.label :reason %>
       <%= form.text_field :reason, class: "form-control" %>
     </div>
     <%= form.label :status %>
@@ -24,16 +24,26 @@
       <%= form.text_field :payment_status, class: "form-control" %>
     </div>
     <%= form.label :service_id %>
+
     <div>
+      <%= form.label :service_id %>
       <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
     </div>
-    <%= form.label :patient_id %>
     <div>
+      <%= form.label :patient_id %>
       <%= form.collection_select(:patient_id, Patient.all.order(name: :asc), :id, :patient_full_name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
     </div>
-    <%= form.label :user_id %>
     <div>
+      <%= form.label :user_id %>
       <%= form.collection_select(:user_id, User.where(role: 'professional').order(role: :asc, name: :asc), :id, :get_professionals, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>
+    </div>
+    <div>
+      <%= form.label :status %>
+      <%= form.select :status, [["Pending", "Pending"], ["Canceled", "Canceled"], ["Finished", "Finished"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+    </div>
+    <div>
+      <%= form.label :payment_status %>
+      <%= form.select :payment_status, [["Missing", "Pending"], ["Paid", "Paid"]], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
     </div>
     <div class="d-grid gap-3 col-6 mx-auto pt-4">
       <%= form.submit 'Create', class: "btn color-btn rounded-pill text-white fw-bold"%>

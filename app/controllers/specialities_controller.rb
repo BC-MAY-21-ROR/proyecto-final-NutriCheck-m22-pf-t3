@@ -4,12 +4,13 @@
 
 class SpecialitiesController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @specialities = Speciality.all
   end
 
   def new
+    @speciality = Speciality.new
   end
 
   def show
@@ -28,6 +29,8 @@ class SpecialitiesController < ApplicationController
   end
 
   def update
+    speciality
+
     if @speciality.update(speciality_params)
       redirect_to specialities_path, notice: 'Speciality was edited successfully'
     else
@@ -44,6 +47,11 @@ class SpecialitiesController < ApplicationController
   end
 
   private
+
+  def speciality
+    @speciality = Speciality.find(params[:id])
+  end
+
 
   def speciality_params
     params.require(:speciality).permit(:name)
