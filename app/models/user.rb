@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :password, presence: true, on: :create
   validates :role, presence: true
-  validates :speciality_id, presence: true
+  validates :speciality_id, presence: false
 
   def getname
     "#{role} #{name} #{last_name}"

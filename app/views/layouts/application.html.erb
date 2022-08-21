@@ -25,7 +25,7 @@
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center name-profile">
             <% if current_user %>
-               <a href="<%=current_user.role%>s/dashboard"><span class=""><%= current_user.full_name %></a></span>
+              <a href="<%=current_user.role unless current_page?(:controller => 'users', :action => 'index')%>s/dashboard"><span class=""><%= current_user.full_name %></a></span>
               <div class="nav-link nav-profile d-flex align-items-center pe-0">
                 <% if current_user.photo.attached? %>
                   <%= image_tag(current_user.photo, class: "rounded-circle px-3") %>

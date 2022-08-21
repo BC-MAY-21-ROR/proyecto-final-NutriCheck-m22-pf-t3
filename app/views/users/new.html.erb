@@ -6,7 +6,6 @@
     <h1 class="mx-auto fw-bold text-capitalize">create new user</h1>
   </div>
   <div class="mx-auto">
-
     <%= form_with(model: @user) do |form| %>
       <% @user.errors.full_messages.each do |error| %>
         <div class="text-danger">
@@ -60,7 +59,9 @@
           <%= form.label :speciality_id, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.text_field :speciality_id, class: "form-control bg-light text-black-50", placeholder: "1" %>
+          <div>
+            <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control  bg-light rounded-pill text-center" }) %>
+          </div>
         </div>
         <div>
           <%= form.label :role, class: "fw-bold" %>
