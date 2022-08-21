@@ -1,0 +1,22 @@
+<tr>
+  <th scope="row"><%= card.id %></th>
+  <td>
+    <%= card.patient.name %>
+    <%= card.patient.last_name %>
+    <%= card.patient.second_last_name %>
+  </td>
+  <td>
+    <%= card.weight %>
+  </td>
+  <td>
+    <%= card.next_appointment %>
+  </td>
+  <td>
+    <% if current_user %>
+      <%= link_to "P", patient_path(card.patient), class: 'btn btn-sm btn-primary' %>
+      <%= link_to "C", card_path(card), class: 'btn btn-sm btn-success' %>
+    <% elsif current_patient %>
+      <%= link_to "C", card_path(card), class: 'btn btn-sm btn-success' %>
+    <% end %>
+  </td>
+</tr>

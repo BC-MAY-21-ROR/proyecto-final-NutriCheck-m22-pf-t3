@@ -27,11 +27,13 @@ class Ability
         cannot :index, User
         can :manage, Card, License, Diet, Slot, Schedule
         can :manage, Speciality
-     end
+      end
     when Patient
     can :manage, Patient, id: model.id
-    can :read, Appointment
+    can :manage, Appointment
     can [:professionals, :services], Slot
+    can :manage, Slot
+
     end
 end
 end
