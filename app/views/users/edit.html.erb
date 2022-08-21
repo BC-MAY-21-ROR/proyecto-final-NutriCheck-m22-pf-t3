@@ -3,7 +3,7 @@
     <%= link_to  "< Back", 'javascript:history.back()',  class: "green-back-link fw-bold text-decoration-none" %>
   </p>
   <div class="d-grid m-auto">
-    <h1 class="mx-auto fw-bold">Edit User</h1>
+    <h1 class="mx-auto fw-bold">Edit <%=current_user.role%></h1>
   </div>
   <div class="mx-auto">
     <%= form_with(model: @user) do |form| %>
@@ -51,15 +51,30 @@
           <%= form.collection_select(:speciality_id, Speciality.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control  bg-light rounded-pill text-center" }) %>
         </div>
         <div>
+
+          <%= form.label :role, class: "fw-bold" %>
+        </div>
+        <div>
+          <%if @user.admin?%>
+            <div>
+              <%= form.select :role, [["Administrator", "administrator"], ["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+            </div>
+          <%else%>
+            <div>
+              <%= form.select :role, [["Manager", "manager"], ["Professional", "professional"] ], {}, {class: "form-control  bg-light rounded-pill text-center"} %>
+            </div>
+          <%end%>
+        </div>
+        <div>
           <%= form.label :photo, class: "fw-bold" %>
         </div>
         <div>
-          <%= form.file_field :photo, class: "form-control bg-light" %>
+          <%= form.file_field :photo, class: "form-control  bg-light" %>
         </div>
-      <div class="d-grid gap-3 col-6 mx-auto pt-4">
-        <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold"%>
+        <div class="d-grid gap-3 col-6 mx-auto pt-4">
+          <%= form.submit 'Edit', class: "btn color-btn rounded-pill text-white fw-bold"%>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>

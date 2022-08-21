@@ -1,122 +1,122 @@
 # # frozen_string_literal: true
 
-# Speciality.create(name: 'Administrator')
-# Speciality.create(name: 'Manager')
-# Speciality.create(name: 'Therapist')
-# Speciality.create(name: 'Massagist')
-# Speciality.create(name: 'Nutritionist')
+Speciality.create(name: 'Administrator')
+Speciality.create(name: 'Manager')
+Speciality.create(name: 'Therapist')
+Speciality.create(name: 'Massagist')
+Speciality.create(name: 'Nutritionist')
 
-# User.create(name: 'Carlos', last_name: 'Perez', birth_date: '1985-01-24', phone: '3121457851',
-#             email: 'carlos@gmail.com', password: '123456789', role: 'administrator', speciality_id: 1)
-# User.create(name: 'Henry', last_name: 'Jimenez', birth_date: '1986-05-06', phone: '3122154782',
-#             email: 'henry@gmail.com', password: '12345678', role: 'professional', speciality_id: 3)
-# User.create(name: 'Oliver', last_name: 'Cardenas', birth_date: '1987-02-18', phone: '3123154873',
-#             email: 'oliver@gmail.com', password: '12345678', role: 'professional', speciality_id: 4)
-# User.create(name: 'Ximena', last_name: 'Pizano', birth_date: '1988-05-20', phone: '3124155624',
-#             email: 'ximena@gmail.com', password: '12345678', role: 'professional', speciality_id: 5)
-# User.create(name: 'Alejandra', last_name: 'Garcia', birth_date: '1989-06-13', phone: '3125762555',
-#             email: 'alejandra@gmail.com', password: '12345678', role: 'professional', speciality_id: 5)
-# User.create(name: 'Axel', last_name: 'Lisboa', birth_date: '1990-10-01', phone: '3126788216',
-#             email: 'axel@gmail.com', password: '1234567', role: 'manager', speciality_id: 2)
-# User.create(name: 'Andrea', last_name: 'Lisboa', birth_date: '1990-10-01', phone: '3127152057',
-#             email: 'andrea@gmail.com', password: '1234567', role: 'manager', speciality_id: 2)
+User.create(name: 'Carlos', last_name: 'Perez', birth_date: '1985-01-24', phone: '3121457851',
+            email: 'carlos@gmail.com', password: '123456789', role: 'administrator', speciality_id: 1)
+User.create(name: 'Henry', last_name: 'Jimenez', birth_date: '1986-05-06', phone: '3122154782',
+            email: 'henry@gmail.com', password: '12345678', role: 'professional', speciality_id: 3)
+User.create(name: 'Oliver', last_name: 'Cardenas', birth_date: '1987-02-18', phone: '3123154873',
+            email: 'oliver@gmail.com', password: '12345678', role: 'professional', speciality_id: 4)
+User.create(name: 'Ximena', last_name: 'Pizano', birth_date: '1988-05-20', phone: '3124155624',
+            email: 'ximena@gmail.com', password: '12345678', role: 'professional', speciality_id: 5)
+User.create(name: 'Alejandra', last_name: 'Garcia', birth_date: '1989-06-13', phone: '3125762555',
+            email: 'alejandra@gmail.com', password: '12345678', role: 'professional', speciality_id: 5)
+User.create(name: 'Axel', last_name: 'Lisboa', birth_date: '1990-10-01', phone: '3126788216',
+            email: 'axel@gmail.com', password: '1234567', role: 'manager', speciality_id: 2)
+User.create(name: 'Andrea', last_name: 'Lisboa', birth_date: '1990-10-01', phone: '3127152057',
+            email: 'andrea@gmail.com', password: '1234567', role: 'manager', speciality_id: 2)
 
-# License.create(name: 'HJT', number: '12et84f6w', user_id: 2)
-# License.create(name: 'OCM', number: '23sd46u4x', user_id: 3)
-# License.create(name: 'XPN', number: '34ap28f5f', user_id: 4)
-# License.create(name: 'AGN', number: '45vb92m1k', user_id: 5)
+License.create(name: 'HJT', number: '12et84f6w', user_id: 2)
+License.create(name: 'OCM', number: '23sd46u4x', user_id: 3)
+License.create(name: 'XPN', number: '34ap28f5f', user_id: 4)
+License.create(name: 'AGN', number: '45vb92m1k', user_id: 5)
 
-# Schedule.create(week_day: 'Monday',    opening_time: '07:00:00', closing_time: '08:00:00')
-# Schedule.create(week_day: 'Monday',    opening_time: '08:00:00', closing_time: '09:00:00')
-# Schedule.create(week_day: 'Monday',    opening_time: '09:00:00', closing_time: '10:00:00')
-# Schedule.create(week_day: 'Monday',    opening_time: '10:00:00', closing_time: '11:00:00')
-# Schedule.create(week_day: 'Monday',    opening_time: '12:00:00', closing_time: '13:00:00')
-# Schedule.create(week_day: 'Monday',    opening_time: '13:00:00', closing_time: '14:00:00')
-# Schedule.create(week_day: 'Monday',    opening_time: '14:00:00', closing_time: '15:00:00')
-# Schedule.create(week_day: 'Tuesday',   opening_time: '07:00:00', closing_time: '08:00:00')
-# Schedule.create(week_day: 'Tuesday',   opening_time: '08:00:00', closing_time: '09:00:00')
-# Schedule.create(week_day: 'Tuesday',   opening_time: '09:00:00', closing_time: '10:00:00')
-# Schedule.create(week_day: 'Tuesday',   opening_time: '14:00:00', closing_time: '15:00:00')
-# Schedule.create(week_day: 'Wednesday', opening_time: '07:00:00', closing_time: '08:00:00')
-# Schedule.create(week_day: 'Wednesday', opening_time: '13:00:00', closing_time: '14:00:00')
-# Schedule.create(week_day: 'Wednesday', opening_time: '14:00:00', closing_time: '15:00:00')
-# Schedule.create(week_day: 'Thursday',  opening_time: '07:00:00', closing_time: '08:00:00')
-# Schedule.create(week_day: 'Thursday',  opening_time: '08:00:00', closing_time: '09:00:00')
-# Schedule.create(week_day: 'Thursday',  opening_time: '12:00:00', closing_time: '13:00:00')
-# Schedule.create(week_day: 'Thursday',  opening_time: '13:00:00', closing_time: '14:00:00')
-# Schedule.create(week_day: 'Thursday',  opening_time: '14:00:00', closing_time: '15:00:00')
-# Schedule.create(week_day: 'Friday',    opening_time: '07:00:00', closing_time: '08:00:00')
-# Schedule.create(week_day: 'Friday',    opening_time: '08:00:00', closing_time: '09:00:00')
-# Schedule.create(week_day: 'Friday',    opening_time: '09:00:00', closing_time: '10:00:00')
-# Schedule.create(week_day: 'Friday',    opening_time: '13:00:00', closing_time: '14:00:00')
+Schedule.create(week_day: 'Monday',    opening_time: '07:00:00', closing_time: '08:00:00')
+Schedule.create(week_day: 'Monday',    opening_time: '08:00:00', closing_time: '09:00:00')
+Schedule.create(week_day: 'Monday',    opening_time: '09:00:00', closing_time: '10:00:00')
+Schedule.create(week_day: 'Monday',    opening_time: '10:00:00', closing_time: '11:00:00')
+Schedule.create(week_day: 'Monday',    opening_time: '12:00:00', closing_time: '13:00:00')
+Schedule.create(week_day: 'Monday',    opening_time: '13:00:00', closing_time: '14:00:00')
+Schedule.create(week_day: 'Monday',    opening_time: '14:00:00', closing_time: '15:00:00')
+Schedule.create(week_day: 'Tuesday',   opening_time: '07:00:00', closing_time: '08:00:00')
+Schedule.create(week_day: 'Tuesday',   opening_time: '08:00:00', closing_time: '09:00:00')
+Schedule.create(week_day: 'Tuesday',   opening_time: '09:00:00', closing_time: '10:00:00')
+Schedule.create(week_day: 'Tuesday',   opening_time: '14:00:00', closing_time: '15:00:00')
+Schedule.create(week_day: 'Wednesday', opening_time: '07:00:00', closing_time: '08:00:00')
+Schedule.create(week_day: 'Wednesday', opening_time: '13:00:00', closing_time: '14:00:00')
+Schedule.create(week_day: 'Wednesday', opening_time: '14:00:00', closing_time: '15:00:00')
+Schedule.create(week_day: 'Thursday',  opening_time: '07:00:00', closing_time: '08:00:00')
+Schedule.create(week_day: 'Thursday',  opening_time: '08:00:00', closing_time: '09:00:00')
+Schedule.create(week_day: 'Thursday',  opening_time: '12:00:00', closing_time: '13:00:00')
+Schedule.create(week_day: 'Thursday',  opening_time: '13:00:00', closing_time: '14:00:00')
+Schedule.create(week_day: 'Thursday',  opening_time: '14:00:00', closing_time: '15:00:00')
+Schedule.create(week_day: 'Friday',    opening_time: '07:00:00', closing_time: '08:00:00')
+Schedule.create(week_day: 'Friday',    opening_time: '08:00:00', closing_time: '09:00:00')
+Schedule.create(week_day: 'Friday',    opening_time: '09:00:00', closing_time: '10:00:00')
+Schedule.create(week_day: 'Friday',    opening_time: '13:00:00', closing_time: '14:00:00')
 
-# # Manager turns
-# Turn.create(schedule_id: 1,  user_id: 6)
-# Turn.create(schedule_id: 2,  user_id: 6)
-# Turn.create(schedule_id: 3,  user_id: 7)
-# Turn.create(schedule_id: 4,  user_id: 7)
-# Turn.create(schedule_id: 5,  user_id: 6)
-# Turn.create(schedule_id: 6,  user_id: 6)
-# Turn.create(schedule_id: 7,  user_id: 7)
-# Turn.create(schedule_id: 8,  user_id: 7)
-# Turn.create(schedule_id: 9,  user_id: 7)
-# Turn.create(schedule_id: 10, user_id: 7)
-# Turn.create(schedule_id: 11, user_id: 7)
-# Turn.create(schedule_id: 12, user_id: 6)
-# Turn.create(schedule_id: 13, user_id: 6)
-# Turn.create(schedule_id: 14, user_id: 6)
-# Turn.create(schedule_id: 15, user_id: 7)
-# Turn.create(schedule_id: 16, user_id: 7)
-# Turn.create(schedule_id: 17, user_id: 6)
-# Turn.create(schedule_id: 18, user_id: 6)
-# Turn.create(schedule_id: 19, user_id: 6)
-# Turn.create(schedule_id: 20, user_id: 7)
-# Turn.create(schedule_id: 21, user_id: 7)
-# Turn.create(schedule_id: 22, user_id: 7)
-# Turn.create(schedule_id: 23, user_id: 6)
-# # Professionals id 2 turns
-# Turn.create(schedule_id: 1,  user_id: 2)
-# Turn.create(schedule_id: 2,  user_id: 2)
-# Turn.create(schedule_id: 6,  user_id: 2)
-# Turn.create(schedule_id: 7,  user_id: 2)
-# Turn.create(schedule_id: 11, user_id: 2)
-# Turn.create(schedule_id: 12, user_id: 2)
-# Turn.create(schedule_id: 23, user_id: 2)
-# # Professionals id 3 turns
-# Turn.create(schedule_id: 1,  user_id: 3)
-# Turn.create(schedule_id: 2,  user_id: 3)
-# Turn.create(schedule_id: 3,  user_id: 3)
-# Turn.create(schedule_id: 4,  user_id: 3)
-# Turn.create(schedule_id: 5,  user_id: 3)
-# Turn.create(schedule_id: 8,  user_id: 3)
-# Turn.create(schedule_id: 9,  user_id: 3)
-# Turn.create(schedule_id: 15, user_id: 3)
-# Turn.create(schedule_id: 16, user_id: 3)
-# # Professionals id 4 turns
-# Turn.create(schedule_id: 1,  user_id: 4)
-# Turn.create(schedule_id: 2,  user_id: 4)
-# Turn.create(schedule_id: 3,  user_id: 4)
-# Turn.create(schedule_id: 4,  user_id: 4)
-# Turn.create(schedule_id: 8,  user_id: 4)
-# Turn.create(schedule_id: 9,  user_id: 4)
-# Turn.create(schedule_id: 10, user_id: 4)
-# Turn.create(schedule_id: 12, user_id: 4)
-# Turn.create(schedule_id: 15, user_id: 4)
-# Turn.create(schedule_id: 16, user_id: 4)
-# Turn.create(schedule_id: 20, user_id: 4)
-# Turn.create(schedule_id: 21, user_id: 4)
-# Turn.create(schedule_id: 22, user_id: 4)
-# # Professionals id 5 turns
-# Turn.create(schedule_id: 5,  user_id: 5)
-# Turn.create(schedule_id: 6,  user_id: 5)
-# Turn.create(schedule_id: 7,  user_id: 5)
-# Turn.create(schedule_id: 11, user_id: 5)
-# Turn.create(schedule_id: 13, user_id: 5)
-# Turn.create(schedule_id: 14, user_id: 5)
-# Turn.create(schedule_id: 17, user_id: 5)
-# Turn.create(schedule_id: 18, user_id: 5)
-# Turn.create(schedule_id: 19, user_id: 5)
-# Turn.create(schedule_id: 23, user_id: 5)
+# Manager turns
+Turn.create(schedule_id: 1,  user_id: 6)
+Turn.create(schedule_id: 2,  user_id: 6)
+Turn.create(schedule_id: 3,  user_id: 7)
+Turn.create(schedule_id: 4,  user_id: 7)
+Turn.create(schedule_id: 5,  user_id: 6)
+Turn.create(schedule_id: 6,  user_id: 6)
+Turn.create(schedule_id: 7,  user_id: 7)
+Turn.create(schedule_id: 8,  user_id: 7)
+Turn.create(schedule_id: 9,  user_id: 7)
+Turn.create(schedule_id: 10, user_id: 7)
+Turn.create(schedule_id: 11, user_id: 7)
+Turn.create(schedule_id: 12, user_id: 6)
+Turn.create(schedule_id: 13, user_id: 6)
+Turn.create(schedule_id: 14, user_id: 6)
+Turn.create(schedule_id: 15, user_id: 7)
+Turn.create(schedule_id: 16, user_id: 7)
+Turn.create(schedule_id: 17, user_id: 6)
+Turn.create(schedule_id: 18, user_id: 6)
+Turn.create(schedule_id: 19, user_id: 6)
+Turn.create(schedule_id: 20, user_id: 7)
+Turn.create(schedule_id: 21, user_id: 7)
+Turn.create(schedule_id: 22, user_id: 7)
+Turn.create(schedule_id: 23, user_id: 6)
+# Professionals id 2 turns
+Turn.create(schedule_id: 1,  user_id: 2)
+Turn.create(schedule_id: 2,  user_id: 2)
+Turn.create(schedule_id: 6,  user_id: 2)
+Turn.create(schedule_id: 7,  user_id: 2)
+Turn.create(schedule_id: 11, user_id: 2)
+Turn.create(schedule_id: 12, user_id: 2)
+Turn.create(schedule_id: 23, user_id: 2)
+# Professionals id 3 turns
+Turn.create(schedule_id: 1,  user_id: 3)
+Turn.create(schedule_id: 2,  user_id: 3)
+Turn.create(schedule_id: 3,  user_id: 3)
+Turn.create(schedule_id: 4,  user_id: 3)
+Turn.create(schedule_id: 5,  user_id: 3)
+Turn.create(schedule_id: 8,  user_id: 3)
+Turn.create(schedule_id: 9,  user_id: 3)
+Turn.create(schedule_id: 15, user_id: 3)
+Turn.create(schedule_id: 16, user_id: 3)
+# Professionals id 4 turns
+Turn.create(schedule_id: 1,  user_id: 4)
+Turn.create(schedule_id: 2,  user_id: 4)
+Turn.create(schedule_id: 3,  user_id: 4)
+Turn.create(schedule_id: 4,  user_id: 4)
+Turn.create(schedule_id: 8,  user_id: 4)
+Turn.create(schedule_id: 9,  user_id: 4)
+Turn.create(schedule_id: 10, user_id: 4)
+Turn.create(schedule_id: 12, user_id: 4)
+Turn.create(schedule_id: 15, user_id: 4)
+Turn.create(schedule_id: 16, user_id: 4)
+Turn.create(schedule_id: 20, user_id: 4)
+Turn.create(schedule_id: 21, user_id: 4)
+Turn.create(schedule_id: 22, user_id: 4)
+# Professionals id 5 turns
+Turn.create(schedule_id: 5,  user_id: 5)
+Turn.create(schedule_id: 6,  user_id: 5)
+Turn.create(schedule_id: 7,  user_id: 5)
+Turn.create(schedule_id: 11, user_id: 5)
+Turn.create(schedule_id: 13, user_id: 5)
+Turn.create(schedule_id: 14, user_id: 5)
+Turn.create(schedule_id: 17, user_id: 5)
+Turn.create(schedule_id: 18, user_id: 5)
+Turn.create(schedule_id: 19, user_id: 5)
+Turn.create(schedule_id: 23, user_id: 5)
 
 # @first_name_man = %w[Adolfo Adrián Agustín Alberto Alejandro Alexander Alexis Alonso Andrés Angel Anthony Antonio
 #                      Bautista Benicio Benjamín Carlos Cesar César Cristóbal Daniel David Diego Dylan Eduardo Emiliano Emilio Emmanuel Enrique Erik Ernesto Esteban Ethan Evaristo Fabián Facundo Felipe Félix Fernando Francisco Gabriel Gaspar Geronimo Giorgio Gregorio Gustavo Hugo Ian Ignacio Iker Isaac Jacob Javier Jayden Jeremy Jerónimo Jesus Jesús Joaquín John Jorge Jose José Josué Juan Julián Julio Justin Kevin Lautaro Liam Lian Lorenzo Lucas Luciano Luis Manuel Marco María Mario Martin Martín Mateo Matías Maximiliano Máximo Maykel Melquiades Miguel Nelson Noah Oscar Pablo Pedro Rafael Ramón Raúl Ricardo Rigoberto Roberto Rolando Ronny Samuel Santiago Santino Santos Sebastián Sergio Thiago Tomás Valentino Vicente]
@@ -470,12 +470,12 @@
 # Card.create(created_at: '2022-03-11 09:00:00', next_appointment: '2022-03-18', weight: 71.2, comments: 'No comments',
 #             patient_id: 15, diet_id: 5)
 
-# Service.create(name: 'Nutritional consultation', duration: 1, price: 120) # 1 - 1
-# Service.create(name: 'Facial massage',           duration: 1, price: 80)  # 2 - 1
-# Service.create(name: 'Body massage',             duration: 2, price: 100) # 3 - 2
-# Service.create(name: 'Acupuncture',              duration: 1, price: 150) # 4 - 1
-# Service.create(name: 'Basic rehabilitation',     duration: 2, price: 300) # 5 - 2
-# Service.create(name: 'Intensive therapy',        duration: 3, price: 550) # 6 - 3
+Service.create(name: 'Nutritional consultation', duration: 1, price: 120) # 1 - 1
+Service.create(name: 'Facial massage',           duration: 1, price: 80)  # 2 - 1
+Service.create(name: 'Body massage',             duration: 2, price: 100) # 3 - 2
+Service.create(name: 'Acupuncture',              duration: 1, price: 150) # 4 - 1
+Service.create(name: 'Basic rehabilitation',     duration: 2, price: 300) # 5 - 2
+Service.create(name: 'Intensive therapy',        duration: 3, price: 550) # 6 - 3
 
 # Appointment.create(date_time: '2022-08-01 07:00:00', reason: '', status: 'cancelled', payment_status: 0, score: 0,
 #                    review: 'No comments', service_id: 1, user_id: 4, patient_id: 1)

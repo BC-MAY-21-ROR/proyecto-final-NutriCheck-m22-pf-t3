@@ -3,7 +3,7 @@
     <%= link_to  "< Back", 'javascript:history.back()',  class: "black-back-link fw-bold text-decoration-none" %>
   </p>
   <h1 class="mx-auto text-white fw-bold">Managers</h1>
-  <a class="center-a" href="<%= new_manager_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
+  <a class="center-a" href="<%= new_user_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
   <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
     <% @managers.sort_by { |manag| manag.name }.each do |manager|%>
       <div class="col">

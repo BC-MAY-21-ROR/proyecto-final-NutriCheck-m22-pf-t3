@@ -7,7 +7,7 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  belongs_to :speciality
+  belongs_to :speciality, optional: true
   has_one_attached :photo
 
   has_many :licenses
@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :password, presence: true, on: :create
   validates :role, presence: true
-  validates :speciality_id, presence: true
+  validates :speciality_id, presence: false
 
   def getname
     "#{role} #{name} #{last_name}"

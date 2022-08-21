@@ -45,7 +45,7 @@
       <label for="">Speciality: </label>
     </div>
     <div class="form-control bg-light text-black-50 m-auto">
-      <%= @professional.speciality.name %>
+      <%= @professional.speciality.name unless @professional.speciality == nil%>
     </div>
     <div class="fw-bold">
       <label for="">Date of entry: </label>

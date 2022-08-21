@@ -5,7 +5,7 @@
   <h1 class="mx-auto text-white fw-bold">Professionals</h1>
   <a class="center-a" href="<%= new_user_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
   <div class="row row-cols-3 row-cols-md-3 g-1 m-2 bg-container-cards rounded">
-    <% @professionals.sort_by { |prof| prof.speciality.name }.each do |professional|%>
+    <% @professionals.sort_by { |prof| prof.name }.each do |professional|%>
       <div class="col">
         <div class="card h-100 shadow">
           <div class="h-50">
@@ -17,7 +17,8 @@
           </div>
           <div class="card-body mx-auto p-1 h-50">
             <p class="card-title fw-bold p-0 m-0 text-center"><%= professional.short_name %></p>
-            <p class="card-title p-0 text-center"><%= professional.speciality.name %></p>
+              <p class="card-title p-0 text-center"><%= professional.speciality.name unless professional.speciality == nil%></p>
+
           </div>
           <div>
             <%= button_to "Check", professional_path(professional), method: :get, form_class: "d-grid mx-auto justify-content-center w-100", class: "btn btn-sm color-btn-2 rounded-pill shadow text-white fw-bold mb-1" %>

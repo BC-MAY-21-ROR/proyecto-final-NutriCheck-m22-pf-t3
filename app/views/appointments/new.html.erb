@@ -15,6 +15,16 @@
       <%= form.label :reason %>
       <%= form.text_field :reason, class: "form-control" %>
     </div>
+    <%= form.label :status %>
+    <div>
+      <%= form.text_field :status, class: "form-control" %>
+    </div>
+    <%= form.label :payment_status %>
+    <div>
+      <%= form.text_field :payment_status, class: "form-control" %>
+    </div>
+    <%= form.label :service_id %>
+
     <div>
       <%= form.label :service_id %>
       <%= form.collection_select(:service_id, Service.all.order(name: :asc), :id, :name, { include_blank: true }, { class: "form-control rounded-pill text-center" }) %>

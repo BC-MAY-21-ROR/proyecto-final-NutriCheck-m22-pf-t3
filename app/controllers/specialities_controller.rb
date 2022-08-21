@@ -14,10 +14,10 @@ class SpecialitiesController < ApplicationController
   end
 
   def show
-    speciality
   end
 
   def create
+    @speciality = Speciality.new(speciality_params)
     if @speciality.save
       redirect_to specialities_path, notice: 'New speciality created successfully'
     else
@@ -26,7 +26,6 @@ class SpecialitiesController < ApplicationController
   end
 
   def edit
-    speciality
   end
 
   def update
@@ -40,7 +39,6 @@ class SpecialitiesController < ApplicationController
   end
 
   def destroy
-    speciality
     if @speciality.destroy
       redirect_to specialities_path, notice: 'Speciality was deleted successfully'
     else
@@ -53,6 +51,7 @@ class SpecialitiesController < ApplicationController
   def speciality
     @speciality = Speciality.find(params[:id])
   end
+
 
   def speciality_params
     params.require(:speciality).permit(:name)

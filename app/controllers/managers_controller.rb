@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ManagersController < UsersController
+class ManagersController < ApplicationController
   skip_load_and_authorize_resource
   def index
     @managers = User.where(role: 'manager')
