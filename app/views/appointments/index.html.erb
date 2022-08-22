@@ -6,6 +6,7 @@
     <div class="d-grid">
       <div class="d-grid my-4">
         <h1 class="mx-auto fw-bold text-white px-3">Historic Appointments</h1>
+        <a class="center-a" href="<%= new_appointment_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
       </div>
       <div class="card mx-3 my-3">
         <% current_patient.appointments.order('date_time DESC').each do |appointment|%>
@@ -45,9 +46,6 @@
             <%= button_to "Next", pagy_url_for(@pagy, @pagy.next), class: "btn btn-sm color-btn fw-bold text-white" %>
           <% end %>
         </div>
-      </div>
-      <div class="d-grid gap-3 mx-auto mb-3">
-        <a class="center-a" href="<%= new_appointment_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a>
       </div>
     </div>
   <% end %>
