@@ -6,10 +6,20 @@ Rails.application.routes.draw do
   devise_for :users, :path => 'u'
   devise_for :patients, :path => 'p'
   # devise_group :entity, contains: [:user, :patient]
-  resources :managers, :professionals, :administrators do
+  resources :managers, :professionals do
     collection do
       get 'dashboard'
       post 'dashboard'
+    end
+  end
+
+  resources :administrators do
+    collection do
+      get 'dashboard'
+      post 'dashboard'
+      get 'patients_report'
+      get 'appointments_report'
+      get 'sales_report'
     end
   end
 

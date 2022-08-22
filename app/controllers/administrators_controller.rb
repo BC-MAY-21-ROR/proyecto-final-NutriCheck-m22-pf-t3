@@ -13,4 +13,17 @@ class AdministratorsController < UsersController
   def dashboard
     @administrators = User.where(role: 'administrator')
   end
+
+  def patients_report
+    @administrators = User.where(role: 'administrator')
+  end
+
+  def appointments_report
+    @administrators = User.where(role: 'administrator')
+  end
+  
+  def sales_report
+    @administrators = User.where(role: 'administrator')
+  end
+
 end
