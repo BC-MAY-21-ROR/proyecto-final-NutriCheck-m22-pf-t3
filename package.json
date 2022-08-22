@@ -1,3 +1,7 @@
 {
-  "dependencies": {}
+  "dependencies": {
+    "daterangepicker": "^3.1.0",
+    "jquery": "^3.6.0",
+    "moment": "^2.29.4"
+  }
 }
