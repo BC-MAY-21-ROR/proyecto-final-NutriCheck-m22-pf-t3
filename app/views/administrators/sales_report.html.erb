@@ -3,36 +3,32 @@
     <%= link_to  "< Back", 'javascript:history.back()', class: "black-back-link fw-bold text-decoration-none" %>
   </p>
   <div class="d-grid m-auto">
-    <h1 class=" mx-auto fw-bold text-white my-2">Sales Reports</h1>
-    <% if current_user.role == 'administrator'%>
-      <a class="center-a" href="<%= new_schedule_path %>"><%= image_tag("plus_button.svg", class: "add-manager-icon mx-auto")%></a><br>
-    <% end %>
-  </div>
-  <table class="table table-responsive table-sm table-light mx-2 mt-4 rounded">
-    <thead class="thead-ligth">
-      <tr>
-        <th scope="col">Dia</th>
-        <th scope="col">Apertura</th>
-        <th scope="col">Cierre</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%# <% @schedules.each do |schedule| %> %>
-        <tr>
-          <%# <th scope="row"><%=schedule.week_day %></th>
-        %>
-        <%# <td><%=schedule.opening_time.strftime("%H:%M") %></td>
-      %>
-      <%# <td><%=schedule.closing_time.strftime("%H:%M") %></td>
-    %>
-    <%# <td><a class="w-100 h-100" href="<%= schedule_path(schedule) %>">
-  </tr>
-  <%# <% end %> %>
-</tbody>
-</table>
-<div class="btn-group mx-2 mb-2 gap-1" role="group" aria-label="Basic example" >
-  <%# <%= button_to "Open Schedule", schedule_new_slots_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
-  <%# <%= button_to "Edit Turns", slots_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %> %> %>
-</div>
-</div>
+    <%# <%= form_with url:  appointments_report_administrators_path , method: :get, class: 'form-group w-50 mx-auto' do |form| %>
+      <%# <%= form.date_field :start %> %>
+      <%# <%= form.date_field :end %> %>
+      <%# <%= form.submit%> %>
+      <%# <% end %> %> %>
+      <h1 class=" mx-auto fw-bold text-white my-2">Sales Reports</h1>
+    </div>
+    <div class="d-flex bg-white w-100">
+      <table class="table table-responsive table-sm table-light mx-2 mt-4 rounded ">
+        <thead class="thead-ligth">
+          <tr class="text-center">
+            <th scope="col">Fecha</th>
+            <th scope="col">Service</th>
+            <th scope="col">Total Sales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @sales_overview.each do |overview| %>
+            <tr class="text-center">
+              <td scope="col"><%= overview.date_time.strftime("%B-%Y") %></td>
+              <td scope="col"><%= overview.service_name %></td>
+              <td scope="col"><%= overview.total_price %></td>
+            </tr>
+          <% end %>
+          <%# <% @schedules.each do |schedule| %>
+          </tbody>
+        </table>
+      </div>
+    </div>

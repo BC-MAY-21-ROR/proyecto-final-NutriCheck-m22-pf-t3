@@ -9,3 +9,9 @@ import "./confirmations"
 //= require bootstrap-sprockets
 import "chartkick"
 import "Chart.bundle"
+
+
+//= require jquery
+//= require moment
+//= require daterangepicker
+
