@@ -17,9 +17,15 @@
     <% if current_user || current_patient %>
       <header id="header" class="header fixed-top d-flex align-items-center">
         <div class="d-flex align-items-center justify-content-between">
-          <a href="/" class="logo d-flex align-items-center">
-            <span class="d-none d-lg-block">NutriCheck</span>
-          </a>
+          <% if current_patient  %>
+            <%= link_to  "NutriCheck", dashboard_patients_path, class: "logo align-items-center fw-bold display-6" %>
+          <% elsif current_user.role == 'administrator'%>
+            <%= link_to  "NutriCheck", dashboard_administrators_path, class: "logo align-items-center fw-bold display-6" %>
+          <% elsif current_user.role == 'manager' %>
+            <%= link_to  "NutriCheck", dashboard_managers_path, class: "logo align-items-center fw-bold display-6" %>
+          <% elsif current_user.role == 'professional' %>
+            <%= link_to  "NutriCheck", dashboard_professionals_path, class: "logo align-items-center fw-bold display-6" %>
+          <% end %>
           <i class="bi bi-list toggle-sidebar-btn"></i>
         </div>
         <nav class="header-nav ms-auto">

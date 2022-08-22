@@ -1,5 +1,4 @@
 <%= javascript_include_tag 'confirmations' %>
-
 <div class="">
   <div class="mx-2 my-3 bg-container-cards rounded">
     <div class="d-flex row;">
@@ -29,7 +28,7 @@
       <div class="card-body bg-container-cards rounded">
         <p class="card-text my-1 p-0"> <strong> Date & Hour: </strong><%= appointment.date_time.strftime("%d-%m-%y %H:%M hrs")%></p>
         <p class="card-text my-1 p-0"> <strong> Professional: </strong><%= appointment.user.full_name%></p>
-        <p class="card-text my-1 p-0"> <strong> Service: </strong><%= appointment.service.name%></p>
+        <p class="card-text my-1 p-0"> <strong> Service: </strong><%= appointment.service_id %></p>
         <div class="btn-group gap-1 w-100 p-0" role="group" aria-label="Basic example" >
           <%= link_to  "View detail", appointment_path(appointment),form_class: 'w-25', class: 'btn color-btn btn-sm fw-bold text-white '%>
           <%= link_to  "Edit", edit_appointment_path(appointment), form_class: 'w-25',class: 'btn btn-warning btn-sm fw-bold text-white '%>

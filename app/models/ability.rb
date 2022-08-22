@@ -18,6 +18,8 @@ class Ability
         can :manage, Appointment
         can :manage, Speciality
         can :manage, Service
+        can :manage, Slot
+        can :manage, Schedule
       elsif model.professional?
         can :manage, Patient
         can :manage, User, id: model.id
