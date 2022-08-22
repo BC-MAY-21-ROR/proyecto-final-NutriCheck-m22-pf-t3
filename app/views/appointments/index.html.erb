@@ -12,7 +12,7 @@
         <% current_patient.appointments.order('date_time DESC').each do |appointment|%>
           <div class="list-group-item d-flex w-100 gap-2 align-items-center px-1">
             <p class="my-auto w-25"><%= appointment.date_time.strftime("%d-%m-%Y") %></p>
-            <p class="my-auto w-50"><%= appointment.service.name %></p>
+            <p class="my-auto w-50"><%= appointment.service_id %></p>
             <%= button_to "Check", appointment_path(appointment), method: :get , form_class: "w-25", class: "btn btn-warning text-white fw-bold w-100" %>
           </div>
         <% end %>
