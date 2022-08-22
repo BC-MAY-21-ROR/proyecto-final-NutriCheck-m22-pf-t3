@@ -98,3 +98,5 @@ gem 'simple_calendar', '~> 2.4'
 gem 'pagy', '~> 5.10'
 
 gem 'groupdate', '~> 6.1'
+
+gem 'chartkick', '~> 4.2', '>= 4.2.1'

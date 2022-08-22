@@ -5,7 +5,7 @@
   <div class="d-grid m-auto">
     <h1 class=" mx-auto fw-bold text-white my-2">Appointments Reports</h1>
   </div>
-  <table class="table table-responsive table-sm table-light mx-2 mt-4 rounded">
+  <table class="table table-responsive table-sm table-light mx-2 mt-4 rounded ">
     <thead class="thead-ligth">
       <tr class="text-center">
         <th scope="col">Year</th>
@@ -33,5 +33,8 @@
     <div class="btn-group mx-2 mb-2 gap-1" role="group" aria-label="Basic example" >
       <%# <%= button_to "Open Schedule", schedule_new_slots_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %>
       <%# <%= button_to "Edit Turns", slots_path, method: :get, type: "button", form_class: "col-sm mx-auto w-100", class: "btn color-btn text-white fw-bold w-100" %> %> %>
+    </div>
+    <div class="bg-white rounded">
+      <%= column_chart @appointments_data, stacked: true, title: "Appointments", download: {filename: "chart", background: "#ffffff"}, height: "500px"%>
     </div>
   </div>

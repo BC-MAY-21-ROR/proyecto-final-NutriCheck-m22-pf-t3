@@ -24,6 +24,11 @@ class AdministratorsController < UsersController
   def appointments_report
     @administrators = User.where(role: 'administrator')
     @appointments = Appointment.all
+    @appointments_data = Appointment.service_ids.keys.map do |service|
+      if service != 'base'
+      {name: service.capitalize, data: Appointment.where(service_id: service).group_by_month(:date_time).count }
+      end
+    end.reject(&:nil?)
   end
   
   def sales_report
