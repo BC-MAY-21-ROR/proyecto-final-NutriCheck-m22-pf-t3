@@ -3,7 +3,7 @@
   <div class="">
     <p style="color: green"><%= notice %></p>
     <h1 class="text-center">Calendar of patient service spaces</h1>
-    <%= link_to "New slot", new_slot_path %>
+    
     <div>
       <%= week_calendar events: @slots do |date, slots| %>
         <p class="fw-bold text-center">
