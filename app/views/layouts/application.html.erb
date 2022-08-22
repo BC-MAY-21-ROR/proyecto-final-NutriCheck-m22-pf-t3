@@ -25,7 +25,24 @@
         <nav class="header-nav ms-auto">
           <ul class="d-flex align-items-center name-profile">
             <% if current_user %>
-              <a href="<%=current_user.role unless current_page?(:controller => 'users', :action => 'index')%>s/dashboard"><span class=""><%= current_user.full_name %></a></span>
+              <% if patient_signed_in?%>
+                <%= link_to "Dashboard", patient_dashboard_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+                <%= link_to "Log out", destroy_patient_session_path, :method => :delete, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+              <% end %>
+              <% if user_signed_in?%>
+                <% if current_user.role == "administrator"%>
+                  <%= link_to "Dashboard", administrator_dashboard_path, method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+                <% end %>
+                <% if current_user.role == "professional"%>
+                  <%= link_to "Dashboard", professional_dashboard_path, method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+                <% end %>
+                <% if current_user.role == "manager"%>
+                  <%= link_to "Dashboard", manager_dashboard_path, method: :get, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+                <% end %>
+                <%= link_to "Log out", destroy_user_session_path, :method => :delete, type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100"%>
+              <% end %>
+              <%= link_to "Log In", new_patient_session_path, method: :get,type: "button", form_class: "col-sm mx-auto w-75", class: "btn btn-sm color-btn text-white fw-bold w-100" unless patient_signed_in? || user_signed_in? %>
+              <a> <%= current_user.full_name %></a></span>
               <div class="nav-link nav-profile d-flex align-items-center pe-0">
                 <% if current_user.photo.attached? %>
                   <%= image_tag(current_user.photo, class: "rounded-circle px-3") %>
@@ -87,6 +104,36 @@
                 <% elsif current_user.role == 'administrator' %>
                   <li class="nav-item">
                     <strong>Manage Options</strong>
+                    <li class="nav-item">
+                      <div class="nav-link " href="index.html">
+                        <i class="bi bi-grid"></i>
+                        <span><%= link_to  "Services", services_path %> </span>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <div class="nav-link " href="index.html">
+                        <i class="bi bi-grid"></i>
+                        <span><%= link_to  "Schedules", schedules_path %> </span>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <div class="nav-link " href="index.html">
+                        <i class="bi bi-grid"></i>
+                        <span><%= link_to  "Specialities", specialities_path %> </span>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <div class="nav-link " href="index.html">
+                        <i class="bi bi-grid"></i>
+                        <span><%= link_to  "Appointments", search_appointments_path %> </span>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <div class="nav-link " href="index.html">
+                        <i class="bi bi-grid"></i>
+                        <span><%= link_to  "Patients", search_patients_path %> </span>
+                      </div>
+                    </li>
                     <div class="nav-link " href="index.html">
                       <i class="bi bi-grid"></i>
                       <span><%= link_to  "Manage Managers", managers_path %> </span>
