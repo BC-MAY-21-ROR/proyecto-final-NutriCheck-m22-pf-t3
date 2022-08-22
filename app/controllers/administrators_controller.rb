@@ -16,10 +16,14 @@ class AdministratorsController < UsersController
 
   def patients_report
     @administrators = User.where(role: 'administrator')
+    @patients = Patient.all
+    
+
   end
 
   def appointments_report
     @administrators = User.where(role: 'administrator')
+    @appointments = Appointment.all
   end
   
   def sales_report
