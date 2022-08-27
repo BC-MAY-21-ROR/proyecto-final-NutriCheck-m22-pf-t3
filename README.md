@@ -1,6 +1,8 @@
 ![BrightCoders Logo](img/logo-bc.png)
 
 # NutriCheck
+[CLICK here to access the deploy](https://nutricheck-bc.herokuapp.com/)
+https://nutricheck-bc.herokuapp.com/
 
 ## Sprint Leader
 
